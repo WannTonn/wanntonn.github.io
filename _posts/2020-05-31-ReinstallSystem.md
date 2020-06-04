@@ -9,7 +9,7 @@
   - sudo ln -s /Users/wanton/zones /zones
 - 设置ssh keygen
   - ssh-keygen -t rsa -C "your_email@example.com"
-  - pbcopy < ~/.ssh/id_rsa.pub  (拷贝文件内的文本内容)
+  - pbcopy < ~/.ssh/id_rsa.pub (拷贝文件内的文本内容)
   
 - 安装Brew
   - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
