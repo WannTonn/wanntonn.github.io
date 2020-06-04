@@ -10,7 +10,10 @@
 - 设置ssh keygen
   - ssh-keygen -t rsa -C "your_email@example.com"
   - pbcopy < ~/.ssh/id_rsa.pub (拷贝文件内的文本内容)
-  
+  - 遇到 ssh_dispatch_run_fatal: Connection to 13.229.188.59 port 22: Operation timed out
+   - git remote rm origin
+   - git remote add origin https://github.com/项目地址
+   - git push -u origin master
 - 安装Brew
   - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
   - 上述方法无效的话 ---> 直接访问https://raw.githubusercontent.com/Homebrew/install/master/install，将文件另存为 brewinstall.rb 至文件夹(我存在Downloads)。打开terminal运行: $> ruby ~/Downloads/brewinstall.rb。
