@@ -21,6 +21,10 @@
     # 拷贝文件内的文本内容 
     pbcopy < ~/.ssh/id_rsa.pub
 
+    # git 配置默认信息
+    git config --global user.name "Name"
+    git config --global user.email xxx@example.com
+    
     # 遇到 ssh_dispatch_run_fatal: Connection to 13.229.188.59 port 22: Operation timed out
     git remote rm origin
     git remote add origin https://github.com/项目地址
