@@ -1,7 +1,7 @@
 # 前端JavaScript 问题列表  - 摘录自 [github]('https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md')
 > 每日一更
 
-1. 输出是什么？ 2021-03-31
+1.输出是什么？ 2021-03-31
   ```
     function sayHi() {
       console.log(name);
@@ -25,7 +25,7 @@
   通过 let 和 const 关键字声明的变量也会提升，但是和 var 不同，它们不会被初始化。在我们声明（初始化）之前是不能访问它们的。这个行为被称之为暂时性死区。当我们试图在声明之前访问它们时，JavaScript 将会抛出一个 ReferenceError 错误。
 </details>
 
-2. 输出是什么？2021-04-01
+2.输出是什么？2021-04-01
 ``` 
 for (var i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 1);
