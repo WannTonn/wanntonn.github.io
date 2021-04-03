@@ -1,12 +1,12 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-03 22:48:31
+ * @LastEditTime: 2021-04-03 23:25:52
  * @LastEditors: WannTonn
  * @Description: 
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
-# 前端JavaScript 问题列表  - 摘录自 [github]('https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md')
+# 前端JavaScript 问题列表  - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
 
 
 > 1.输出是什么？ 2021-03-31
