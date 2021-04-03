@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-03 22:44:08
+ * @LastEditTime: 2021-04-03 22:48:31
  * @LastEditors: WannTonn
  * @Description: 
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -10,6 +10,7 @@
 
 
 > 1.输出是什么？ 2021-03-31
+
   ```
     function sayHi() {
       console.log(name);
@@ -34,6 +35,7 @@
 </details>
 
 > 2.输出是什么？2021-04-01
+
 ``` 
 for (var i = 0; i < 3; i++) {
   setTimeout(() => console.log(i), 1);
@@ -56,6 +58,7 @@ for (let i = 0; i < 3; i++) {
 </details>
 
 > 3.输出是什么？ 2021-04-01
+
 ``` 
 const shape = {
   radius: 10,
@@ -86,6 +89,7 @@ shape.perimeter();
 </details>
 
 > 4.输出是什么？ 2021-04-02
+
 ```
 +true;
 !"Lydia";
@@ -104,6 +108,7 @@ shape.perimeter();
 </details>
 
 >5.哪一个是正确的？ 2021-04-03
+
 ```
 const bird = {
   size: 'small'
