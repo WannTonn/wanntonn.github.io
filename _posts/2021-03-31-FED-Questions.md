@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-03 23:25:52
+ * @LastEditTime: 2021-04-04 22:44:01
  * @LastEditors: WannTonn
  * @Description: 
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -134,5 +134,85 @@ const mouse = {
   mouse[bird.size]: 首先计算bird.size, 得到 size的值为'small'。mouse["small"] 返回 true。
 
   然后使用点语法的话，mouse不包含bird这个key， mouse.bird 返回 undefined。所以在使用点语法 mouse.bird.size时， 因为mouse.bird 是undefined， 变成了 undefined.size 。会抛出 'cannot read property "size" of undefined' 的错误。
+
+</details>
+
+>6.输出是什么？ 2021-04-04
+
+```
+let c = { greeting: 'Hey!' };
+let d;
+
+d = c;
+c.greeting = 'Hello';
+console.log(d.greeting);
+```
+- A：Hello
+- B：undefined
+- C：ReferenceError
+- D：TypeError
+<details>
+<summary>点击查看答案</summary>
+
+  答案： A
+
+  在JavaScript中，当设置两个对象彼此相等时，它们会通过引用进行交互。
+  首先，变量c的值是一个对象，接下来，给 d 分配了一个和c对象相同的引用。
+
+</details>
+
+>7.输出是什么？ 2021-04-04
+
+```
+let a = 3;
+let b = new Number(3);
+let c = 3;
+
+console.log( a == b )
+console.log( a === b )
+console.log( b === c )
+```
+- A：true false true
+- B：false false true
+- C：true false false
+- D：false true true
+<details>
+<summary>点击查看答案</summary>
+
+  答案： C
+
+  new Number() 是一个内建的函数构造器。它实际上返回的是一个对象。
+  当使用 == 操作符时，它只检查两者是否拥有相同的值。因为它们的值都是3，因此返回true。
+  当使用 === 操作符时，两者的值以及类型都应该是相同的。new Number() 是一个对象而不是number，因此返回false。
+
+</details>
+
+>8.输出是什么？ 2021-04-04
+
+```
+class Chameleon {
+  static colorChange(newColor) {
+    this.newColor = newColor;
+    return this.newColor;
+  }
+
+  constructor({ newColor = 'green' } = {}) {
+    this.newColor = newColor;
+  }
+}
+
+const freddie = new Chameleon({newColor: 'purple'});
+freddie.colorChange('orange');
+```
+- A：orange
+- B：purple
+- C：green
+- D：TypeError
+<details>
+<summary>点击查看答案</summary>
+
+  答案： D
+
+  colorChange 是一个静态方法。静态方法被设计为只能被创建它们的构造器使用(Chameleon)，并且不能传递给实例。因为freddie 是一个实例，静态方法不能被实例使用，因此抛出 TypeError 错误。
 
 </details>
