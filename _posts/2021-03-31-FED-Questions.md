@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-07 22:33:48
+ * @LastEditTime: 2021-04-07 22:35:47
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -300,7 +300,7 @@ bark.animal = 'dog'
 函数bark也是特殊的对象。函数是一个拥有属性的对象，并且属性也可以被调用。
 </details>
 
-  ---
+---
 
 > 11. 输出是什么? 2021-04-07
 ```javascript
@@ -336,7 +336,7 @@ Person.prototype.getFullName = function() {
 这样才会使 member.getFullName() 起作用。如果将方法添加到构造函数本身，将浪费大量内存空间，因为不是所有Person实例都需要这个方法。相反，如果只将它添加到原型汇总，那么它只存在于内存的一个位置，并且所有实例仍然可以访问它。
 </details>
 
-  ---
+---
 
 > 12. 输出是什么? 2021-04-07
 ```javascript
@@ -366,9 +366,9 @@ console.log(sarah);
 我们说 `this.firstName` 等于 "Sarah", 并且 `this.lastName` 等于 `Smith`。实际上我们做的是，定义了 `global.firstName = 'Sarah'` 和 `global.lastName = 'Smith'`。而 `sarah` 本身是 `undefined`。
 </details>
 
-  ---
+---
 
->13. 事件传播的三个阶段是什么? 2021-04-07
+> 13. 事件传播的三个阶段是什么? 2021-04-07
 - A: Target > Capturing > Bubbling
 - B: Bubbling > Target > Capturing
 - C: Target > Bubbling > Capturing
@@ -382,5 +382,5 @@ console.log(sarah);
 在 `捕获(capturing)`阶段中，事件从祖先元素向下传播到目标元素。当事件达到`目标(target)`元素后，`冒泡(bubbling)`才开始。
 </details>
 
-  ---
+---
 
