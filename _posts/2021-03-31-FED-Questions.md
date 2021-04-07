@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-07 22:38:22
+ * @LastEditTime: 2021-04-07 22:40:05
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -279,6 +279,7 @@ console.log(greetign)
 ---
 
 > 10.当我们这么做时，会发生什么? 2021-04-06
+
 ```javascript
 function bark() {
   console.log('Woof!');
@@ -303,6 +304,7 @@ bark.animal = 'dog'
 ---
 
 > 11.输出是什么? 2021-04-07
+
 ```javascript
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -339,6 +341,7 @@ Person.prototype.getFullName = function() {
 ---
 
 > 12.输出是什么? 2021-04-07
+
 ```javascript
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -369,6 +372,7 @@ console.log(sarah);
 ---
 
 > 13.事件传播的三个阶段是什么? 2021-04-07
+
 - A: Target > Capturing > Bubbling
 - B: Bubbling > Target > Capturing
 - C: Target > Bubbling > Capturing
