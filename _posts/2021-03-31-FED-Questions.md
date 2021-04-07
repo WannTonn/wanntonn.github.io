@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-07 22:35:47
+ * @LastEditTime: 2021-04-07 22:38:22
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -256,7 +256,7 @@ colorChange 是一个静态方法。静态方法被设计为只能被创建它�
 
 ---
 
-> 9. 输出是什么？2021-04-05
+> 9.输出是什么？2021-04-05
 ```javascript
 let greeting
 greetign = {} // Typo!
@@ -278,7 +278,7 @@ console.log(greetign)
 
 ---
 
-> 10. 当我们这么做时，会发生什么? 2021-04-06
+> 10.当我们这么做时，会发生什么? 2021-04-06
 ```javascript
 function bark() {
   console.log('Woof!');
@@ -302,7 +302,7 @@ bark.animal = 'dog'
 
 ---
 
-> 11. 输出是什么? 2021-04-07
+> 11.输出是什么? 2021-04-07
 ```javascript
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -338,7 +338,7 @@ Person.prototype.getFullName = function() {
 
 ---
 
-> 12. 输出是什么? 2021-04-07
+> 12.输出是什么? 2021-04-07
 ```javascript
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -368,7 +368,7 @@ console.log(sarah);
 
 ---
 
-> 13. 事件传播的三个阶段是什么? 2021-04-07
+> 13.事件传播的三个阶段是什么? 2021-04-07
 - A: Target > Capturing > Bubbling
 - B: Bubbling > Target > Capturing
 - C: Target > Bubbling > Capturing
