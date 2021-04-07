@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-07 21:58:30
+ * @LastEditTime: 2021-04-07 22:33:48
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -150,7 +150,6 @@ const mouse = {
 - D: 以上三个选项都是有效的
 <details>
 <summary>点击查看答案</summary>
-<p>
 
 答案:  A
 <br/>
@@ -163,7 +162,6 @@ mouse[bird.size]: 首先计算 bird.size, 得到 size 的值为'small'。mouse["
 
 然后使用点语法的话，mouse 不包含 bird 这个 key， mouse.bird 返回 undefined。所以在使用点语法 mouse.bird.size 时， 因为 mouse.bird 是 undefined， 变成了 undefined.size 。会抛出 'cannot read property "size" of undefined' 的错误。
 
-</p>
 </details>
 
 ---
@@ -183,17 +181,15 @@ console.log(d.greeting);
 - B: undefined
 - C: ReferenceError
 - D: TypeError
-  <details>
-  <summary>点击查看答案</summary>
-  <p>
+<details>
+<summary>点击查看答案</summary>
 
-  答案:  A
-  <br/>
+答案:  A
+<br/>
 
-  在 JavaScript 中，当设置两个对象彼此相等时，它们会通过引用进行交互。
-  首先，变量 c 的值是一个对象，接下来，给 d 分配了一个和 c 对象相同的引用。
+在 JavaScript 中，当设置两个对象彼此相等时，它们会通过引用进行交互。
+首先，变量 c 的值是一个对象，接下来，给 d 分配了一个和 c 对象相同的引用。
 
-</p>
 </details>
 
 > 7.输出是什么？ 2021-04-04
@@ -214,7 +210,6 @@ console.log(b === c);
 - D: false true true
 <details>
 <summary>点击查看答案</summary>
-<p>
 
 答案:  C
 <br/>
@@ -223,7 +218,6 @@ new Number() 是一个内建的函数构造器。它实际上返回的是一个�
 当使用 == 操作符时，它只检查两者是否拥有相同的值。因为它们的值都是 3，因此返回 true。
 当使用 === 操作符时，两者的值以及类型都应该是相同的。new Number() 是一个对象而不是 number，因此返回 false。
 
-</p>
 </details>
 
 ---
@@ -252,19 +246,17 @@ freddie.colorChange('orange');
 - D: TypeError
 <details>
 <summary>点击查看答案</summary>
-<p>
 
 答案:  D
 <br />
 
 colorChange 是一个静态方法。静态方法被设计为只能被创建它们的构造器使用(Chameleon)，并且不能传递给实例。因为 freddie 是一个实例，静态方法不能被实例使用，因此抛出 TypeError 错误。
 
-</p>
 </details>
 
 ---
 
->9. 输出是什么？2021-04-05
+> 9. 输出是什么？2021-04-05
 ```javascript
 let greeting
 greetign = {} // Typo!
@@ -286,7 +278,7 @@ console.log(greetign)
 
 ---
 
->10. 当我们这么做时，会发生什么? 2021-04-06
+> 10. 当我们这么做时，会发生什么? 2021-04-06
 ```javascript
 function bark() {
   console.log('Woof!');
@@ -310,7 +302,7 @@ bark.animal = 'dog'
 
   ---
 
->11. 输出是什么? 2021-04-07
+> 11. 输出是什么? 2021-04-07
 ```javascript
 function Person(firstName, lastName) {
   this.firstName = firstName;
@@ -346,7 +338,7 @@ Person.prototype.getFullName = function() {
 
   ---
 
->12. 输出是什么? 2021-04-07
+> 12. 输出是什么? 2021-04-07
 ```javascript
 function Person(firstName, lastName) {
   this.firstName = firstName;
