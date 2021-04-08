@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-07 22:40:05
+ * @LastEditTime: 2021-04-08 22:54:28
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -384,6 +384,93 @@ console.log(sarah);
 答案: D
 <br />
 在 `捕获(capturing)`阶段中，事件从祖先元素向下传播到目标元素。当事件达到`目标(target)`元素后，`冒泡(bubbling)`才开始。
+</details>
+
+---
+
+> 14.所有对象都有原型? 2021-04-08
+
+- A: 对
+- B: 错
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+除了 `基本对象（base object）` ,所有对象都有原型。基本对象可以访问一些方法和属性，比如 `.toString`。这就是为什么你可以使用内置的JavaScript方法! 所有这些方法在原型上都是可用的。虽然JavaScript不能直接在对象上找到这些方法，但JavaScript会沿着原型链找到它们，以便于使用。
+</details>
+
+---
+
+> 15.事件传播的三个阶段是什么? 2021-04-08
+
+- A: Target > Capturing > Bubbling
+- B: Bubbling > Target > Capturing
+- C: Target > Bubbling > Capturing
+- D: Capturing > Target > Bubbling
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+在 `捕获(capturing)`阶段中，事件从祖先元素向下传播到目标元素。当事件达到`目标(target)`元素后，`冒泡(bubbling)`才开始。
+</details>
+
+---
+
+> 16.输出是什么? 2021-04-08
+
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+sum(1, '2');
+```
+
+- A: NaN
+- B: TypeError
+- C: "12"
+- D: 3
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+JavaScript 是一种动态类型语言：我们不指定某些变量的类型。值可以在你不知道的情况下自动转换成另一种类型，这种类型称为隐式类型转换（implicit type coercion）。Coercion 是指将一种类型转换为另一种类型。
+
+在本例中，JavaScript 将数字 1 转换为字符串，以便函数有意义并返回一个值。在数字类型（1）和字符串类型（'2'）相加时，该数字被视为字符串。我们可以连接字符串，比如 "Hello" + "World"，这里发生的是 "1" + "2"，它返回 "12"。
+</details>
+
+---
+
+> 17.输出是什么? 2021-04-08
+
+```javascript
+funciton getPersonInfo(one, two, three) {
+  consle.log(one);
+  consle.log(two);
+  consle.log(three);
+}
+const person = 'Lydia';
+const age = 21;
+
+getPersonInfo`${person} is ${age} years old`
+```
+
+
+- A: "Lydia" 21 ["", " is ", " years old"]
+- B: ["", " is ", " years old"] "Lydia" 21
+- C: "Lydia" ["", " is ", " years old"] 21
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+如果使用标记模板字面量，第一个参数的值总是包含字符串的数组。其余的参数获取的是传递的表达式的值！
 </details>
 
 ---
