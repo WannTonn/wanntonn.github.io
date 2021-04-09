@@ -1,10 +1,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-08 22:54:28
- * @LastEditors: WannTonn
+ * @LastEditTime: 2021-04-09 14:32:18
+ * @LastEditors: Please set LastEditors
  * @Description:
- * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -471,6 +471,94 @@ getPersonInfo`${person} is ${age} years old`
 答案: B
 <br />
 如果使用标记模板字面量，第一个参数的值总是包含字符串的数组。其余的参数获取的是传递的表达式的值！
+</details>
+
+---
+
+> 18.输出是什么? 2021-04-09
+
+```javascript
+funciton checkAge(data) {
+  if (data === {age: 18}) {
+    console.log('You are a man!');
+  } else if (data == {age: 18}) {
+    console.log('You are still a man.');
+  } else {
+    console.log('Oops...I can't guess your age')
+  }
+}
+
+checkAge({age: 18});
+```
+
+
+- A: You are a man!
+- B: You are still a man.
+- C: Oops...I can't guess your age
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+在测试相等性时，基本类型通过它们的值(value)进行比较，而对象通过它们的引用(reference) 进行比较。JavaScript检查对象是否具有对内存中相同位置的引用。
+
+题目中我们正在比较的两个对象是不同一个引用: 作为参数传递的对象引用的内存位置，与用于判断相等的对象所引用的内存位置并不同。
+这也是{ age: 18 } === { age: 18 } 和 { age: 18 } == { age: 18 } 都返回 false 的原因。
+</details>
+
+---
+
+> 19.输出是什么? 2021-04-09
+
+```javascript
+funciton getAge(...args) {
+  console.log(typeof args)
+}
+
+getAge(27);
+```
+
+
+- A: "number"
+- B: "array"
+- C: "object"
+- D: "NaN"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+扩展运算符(...args)会返回实参组成的数组。而数组是对象，因此typeof args 返回 "object"。
+</details>
+
+---
+
+> 20.输出是什么? 2021-04-09
+
+```javascript
+function getAge() {
+  'use strict';
+  age = 21;
+  console.log(age);
+}
+
+getAge();
+```
+
+
+- A: 21
+- B: undefined
+- C: ReferenceError
+- D: TypeError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+使用 `"use strict"`,你可以确保不会意外地声明全局变量。我们从来没有声明变量age，因为我们使用`"use strict"`,它将抛出一个引用错误。如果我们不使用`"use strict"`,它就会工作，因为属性 `age` 会被添加到全局对象中。
 </details>
 
 ---
