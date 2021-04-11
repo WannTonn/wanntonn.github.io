@@ -1,10 +1,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-09 14:32:18
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-04-11 10:47:30
+ * @LastEditors: WannTonn
  * @Description:
- * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -559,6 +559,144 @@ getAge();
 答案: C
 <br />
 使用 `"use strict"`,你可以确保不会意外地声明全局变量。我们从来没有声明变量age，因为我们使用`"use strict"`,它将抛出一个引用错误。如果我们不使用`"use strict"`,它就会工作，因为属性 `age` 会被添加到全局对象中。
+</details>
+
+---
+
+
+> 21.输出是什么? 2021-04-10
+
+```javascript
+const sum = eval('10*10+5');
+```
+
+- A: 105
+- B: "105"
+- C: TypeError
+- D: "10*10+5"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+代码以字符串形式传递进来，eval对其求值。如果它是一个表达式，就像本例中那样，它对表达式求值。表达式是 10 * 10 + 5. 这将返回数字105。
+</details>
+
+---
+
+
+> 22.cool_secret 可以访问多长时间? 2021-04-10
+
+```javascript
+sessionStorage.setItem('cool_secret', 123);
+```
+
+
+- A: 永远，数据不会丢失。
+- B: 当用户关掉标签页时。
+- C: 当用户关掉整个浏览器，而不只是关掉标签页。
+- D: 当用户关闭电脑时。
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+关闭tab标签页 后，sessionStorage 存储的数据才会删除。
+如果使用localStorage，那么数据将永远在那里，除非调用 localStorage.clear()。
+</details>
+
+---
+
+> 23.输出是什么? 2021-04-10
+
+```javascript
+var num = 8;
+var num = 10;
+```
+
+
+- A: 8
+- B: 10
+- C: SyntaxError
+- D: ReferenceError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+使用 var 关键字，你可以用相同的名称声明多个变量。然后变量将保存最新的值。
+你不能使用 let 或 const 来实现这一点。因为它们是块作用域的。
+</details>
+
+---
+
+> 24.输出是什么? 2021-04-11
+
+```javascript
+const obj = {1: 'a', 2: 'b', 3: 'c'};
+const set = new Set([1, 2, 3, 4, 5]);
+
+obj.hasOwnProperty('1');
+obj.hasOwnProperty(1);
+set.has('1');
+set.has(1)
+```
+
+
+- A: false true false true
+- B: false true true true
+- C: true true false true
+- D: true true true true
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+所有对象的键(不包括Symbol) 在底层都是字符串，即使你自己没有将其作为字符串输入。这就是为什么 obj.hasOwnproperty('1') 也返回 true。
+对于集合，它不是这样工作的。在我们的集合中没有'1': set.has('1') 返回 false。它有数字类型为1, set.has(1) 返回true。
+</details>
+
+---
+
+> 25.输出是什么? 2021-04-11
+
+```javascript
+const obj = {a: 'one', b: 'two', a: 'three'}
+console.log(obj);
+```
+
+- A: { a: "one", b: "two" }
+- B: { b: "two", a: "three" }
+- C: { a: "three", b: "two" }
+- D: SyntaxError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+如果对象中有2个名称相同的键，则键会被替换掉。它仍然位于第一个键出现的位置，但是值是最后出现那个键的值。
+</details>
+
+---
+
+> 26.JavaScript 全局执行上下文为你做了两件事：全局对象和 this 关键字。 2021-04-11
+
+
+- A: 对
+- B: 错
+- C: 看情况
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+基本执行上下文是全局执行上下文：它是代码中随处可访问的内容。
 </details>
 
 ---
