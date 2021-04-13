@@ -1,10 +1,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-11 10:47:30
- * @LastEditors: WannTonn
+ * @LastEditTime: 2021-04-13 17:15:50
+ * @LastEditors: Please set LastEditors
  * @Description:
- * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -697,6 +697,202 @@ console.log(obj);
 答案: A
 <br />
 基本执行上下文是全局执行上下文：它是代码中随处可访问的内容。
+</details>
+
+---
+
+
+> 27.输出是什么? 2021-04-11
+```javascript
+for(let i = 1; i < 5; i++) {
+  if (i === 3) continue;
+  console.log(i);
+}
+```
+
+- A: 1 2
+- B: 1 2 3
+- C: 1 2 4
+- D: 1 3 4
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+如果某个条件返回 true，则continue语句跳过本次迭代。
+</details>
+
+---
+
+
+> 28.输出是什么？ 2021-04-12
+```javascript
+String.prototype.giveLydiaPizza = () => {
+  return 'Just give Lydia pizza already!'
+}
+const name = 'Lydia';
+
+name.giveLydiaPizza();
+```
+
+- A: "Just give Lydia pizza already!"
+- B: TypeError: not a function
+- C: SyntaxError
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+String 是内置的构造函数，我们可以向它添加属性。我们只是在它的原型中添加了一个方法。基本类型字符串被自动转换成字符串对象，由字符串原型函数生成。因此，所有String(string 对象) 都可以访问该方法!
+</details>
+
+---
+
+> 29.输出是什么 2021-04-12
+```javascript
+const a = {};
+const b = {key: 'b'};
+const c = {ley: 'c'};
+
+a[b] = 123;
+a[c] = 456;
+
+console.log(a[b]);
+```
+
+- A: 123
+- B: 456
+- C: undefined
+- D: ReferenceError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+对象的键被自动转换为字符串。我们试图将一个对象 b 设置为对象 a 的键，且相应的值为 123。
+
+然而，当字符串化一个对象时，它会变成 "[object Object]"。因此这里说的是，a["[object Object]"] = 123。然后，我们再一次做了同样的事情，c 是另外一个对象，这里也有隐式字符串化，于是，a["[object Object]"] = 456。
+
+然后，我们打印 a[b]，也就是 a["[object Object]"]。之前刚设置为 456，因此返回的是 456。
+
+
+</details>
+
+---
+
+> 30.输出是什么? 2021-04-13
+```javascript
+const foo = () => console.log('First')
+const bar = () => setTimeout(() => console.log('Second'))
+const barz = () => console.log('Third')
+
+bar()
+foo()
+baz()
+```
+
+- A: First Second Third
+- B: First Third Second
+- C: Second First Third
+- D: Second Third First
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+这里有一个 setTimeout 函数，并首先调用它。然而，它是最后才输出 console的。
+因为在浏览器中，不仅有运行时引擎，还有一个叫WebAPI的东西。WebAPI提供了setTimeout函数，也包含其他的，例如DOM。
+
+将callback推送到WebAPI后，setTimeout函数本身(不是回调！) 将从栈中弹出。
+步骤：
+ 1. foo被调用，打印 "First"
+ 2. foo 从栈中弹出, baz 被调用，打印 "Third"
+ 3. WebAPI不能随时向栈内添加内容。相反它将回调函数推到名为queue的地方。
+ 4. 这就是事件循环开始工作的地方。一个 事件循环  查看栈和任务队列。如果栈是空的，它接受队列上的第一个元素并将其推入栈。
+ 5. bar 被调用。打印 "Second", 然后被栈弹出
+<br />
+
+</details>
+
+---
+
+> 31.当点击按钮时，event.target是什么？ 2021-04-13
+```html
+<div onclick="console.log('first div')">
+  <div onclick="console.log('second div')">
+    <button onclick="console.log('button')">
+      Click!
+    </button>
+  </div>
+</div>
+```
+
+- A: Outer div
+- B: Inner div
+- C: button
+- D: 一个包含所有嵌套元素的数组。
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+导致事件的最深嵌套的元素是事件的target。 可以通过 event.stopPropagation 来停止冒泡。
+</details>
+
+---
+
+> 32.当单击该段落时，日志输出是什么？ 2021-04-13
+```
+<div onclick="console.log('div')">
+  <p onclick="console.log('p')">
+    Click here!
+  </p>
+</div>
+```
+
+- A: p div
+- B: div p
+- C: p
+- D: div
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+当点击p标签，我们会看到两个输出日志: p和div。在事件传播期间，有三个阶段：捕获、目标和冒泡。默认情况下，事件处理程序在冒泡阶段执行(除非将useCapture 设置为 true)。它从嵌套最深的元素向外传播。
+</details>
+
+---
+
+> 33.输出是什么？ 2021-04-13
+```
+const person = {name: 'Lydia'};
+function sayHi(age) {
+  console.log(`${this.name} is ${age}`);
+}
+
+sayHi.call(person, 21);
+sayHi.bind(person, 21);
+```
+
+- A: undefined is 21 Lydia is 21
+- B: function function
+- C: Lydia is 21 Lydia is 21
+- D: Lydia is 21 function
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+使用这两种方法，我们都可以传递我们希望 this 关键字引用的对象。但是，.call 是立即执行的。
+.bind 返回函数的副本，但带有绑定上下文！它不是立即执行的。
 </details>
 
 ---
