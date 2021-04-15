@@ -1,10 +1,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-13 17:15:50
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-04-15 22:49:06
+ * @LastEditors: WannTonn
  * @Description:
- * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -847,7 +847,7 @@ baz()
 ---
 
 > 32.当单击该段落时，日志输出是什么？ 2021-04-13
-```
+```javascript
 <div onclick="console.log('div')">
   <p onclick="console.log('p')">
     Click here!
@@ -871,7 +871,7 @@ baz()
 ---
 
 > 33.输出是什么？ 2021-04-13
-```
+```javascript
 const person = {name: 'Lydia'};
 function sayHi(age) {
   console.log(`${this.name} is ${age}`);
@@ -893,6 +893,172 @@ sayHi.bind(person, 21);
 <br />
 使用这两种方法，我们都可以传递我们希望 this 关键字引用的对象。但是，.call 是立即执行的。
 .bind 返回函数的副本，但带有绑定上下文！它不是立即执行的。
+</details>
+
+---
+
+> 34.输出是什么？ 2021-04-14
+```javascript
+function SayHi() {
+  return (() => 0)();
+}
+
+typeof SayHi()
+```
+
+- A: "object"
+- B: "number"
+- C: "function"
+- D: "undefined"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+SayHi 方法返回的是立即执行函数(IIFE)的返回值。此立即执行函数的返回值是0，类型是number。
+参考：只有7种内置类型：null, undefined, boolean, number, string, object, symbol, bigint。 fucntion 不是一种类型，函数是对象，他的类型是object。
+</details>
+
+---
+
+> 35.下面哪些值是 falsy？ 2021-04-14
+```javascript
+a.0
+b.new Number(0)
+c.('')
+d.(' ')
+e.new Boolean(false)
+f.undefined
+```
+
+- A: a,c,f
+- B: a,b,c,e,f
+- C: a,b,e,f
+- D: all 
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+只有6种falsy值: undefined，null，NaN，0，''(empty string)，false。Function 构造函数，比如new Number和 new Boolean，是truthy。
+</details>
+
+---
+
+> 36.输出是什么？ 2021-04-14
+```javascript
+console.log(typeof typeof 1)
+```
+
+- A: "number"
+- B: "string"
+- C: "object"
+- D: "undefined"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+typeof 1 返回 "number"。typeof "number" 返回"string"
+</details>
+
+---
+
+> 37.输出是什么？ 2021-04-15
+```javascript
+const numbers = [1, 2, 3]
+numbers[10] = 11;
+console.log(numbers)
+```
+
+- A: [1, 2, 3, null x 7, 11]
+- B: [1, 2, 3, 11]
+- C: [1, 2, 3, empty x 7, 11]
+- D: SyntaxError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+当为数组设置超过数组长度的值的时候，JavaScript会创建名为"empty slots"的东西。它们的值实际上是undefined。你会看到以下场景:
+Chrome:[1, 2, 3, empty x 7, 11]
+Node: [ 1, 2, 3, <7 empty items>, 11 ]
+这取决于运行环境的不同
+</details>
+
+---
+
+> 38.输出是什么？ 2021-04-15
+```javascript
+(() => {
+  let x,y
+  try {
+    throw new Error()
+  } catch (x) {
+    (x = 1), (y = 2)
+    console.log(x)
+  }
+  console.log(x)
+  console.log(y)
+})()
+```
+
+- A: 1 undefined 2
+- B: undefined undefined undefined
+- C: 1 1 2
+- D: 1 undefined undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+catch 代码块接收参数 x。当我们传递参数时，这与之前定义的变量x不同。这个x是属于catch块级作用域的。
+然后，我们将块级作用域中的变量赋值为1，同时也设置了变量y的值。现在，我们打印块级作用域中的变量x，值为1.
+catch块之外的变量x的值仍为undefined，y的值为2.当我们在catch块之外执行console.log(x)时，返回undefined，y返回2。
+</details>
+
+---
+
+> 39.JavaScript 中的一切都是？ 2021-04-15
+
+- A: 基本类型与对象
+- B: 函数与对象
+- C: 只有对象
+- D: 数字与对象
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+基本类型包括: boolean, number, string, symble, bigint, null, undefined。
+</details>
+
+---
+
+> 40.输出是什么？ 2021-04-15
+```javascript
+[[0, 1], [2, 3]].reduce((acc, cur) => {
+  return acc.concat(cur)
+}, [1, 2])
+```
+
+- A: [0, 1, 2, 3, 1, 2]
+- B: [6, 1, 2]
+- C: [1, 2, 0, 1, 2, 3]
+- D: [1, 2, 6]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+[1, 2]是初始值。初始值将会作为首次调用时第一个参数acc的值。在第一次执行时，acc的值是[1, 2], cur 的值是[0, 1]。合并它们，结果为[1, 2, 0, 1]。第二次执行，acc的值是[1, 2, 0, 1]，cur的值是[2, 3]。合并它们，最终结果为[1, 2, 0, 1, 2, 3]
 </details>
 
 ---
