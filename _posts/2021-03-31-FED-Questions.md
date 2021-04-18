@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-15 22:49:06
+ * @LastEditTime: 2021-04-18 17:00:52
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -1059,6 +1059,262 @@ catch块之外的变量x的值仍为undefined，y的值为2.当我们在catch块
 答案: C
 <br />
 [1, 2]是初始值。初始值将会作为首次调用时第一个参数acc的值。在第一次执行时，acc的值是[1, 2], cur 的值是[0, 1]。合并它们，结果为[1, 2, 0, 1]。第二次执行，acc的值是[1, 2, 0, 1]，cur的值是[2, 3]。合并它们，最终结果为[1, 2, 0, 1, 2, 3]
+</details>
+
+---
+
+> 41.输出是什么？ 2021-04-16
+```javascript
+!!null;
+!!'';
+!!1;
+```
+
+- A: false true false
+- B: false false true
+- C: false true true
+- D: true true false
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+null 是falsy。!null 的值是true。!true的值是false。
+"" 是falsy。!""的值是true。!true的值是false。
+1是truthy。!1的值是false。!false的值是true。
+</details>
+
+---
+
+> 42.setInterval方法的返回值是什么？ 2021-04-16
+```javascript
+setInterval(() => console.log('Hi'), 1000);
+```
+
+- A: 一个唯一的id
+- B: 该方法指定的毫秒数
+- C: 传递的函数
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+setInterval 返回一个唯一的 id。此 id 可被用于 clearInterval 函数来取消定时。
+</details>
+
+---
+
+> 43.输出是什么？ 2021-04-16
+```javascript
+[...'Lydia']
+```
+
+- A: ["L", "y", "d", "i", "a"]
+- B: ["Lydia"]
+- C: [[], "Lydia"]
+- D: [["L", "y", "d", "i", "a"]]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+string类型是可迭代的。扩展运算符将迭代的每个字符映射成一个元素。
+</details>
+
+---
+
+> 44.输出是什么？ 2021-04-17
+```javascript
+function* generator(i) {
+  yield i;
+  yield i * 2;
+}
+
+const gen = generator(10);
+
+console.log(gen.next().value);
+console.log(gen.next().value);
+```
+
+- A: [0, 10], [10, 20]
+- B: 20, 20
+- C: 10, 20
+- D: 0, 10 and 10, 20
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+一般的函数在执行之后是不能中途停下的。但是，生成器函数却可以中途“停下”，之后可以再从停下的地方继续。当生成器遇到yield关键字的时候，会生成yield后面的值。注意，生成器在这种情况下不 返回 (return )值，而是 生成 (yield)值。
+
+首先，我们用10作为参数i来初始化生成器函数。然后使用next()方法一步步执行生成器。第一次执行生成器的时候，i的值为10，遇到第一个yield关键字，它要生成i的值。此时，生成器“暂停”，生成了10。
+
+然后，我们再执行next()方法。生成器会从刚才暂停的地方继续，这个时候i还是10。于是我们走到了第二个yield关键字处，这时候需要生成的值是i*2，i为10，那么此时生成的值便是20。所以这道题的最终结果是10,20。
+</details>
+
+---
+
+> 45.输出是什么？ 2021-04-17
+```javascript
+const firstPromise = new Promise((res, rej) => {
+  setTimeout(res, 500, "one");
+});
+const secondPromise = new Promise((res, rej) => {
+  setTimeout(res, 100, "two")
+});
+
+Promise.race([firstPromise, secondPromise]).then(res => console.log(res));
+```
+
+- A: "one"
+- B: "two"
+- C: "two" "one"
+- D: "one" "two"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+当我们向Promise.race方法中传入多个Promise时，会进行 优先 解析。在这个例子中，我们用setTimeout给firstPromise和secondPromise分别设定了500ms和100ms的定时器。这意味着secondPromise会首先解析出字符串two。那么此时res参数即为two，是为输出结果。
+
+</details>
+
+---
+
+> 46.输出是什么？ 2021-04-17
+```javascript
+let person = {name: "Lydia"};
+const members = [person];
+person = null;
+
+console.log(members);
+```
+
+- A: null
+- B: [null]
+- C: [{}]
+- D: [{ name: "Lydia" }]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+首先我们声明了一个拥有name属性的对象person
+
+然后我们又声明了一个变量members. 将首个元素赋值为变量person。 当设置两个对象彼此相等时，它们会通过 引用 进行交互。但是当你将引用从一个变量分配至另一个变量时，其实只是执行了一个 复制 操作。（注意一点，他们的引用 并不相同!）
+
+接下来我们让person等于null。
+
+我们没有修改数组第一个元素的值，而只是修改了变量person的值,因为元素（复制而来）的引用与person不同。members的第一个元素仍然保持着对原始对象的引用。当我们输出members数组时，第一个元素会将引用的对象打印出来。
+
+</details>
+
+---
+
+> 47.输出是什么？ 2021-04-18
+```javascript
+const person = {
+  name: "Lydia",
+  age: 21
+};
+
+for (const item in person) {
+  console.log(item);
+}
+```
+
+- A: { name: "Lydia" }, { age: 21 }
+- B: "name", "age"
+- C: "Lydia", 21
+- D: ["name", "Lydia"], ["age", 21]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+在for-in循环中,我们可以通过对象的key来进行迭代,也就是这里的name和age。在底层，对象的key都是字符串（如果他们不是Symbol的话）。在每次循环中，我们将item设定为当前遍历到的key.所以一开始，item是name，之后 item输出的则是age。
+</details>
+
+---
+
+> 48.输出是什么？ 2021-04-18
+```javascript
+console.log(3 + 4 + "5");
+```
+
+- A: "345"
+- B: "75"
+- C: 12
+- D: "12"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+当所有运算符的 优先级 相同时，计算表达式需要确定运算符的结合顺序，即从右到左还是从左往右。在这个例子中，我们只有一类运算符+，对于加法来说，结合顺序就是从左到右。
+
+3 + 4首先计算，得到数字7.
+
+由于类型的强制转换，7 + '5'的结果是"75". JavaScript将7转换成了字符串，可以参考问题15.我们可以用+号把两个字符串连接起来。 "7" + "5" 就得到了"75".
+</details>
+
+---
+
+> 49.num的值是什么？ 2021-04-18
+```javascript
+const num = parseInt("7*6", 10);
+```
+
+- A: 42
+- B: "42"
+- C: 7
+- D: NaN
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+只返回了字符串中第一个字母. 设定了 进制 后 (也就是第二个参数，指定需要解析的数字是什么进制: 十进制、十六机制、八进制、二进制等等……),parseInt 检查字符串中的字符是否合法. 一旦遇到一个在指定进制中不合法的字符后，立即停止解析并且忽略后面所有的字符。
+
+*就是不合法的数字字符。所以只解析到"7"，并将其解析为十进制的7. num的值即为7.
+
+</details>
+
+---
+
+
+> 50.输出是什么？ 2021-04-18
+```javascript
+[1, 2, 3].map(num => {
+  if (typeof num === "number") return;
+  return num * 2;
+});
+```
+
+- A: []
+- B: [null, null, null]
+- C: [undefined, undefined, undefined]
+- D: [ 3 x empty ]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+对数组进行映射的时候,num就是当前循环到的元素. 在这个例子中，所有的映射都是number类型，所以if中的判断typeof num === "number"结果都是true.map函数创建了新数组并且将函数的返回值插入数组。
+
+但是，没有任何值返回。当函数没有返回任何值时，即默认返回undefined.对数组中的每一个元素来说，函数块都得到了这个返回值，所以结果中每一个元素都是undefined.
+
 </details>
 
 ---
