@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-20 22:43:48
+ * @LastEditTime: 2021-04-21 21:49:17
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -1557,6 +1557,122 @@ pet.bark();
 
 但是，没有任何值返回。当函数没有返回任何值时，即默认返回 undefined.对数组中的每一个元素来说，函数块都得到了这个返回值，所以结果中每一个元素都是 undefined.
 
+</details>
+
+---
+
+> 57.输出是什么？ 2021-04-21
+
+```javascript
+// counter.js
+let counter = 10;
+export default counter;
+
+// index.js
+import myCounter from "./counter.js";
+
+myCounter += 1;
+
+console.log(myCounter);
+```
+
+- A: 10
+- B: 11
+- C: Error
+- D: NaN
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+引入的模块是 只读 的: 你不能修改引入的模块。只有导出他们的模块才能修改其值。
+
+当我们给myCounter增加一个值的时候会抛出一个异常： myCounter是只读的，不能被修改。
+
+</details>
+
+---
+
+> 58.输出是什么？ 2021-04-21
+
+```javascript
+const name = "Lydia";
+age = 21;
+
+console.log(delete name);
+console.log(delete age);
+```
+
+- A: false, true
+- B: "Lydia", 21
+- C: true, true
+- D: undefined, undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+delete操作符返回一个布尔值： true指删除成功，否则返回false. 但是通过 var, const 或 let 关键字声明的变量无法用 delete 操作符来删除。
+
+name变量由const关键字声明，所以删除不成功:返回 false. 而我们设定age等于21时,我们实际上添加了一个名为age的属性给全局对象。对象中的属性是可以删除的，全局对象也是如此，所以delete age返回true.
+
+</details>
+
+---
+
+> 59.输出是什么？ 2021-04-21
+
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const [y] = numbers;
+
+console.log(y);
+```
+
+- A: [[1, 2, 3, 4, 5]]
+- B: [1, 2, 3, 4, 5]
+- C: 1
+- D: [1]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+可以通过结构赋值来解析来自对象的数组或属性的值：
+[a, b] = [1, 2];
+
+a的值现在是1， b的值现在是2.在题目中，我们是这么做的：
+[y] = [1, 2, 3, 4, 5];
+
+也就是说，y等于数组的第一个值就是数字1. 所以我们输出y，返回1.
+
+</details>
+
+---
+
+> 60.输出是什么？ 2021-04-21
+
+```javascript
+const user = {name: "Lydia", age: 21};
+const admin = {admin: true, ...user};
+
+console.log(admin);
+```
+
+- A: { admin: true, user: { name: "Lydia", age: 21 } }
+- B: { admin: true, name: "Lydia", age: 21 }
+- C: { admin: true, user: ["Lydia", 21] }
+- D: { admin: true }
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+扩展运算符...为对象的组合提供了可能。你可以复制对象中的键值对，然后把它们加到另一个对象里去。在本例中，我们复制了user对象键值对，然后把它们加入到admin对象中。admin对象就拥有了这些键值对，所以结果为{ admin: true, name: "Lydia", age: 21 }
 </details>
 
 ---
