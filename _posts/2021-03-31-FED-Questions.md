@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-21 21:49:17
+ * @LastEditTime: 2021-04-22 23:03:00
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -1673,6 +1673,97 @@ console.log(admin);
 答案: B
 <br />
 扩展运算符...为对象的组合提供了可能。你可以复制对象中的键值对，然后把它们加到另一个对象里去。在本例中，我们复制了user对象键值对，然后把它们加入到admin对象中。admin对象就拥有了这些键值对，所以结果为{ admin: true, name: "Lydia", age: 21 }
+</details>
+
+---
+
+> 61.输出是什么？ 2021-04-22
+
+```javascript
+const person = {name: "Lydia"}
+Object.defineProperty(person, "age", {value: 21});
+console.log(person)
+console.log(Object.keys(person);)
+```
+
+- A: { name: "Lydia", age: 21 }, ["name", "age"]
+- B: { name: "Lydia", age: 21 }, ["name"]
+- C: { name: "Lydia"}, ["name", "age"]
+- D: { name: "Lydia"}, ["age"]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+通过defineProperty方法，我们可以给对象添加一个新属性，或者修改已经存在的属性。而我们使用defineProperty方法给对象添加了一个属性之后，属性默认为 不可枚举(not enumerable). Object.keys方法仅返回对象中 可枚举(enumerable) 的属性，因此只剩下了"name".
+
+用defineProperty方法添加的属性默认不可变。你可以通过writable, configurable 和 enumerable属性来改变这一行为。这样的话， 相比于自己添加的属性，defineProperty方法添加的属性有了更多的控制权。
+
+
+</details>
+
+---
+
+> 62.输出是什么？ 2021-04-22
+
+```javascript
+const settings = {
+  username: "lydiahallie",
+  level: 19,
+  health: 90
+}
+const data = JSON.stringify(settings, ["level", "health"]);
+console.log(data);
+```
+
+- A: "{"level":19, "health":90}"
+- B: "{"username": "lydiahallie"}"
+- C: "["level", "health"]"
+- D: "{"username": "lydiahallie", "level":19, "health":90}"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+JSON.stringify的第二个参数是 替代者(replacer). 替代者(replacer)可以是个函数或数组，用以控制哪些值如何被转换为字符串。
+
+如果替代者(replacer)是个 数组 ，那么就只有包含在数组中的属性将会被转化为字符串。在本例中，只有名为"level" 和 "health" 的属性被包括进来， "username"则被排除在外。 data 就等于 "{"level":19, "health":90}".
+
+而如果替代者(replacer)是个 函数，这个函数将被对象的每个属性都调用一遍。 函数返回的值会成为这个属性的值，最终体现在转化后的JSON字符串中（译者注：Chrome下，经过实验，如果所有属性均返回同一个值的时候有异常，会直接将返回值作为结果输出而不会输出JSON字符串），而如果返回值为undefined，则该属性会被排除在外。
+</details>
+
+---
+
+> 63.输出是什么？ 2021-04-22
+
+```javascript
+let num = 10;
+
+const increaseNumber = () => num++;
+const increasePassedNumber = number => number++;
+
+const num1 = increaseNumber();
+const num2 = increasePassedNumber(num1);
+
+console.log(num1);
+console.log(num2);
+```
+
+- A: 10, 10
+- B: 10, 11
+- C: 11, 11
+- D: 11, 12
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+一元操作符 ++ 先返回 操作值, 再累加 操作值。num1的值是10, 因为increaseNumber函数首先返回num的值，也就是10，随后再进行 num的累加。
+
+num2是10因为我们将 num1传入increasePassedNumber. number等于10（num1的值。同样道理，++ 先返回 操作值, 再累加 操作值。） number是10，所以num2也是10.
 </details>
 
 ---
