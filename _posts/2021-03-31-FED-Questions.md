@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-22 23:03:00
+ * @LastEditTime: 2021-04-24 22:37:05
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -1764,6 +1764,234 @@ console.log(num2);
 一元操作符 ++ 先返回 操作值, 再累加 操作值。num1的值是10, 因为increaseNumber函数首先返回num的值，也就是10，随后再进行 num的累加。
 
 num2是10因为我们将 num1传入increasePassedNumber. number等于10（num1的值。同样道理，++ 先返回 操作值, 再累加 操作值。） number是10，所以num2也是10.
+</details>
+
+---
+
+> 64.输出是什么？ 2021-04-23
+
+```javascript
+const value = {number: 10};
+
+const multiply = (x = {...value}) => {
+  console.log(x.number *= 2);
+}
+multiply();
+multiply();
+multiply(value);
+multiply(value);
+```
+
+- A: 20, 40, 80, 160
+- B: 20, 40, 20, 40
+- C: 20, 20, 20, 40
+- D: NaN, NaN, 20, 40
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+在ES6中，我们可以使用默认值初始化参数。如果没有给函数传参，或者传的参值为 "undefined" ，那么参数的值将是默认值。上述例子中，我们将 value 对象进行了解构并传到一个新对象中，因此 x 的默认值为 {number：10} 。
+
+默认参数在调用时才会进行计算，每次调用函数时，都会创建一个新的对象。我们前两次调用 multiply 函数且不传递值，那么每一次 x 的默认值都为 {number：10} ，因此打印出该数字的乘积值为20。
+
+第三次调用 multiply 时，我们传递了一个参数，即对象value。 *=运算符实际上是x.number = x.number * 2的简写，我们修改了x.number的值，并打印出值20。
+
+第四次，我们再次传递value对象。 x.number之前被修改为20，所以x.number * = 2打印为40。
+
+
+</details>
+
+---
+
+> 65.输出是什么？ 2021-04-23
+
+```javascript
+[1, 2, 3, 4].reduce((x, y) => console.log(x, y));
+```
+
+- A: 1 2 and 3 3 and 6 4
+- B: 1 2 and 2 3 and 3 4
+- C: 1 undefined and 2 undefined and 3 undefined and 4 undefined
+- D: 1 2 and undefined 3 and undefined 4
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+reducer 函数接收4个参数:
+
+Accumulator (acc) (累计器)
+Current Value (cur) (当前值)
+Current Index (idx) (当前索引)
+Source Array (src) (源数组)
+reducer 函数的返回值将会分配给累计器，该返回值在数组的每个迭代中被记住，并最后成为最终的单个结果值。
+
+reducer 函数还有一个可选参数initialValue, 该参数将作为第一次调用回调函数时的第一个参数的值。如果没有提供initialValue，则将使用数组中的第一个元素。
+
+在上述例子，reduce方法接收的第一个参数(Accumulator)是x, 第二个参数(Current Value)是y。
+
+在第一次调用时，累加器x为1，当前值“y”为2，打印出累加器和当前值：1和2。
+
+例子中我们的回调函数没有返回任何值，只是打印累加器的值和当前值。如果函数没有返回值，则默认返回undefined。 在下一次调用时，累加器为undefined，当前值为“3”, 因此undefined和3被打印出。
+
+在第四次调用时，回调函数依然没有返回值。 累加器再次为 undefined ，当前值为“4”。 undefined和4被打印出。
+</details>
+
+---
+
+> 66.使用哪个构造函数可以成功继承Dog类？ 2021-04-23
+
+```javascript
+class Dog {
+  constructor(name) {
+    this.name = name;
+  }
+};
+
+class Labrador extends Dog {
+  // 1 
+  constructor(name, size) {
+    this.size = size;
+  }
+  // 2
+  constructor(name, size) {
+    super(name);
+    this.size = size;
+  }
+  // 3
+  constructor(size) {
+    super(name);
+    this.size = size;
+  }
+  // 4 
+  constructor(name, size) {
+    this.name = name;
+    this.size = size;
+  }
+
+};
+```
+
+- A: 1
+- B: 2
+- C: 3
+- D: 4
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+在子类中，在调用super之前不能访问到this关键字。 如果这样做，它将抛出一个ReferenceError：1和4将引发一个引用错误。
+
+使用super关键字，需要用给定的参数来调用父类的构造函数。 父类的构造函数接收name参数，因此我们需要将name传递给super。
+
+Labrador类接收两个参数，name参数是由于它继承了Dog，size作为Labrador类的额外属性，它们都需要传递给Labrador的构造函数，因此使用构造函数2正确完成。
+</details>
+
+---
+
+> 67.输出是什么？ 2021-04-24
+
+```javascript
+// index.js
+console.log('running index.js');
+import { sum } from './sum.js';
+console.log(sum(1, 2));
+
+// sum.js
+console.log('running sum.js');
+export const sum = (a, b) => a + b;
+
+```
+
+- A: running index.js, running sum.js, 3
+- B: running sum.js, running index.js, 3
+- C: running sum.js, 3, running index.js
+- D: running index.js, undefined, running sum.js
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+import命令是编译阶段执行的，在代码运行之前。因此这意味着被导入的模块会先运行，而导入模块的文件会后执行。
+
+这是CommonJS中require（）和import之间的区别。使用require()，您可以在运行代码时根据需要加载依赖项。 如果我们使用require而不是import，running index.js，running sum.js，3会被依次打印。
+</details>
+
+---
+
+> 68.输出是什么？ 2021-04-24
+
+```javascript
+console.log(Number(2) === Number(2))
+console.log(Boolean(false) === Boolean(false))
+console.log(Symbol('foo') === Symbol('foo'))
+```
+
+- A: true, true, false
+- B: false, true, false
+- C: true, false, true
+- D: true, true, true
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+每个Symbol都是完全唯一的。传递给Symbol的参数只是给Symbol的一个描述。 Symbol的值不依赖于传递的参数。 当我们测试相等时，我们创建了两个全新的符号：第一个Symbol（'foo'），第二个Symbol（'foo'）, 这两个值是唯一的，彼此不相等，因此返回false。
+
+
+</details>
+
+---
+
+> 69.输出是什么？ 2021-04-24
+
+```javascript
+const name = "Lydia Hallie"
+console.log(name.padStart(13))
+console.log(name.padStart(2))
+```
+
+- A: "Lydia Hallie", "Lydia Hallie"
+- B: " Lydia Hallie", " Lydia Hallie" ("[13x whitespace]Lydia Hallie", "[2x whitespace]Lydia Hallie")
+- C: " Lydia Hallie", "Lydia Hallie" ("[1x whitespace]Lydia Hallie", "Lydia Hallie")
+- D: "Lydia Hallie", "Lyd"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+使用padStart方法，我们可以在字符串的开头添加填充。传递给此方法的参数是字符串的总长度（包含填充）。字符串Lydia Hallie的长度为12, 因此name.padStart（13）在字符串的开头只会插入1（13 - 12 = 1）个空格。
+
+如果传递给padStart方法的参数小于字符串的长度，则不会添加填充。
+</details>
+
+---
+
+> 70.输出是什么？ 2021-04-24
+
+```javascript
+console.log("🥑" + "💻");
+```
+
+- A: "🥑💻"
+- B: 257548
+- C: A string containing their code points
+- D: Error
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+使用+运算符，您可以连接字符串。 上述情况，我们将字符串“🥑”与字符串”💻“连接起来，产生”🥑💻“。
 </details>
 
 ---
