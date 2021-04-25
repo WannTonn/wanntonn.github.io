@@ -1,10 +1,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-24 22:37:05
- * @LastEditors: WannTonn
+ * @LastEditTime: 2021-04-25 09:18:54
+ * @LastEditors: Please set LastEditors
  * @Description:
- * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -1995,3 +1995,106 @@ console.log("🥑" + "💻");
 </details>
 
 ---
+ 
+> 71.如何能打印出console.log语句后注释掉的值？ 2021-04-25
+
+```javascript
+function* startGame() {
+  const 答案 = yield "Do you love JavaScript?";
+  if (答案 !== "Yes") {
+    return "Oh wow... Guess we're gone here";
+  }
+  return "JavaScript loves you back ❤️";
+}
+
+const game = startGame();
+console.log(/* 1 */); // Do you love JavaScript?
+console.log(/* 2 */); // JavaScript loves you back ❤️
+}
+```
+
+- A: game.next("Yes").value and game.next().value
+- B: game.next.value("Yes") and game.next.value()
+- C: game.next().value and game.next("Yes").value
+- D: game.next.value() and game.next.value("Yes")
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+generator函数在遇到yield关键字时会“暂停”其执行。 首先，我们需要让函数产生字符串Do you love JavaScript?，这可以通过调用game.next().value来完成。上述函数的第一行就有一个yield关键字，那么运行立即停止了，yield表达式本身没有返回值，或者说总是返回undefined, 这意味着此时变量 答案 为undefined
+
+next方法可以带一个参数，该参数会被当作上一个 yield 表达式的返回值。当我们调用game.next("Yes").value时，先前的 yield 的返回值将被替换为传递给next()函数的参数"Yes"。此时变量 答案 被赋值为 "Yes"，if语句返回false，所以JavaScript loves you back ❤️被打印。
+</details>
+
+---
+ 
+> 72.输出是什么？ 2021-04-25
+
+```javascript
+console.log(String.raw`Hello\nworld`);
+```
+
+- A: Hello world!
+- B: Hello
+     world
+- C: Hello\nworld
+- D: Hello\n
+     world
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+String.raw函数是用来获取一个模板字符串的原始字符串的，它返回一个字符串，其中忽略了转义符（\n，\v，\t等）。但反斜杠可能造成问题，因为你可能会遇到下面这种类似情况：
+
+const path = `C:\Documents\Projects\table.html`
+String.raw`${path}`
+这将导致：
+
+"C:DocumentsProjects able.html"
+
+直接使用String.raw
+
+String.raw`C:\Documents\Projects\table.html`
+它会忽略转义字符并打印：C:\Documents\Projects\table.html
+
+上述情况，字符串是Hello\nworld被打印出。
+</details>
+
+---
+ 
+> 73.输出是什么？ 2021-04-25
+
+```javascript
+async function getData() {
+  return await Promise.resolve("I made it!");
+}
+
+const data = getData();
+console.log(data);
+```
+
+- A: "I made it!"
+- B: Promise {<resolved>: "I made it!"}
+- C: Promise {<pending>}
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+异步函数始终返回一个promise。await仍然需要等待promise的解决：当我们调用getData()并将其赋值给data，此时data为getData方法返回的一个挂起的promise，该promise并没有解决。
+
+如果我们想要访问已解决的值"I made it!"，可以在data上使用.then()方法：
+
+data.then(res => console.log(res))
+
+这样将打印 "I made it!"
+</details>
+
+---
+ 
