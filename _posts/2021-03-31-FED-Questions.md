@@ -1,8 +1,13 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-28 23:16:08
+<<<<<<< HEAD
+ * @LastEditTime: 2021-04-28 23:17:18
  * @LastEditors: WannTonn
+=======
+ * @LastEditTime: 2021-04-25 09:18:54
+ * @LastEditors: Please set LastEditors
+>>>>>>> 92497a7c05b10a1f6370b5faf797609006f27566
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
@@ -1995,7 +2000,6 @@ console.log("🥑" + "💻");
 </details>
 
 ---
-
 > 71.如何能打印出console.log语句后注释掉的值？ 2021-04-25
 
 ```javascript
