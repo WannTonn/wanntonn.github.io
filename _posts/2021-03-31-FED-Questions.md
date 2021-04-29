@@ -1,15 +1,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
-<<<<<<< HEAD
- * @LastEditTime: 2021-04-28 23:17:18
- * @LastEditors: WannTonn
-=======
- * @LastEditTime: 2021-04-25 09:18:54
+ * @LastEditTime: 2021-04-29 16:05:40
  * @LastEditors: Please set LastEditors
->>>>>>> 92497a7c05b10a1f6370b5faf797609006f27566
  * @Description:
- * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -2379,6 +2374,93 @@ setTimeout(() => {
 this关键字的指向取决于使用它的位置。 在函数中，比如getStatus，this指向的是调用它的对象，上述例子中data对象调用了getStatus，因此this指向的就是data对象。 当我们打印this.status时，data对象的status属性被打印，即"🥑"。
 
 使用call方法，可以更改this指向的对象。data.getStatus.call(this)是将this的指向由data对象更改为全局对象。在全局对象上，有一个名为status的变量，其值为”😎“。 因此打印this.status时，会打印“😎”。
+</details>
+
+---
+
+> 83.输出是什么？ 2021-04-28
+
+```javascript
+const person = {
+  name: "WannTonn",
+  age: 27
+}
+
+let city = person.city;
+city = "Fuzhou";
+console.log(person);
+```
+
+- A: {name: "WannTonn", age: 27}
+- B: {name: "WannTonn", age: 27, city: "Fuzhou"}
+- C: {name: "WannTonn", age: 27, city: undefined}
+- D: "Fuzhou"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+我们将变量city设置为等于person对象上名为city的属性的值。 这个对象上没有名为city的属性，因此变量city的值为undefined。
+
+请注意，我们没有引用person对象本身，只是将变量city设置为等于person对象上city属性的当前值。
+
+然后，我们将city设置为等于字符串“Fuzhou”。 这不会更改person对象：没有对该对象的引用。
+
+因此打印person对象时，会返回未修改的对象。
+</details>
+
+---
+
+> 84.输出是什么？ 2021-04-28
+
+```javascript
+fucntion checkAge(age) {
+  if (age < 18) {
+    const message = "Too young.";
+  } else {
+    const message = "Old enough!";
+  }
+  return message;
+}
+
+console.log(checkAge(21))
+```
+
+- A: "Too young."
+- B: "Old enough!"
+- C: ReferenceError
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+const和let声明的变量是具有块级作用域的，块是大括号（{}）之间的任何东西, 即上述情况if / else语句的花括号。 由于块级作用域，我们无法在声明的块之外引用变量，因此抛出ReferenceError。
+</details>
+
+---
+
+> 85.什么样的信息将被打印？ 2021-04-28
+
+```javascript
+fetch('https://www.google.com')
+  .then(res => res.json())
+  .then(res => console.log(res))
+```
+
+- A: fetch 方法的结果
+- B: 第二次调用fetch方法的结果
+- C: 前一个.then()中回调方法返回的结果
+- D: 总是undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+第二个.then中res的值等于前一个.then中的回调函数返回的值。 你可以像这样继续链接.then，将值传递给下一个处理程序。
 </details>
 
 ---
