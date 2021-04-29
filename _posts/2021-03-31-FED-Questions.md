@@ -1,10 +1,15 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
+<<<<<<< HEAD
+ * @LastEditTime: 2021-04-28 23:17:18
+ * @LastEditors: WannTonn
+=======
  * @LastEditTime: 2021-04-25 09:18:54
  * @LastEditors: Please set LastEditors
+>>>>>>> 92497a7c05b10a1f6370b5faf797609006f27566
  * @Description:
- * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -1995,7 +2000,6 @@ console.log("🥑" + "💻");
 </details>
 
 ---
- 
 > 71.如何能打印出console.log语句后注释掉的值？ 2021-04-25
 
 ```javascript
@@ -2010,7 +2014,6 @@ function* startGame() {
 const game = startGame();
 console.log(/* 1 */); // Do you love JavaScript?
 console.log(/* 2 */); // JavaScript loves you back ❤️
-}
 ```
 
 - A: game.next("Yes").value and game.next().value
@@ -2023,13 +2026,13 @@ console.log(/* 2 */); // JavaScript loves you back ❤️
 
 答案: C
 <br />
-generator函数在遇到yield关键字时会“暂停”其执行。 首先，我们需要让函数产生字符串Do you love JavaScript?，这可以通过调用game.next().value来完成。上述函数的第一行就有一个yield关键字，那么运行立即停止了，yield表达式本身没有返回值，或者说总是返回undefined, 这意味着此时变量 答案 为undefined
+generator 函数在遇到yield 关键字时会‘暂停’其执行。首先，我们要让函数产生字符串 Do you love javascript? 这可以通过调用game.next().value来完成。上述函数的第一行就有一个yield关键字，那么运行立即停止了。yield表达式本身没有返回值，或者说总是返回undefined，意味着变量 答案为undefined。
+next方法可以带一个参数，该参数会被当做上一个yield表达式的返回值。当我们调用game.next('YES').value时，先前的yield的返回值将被替换为传递给next()函数的参数‘Yes’。此时变量 答案 被赋值为 ‘Yes’，if 语句返回false，所以所以JavaScript loves you back ❤️被打印。
 
-next方法可以带一个参数，该参数会被当作上一个 yield 表达式的返回值。当我们调用game.next("Yes").value时，先前的 yield 的返回值将被替换为传递给next()函数的参数"Yes"。此时变量 答案 被赋值为 "Yes"，if语句返回false，所以JavaScript loves you back ❤️被打印。
 </details>
 
 ---
- 
+
 > 72.输出是什么？ 2021-04-25
 
 ```javascript
@@ -2038,7 +2041,7 @@ console.log(String.raw`Hello\nworld`);
 
 - A: Hello world!
 - B: Hello
-     world
+     world!
 - C: Hello\nworld
 - D: Hello\n
      world
@@ -2049,7 +2052,6 @@ console.log(String.raw`Hello\nworld`);
 答案: C
 <br />
 String.raw函数是用来获取一个模板字符串的原始字符串的，它返回一个字符串，其中忽略了转义符（\n，\v，\t等）。但反斜杠可能造成问题，因为你可能会遇到下面这种类似情况：
-
 const path = `C:\Documents\Projects\table.html`
 String.raw`${path}`
 这将导致：
@@ -2062,17 +2064,17 @@ String.raw`C:\Documents\Projects\table.html`
 它会忽略转义字符并打印：C:\Documents\Projects\table.html
 
 上述情况，字符串是Hello\nworld被打印出。
+
 </details>
 
 ---
- 
+
 > 73.输出是什么？ 2021-04-25
 
 ```javascript
 async function getData() {
   return await Promise.resolve("I made it!");
 }
-
 const data = getData();
 console.log(data);
 ```
@@ -2097,4 +2099,286 @@ data.then(res => console.log(res))
 </details>
 
 ---
- 
+
+> 74.输出是什么？ 2021-04-26
+
+```javascript
+function addToList(item, list) {
+  return list.push(item);
+}
+
+const result = addToList("apple", ["banana"]);
+console.log(result);
+```
+
+- A: ['apple', 'banana']
+- B: 2
+- C: true
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+push()方法返回新数组的长度。一开始，数组包含一个元素（字符串"banana"），长度为1。 在数组中添加字符串"apple"后，长度变为2，并将从addToList函数返回。
+
+push方法修改原始数组，如果你想从函数返回数组而不是数组长度，那么应该在push item之后返回list。
+</details>
+
+---
+
+> 75.输出是什么？ 2021-04-26
+
+```javascript
+const box = {x: 10, y: 20};
+Object.freeze(box);
+
+const shape = box;
+shape.x = 100;
+console.log(shape);
+```
+
+- A: { x: 100, y: 20 }
+- B: { x: 10, y: 20 }
+- C: { x: 100 }
+- D: ReferenceError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+Object.freeze使得无法添加、删除或修改对象的属性（除非属性的值是另一个对象）。
+
+当我们创建变量shape并将其设置为等于冻结对象box时，shape指向的也是冻结对象。你可以使用Object.isFrozen检查一个对象是否被冻结，上述情况，Object.isFrozen（shape）将返回true。
+
+由于shape被冻结，并且x的值不是对象，所以我们不能修改属性x。 x仍然等于10，{x：10，y：20}被打印。
+
+注意，上述例子我们对属性x进行修改，可能会导致抛出TypeError异常（最常见但不仅限于严格模式下时）。
+</details>
+
+---
+
+> 76.输出是什么？ 2021-04-26
+
+```javascript
+const {name: myName} = {name: "Lydia"};
+console.log(name);
+```
+
+- A: "Lydia"
+- B: "myName"
+- C: undefined
+- D: ReferenceError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+当我们从右侧的对象解构属性name时，我们将其值Lydia分配给名为myName的变量。
+
+使用{name：myName}，我们是在告诉JavaScript我们要创建一个名为myName的新变量，并且其值是右侧对象的name属性的值。
+
+当我们尝试打印name，一个未定义的变量时，就会引发ReferenceError。
+</details>
+
+---
+
+> 77.以下是个纯函数么？ 2021-04-27
+
+```javascript
+function sun(a, b) {
+  return a + b;
+}
+```
+
+- A: Yes
+- B: No
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+纯函数在相同的输入值时，需产生相同的输出，其输出的结果，与输入值以外的其他隐藏信息或状态无关，也和由I/O设备产生的外部输出无关。 纯函数不会产生副作用。
+
+纯函数与副作用的定义可参考： https://zh.wikipedia.org/wiki/%E5%89%AF%E4%BD%9C%E7%94%A8_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)
+</details>
+
+---
+
+> 78.输出是什么？ 2021-04-27
+
+```javascript
+const add = () => {
+  const cache = {};
+  return num => {
+    if (num in cache) {
+      return `From cache! ${cache[num]}`;
+    } else {
+      const result = num + 10;
+      cache[num] = result;
+      return `Calculated! ${result}`;
+    }
+  }
+}
+
+const addFunction = add();
+console.log(addFunction(10));
+console.log(addFunction(10));
+console.log(addFunction(5 * 2));
+```
+
+- A: Calculated! 20 Calculated! 20 Calculated! 20
+- B: Calculated! 20 From cache! 20 Calculated! 20
+- C: Calculated! 20 From cache! 20 From cache! 20
+- D: Calculated! 20 From cache! 20 Error
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+add函数是一个记忆函数。 通过记忆化，我们可以缓存函数的结果，以加快其执行速度。上述情况，我们创建一个cache对象，用于存储先前返回过的值。
+
+如果我们使用相同的参数多次调用addFunction函数，它首先检查缓存中是否已有该值，如果有，则返回缓存值，这将节省执行时间。如果没有，那么它将计算该值，并存储在缓存中。
+
+我们用相同的值三次调用了addFunction函数：
+
+在第一次调用，num等于10时函数的值尚未缓存，if语句num in cache返回false，else块的代码被执行：Calculated! 20，并且其结果被添加到缓存对象，cache现在看起来像{10：20}。
+
+第二次，cache对象包含10的返回值。 if语句 num in cache 返回true，From cache! 20被打印。
+
+第三次，我们将5 * 2(值为10)传递给函数。 cache对象包含10的返回值。 if语句 num in cache 返回true，From cache! 20被打印。
+</details>
+
+---
+
+> 79.输出是什么？ 2021-04-27
+
+```javascript
+const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"]
+
+for (let item in myLifeSummedUp) {
+  console.log(item)
+}
+
+for (let item of myLifeSummedUp) {
+  console.log(item)
+}
+```
+
+- A: 0 1 2 3 and "☕" "💻" "🍷" "🍫"
+- B: "☕" "💻" "🍷" "🍫" and "☕" "💻" "🍷" "🍫"
+- C: "☕" "💻" "🍷" "🍫" and 0 1 2 3
+- D: 0 1 2 3 and {0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+通过for-in循环，我们可以遍历一个对象自有的、继承的、可枚举的、非Symbol的属性。 在数组中，可枚举属性是数组元素的“键”， 即它们的索引。 类似于下面这个对象：
+
+{0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}
+
+其中键则是可枚举属性，因此 0，1，2，3被记录。
+
+通过for-of循环，我们可以迭代可迭代对象（包括 Array，Map，Set，String，arguments等）。当我们迭代数组时，在每次迭代中，不同属性的值将被分配给变量item, 因此“☕”，“💻”，“🍷”，“🍫”被打印。
+</details>
+
+---
+
+> 80.输出是什么？ 2021-04-28
+
+```javascript
+const list = [1 + 2, 1 * 2, 1 / 2]
+console.log(list)
+```
+
+- A: ["1 + 2", "1 * 2", "1 / 2"]
+- B: ["12", 2, 0.5]
+- C: [3, 2, 0.5]
+- D: [1, 1, 1]
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+数组元素可以包含任何值。 数字，字符串，布尔值，对象，数组，null，undeifned, 以及其他表达式，如日期，函数和计算。
+
+元素将等于返回的值。 1 + 2返回3，1 * 2返回'2，'1 / 2返回0.5。
+
+</details>
+
+---
+
+> 81.输出是什么？ 2021-04-28
+
+```javascript
+function sayHi(name) {
+  return `Hi there, ${name}`;
+}
+console.log(sayHi());
+```
+
+- A: Hi there,
+- B: Hi there, undefined
+- C: Hi there, null
+- D: ReferenceError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+默认情况下，如果不给函数传参，参数的值将为undefined。 上述情况，我们没有给参数name传值。 name等于undefined，并被打印。
+
+在ES6中，我们可以使用默认参数覆盖此默认的undefined值。 例如：
+
+function sayHi（name =“Lydia”）{...}
+
+在这种情况下，如果我们没有传递值或者如果我们传递undefined，name总是等于字符串Lydia
+</details>
+
+---
+
+> 82.输出是什么？ 2021-04-28
+
+```javascript
+var status = "😎"
+
+setTimeout(() => {
+  const status = "😍"
+
+  const data = {
+    status: "🥑",
+    getStatus() {
+      return this.status
+    }
+  }
+
+  console.log(data.getStatus())
+  console.log(data.getStatus.call(this))
+}, 0)
+```
+
+- A: "🥑" and "😍"
+- B: "🥑" and "😎"
+- C: "😍" and "😎"
+- D: "😎" and "😎"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+this关键字的指向取决于使用它的位置。 在函数中，比如getStatus，this指向的是调用它的对象，上述例子中data对象调用了getStatus，因此this指向的就是data对象。 当我们打印this.status时，data对象的status属性被打印，即"🥑"。
+
+使用call方法，可以更改this指向的对象。data.getStatus.call(this)是将this的指向由data对象更改为全局对象。在全局对象上，有一个名为status的变量，其值为”😎“。 因此打印this.status时，会打印“😎”。
+</details>
+
+---
