@@ -1,10 +1,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-29 16:05:40
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-04-30 22:53:19
+ * @LastEditors: WannTonn
  * @Description:
- * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 # 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
@@ -2461,6 +2461,168 @@ fetch('https://www.google.com')
 答案: B
 <br />
 第二个.then中res的值等于前一个.then中的回调函数返回的值。 你可以像这样继续链接.then，将值传递给下一个处理程序。
+</details>
+
+---
+
+> 86. 哪个选项是将hasName设置为true的方法，前提是不能将true作为参数传递? 2021-04-29
+
+```javascript
+function getName(name) {
+  const hasName = //
+}
+```
+
+- A: !!name
+- B: name
+- C: new Boolean(name)
+- D: name.length
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+使用逻辑非运算符!，将返回一个布尔值，使用!! name，我们可以确定name的值是真的还是假的。 如果name是真实的，那么!name返回false。 !false返回true。
+
+通过将hasName设置为name，可以将hasName设置为等于传递给getName函数的值，而不是布尔值true。
+
+new Boolean（true）返回一个对象包装器，而不是布尔值本身。
+
+name.length返回传递的参数的长度，而不是布尔值true。
+</details>
+
+---
+> 87.输出是什么？ 2021-04-29
+
+```javascript
+console.log("I want pizza"[0])
+```
+
+- A: """
+- B:"I"
+- C: SyntaxError
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+可以使用方括号表示法获取字符串中特定索引的字符，字符串中的第一个字符具有索引0，依此类推。 在这种情况下，我们想要得到索引为0的元素，字符'I'被记录。
+
+请注意，IE7及更低版本不支持此方法。 在这种情况下，应该使用.charAt（）
+</details>
+
+---
+
+> 88.输出是什么？ 2021-04-29
+
+```javascript
+funciton sum(num1, num2 = num1) {
+  console.log(num1 + num2);
+}
+sum(10)
+```
+
+- A: NaN
+- B: 20
+- C: ReferenceError
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+您可以将默认参数的值设置为函数的另一个参数，只要另一个参数定义在其之前即可。 我们将值10传递给sum函数。 如果sum函数只接收1个参数，则意味着没有传递num2的值，这种情况下，num1的值等于传递的值10。 num2的默认值是num1的值，即10。 num1 + num2返回20。
+</details>
+
+---
+
+> 89.输出是什么？ 2021-04-30
+
+```javascript
+class Person {
+  constructor(name) {
+    this.name = name;
+  }
+}
+const member = new Person("John");
+console.log(typeof member);
+```
+
+- A: "class"
+- B: "function"
+- C: "object"
+- D: "string"
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+类是构造函数的语法糖，如果用构造函数的方式来重写Person类则将是：
+
+function Person() {
+  this.name = name
+}
+通过new来调用构造函数，将会生成构造函数Person的实例，对实例执行typeof关键字将返回"object"，上述情况打印出"object"。
+</details>
+
+---
+
+> 90.输出是什么？ 2021-04-30
+
+```javascript
+// module.js 
+export default () => "Hello world"
+export const name = "Lydia"
+
+// index.js 
+import * as data from "./module"
+
+console.log(data)
+```
+
+- A: { default: function default(), name: "Lydia" }
+- B: { default: function default() }
+- C: { default: "Hello world", name: "Lydia" }
+- D: Global object of module.js
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+使用import * as name语法，我们将module.js文件中所有export导入到index.js文件中，并且创建了一个名为data的新对象。 在module.js文件中，有两个导出：默认导出和命名导出。 默认导出是一个返回字符串“Hello World”的函数，命名导出是一个名为name的变量，其值为字符串“Lydia”。
+
+data对象具有默认导出的default属性，其他属性具有指定exports的名称及其对应的值。
+</details>
+
+---
+
+> 91.输出是什么？ 2021-04-30
+
+```javascript
+let newList = [1, 2, 3].push(4)
+
+console.log(newList.push(5))
+```
+
+- A: [1, 2, 3, 4, 5]
+- B: [1, 2, 3, 5]
+- C: [1, 2, 3, 4]
+- D: Error
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+.push方法返回数组的长度，而不是数组本身！ 通过将newList设置为[1,2,3].push(4)，实际上newList等于数组的新长度：4。
+
+然后，尝试在newList上使用.push方法。 由于newList是数值4，抛出TypeError。
 </details>
 
 ---
