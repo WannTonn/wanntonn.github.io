@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-04-30 22:53:19
+ * @LastEditTime: 2021-05-01 22:59:14
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -2623,6 +2623,100 @@ console.log(newList.push(5))
 .push方法返回数组的长度，而不是数组本身！ 通过将newList设置为[1,2,3].push(4)，实际上newList等于数组的新长度：4。
 
 然后，尝试在newList上使用.push方法。 由于newList是数值4，抛出TypeError。
+</details>
+
+---
+
+> 92.输出是什么？ 2021-05-01
+
+```javascript
+function giveMePizza() {
+  return "Here you are";
+}
+
+const giveMeDrink = () => "Hure you go,enjoy";
+
+console.log(giveMePizza.prototype);
+console.log(giveMeDrink.prototype);
+```
+
+- A: { constructor: ...} { constructor: ...}
+- B: {} { constructor: ...}
+- C: { constructor: ...} {}
+- D: {constructor: ...} undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+常规函数，例如giveMePizza 函数， 有一个prototype 属性，它是一个带有constructor属性的对象（原型对象）。然而，箭头函数，例如giveMeDrink函数，没有prototype属性。尝试使用giveMeDrink.prototype属性时会返回undefined。
+</details>
+
+---
+
+> 93.输出是什么？ 2021-05-01
+
+```javascript
+const person = {
+  name: "WannTonn",
+  age: 27
+}
+
+for(const [x, y] of Object.entries(person)) {
+  console.log(x, y);
+}
+```
+
+- A: name WannTonn and age 27
+- B: ["name", "WannTonn"] and ["age", 27]
+- C: ["name", "age"] and undefined
+- D: Error
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: 
+<br />
+Object.entries()方法返回一个给定对象自身可枚举属性的键值对数组，上述情况返回一个二维数组，数组每个元素是一个包含键和值的数组：
+
+[['name'，'WannTonn']，['age'，27]]
+
+使用for-of循环，我们可以迭代数组中的每个元素，上述情况是子数组。 我们可以使用const [x，y]在for-of循环中解构子数组。 x等于子数组中的第一个元素，y等于子数组中的第二个元素。
+
+第一个子阵列是[“name”，“WannTonn”]，其中x等于name，而y等于Lydia。 第二个子阵列是[“age”，27]，其中x等于age，而y等于27。
+</details>
+
+---
+
+> 94.输出是什么？ 2021-05-01
+
+```javascript
+function getItems(fruitList, ...args, favoriteFruit) {
+  return [...fruitList, ...args, favoriteFruit]
+}
+
+getItems(["banana", "apple"], "pear", "orange")
+```
+
+- A: ["banana", "apple", "pear", "orange"]
+- B: [["banana", "apple"], "pear", "orange"]
+- C: ["banana", "apple", ["pear"], "orange"]
+- D: SyntaxError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+... args是剩余参数，剩余参数的值是一个包含所有剩余参数的数组，并且只能作为最后一个参数。上述示例中，剩余参数是第二个参数，这是不可能的，并会抛出语法错误。
+```javascript
+function getItems(fruitList, favoriteFruit, ...args) {
+  return [...fruitList, ...args, favoriteFruit]
+}
+```
+getItems(["banana", "apple"], "pear", "orange")
+上述例子是有效的，将会返回数组：[ 'banana', 'apple', 'orange', 'pear' ]
 </details>
 
 ---
