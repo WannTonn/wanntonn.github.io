@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-01 22:59:14
+ * @LastEditTime: 2021-05-02 16:48:37
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -1506,11 +1506,11 @@ class Dog {
     this.name = name;
   }
 }
-Dog.prototype.bark = function() {
+Dog.prototype.bark = function () {
   console.log(`Woof, I am ${this.name}`);
-}
+};
 
-const pet = new Dog("Mara");
+const pet = new Dog('Mara');
 pet.bark();
 delete Dog.prototype.bark;
 pet.bark();
@@ -1526,9 +1526,9 @@ pet.bark();
 
 答案: A
 <br />
-我们可以用delete关键字删除对象的属性，对原型也是适用的。删除了原型的属性后，该属性在原型链上就不可用了。在本例中，函数bark在执行了delete Dog.prototype.bark后不可用, 然而后面的代码还在调用它。
+我们可以用 delete 关键字删除对象的属性，对原型也是适用的。删除了原型的属性后，该属性在原型链上就不可用了。在本例中，函数 bark 在执行了 delete Dog.prototype.bark 后不可用, 然而后面的代码还在调用它。
 
-当我们尝试调用一个不存在的函数时TypeError异常会被抛出。在本例中就是 TypeError: pet.bark is not a function，因为pet.bark是undefined.
+当我们尝试调用一个不存在的函数时 TypeError 异常会被抛出。在本例中就是 TypeError: pet.bark is not a function，因为 pet.bark 是 undefined.
 
 </details>
 
@@ -1569,7 +1569,7 @@ let counter = 10;
 export default counter;
 
 // index.js
-import myCounter from "./counter.js";
+import myCounter from './counter.js';
 
 myCounter += 1;
 
@@ -1588,7 +1588,7 @@ console.log(myCounter);
 <br />
 引入的模块是 只读 的: 你不能修改引入的模块。只有导出他们的模块才能修改其值。
 
-当我们给myCounter增加一个值的时候会抛出一个异常： myCounter是只读的，不能被修改。
+当我们给 myCounter 增加一个值的时候会抛出一个异常： myCounter 是只读的，不能被修改。
 
 </details>
 
@@ -1597,7 +1597,7 @@ console.log(myCounter);
 > 58.输出是什么？ 2021-04-21
 
 ```javascript
-const name = "Lydia";
+const name = 'Lydia';
 age = 21;
 
 console.log(delete name);
@@ -1614,9 +1614,9 @@ console.log(delete age);
 
 答案: A
 <br />
-delete操作符返回一个布尔值： true指删除成功，否则返回false. 但是通过 var, const 或 let 关键字声明的变量无法用 delete 操作符来删除。
+delete 操作符返回一个布尔值： true 指删除成功，否则返回 false. 但是通过 var, const 或 let 关键字声明的变量无法用 delete 操作符来删除。
 
-name变量由const关键字声明，所以删除不成功:返回 false. 而我们设定age等于21时,我们实际上添加了一个名为age的属性给全局对象。对象中的属性是可以删除的，全局对象也是如此，所以delete age返回true.
+name 变量由 const 关键字声明，所以删除不成功:返回 false. 而我们设定 age 等于 21 时,我们实际上添加了一个名为 age 的属性给全局对象。对象中的属性是可以删除的，全局对象也是如此，所以 delete age 返回 true.
 
 </details>
 
@@ -1644,10 +1644,10 @@ console.log(y);
 可以通过结构赋值来解析来自对象的数组或属性的值：
 [a, b] = [1, 2];
 
-a的值现在是1， b的值现在是2.在题目中，我们是这么做的：
+a 的值现在是 1， b 的值现在是 2.在题目中，我们是这么做的：
 [y] = [1, 2, 3, 4, 5];
 
-也就是说，y等于数组的第一个值就是数字1. 所以我们输出y，返回1.
+也就是说，y 等于数组的第一个值就是数字 1. 所以我们输出 y，返回 1.
 
 </details>
 
@@ -1656,8 +1656,8 @@ a的值现在是1， b的值现在是2.在题目中，我们是这么做的：
 > 60.输出是什么？ 2021-04-21
 
 ```javascript
-const user = {name: "Lydia", age: 21};
-const admin = {admin: true, ...user};
+const user = { name: 'Lydia', age: 21 };
+const admin = { admin: true, ...user };
 
 console.log(admin);
 ```
@@ -1672,7 +1672,8 @@ console.log(admin);
 
 答案: B
 <br />
-扩展运算符...为对象的组合提供了可能。你可以复制对象中的键值对，然后把它们加到另一个对象里去。在本例中，我们复制了user对象键值对，然后把它们加入到admin对象中。admin对象就拥有了这些键值对，所以结果为{ admin: true, name: "Lydia", age: 21 }
+扩展运算符...为对象的组合提供了可能。你可以复制对象中的键值对，然后把它们加到另一个对象里去。在本例中，我们复制了 user 对象键值对，然后把它们加入到 admin 对象中。admin 对象就拥有了这些键值对，所以结果为{ admin: true, name: "Lydia", age: 21 }
+
 </details>
 
 ---
@@ -1696,10 +1697,9 @@ console.log(Object.keys(person);)
 
 答案: B
 <br />
-通过defineProperty方法，我们可以给对象添加一个新属性，或者修改已经存在的属性。而我们使用defineProperty方法给对象添加了一个属性之后，属性默认为 不可枚举(not enumerable). Object.keys方法仅返回对象中 可枚举(enumerable) 的属性，因此只剩下了"name".
+通过 defineProperty 方法，我们可以给对象添加一个新属性，或者修改已经存在的属性。而我们使用 defineProperty 方法给对象添加了一个属性之后，属性默认为 不可枚举(not enumerable). Object.keys 方法仅返回对象中 可枚举(enumerable) 的属性，因此只剩下了"name".
 
-用defineProperty方法添加的属性默认不可变。你可以通过writable, configurable 和 enumerable属性来改变这一行为。这样的话， 相比于自己添加的属性，defineProperty方法添加的属性有了更多的控制权。
-
+用 defineProperty 方法添加的属性默认不可变。你可以通过 writable, configurable 和 enumerable 属性来改变这一行为。这样的话， 相比于自己添加的属性，defineProperty 方法添加的属性有了更多的控制权。
 
 </details>
 
@@ -1709,11 +1709,11 @@ console.log(Object.keys(person);)
 
 ```javascript
 const settings = {
-  username: "lydiahallie",
+  username: 'lydiahallie',
   level: 19,
-  health: 90
-}
-const data = JSON.stringify(settings, ["level", "health"]);
+  health: 90,
+};
+const data = JSON.stringify(settings, ['level', 'health']);
 console.log(data);
 ```
 
@@ -1727,11 +1727,12 @@ console.log(data);
 
 答案: A
 <br />
-JSON.stringify的第二个参数是 替代者(replacer). 替代者(replacer)可以是个函数或数组，用以控制哪些值如何被转换为字符串。
+JSON.stringify 的第二个参数是 替代者(replacer). 替代者(replacer)可以是个函数或数组，用以控制哪些值如何被转换为字符串。
 
 如果替代者(replacer)是个 数组 ，那么就只有包含在数组中的属性将会被转化为字符串。在本例中，只有名为"level" 和 "health" 的属性被包括进来， "username"则被排除在外。 data 就等于 "{"level":19, "health":90}".
 
-而如果替代者(replacer)是个 函数，这个函数将被对象的每个属性都调用一遍。 函数返回的值会成为这个属性的值，最终体现在转化后的JSON字符串中（译者注：Chrome下，经过实验，如果所有属性均返回同一个值的时候有异常，会直接将返回值作为结果输出而不会输出JSON字符串），而如果返回值为undefined，则该属性会被排除在外。
+而如果替代者(replacer)是个 函数，这个函数将被对象的每个属性都调用一遍。 函数返回的值会成为这个属性的值，最终体现在转化后的 JSON 字符串中（译者注：Chrome 下，经过实验，如果所有属性均返回同一个值的时候有异常，会直接将返回值作为结果输出而不会输出 JSON 字符串），而如果返回值为 undefined，则该属性会被排除在外。
+
 </details>
 
 ---
@@ -1742,7 +1743,7 @@ JSON.stringify的第二个参数是 替代者(replacer). 替代者(replacer)可�
 let num = 10;
 
 const increaseNumber = () => num++;
-const increasePassedNumber = number => number++;
+const increasePassedNumber = (number) => number++;
 
 const num1 = increaseNumber();
 const num2 = increasePassedNumber(num1);
@@ -1761,9 +1762,10 @@ console.log(num2);
 
 答案: A
 <br />
-一元操作符 ++ 先返回 操作值, 再累加 操作值。num1的值是10, 因为increaseNumber函数首先返回num的值，也就是10，随后再进行 num的累加。
+一元操作符 ++ 先返回 操作值, 再累加 操作值。num1 的值是 10, 因为 increaseNumber 函数首先返回 num 的值，也就是 10，随后再进行 num 的累加。
 
-num2是10因为我们将 num1传入increasePassedNumber. number等于10（num1的值。同样道理，++ 先返回 操作值, 再累加 操作值。） number是10，所以num2也是10.
+num2 是 10 因为我们将 num1 传入 increasePassedNumber. number 等于 10（num1 的值。同样道理，++ 先返回 操作值, 再累加 操作值。） number 是 10，所以 num2 也是 10.
+
 </details>
 
 ---
@@ -1771,11 +1773,11 @@ num2是10因为我们将 num1传入increasePassedNumber. number等于10（num1�
 > 64.输出是什么？ 2021-04-23
 
 ```javascript
-const value = {number: 10};
+const value = { number: 10 };
 
-const multiply = (x = {...value}) => {
-  console.log(x.number *= 2);
-}
+const multiply = (x = { ...value }) => {
+  console.log((x.number *= 2));
+};
 multiply();
 multiply();
 multiply(value);
@@ -1792,14 +1794,13 @@ multiply(value);
 
 答案: C
 <br />
-在ES6中，我们可以使用默认值初始化参数。如果没有给函数传参，或者传的参值为 "undefined" ，那么参数的值将是默认值。上述例子中，我们将 value 对象进行了解构并传到一个新对象中，因此 x 的默认值为 {number：10} 。
+在 ES6 中，我们可以使用默认值初始化参数。如果没有给函数传参，或者传的参值为 "undefined" ，那么参数的值将是默认值。上述例子中，我们将 value 对象进行了解构并传到一个新对象中，因此 x 的默认值为 {number：10} 。
 
-默认参数在调用时才会进行计算，每次调用函数时，都会创建一个新的对象。我们前两次调用 multiply 函数且不传递值，那么每一次 x 的默认值都为 {number：10} ，因此打印出该数字的乘积值为20。
+默认参数在调用时才会进行计算，每次调用函数时，都会创建一个新的对象。我们前两次调用 multiply 函数且不传递值，那么每一次 x 的默认值都为 {number：10} ，因此打印出该数字的乘积值为 20。
 
-第三次调用 multiply 时，我们传递了一个参数，即对象value。 *=运算符实际上是x.number = x.number * 2的简写，我们修改了x.number的值，并打印出值20。
+第三次调用 multiply 时，我们传递了一个参数，即对象 value。 _=运算符实际上是 x.number = x.number _ 2 的简写，我们修改了 x.number 的值，并打印出值 20。
 
-第四次，我们再次传递value对象。 x.number之前被修改为20，所以x.number * = 2打印为40。
-
+第四次，我们再次传递 value 对象。 x.number 之前被修改为 20，所以 x.number \* = 2 打印为 40。
 
 </details>
 
@@ -1821,7 +1822,7 @@ multiply(value);
 
 答案: D
 <br />
-reducer 函数接收4个参数:
+reducer 函数接收 4 个参数:
 
 Accumulator (acc) (累计器)
 Current Value (cur) (当前值)
@@ -1829,30 +1830,31 @@ Current Index (idx) (当前索引)
 Source Array (src) (源数组)
 reducer 函数的返回值将会分配给累计器，该返回值在数组的每个迭代中被记住，并最后成为最终的单个结果值。
 
-reducer 函数还有一个可选参数initialValue, 该参数将作为第一次调用回调函数时的第一个参数的值。如果没有提供initialValue，则将使用数组中的第一个元素。
+reducer 函数还有一个可选参数 initialValue, 该参数将作为第一次调用回调函数时的第一个参数的值。如果没有提供 initialValue，则将使用数组中的第一个元素。
 
-在上述例子，reduce方法接收的第一个参数(Accumulator)是x, 第二个参数(Current Value)是y。
+在上述例子，reduce 方法接收的第一个参数(Accumulator)是 x, 第二个参数(Current Value)是 y。
 
-在第一次调用时，累加器x为1，当前值“y”为2，打印出累加器和当前值：1和2。
+在第一次调用时，累加器 x 为 1，当前值“y”为 2，打印出累加器和当前值：1 和 2。
 
-例子中我们的回调函数没有返回任何值，只是打印累加器的值和当前值。如果函数没有返回值，则默认返回undefined。 在下一次调用时，累加器为undefined，当前值为“3”, 因此undefined和3被打印出。
+例子中我们的回调函数没有返回任何值，只是打印累加器的值和当前值。如果函数没有返回值，则默认返回 undefined。 在下一次调用时，累加器为 undefined，当前值为“3”, 因此 undefined 和 3 被打印出。
 
-在第四次调用时，回调函数依然没有返回值。 累加器再次为 undefined ，当前值为“4”。 undefined和4被打印出。
+在第四次调用时，回调函数依然没有返回值。 累加器再次为 undefined ，当前值为“4”。 undefined 和 4 被打印出。
+
 </details>
 
 ---
 
-> 66.使用哪个构造函数可以成功继承Dog类？ 2021-04-23
+> 66.使用哪个构造函数可以成功继承 Dog 类？ 2021-04-23
 
 ```javascript
 class Dog {
   constructor(name) {
     this.name = name;
   }
-};
+}
 
 class Labrador extends Dog {
-  // 1 
+  // 1
   constructor(name, size) {
     this.size = size;
   }
@@ -1866,13 +1868,12 @@ class Labrador extends Dog {
     super(name);
     this.size = size;
   }
-  // 4 
+  // 4
   constructor(name, size) {
     this.name = name;
     this.size = size;
   }
-
-};
+}
 ```
 
 - A: 1
@@ -1885,11 +1886,12 @@ class Labrador extends Dog {
 
 答案: B
 <br />
-在子类中，在调用super之前不能访问到this关键字。 如果这样做，它将抛出一个ReferenceError：1和4将引发一个引用错误。
+在子类中，在调用 super 之前不能访问到 this 关键字。 如果这样做，它将抛出一个 ReferenceError：1 和 4 将引发一个引用错误。
 
-使用super关键字，需要用给定的参数来调用父类的构造函数。 父类的构造函数接收name参数，因此我们需要将name传递给super。
+使用 super 关键字，需要用给定的参数来调用父类的构造函数。 父类的构造函数接收 name 参数，因此我们需要将 name 传递给 super。
 
-Labrador类接收两个参数，name参数是由于它继承了Dog，size作为Labrador类的额外属性，它们都需要传递给Labrador的构造函数，因此使用构造函数2正确完成。
+Labrador 类接收两个参数，name 参数是由于它继承了 Dog，size 作为 Labrador 类的额外属性，它们都需要传递给 Labrador 的构造函数，因此使用构造函数 2 正确完成。
+
 </details>
 
 ---
@@ -1905,7 +1907,6 @@ console.log(sum(1, 2));
 // sum.js
 console.log('running sum.js');
 export const sum = (a, b) => a + b;
-
 ```
 
 - A: running index.js, running sum.js, 3
@@ -1918,9 +1919,10 @@ export const sum = (a, b) => a + b;
 
 答案: B
 <br />
-import命令是编译阶段执行的，在代码运行之前。因此这意味着被导入的模块会先运行，而导入模块的文件会后执行。
+import 命令是编译阶段执行的，在代码运行之前。因此这意味着被导入的模块会先运行，而导入模块的文件会后执行。
 
-这是CommonJS中require（）和import之间的区别。使用require()，您可以在运行代码时根据需要加载依赖项。 如果我们使用require而不是import，running index.js，running sum.js，3会被依次打印。
+这是 CommonJS 中 require（）和 import 之间的区别。使用 require()，您可以在运行代码时根据需要加载依赖项。 如果我们使用 require 而不是 import，running index.js，running sum.js，3 会被依次打印。
+
 </details>
 
 ---
@@ -1928,9 +1930,9 @@ import命令是编译阶段执行的，在代码运行之前。因此这意味�
 > 68.输出是什么？ 2021-04-24
 
 ```javascript
-console.log(Number(2) === Number(2))
-console.log(Boolean(false) === Boolean(false))
-console.log(Symbol('foo') === Symbol('foo'))
+console.log(Number(2) === Number(2));
+console.log(Boolean(false) === Boolean(false));
+console.log(Symbol('foo') === Symbol('foo'));
 ```
 
 - A: true, true, false
@@ -1943,8 +1945,7 @@ console.log(Symbol('foo') === Symbol('foo'))
 
 答案: A
 <br />
-每个Symbol都是完全唯一的。传递给Symbol的参数只是给Symbol的一个描述。 Symbol的值不依赖于传递的参数。 当我们测试相等时，我们创建了两个全新的符号：第一个Symbol（'foo'），第二个Symbol（'foo'）, 这两个值是唯一的，彼此不相等，因此返回false。
-
+每个 Symbol 都是完全唯一的。传递给 Symbol 的参数只是给 Symbol 的一个描述。 Symbol 的值不依赖于传递的参数。 当我们测试相等时，我们创建了两个全新的符号：第一个 Symbol（'foo'），第二个 Symbol（'foo'）, 这两个值是唯一的，彼此不相等，因此返回 false。
 
 </details>
 
@@ -1953,9 +1954,9 @@ console.log(Symbol('foo') === Symbol('foo'))
 > 69.输出是什么？ 2021-04-24
 
 ```javascript
-const name = "Lydia Hallie"
-console.log(name.padStart(13))
-console.log(name.padStart(2))
+const name = 'Lydia Hallie';
+console.log(name.padStart(13));
+console.log(name.padStart(2));
 ```
 
 - A: "Lydia Hallie", "Lydia Hallie"
@@ -1968,9 +1969,10 @@ console.log(name.padStart(2))
 
 答案: C
 <br />
-使用padStart方法，我们可以在字符串的开头添加填充。传递给此方法的参数是字符串的总长度（包含填充）。字符串Lydia Hallie的长度为12, 因此name.padStart（13）在字符串的开头只会插入1（13 - 12 = 1）个空格。
+使用 padStart 方法，我们可以在字符串的开头添加填充。传递给此方法的参数是字符串的总长度（包含填充）。字符串 Lydia Hallie 的长度为 12, 因此 name.padStart（13）在字符串的开头只会插入 1（13 - 12 = 1）个空格。
 
-如果传递给padStart方法的参数小于字符串的长度，则不会添加填充。
+如果传递给 padStart 方法的参数小于字符串的长度，则不会添加填充。
+
 </details>
 
 ---
@@ -1978,7 +1980,7 @@ console.log(name.padStart(2))
 > 70.输出是什么？ 2021-04-24
 
 ```javascript
-console.log("🥑" + "💻");
+console.log('🥑' + '💻');
 ```
 
 - A: "🥑💻"
@@ -1992,18 +1994,20 @@ console.log("🥑" + "💻");
 答案: A
 <br />
 使用+运算符，您可以连接字符串。 上述情况，我们将字符串“🥑”与字符串”💻“连接起来，产生”🥑💻“。
+
 </details>
 
 ---
-> 71.如何能打印出console.log语句后注释掉的值？ 2021-04-25
+
+> 71.如何能打印出 console.log 语句后注释掉的值？ 2021-04-25
 
 ```javascript
 function* startGame() {
-  const 答案 = yield "Do you love JavaScript?";
-  if (答案 !== "Yes") {
+  const 答案 = yield 'Do you love JavaScript?';
+  if (答案 !== 'Yes') {
     return "Oh wow... Guess we're gone here";
   }
-  return "JavaScript loves you back ❤️";
+  return 'JavaScript loves you back ❤️';
 }
 
 const game = startGame();
@@ -2021,8 +2025,8 @@ console.log(/* 2 */); // JavaScript loves you back ❤️
 
 答案: C
 <br />
-generator 函数在遇到yield 关键字时会‘暂停’其执行。首先，我们要让函数产生字符串 Do you love javascript? 这可以通过调用game.next().value来完成。上述函数的第一行就有一个yield关键字，那么运行立即停止了。yield表达式本身没有返回值，或者说总是返回undefined，意味着变量 答案为undefined。
-next方法可以带一个参数，该参数会被当做上一个yield表达式的返回值。当我们调用game.next('YES').value时，先前的yield的返回值将被替换为传递给next()函数的参数‘Yes’。此时变量 答案 被赋值为 ‘Yes’，if 语句返回false，所以所以JavaScript loves you back ❤️被打印。
+generator 函数在遇到 yield 关键字时会‘暂停’其执行。首先，我们要让函数产生字符串 Do you love javascript? 这可以通过调用 game.next().value 来完成。上述函数的第一行就有一个 yield 关键字，那么运行立即停止了。yield 表达式本身没有返回值，或者说总是返回 undefined，意味着变量 答案为 undefined。
+next 方法可以带一个参数，该参数会被当做上一个 yield 表达式的返回值。当我们调用 game.next('YES').value 时，先前的 yield 的返回值将被替换为传递给 next()函数的参数‘Yes’。此时变量 答案 被赋值为 ‘Yes’，if 语句返回 false，所以所以 JavaScript loves you back ❤️ 被打印。
 
 </details>
 
@@ -2036,29 +2040,29 @@ console.log(String.raw`Hello\nworld`);
 
 - A: Hello world!
 - B: Hello
-     world!
+  world!
 - C: Hello\nworld
 - D: Hello\n
-     world
+  world
 
 <details>
 <summary>点击查看答案</summary>
 
 答案: C
 <br />
-String.raw函数是用来获取一个模板字符串的原始字符串的，它返回一个字符串，其中忽略了转义符（\n，\v，\t等）。但反斜杠可能造成问题，因为你可能会遇到下面这种类似情况：
+String.raw 函数是用来获取一个模板字符串的原始字符串的，它返回一个字符串，其中忽略了转义符（\n，\v，\t 等）。但反斜杠可能造成问题，因为你可能会遇到下面这种类似情况：
 const path = `C:\Documents\Projects\table.html`
 String.raw`${path}`
 这将导致：
 
 "C:DocumentsProjects able.html"
 
-直接使用String.raw
+直接使用 String.raw
 
 String.raw`C:\Documents\Projects\table.html`
 它会忽略转义字符并打印：C:\Documents\Projects\table.html
 
-上述情况，字符串是Hello\nworld被打印出。
+上述情况，字符串是 Hello\nworld 被打印出。
 
 </details>
 
@@ -2068,7 +2072,7 @@ String.raw`C:\Documents\Projects\table.html`
 
 ```javascript
 async function getData() {
-  return await Promise.resolve("I made it!");
+  return await Promise.resolve('I made it!');
 }
 const data = getData();
 console.log(data);
@@ -2084,13 +2088,14 @@ console.log(data);
 
 答案: C
 <br />
-异步函数始终返回一个promise。await仍然需要等待promise的解决：当我们调用getData()并将其赋值给data，此时data为getData方法返回的一个挂起的promise，该promise并没有解决。
+异步函数始终返回一个 promise。await 仍然需要等待 promise 的解决：当我们调用 getData()并将其赋值给 data，此时 data 为 getData 方法返回的一个挂起的 promise，该 promise 并没有解决。
 
-如果我们想要访问已解决的值"I made it!"，可以在data上使用.then()方法：
+如果我们想要访问已解决的值"I made it!"，可以在 data 上使用.then()方法：
 
 data.then(res => console.log(res))
 
 这样将打印 "I made it!"
+
 </details>
 
 ---
@@ -2102,7 +2107,7 @@ function addToList(item, list) {
   return list.push(item);
 }
 
-const result = addToList("apple", ["banana"]);
+const result = addToList('apple', ['banana']);
 console.log(result);
 ```
 
@@ -2116,9 +2121,10 @@ console.log(result);
 
 答案: B
 <br />
-push()方法返回新数组的长度。一开始，数组包含一个元素（字符串"banana"），长度为1。 在数组中添加字符串"apple"后，长度变为2，并将从addToList函数返回。
+push()方法返回新数组的长度。一开始，数组包含一个元素（字符串"banana"），长度为 1。 在数组中添加字符串"apple"后，长度变为 2，并将从 addToList 函数返回。
 
-push方法修改原始数组，如果你想从函数返回数组而不是数组长度，那么应该在push item之后返回list。
+push 方法修改原始数组，如果你想从函数返回数组而不是数组长度，那么应该在 push item 之后返回 list。
+
 </details>
 
 ---
@@ -2126,7 +2132,7 @@ push方法修改原始数组，如果你想从函数返回数组而不是数组�
 > 75.输出是什么？ 2021-04-26
 
 ```javascript
-const box = {x: 10, y: 20};
+const box = { x: 10, y: 20 };
 Object.freeze(box);
 
 const shape = box;
@@ -2144,13 +2150,14 @@ console.log(shape);
 
 答案: B
 <br />
-Object.freeze使得无法添加、删除或修改对象的属性（除非属性的值是另一个对象）。
+Object.freeze 使得无法添加、删除或修改对象的属性（除非属性的值是另一个对象）。
 
-当我们创建变量shape并将其设置为等于冻结对象box时，shape指向的也是冻结对象。你可以使用Object.isFrozen检查一个对象是否被冻结，上述情况，Object.isFrozen（shape）将返回true。
+当我们创建变量 shape 并将其设置为等于冻结对象 box 时，shape 指向的也是冻结对象。你可以使用 Object.isFrozen 检查一个对象是否被冻结，上述情况，Object.isFrozen（shape）将返回 true。
 
-由于shape被冻结，并且x的值不是对象，所以我们不能修改属性x。 x仍然等于10，{x：10，y：20}被打印。
+由于 shape 被冻结，并且 x 的值不是对象，所以我们不能修改属性 x。 x 仍然等于 10，{x：10，y：20}被打印。
 
-注意，上述例子我们对属性x进行修改，可能会导致抛出TypeError异常（最常见但不仅限于严格模式下时）。
+注意，上述例子我们对属性 x 进行修改，可能会导致抛出 TypeError 异常（最常见但不仅限于严格模式下时）。
+
 </details>
 
 ---
@@ -2158,7 +2165,7 @@ Object.freeze使得无法添加、删除或修改对象的属性（除非属性�
 > 76.输出是什么？ 2021-04-26
 
 ```javascript
-const {name: myName} = {name: "Lydia"};
+const { name: myName } = { name: 'Lydia' };
 console.log(name);
 ```
 
@@ -2172,11 +2179,12 @@ console.log(name);
 
 答案: D
 <br />
-当我们从右侧的对象解构属性name时，我们将其值Lydia分配给名为myName的变量。
+当我们从右侧的对象解构属性 name 时，我们将其值 Lydia 分配给名为 myName 的变量。
 
-使用{name：myName}，我们是在告诉JavaScript我们要创建一个名为myName的新变量，并且其值是右侧对象的name属性的值。
+使用{name：myName}，我们是在告诉 JavaScript 我们要创建一个名为 myName 的新变量，并且其值是右侧对象的 name 属性的值。
 
-当我们尝试打印name，一个未定义的变量时，就会引发ReferenceError。
+当我们尝试打印 name，一个未定义的变量时，就会引发 ReferenceError。
+
 </details>
 
 ---
@@ -2197,9 +2205,10 @@ function sun(a, b) {
 
 答案: A
 <br />
-纯函数在相同的输入值时，需产生相同的输出，其输出的结果，与输入值以外的其他隐藏信息或状态无关，也和由I/O设备产生的外部输出无关。 纯函数不会产生副作用。
+纯函数在相同的输入值时，需产生相同的输出，其输出的结果，与输入值以外的其他隐藏信息或状态无关，也和由 I/O 设备产生的外部输出无关。 纯函数不会产生副作用。
 
 纯函数与副作用的定义可参考： https://zh.wikipedia.org/wiki/%E5%89%AF%E4%BD%9C%E7%94%A8_(%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%A7%91%E5%AD%A6)
+
 </details>
 
 ---
@@ -2209,7 +2218,7 @@ function sun(a, b) {
 ```javascript
 const add = () => {
   const cache = {};
-  return num => {
+  return (num) => {
     if (num in cache) {
       return `From cache! ${cache[num]}`;
     } else {
@@ -2217,8 +2226,8 @@ const add = () => {
       cache[num] = result;
       return `Calculated! ${result}`;
     }
-  }
-}
+  };
+};
 
 const addFunction = add();
 console.log(addFunction(10));
@@ -2236,17 +2245,18 @@ console.log(addFunction(5 * 2));
 
 答案: C
 <br />
-add函数是一个记忆函数。 通过记忆化，我们可以缓存函数的结果，以加快其执行速度。上述情况，我们创建一个cache对象，用于存储先前返回过的值。
+add 函数是一个记忆函数。 通过记忆化，我们可以缓存函数的结果，以加快其执行速度。上述情况，我们创建一个 cache 对象，用于存储先前返回过的值。
 
-如果我们使用相同的参数多次调用addFunction函数，它首先检查缓存中是否已有该值，如果有，则返回缓存值，这将节省执行时间。如果没有，那么它将计算该值，并存储在缓存中。
+如果我们使用相同的参数多次调用 addFunction 函数，它首先检查缓存中是否已有该值，如果有，则返回缓存值，这将节省执行时间。如果没有，那么它将计算该值，并存储在缓存中。
 
-我们用相同的值三次调用了addFunction函数：
+我们用相同的值三次调用了 addFunction 函数：
 
-在第一次调用，num等于10时函数的值尚未缓存，if语句num in cache返回false，else块的代码被执行：Calculated! 20，并且其结果被添加到缓存对象，cache现在看起来像{10：20}。
+在第一次调用，num 等于 10 时函数的值尚未缓存，if 语句 num in cache 返回 false，else 块的代码被执行：Calculated! 20，并且其结果被添加到缓存对象，cache 现在看起来像{10：20}。
 
-第二次，cache对象包含10的返回值。 if语句 num in cache 返回true，From cache! 20被打印。
+第二次，cache 对象包含 10 的返回值。 if 语句 num in cache 返回 true，From cache! 20 被打印。
 
-第三次，我们将5 * 2(值为10)传递给函数。 cache对象包含10的返回值。 if语句 num in cache 返回true，From cache! 20被打印。
+第三次，我们将 5 \* 2(值为 10)传递给函数。 cache 对象包含 10 的返回值。 if 语句 num in cache 返回 true，From cache! 20 被打印。
+
 </details>
 
 ---
@@ -2254,14 +2264,14 @@ add函数是一个记忆函数。 通过记忆化，我们可以缓存函数的�
 > 79.输出是什么？ 2021-04-27
 
 ```javascript
-const myLifeSummedUp = ["☕", "💻", "🍷", "🍫"]
+const myLifeSummedUp = ['☕', '💻', '🍷', '🍫'];
 
 for (let item in myLifeSummedUp) {
-  console.log(item)
+  console.log(item);
 }
 
 for (let item of myLifeSummedUp) {
-  console.log(item)
+  console.log(item);
 }
 ```
 
@@ -2275,13 +2285,14 @@ for (let item of myLifeSummedUp) {
 
 答案: A
 <br />
-通过for-in循环，我们可以遍历一个对象自有的、继承的、可枚举的、非Symbol的属性。 在数组中，可枚举属性是数组元素的“键”， 即它们的索引。 类似于下面这个对象：
+通过 for-in 循环，我们可以遍历一个对象自有的、继承的、可枚举的、非 Symbol 的属性。 在数组中，可枚举属性是数组元素的“键”， 即它们的索引。 类似于下面这个对象：
 
 {0: "☕", 1: "💻", 2: "🍷", 3: "🍫"}
 
-其中键则是可枚举属性，因此 0，1，2，3被记录。
+其中键则是可枚举属性，因此 0，1，2，3 被记录。
 
-通过for-of循环，我们可以迭代可迭代对象（包括 Array，Map，Set，String，arguments等）。当我们迭代数组时，在每次迭代中，不同属性的值将被分配给变量item, 因此“☕”，“💻”，“🍷”，“🍫”被打印。
+通过 for-of 循环，我们可以迭代可迭代对象（包括 Array，Map，Set，String，arguments 等）。当我们迭代数组时，在每次迭代中，不同属性的值将被分配给变量 item, 因此“☕”，“💻”，“🍷”，“🍫”被打印。
+
 </details>
 
 ---
@@ -2289,8 +2300,8 @@ for (let item of myLifeSummedUp) {
 > 80.输出是什么？ 2021-04-28
 
 ```javascript
-const list = [1 + 2, 1 * 2, 1 / 2]
-console.log(list)
+const list = [1 + 2, 1 * 2, 1 / 2];
+console.log(list);
 ```
 
 - A: ["1 + 2", "1 * 2", "1 / 2"]
@@ -2305,7 +2316,7 @@ console.log(list)
 <br />
 数组元素可以包含任何值。 数字，字符串，布尔值，对象，数组，null，undeifned, 以及其他表达式，如日期，函数和计算。
 
-元素将等于返回的值。 1 + 2返回3，1 * 2返回'2，'1 / 2返回0.5。
+元素将等于返回的值。 1 + 2 返回 3，1 \* 2 返回'2，'1 / 2 返回 0.5。
 
 </details>
 
@@ -2330,13 +2341,14 @@ console.log(sayHi());
 
 答案: B
 <br />
-默认情况下，如果不给函数传参，参数的值将为undefined。 上述情况，我们没有给参数name传值。 name等于undefined，并被打印。
+默认情况下，如果不给函数传参，参数的值将为 undefined。 上述情况，我们没有给参数 name 传值。 name 等于 undefined，并被打印。
 
-在ES6中，我们可以使用默认参数覆盖此默认的undefined值。 例如：
+在 ES6 中，我们可以使用默认参数覆盖此默认的 undefined 值。 例如：
 
 function sayHi（name =“Lydia”）{...}
 
-在这种情况下，如果我们没有传递值或者如果我们传递undefined，name总是等于字符串Lydia
+在这种情况下，如果我们没有传递值或者如果我们传递 undefined，name 总是等于字符串 Lydia
+
 </details>
 
 ---
@@ -2344,21 +2356,21 @@ function sayHi（name =“Lydia”）{...}
 > 82.输出是什么？ 2021-04-28
 
 ```javascript
-var status = "😎"
+var status = '😎';
 
 setTimeout(() => {
-  const status = "😍"
+  const status = '😍';
 
   const data = {
-    status: "🥑",
+    status: '🥑',
     getStatus() {
-      return this.status
-    }
-  }
+      return this.status;
+    },
+  };
 
-  console.log(data.getStatus())
-  console.log(data.getStatus.call(this))
-}, 0)
+  console.log(data.getStatus());
+  console.log(data.getStatus.call(this));
+}, 0);
 ```
 
 - A: "🥑" and "😍"
@@ -2371,9 +2383,10 @@ setTimeout(() => {
 
 答案: B
 <br />
-this关键字的指向取决于使用它的位置。 在函数中，比如getStatus，this指向的是调用它的对象，上述例子中data对象调用了getStatus，因此this指向的就是data对象。 当我们打印this.status时，data对象的status属性被打印，即"🥑"。
+this 关键字的指向取决于使用它的位置。 在函数中，比如 getStatus，this 指向的是调用它的对象，上述例子中 data 对象调用了 getStatus，因此 this 指向的就是 data 对象。 当我们打印 this.status 时，data 对象的 status 属性被打印，即"🥑"。
 
-使用call方法，可以更改this指向的对象。data.getStatus.call(this)是将this的指向由data对象更改为全局对象。在全局对象上，有一个名为status的变量，其值为”😎“。 因此打印this.status时，会打印“😎”。
+使用 call 方法，可以更改 this 指向的对象。data.getStatus.call(this)是将 this 的指向由 data 对象更改为全局对象。在全局对象上，有一个名为 status 的变量，其值为”😎“。 因此打印 this.status 时，会打印“😎”。
+
 </details>
 
 ---
@@ -2382,12 +2395,12 @@ this关键字的指向取决于使用它的位置。 在函数中，比如getSta
 
 ```javascript
 const person = {
-  name: "WannTonn",
-  age: 27
-}
+  name: 'WannTonn',
+  age: 27,
+};
 
 let city = person.city;
-city = "Fuzhou";
+city = 'Fuzhou';
 console.log(person);
 ```
 
@@ -2401,13 +2414,14 @@ console.log(person);
 
 答案: A
 <br />
-我们将变量city设置为等于person对象上名为city的属性的值。 这个对象上没有名为city的属性，因此变量city的值为undefined。
+我们将变量 city 设置为等于 person 对象上名为 city 的属性的值。 这个对象上没有名为 city 的属性，因此变量 city 的值为 undefined。
 
-请注意，我们没有引用person对象本身，只是将变量city设置为等于person对象上city属性的当前值。
+请注意，我们没有引用 person 对象本身，只是将变量 city 设置为等于 person 对象上 city 属性的当前值。
 
-然后，我们将city设置为等于字符串“Fuzhou”。 这不会更改person对象：没有对该对象的引用。
+然后，我们将 city 设置为等于字符串“Fuzhou”。 这不会更改 person 对象：没有对该对象的引用。
 
-因此打印person对象时，会返回未修改的对象。
+因此打印 person 对象时，会返回未修改的对象。
+
 </details>
 
 ---
@@ -2437,7 +2451,8 @@ console.log(checkAge(21))
 
 答案: C
 <br />
-const和let声明的变量是具有块级作用域的，块是大括号（{}）之间的任何东西, 即上述情况if / else语句的花括号。 由于块级作用域，我们无法在声明的块之外引用变量，因此抛出ReferenceError。
+const 和 let 声明的变量是具有块级作用域的，块是大括号（{}）之间的任何东西, 即上述情况 if / else 语句的花括号。 由于块级作用域，我们无法在声明的块之外引用变量，因此抛出 ReferenceError。
+
 </details>
 
 ---
@@ -2446,26 +2461,27 @@ const和let声明的变量是具有块级作用域的，块是大括号（{}）�
 
 ```javascript
 fetch('https://www.google.com')
-  .then(res => res.json())
-  .then(res => console.log(res))
+  .then((res) => res.json())
+  .then((res) => console.log(res));
 ```
 
 - A: fetch 方法的结果
-- B: 第二次调用fetch方法的结果
+- B: 第二次调用 fetch 方法的结果
 - C: 前一个.then()中回调方法返回的结果
-- D: 总是undefined
+- D: 总是 undefined
 
 <details>
 <summary>点击查看答案</summary>
 
 答案: B
 <br />
-第二个.then中res的值等于前一个.then中的回调函数返回的值。 你可以像这样继续链接.then，将值传递给下一个处理程序。
+第二个.then 中 res 的值等于前一个.then 中的回调函数返回的值。 你可以像这样继续链接.then，将值传递给下一个处理程序。
+
 </details>
 
 ---
 
-> 86. 哪个选项是将hasName设置为true的方法，前提是不能将true作为参数传递? 2021-04-29
+> 86. 哪个选项是将 hasName 设置为 true 的方法，前提是不能将 true 作为参数传递? 2021-04-29
 
 ```javascript
 function getName(name) {
@@ -2483,20 +2499,22 @@ function getName(name) {
 
 答案: A
 <br />
-使用逻辑非运算符!，将返回一个布尔值，使用!! name，我们可以确定name的值是真的还是假的。 如果name是真实的，那么!name返回false。 !false返回true。
+使用逻辑非运算符!，将返回一个布尔值，使用!! name，我们可以确定 name 的值是真的还是假的。 如果 name 是真实的，那么!name 返回 false。 !false 返回 true。
 
-通过将hasName设置为name，可以将hasName设置为等于传递给getName函数的值，而不是布尔值true。
+通过将 hasName 设置为 name，可以将 hasName 设置为等于传递给 getName 函数的值，而不是布尔值 true。
 
 new Boolean（true）返回一个对象包装器，而不是布尔值本身。
 
-name.length返回传递的参数的长度，而不是布尔值true。
+name.length 返回传递的参数的长度，而不是布尔值 true。
+
 </details>
 
 ---
+
 > 87.输出是什么？ 2021-04-29
 
 ```javascript
-console.log("I want pizza"[0])
+console.log('I want pizza'[0]);
 ```
 
 - A: """
@@ -2509,9 +2527,10 @@ console.log("I want pizza"[0])
 
 答案: B
 <br />
-可以使用方括号表示法获取字符串中特定索引的字符，字符串中的第一个字符具有索引0，依此类推。 在这种情况下，我们想要得到索引为0的元素，字符'I'被记录。
+可以使用方括号表示法获取字符串中特定索引的字符，字符串中的第一个字符具有索引 0，依此类推。 在这种情况下，我们想要得到索引为 0 的元素，字符'I'被记录。
 
-请注意，IE7及更低版本不支持此方法。 在这种情况下，应该使用.charAt（）
+请注意，IE7 及更低版本不支持此方法。 在这种情况下，应该使用.charAt（）
+
 </details>
 
 ---
@@ -2535,7 +2554,8 @@ sum(10)
 
 答案: B
 <br />
-您可以将默认参数的值设置为函数的另一个参数，只要另一个参数定义在其之前即可。 我们将值10传递给sum函数。 如果sum函数只接收1个参数，则意味着没有传递num2的值，这种情况下，num1的值等于传递的值10。 num2的默认值是num1的值，即10。 num1 + num2返回20。
+您可以将默认参数的值设置为函数的另一个参数，只要另一个参数定义在其之前即可。 我们将值 10 传递给 sum 函数。 如果 sum 函数只接收 1 个参数，则意味着没有传递 num2 的值，这种情况下，num1 的值等于传递的值 10。 num2 的默认值是 num1 的值，即 10。 num1 + num2 返回 20。
+
 </details>
 
 ---
@@ -2548,7 +2568,7 @@ class Person {
     this.name = name;
   }
 }
-const member = new Person("John");
+const member = new Person('John');
 console.log(typeof member);
 ```
 
@@ -2562,12 +2582,13 @@ console.log(typeof member);
 
 答案: C
 <br />
-类是构造函数的语法糖，如果用构造函数的方式来重写Person类则将是：
+类是构造函数的语法糖，如果用构造函数的方式来重写 Person 类则将是：
 
 function Person() {
-  this.name = name
+this.name = name
 }
-通过new来调用构造函数，将会生成构造函数Person的实例，对实例执行typeof关键字将返回"object"，上述情况打印出"object"。
+通过 new 来调用构造函数，将会生成构造函数 Person 的实例，对实例执行 typeof 关键字将返回"object"，上述情况打印出"object"。
+
 </details>
 
 ---
@@ -2575,14 +2596,14 @@ function Person() {
 > 90.输出是什么？ 2021-04-30
 
 ```javascript
-// module.js 
-export default () => "Hello world"
-export const name = "Lydia"
+// module.js
+export default () => 'Hello world';
+export const name = 'Lydia';
 
-// index.js 
-import * as data from "./module"
+// index.js
+import * as data from './module';
 
-console.log(data)
+console.log(data);
 ```
 
 - A: { default: function default(), name: "Lydia" }
@@ -2595,9 +2616,10 @@ console.log(data)
 
 答案: A
 <br />
-使用import * as name语法，我们将module.js文件中所有export导入到index.js文件中，并且创建了一个名为data的新对象。 在module.js文件中，有两个导出：默认导出和命名导出。 默认导出是一个返回字符串“Hello World”的函数，命名导出是一个名为name的变量，其值为字符串“Lydia”。
+使用 import \* as name 语法，我们将 module.js 文件中所有 export 导入到 index.js 文件中，并且创建了一个名为 data 的新对象。 在 module.js 文件中，有两个导出：默认导出和命名导出。 默认导出是一个返回字符串“Hello World”的函数，命名导出是一个名为 name 的变量，其值为字符串“Lydia”。
 
-data对象具有默认导出的default属性，其他属性具有指定exports的名称及其对应的值。
+data 对象具有默认导出的 default 属性，其他属性具有指定 exports 的名称及其对应的值。
+
 </details>
 
 ---
@@ -2605,9 +2627,9 @@ data对象具有默认导出的default属性，其他属性具有指定exports�
 > 91.输出是什么？ 2021-04-30
 
 ```javascript
-let newList = [1, 2, 3].push(4)
+let newList = [1, 2, 3].push(4);
 
-console.log(newList.push(5))
+console.log(newList.push(5));
 ```
 
 - A: [1, 2, 3, 4, 5]
@@ -2620,9 +2642,10 @@ console.log(newList.push(5))
 
 答案: B
 <br />
-.push方法返回数组的长度，而不是数组本身！ 通过将newList设置为[1,2,3].push(4)，实际上newList等于数组的新长度：4。
+.push 方法返回数组的长度，而不是数组本身！ 通过将 newList 设置为[1,2,3].push(4)，实际上 newList 等于数组的新长度：4。
 
-然后，尝试在newList上使用.push方法。 由于newList是数值4，抛出TypeError。
+然后，尝试在 newList 上使用.push 方法。 由于 newList 是数值 4，抛出 TypeError。
+
 </details>
 
 ---
@@ -2631,10 +2654,10 @@ console.log(newList.push(5))
 
 ```javascript
 function giveMePizza() {
-  return "Here you are";
+  return 'Here you are';
 }
 
-const giveMeDrink = () => "Hure you go,enjoy";
+const giveMeDrink = () => 'Hure you go,enjoy';
 
 console.log(giveMePizza.prototype);
 console.log(giveMeDrink.prototype);
@@ -2650,7 +2673,8 @@ console.log(giveMeDrink.prototype);
 
 答案: D
 <br />
-常规函数，例如giveMePizza 函数， 有一个prototype 属性，它是一个带有constructor属性的对象（原型对象）。然而，箭头函数，例如giveMeDrink函数，没有prototype属性。尝试使用giveMeDrink.prototype属性时会返回undefined。
+常规函数，例如 giveMePizza 函数， 有一个 prototype 属性，它是一个带有 constructor 属性的对象（原型对象）。然而，箭头函数，例如 giveMeDrink 函数，没有 prototype 属性。尝试使用 giveMeDrink.prototype 属性时会返回 undefined。
+
 </details>
 
 ---
@@ -2659,11 +2683,11 @@ console.log(giveMeDrink.prototype);
 
 ```javascript
 const person = {
-  name: "WannTonn",
-  age: 27
-}
+  name: 'WannTonn',
+  age: 27,
+};
 
-for(const [x, y] of Object.entries(person)) {
+for (const [x, y] of Object.entries(person)) {
   console.log(x, y);
 }
 ```
@@ -2676,15 +2700,16 @@ for(const [x, y] of Object.entries(person)) {
 <details>
 <summary>点击查看答案</summary>
 
-答案: 
+答案:
 <br />
 Object.entries()方法返回一个给定对象自身可枚举属性的键值对数组，上述情况返回一个二维数组，数组每个元素是一个包含键和值的数组：
 
 [['name'，'WannTonn']，['age'，27]]
 
-使用for-of循环，我们可以迭代数组中的每个元素，上述情况是子数组。 我们可以使用const [x，y]在for-of循环中解构子数组。 x等于子数组中的第一个元素，y等于子数组中的第二个元素。
+使用 for-of 循环，我们可以迭代数组中的每个元素，上述情况是子数组。 我们可以使用 const [x，y]在 for-of 循环中解构子数组。 x 等于子数组中的第一个元素，y 等于子数组中的第二个元素。
 
-第一个子阵列是[“name”，“WannTonn”]，其中x等于name，而y等于Lydia。 第二个子阵列是[“age”，27]，其中x等于age，而y等于27。
+第一个子阵列是[“name”，“WannTonn”]，其中 x 等于 name，而 y 等于 Lydia。 第二个子阵列是[“age”，27]，其中 x 等于 age，而 y 等于 27。
+
 </details>
 
 ---
@@ -2709,14 +2734,120 @@ getItems(["banana", "apple"], "pear", "orange")
 
 答案: D
 <br />
-... args是剩余参数，剩余参数的值是一个包含所有剩余参数的数组，并且只能作为最后一个参数。上述示例中，剩余参数是第二个参数，这是不可能的，并会抛出语法错误。
+... args 是剩余参数，剩余参数的值是一个包含所有剩余参数的数组，并且只能作为最后一个参数。上述示例中，剩余参数是第二个参数，这是不可能的，并会抛出语法错误。
+
 ```javascript
 function getItems(fruitList, favoriteFruit, ...args) {
-  return [...fruitList, ...args, favoriteFruit]
+  return [...fruitList, ...args, favoriteFruit];
 }
 ```
+
 getItems(["banana", "apple"], "pear", "orange")
 上述例子是有效的，将会返回数组：[ 'banana', 'apple', 'orange', 'pear' ]
+
+</details>
+
+---
+
+> 95.输出是什么？ 2021-05-02
+
+```javascript
+fucntion nums(a, b) {
+  if
+  (a > b)
+  console.log('a is bigger');
+  else
+  console.log('b is bigger');
+  return
+  a + b;
+}
+
+console.log(nums(4, 2));
+console.log(nums(1, 2));
+```
+
+- A: a is bigger, 6 and b is bigger, 3
+- B: a is bigger, undefined and b is bigger, undefined
+- C: undefined and undefined
+- D: SyntaxError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+在 JavaScript 中，我们不必显式地编写分号(;)，但是 JavaScript 引擎仍然在语句之后自动添加分号。这称为自动分号插入。例如，一个语句可以是变量，或者像 throw、return、break 这样的关键字。
+
+在这里，我们在新的一行上写了一个 return 语句和另一个值 a + b 。然而，由于它是一个新行，引擎并不知道它实际上是我们想要返回的值。相反，它会在 return 后面自动添加分号。你可以这样看:
+
+return;
+a + b
+这意味着永远不会到达 a + b，因为函数在 return 关键字之后停止运行。如果没有返回值，就像这里，函数返回 undefined。注意，在 if/else 语句之后没有自动插入!
+
+</details>
+
+---
+
+> 96.输出是什么？ 2021-05-02
+
+```javascript
+class Person {
+  constructor() {
+    this.name = 'WannTonn';
+  }
+}
+
+Person = class AnothoerPerson {
+  constructor() {
+    this.name = 'Tyrant';
+  }
+};
+
+const member = new Person();
+console.log(member.name);
+```
+
+- A: "WannTonn"
+- B: "Tyrant"
+- C: Error: cannot redeclare Person
+- D: SyntaxError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+我们可以将类设置为等于其他类/函数构造函数。 在这种情况下，我们将 Person 设置为 AnotherPerson。 这个构造函数的名字是 Sarah，所以新的 Person 实例 member 上的 name 属性是 Sarah。
+
+</details>
+
+---
+
+> 97.输出是什么？ 2021-05-02
+
+```javascript
+const info = {
+  [Symbol('a')]: 'b',
+};
+
+console.log(info);
+console.log(Object.keys(info));
+```
+
+- A: {Symbol('a'): 'b'} and ["{Symbol('a')"]
+- B: {} and []
+- C: { a: "b" } and ["a"]
+- D: {Symbol('a'): 'b'} and []
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+Symbol 类型是不可枚举的。Object.keys 方法返回对象上的所有可枚举的键属性。Symbol 类型是不可见的，并返回一个空数组。 记录整个对象时，所有属性都是可见的，甚至是不可枚举的属性。
+
+这是 Symbol 的众多特性之一：除了表示完全唯一的值（防止对象意外名称冲突，例如当使用 2 个想要向同一对象添加属性的库时），您还可以隐藏这种方式对象的属性（尽管不完全。你仍然可以使用 Object.getOwnPropertySymbols()方法访问 Symbol。
+
 </details>
 
 ---
