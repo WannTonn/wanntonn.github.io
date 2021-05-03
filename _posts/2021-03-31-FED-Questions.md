@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-02 16:48:37
+ * @LastEditTime: 2021-05-03 19:23:26
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -2847,6 +2847,99 @@ console.log(Object.keys(info));
 Symbol 类型是不可枚举的。Object.keys 方法返回对象上的所有可枚举的键属性。Symbol 类型是不可见的，并返回一个空数组。 记录整个对象时，所有属性都是可见的，甚至是不可枚举的属性。
 
 这是 Symbol 的众多特性之一：除了表示完全唯一的值（防止对象意外名称冲突，例如当使用 2 个想要向同一对象添加属性的库时），您还可以隐藏这种方式对象的属性（尽管不完全。你仍然可以使用 Object.getOwnPropertySymbols()方法访问 Symbol。
+
+</details>
+
+---
+
+> 98.输出是什么？ 2021-05-03
+
+```javascript
+const getList = ([x, ...y]) => [x, y];
+const getUser = user => {name: user.name, age: user.age};
+
+const list = [1, 2, 3, 4];
+const user = {name: "WannTonn", age: 27};
+
+console.log(getList(list));
+console.log(getUser(user));
+```
+
+- A: [1, [2, 3, 4]] and undefined
+- B: [1, [2, 3, 4]] and { name: "WannTonn", age: 27 }
+- C: [1, 2, 3, 4] and { name: "WannTonn", age: 27 }
+- D: Error and { name: "WannTonn", age: 27 }
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+getList函数接收一个数组作为其参数。 在getList函数的括号之间，我们立即解构这个数组。 您可以将其视为：
+
+[x, ...y] = [1, 2, 3, 4]
+
+使用剩余的参数... y，我们将所有剩余参数放在一个数组中。 在这种情况下，其余的参数是2，3和4。 y的值是一个数组，包含所有其余参数。 在这种情况下，x的值等于1，所以当我们打印[x，y]时，会打印[1，[2,3,4]]。
+
+getUser函数接收一个对象。对于箭头函数，如果只返回一个值，我们不必编写花括号。但是，如果您想从一个箭头函数返回一个对象，您必须在圆括号之间编写它，否则不会返回任何值!下面的函数将返回一个对象:
+
+const getUser = user => ({ name: user.name, age: user.age })
+
+由于在这种情况下不返回任何值，因此该函数返回undefined。
+</details>
+
+---
+
+> 99.输出是什么？ 2021-05-03
+
+```javascript
+const name = "WannTonn"
+
+console.log(name());
+```
+
+- A: SyntaxError
+- B: ReferenceError
+- C: TypeError
+- D: undefined
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+变量name保存字符串的值，该字符串不是函数，因此无法调用。
+
+当值不是预期类型时，会抛出TypeErrors。 JavaScript期望name是一个函数，因为我们试图调用它。 但它是一个字符串，因此抛出TypeError：name is not a function
+
+当你编写了一些非有效的JavaScript时，会抛出语法错误，例如当你把return这个词写成retrun时。 当JavaScript无法找到您尝试访问的值的引用时，抛出ReferenceErrors。
+
+</details>
+
+---
+
+> 100.输出是什么？ 2021-05-03
+
+```javascript
+// 🎉✨ This is my 100th question! ✨🎉
+
+const output = `${[] && 'Im'}possible!
+You should${'' && `n't`} see a therapist after so much JavaScript lol`
+```
+
+- A: possible! You should see a therapist after so much JavaScript lol
+- B: Impossible! You should see a therapist after so much JavaScript lol
+- C: possible! You shouldn't see a therapist after so much JavaScript lol
+- D: Impossible! You shouldn't see a therapist after so much JavaScript lol
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+[]是一个真值。 使用&&运算符，如果左侧值是真值，则返回右侧值。 在这种情况下，左侧值[]是一个真值，所以返回Im。
+
+""是一个假值。 如果左侧值是假的，则不返回任何内容。 n't不会被返回。
 
 </details>
 
