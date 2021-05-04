@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-03 19:23:26
+ * @LastEditTime: 2021-05-04 12:24:18
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -2940,6 +2940,113 @@ You should${'' && `n't`} see a therapist after so much JavaScript lol`
 []是一个真值。 使用&&运算符，如果左侧值是真值，则返回右侧值。 在这种情况下，左侧值[]是一个真值，所以返回Im。
 
 ""是一个假值。 如果左侧值是假的，则不返回任何内容。 n't不会被返回。
+
+</details>
+
+---
+
+> 101.输出是什么？ 2021-05-04
+
+```javascript
+const one = (false || {} || null)
+const two = (null || false || "")
+const three = ([] || 0 || true)
+
+console.log(one, two, three)
+```
+
+- A: false null []
+- B: null "" true
+- C: {} "" []
+- D: null null true
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+使用||运算符，我们可以返回第一个真值。 如果所有值都是假值，则返回最后一个值。
+
+（false || {} || null）：空对象{}是一个真值。 这是第一个（也是唯一的）真值，它将被返回。one等于{}。
+
+（null || false ||“”）：所有值都是假值。 这意味着返回传递的值""。 two等于""。
+
+（[] || 0 ||“”）：空数组[]是一个真值。 这是第一个返回的真值。 three等于[]。
+
+</details>
+
+---
+
+> 102.输出是什么？ 2021-05-04
+
+```javascript
+const myPromise = () => Promise.resolve('I have resolved!')
+
+function firstFunciton() {
+  myPromise().then(res => console.log(res));
+  console.log('second')
+}
+
+async function secondFunction() {
+  console.log(await myPromise())
+  console.log('second')
+}
+fisrtFunction();
+secondFunction();
+```
+
+- A: I have resolved!, second and I have resolved!, second
+- B: second, I have resolved! and second, I have resolved!
+- C: I have resolved!, second and second, I have resolved!
+- D: second, I have resolved! and I have resolved!, second
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+有了promise，我们通常会说：当我想要调用某个方法，但是由于它可能需要一段时间，因此暂时将它放在一边。只有当某个值被resolved/rejected，并且执行栈为空时才使用这个值。
+
+我们可以在async函数中通过.then和await关键字获得该值。 尽管我们可以通过.then和await获得promise的价值，但是它们的工作方式有所不同。
+
+在 firstFunction中，当运行到myPromise方法时我们将其放在一边，即promise进入微任务队列，其他后面的代码（console.log('second')）照常运行，因此second被打印出，firstFunction方法到此执行完毕，执行栈中宏任务队列被清空，此时开始执行微任务队列中的任务，I have resolved被打印出。
+
+在secondFunction方法中，我们通过await关键字，暂停了后面代码的执行，直到异步函数的值被解析才开始后面代码的执行。这意味着，它会等着直到 myPromise 以值I have resolved被解决之后，下一行second才开始执行。
+
+</details>
+
+---
+
+> 103.输出是什么？ 2021-05-04
+
+```javascript
+const set = new Set()
+
+set.add(1)
+set.add("Lydia")
+set.add({ name: "Lydia" })
+
+for (let item of set) {
+  console.log(item + 2)
+}
+```
+
+- A: 3, NaN, NaN
+- B: 3, 7, NaN
+- C: 3, Lydia2, [Object object]2
+- D: "12", Lydia2, [Object object]2
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+“+”运算符不仅用于添加数值，还可以使用它来连接字符串。 每当JavaScript引擎发现一个或多个值不是数字时，就会将数字强制为字符串。
+
+第一个是数字1。 1 + 2返回数字3。
+
+但是，第二个是字符串“Lydia”。 “Lydia”是一个字符串，2是一个数字：2被强制转换为字符串。 “Lydia”和“2”被连接起来，产生字符串“Lydia2”。
+
+{name：“ Lydia”}是一个对象。 数字和对象都不是字符串，因此将二者都字符串化。 每当我们对常规对象进行字符串化时，它就会变成[Object object]。 与“2”串联的“ [Object object]”成为“[Object object]2”。
 
 </details>
 
