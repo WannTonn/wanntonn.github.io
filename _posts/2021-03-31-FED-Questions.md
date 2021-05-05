@@ -1,7 +1,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-04 12:24:18
+ * @LastEditTime: 2021-05-05 12:10:16
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
@@ -3048,6 +3048,97 @@ for (let item of set) {
 
 {name：“ Lydia”}是一个对象。 数字和对象都不是字符串，因此将二者都字符串化。 每当我们对常规对象进行字符串化时，它就会变成[Object object]。 与“2”串联的“ [Object object]”成为“[Object object]2”。
 
+</details>
+
+---
+
+> 104.输出是什么？ 2021-05-05
+
+```javascript
+Promise.resolve(5)
+```
+
+- A: 5
+- B: Promise {<pending>: 5}
+- C: Promise {<fulfilled>: 5}
+- D: Error
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+我们可以将我们想要的任何类型的值传递Promise.resolve，无论是否promise。 该方法本身返回带有已解析值的Promise (<fulfilled>)。 如果您传递常规函数，它将是具有常规值的已解决promise。 如果你通过了promise，它将是一个已经resolved的且带有传的值的promise。
+
+上述情况，我们传了数字5，因此返回一个resolved状态的promise，resolve值为5
+
+</details>
+
+---
+
+> 105.输出是什么？ 2021-05-05
+
+```javascript
+function compareMembers(person1, person2 = person) {
+  if (person1 !== person2) {
+    console.log("Not the same!");
+  } else {
+    console.log("They are the same!")
+  }
+}
+const person = {name: "WannTonn"}
+compareMembers(person)
+```
+
+- A: Not the same!
+- B: They are the same!
+- C: ReferenceError
+- D: SyntaxError
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+对象通过引用传递。 当我们检查对象的严格相等性（===）时，我们正在比较它们的引用。
+
+我们将“person2”的默认值设置为“person”对象，并将“person”对象作为“person1”的值传递。
+
+这意味着两个值都引用内存中的同一位置，因此它们是相等的。
+
+运行“ else”语句中的代码块，并记录They are the same! 。
+
+</details>
+
+---
+
+> 106.输出是什么？ 2021-05-05
+
+```javascript
+const colorConfig = {
+  red: true,
+  blue: false,
+  green: true,
+  black: true,
+  yellow: false
+}
+const colors = ["pink", "red", "blue"]
+
+console.log(colorConfig.colors[1])
+```
+
+- A: true
+- B: false
+- C: undefined
+- D: TypeError
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+在JavaScript中，我们有两种访问对象属性的方法：括号表示法或点表示法。 在此示例中，我们使用点表示法（colorConfig.colors）代替括号表示法（colorConfig [“ colors”]）。
+
+使用点表示法，JavaScript会尝试使用该确切名称在对象上查找属性。 在此示例中，JavaScript尝试在colorconfig对象上找到名为colors的属性。 没有名为“colors”的属性，因此返回“undefined”。 然后，我们尝试使用[1]访问第一个元素的值。 我们无法对未定义的值执行此操作，因此会抛出Cannot read property '1' of undefined。
+
+JavaScript解释（或取消装箱）语句。 当我们使用方括号表示法时，它会看到第一个左方括号[并一直进行下去，直到找到右方括号]。 只有这样，它才会评估该语句。 如果我们使用了colorConfig [colors [1]]，它将返回colorConfig对象上red属性的值。
 </details>
 
 ---
