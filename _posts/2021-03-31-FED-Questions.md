@@ -1,13 +1,14 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-05 12:10:16
+ * @LastEditTime: 2021-05-06 21:14:16
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
-# 前端 JavaScript 问题列表 - 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>
+# 前端 JavaScript 问题列表
+## 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>。同步更新中。
 
 > 1.输出是什么？ 2021-03-31
 
@@ -3139,6 +3140,80 @@ console.log(colorConfig.colors[1])
 使用点表示法，JavaScript会尝试使用该确切名称在对象上查找属性。 在此示例中，JavaScript尝试在colorconfig对象上找到名为colors的属性。 没有名为“colors”的属性，因此返回“undefined”。 然后，我们尝试使用[1]访问第一个元素的值。 我们无法对未定义的值执行此操作，因此会抛出Cannot read property '1' of undefined。
 
 JavaScript解释（或取消装箱）语句。 当我们使用方括号表示法时，它会看到第一个左方括号[并一直进行下去，直到找到右方括号]。 只有这样，它才会评估该语句。 如果我们使用了colorConfig [colors [1]]，它将返回colorConfig对象上red属性的值。
+</details>
+
+---
+
+> 107.输出是什么？ 2021-05-06
+
+```javascript
+console.log('❤️' === '❤️')
+```
+
+- A: true
+- B: false
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+在JavaScript内部，表情符号是Unicode。爱心的表情符号对应的Unicode码是 "U + 2764 U + FE0F", 对于相同的表情符号，它们总是相同的，因此我们将2个相等的字符串相互比较，将返回true。
+</details>
+
+---
+
+> 108.哪些方法修改了原数组？ 2021-05-06
+
+```javascript
+const emojis = ['✨', '🥑', '😍'];
+
+emojis.map(x => x + '✨')
+emojis.filter(x => x !== '🥑')
+emojis.find(x => x !== '🥑')
+emojis.reduce((acc, cur) => acc + '✨')
+emojis.slice(1, 2, '✨') 
+emojis.splice(1, 2, '✨')
+```
+
+- A: All of them
+- B: map reduce slice splice
+- C: map slice splice
+- D: splice
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+使用splice方法，我们通过删除，替换或添加元素来修改原始数组。 在这种情况下，我们从索引1中删除了2个元素（我们删除了'🥑'和'😍'），同时添加了✨emoji表情。
+
+map，filter和slice返回一个新数组，find返回一个元素，而reduce返回一个减小的值。
+</details>
+
+---
+
+> 109.输出是什么？ 2021-05-06
+
+```javascript
+const food = ['🍕', '🍫', '🥑', '🍔']
+const info = { favoriteFood: food[0] }
+
+info.favoriteFood = '🍝'
+
+console.log(food)
+```
+
+- A: ['🍕', '🍫', '🥑', '🍔']
+- B: ['🍝', '🍫', '🥑', '🍔']
+- C: ['🍝', '🍕', '🍫', '🥑', '🍔']
+- D: ReferenceError
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+我们将info对象上的favoriteFood属性的值设置为披萨表情符号“🍕”的字符串。字符串是原始数据类型。在JavaScript中，原始数据类型通过值起作用
+
+在这种情况下，我们将info对象上的favoriteFood属性的值设置为等于food数组中的第一个元素的值，字符串为披萨表情符号（'🍕' ）。字符串是原始数据类型，并且通过值进行交互，我们更改info对象上favoriteFood属性的值。 food数组没有改变，因为favoriteFood的值只是该数组中第一个元素的值的复制，并且与该元素上的元素没有相同的内存引用食物[0]。当我们记录食物时，它仍然是原始数组['🍕'，'🍫'，'🥑'，'🍔']。
 </details>
 
 ---
