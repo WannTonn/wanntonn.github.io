@@ -1,13 +1,13 @@
+# 前端 JavaScript 问答题目收录
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-06 21:14:16
+ * @LastEditTime: 2021-05-06 21:21:41
  * @LastEditors: WannTonn
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
-# 前端 JavaScript 问题列表
 ## 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>。同步更新中。
 
 > 1.输出是什么？ 2021-03-31
