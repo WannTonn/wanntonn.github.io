@@ -2,10 +2,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-06 21:21:41
- * @LastEditors: WannTonn
+ * @LastEditTime: 2021-05-07 18:00:38
+ * @LastEditors: Please set LastEditors
  * @Description:
- * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 ## 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>。同步更新中。
@@ -3214,6 +3214,108 @@ console.log(food)
 我们将info对象上的favoriteFood属性的值设置为披萨表情符号“🍕”的字符串。字符串是原始数据类型。在JavaScript中，原始数据类型通过值起作用
 
 在这种情况下，我们将info对象上的favoriteFood属性的值设置为等于food数组中的第一个元素的值，字符串为披萨表情符号（'🍕' ）。字符串是原始数据类型，并且通过值进行交互，我们更改info对象上favoriteFood属性的值。 food数组没有改变，因为favoriteFood的值只是该数组中第一个元素的值的复制，并且与该元素上的元素没有相同的内存引用食物[0]。当我们记录食物时，它仍然是原始数组['🍕'，'🍫'，'🥑'，'🍔']。
+</details>
+
+---
+
+> 110.这个函数干了什么？ 2021-05-07
+
+```javascript
+JSON.parse()
+```
+
+- A: Parses JSON to a JavaScript value
+- B: Parses a JavaScript object to JSON
+- C: Parses any JavaScript value to JSON
+- D: Parses JSON to a JavaScript object only
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+使用JSON.parse(), 我们可以将JSON字符串解析为JavaScript值。
+// 将数字字符串化为有效的JSON，然后将JSON字符串解析为JavaScript值:
+const jsonNumber = JSON.stringify(4) // '4'
+JSON.parse(jsonNumber) // 4
+
+// 将数组值字符串化为有效的JSON，然后将JSON字符串解析为JavaScript值:
+const jsonArray = JSON.stringify([1, 2, 3]) // '[1, 2, 3]'
+JSON.parse(jsonArray) // [1, 2, 3]
+
+// 将对象字符串化为有效的JSON，然后将JSON字符串解析为JavaScript值:
+const jsonArray = JSON.stringify({ name: "Lydia" }) // '{"name":"Lydia"}'
+JSON.parse(jsonArray) // { name: 'Lydia' }
+
+</details>
+
+---
+
+> 111.输出是什么？ 2021-05-07
+
+```javascript
+let name = "WannTonn"
+function getName() {
+  console.log(name)
+  let name = "Joe"
+}
+
+getName()
+```
+
+- A: WannTonn
+- B: Joe
+- C: undefined
+- D: ReferenceError
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+每个函数都有其自己的执行上下文。 getName函数首先在其自身的上下文（范围）内查找，以查看其是否包含我们尝试访问的变量name。 上述情况，getName函数包含其自己的name变量：我们用let关键字和Sarah的值声明变量name。
+
+带有let关键字（和const）的变量被提升，但是与var不同，它不会被初始化。 在我们声明（初始化）它们之前，无法访问它们。 这称为“暂时性死区”。 当我们尝试在声明变量之前访问变量时，JavaScript会抛出ReferenceError: Cannot access 'name' before initialization。
+</details>
+
+---
+
+> 112.输出是什么？ 2021-05-07
+
+```javascript
+function* generatorOne() {
+  yield ['a', 'b', 'c'];
+}
+function* generatorTwo() {
+  yield* ['a', 'b', 'c'];
+}
+
+const one = generatorOne();
+const two = generatorTwo();
+console.log(one.next().value)
+console.log(two.next().value)
+
+```
+
+- A: a and a
+- B: a and undefined
+- C: ['a', 'b', 'c'] and a
+- D: a and ['a', 'b', 'c']
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+通过 yield 关键字, 我们在 Generator 函数里执行yield表达式. 通过 yield* 关键字, 我们可以在一个Generator 函数里面执行（yield表达式）另一个 Generator 函数, 或可遍历的对象 (如数组).
+
+在函数 generatorOne 中, 我们通过 yield 关键字 yield 了一个完整的数组 ['a', 'b', 'c']。函数one通过next方法返回的对象的value 属性的值 (one.next().value) 等价于数组 ['a', 'b', 'c'].
+
+console.log(one.next().value) // ['a', 'b', 'c']
+console.log(one.next().value) // undefined
+在函数 generatorTwo 中, 我们使用 yield* 关键字。就相当于函数two第一个yield的值, 等价于在迭代器中第一个 yield 的值。数组['a', 'b', 'c']就是这个迭代器. 第一个 yield 的值就是 a, 所以我们第一次调用 two.next().value时, 就返回a。
+
+console.log(two.next().value) // 'a'
+console.log(two.next().value) // 'b'
+console.log(two.next().value) // 'c'
+console.log(two.next().value) // undefined
 </details>
 
 ---
