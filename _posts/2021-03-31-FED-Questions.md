@@ -2,7 +2,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-07 18:00:38
+ * @LastEditTime: 2021-05-08 09:40:47
  * @LastEditors: Please set LastEditors
  * @Description:
  * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
@@ -3316,6 +3316,89 @@ console.log(two.next().value) // 'a'
 console.log(two.next().value) // 'b'
 console.log(two.next().value) // 'c'
 console.log(two.next().value) // undefined
+</details>
+
+---
+
+> 113.输出是什么？ 2021-05-09
+
+```javascript
+console.log(`${(x => x)('I love')} to program`)
+```
+
+- A: I love to program
+- B: undefined to program
+- C: ${(x => x)('I love') to program
+- D: TypeError
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+带有模板字面量的表达式首先被执行。相当于字符串会包含表达式，这个立即执行函数 (x => x)('I love') 返回的值. 我们向箭头函数 x => x 传递 'I love' 作为参数。x 等价于返回的 'I love'。这就是结果 I love to program。
+
+</details>
+
+---
+
+> 114.将会发生什么？ 2021-05-09
+
+```javascript
+let config = {
+  alert: setInterval(() => {
+    console.log('Alert!')
+  }, 1000)
+}
+
+config = null
+```
+
+- A: setInterval 的回调不会被调用
+- B: setInterval 的回调被调用一次
+- C: setInterval 的回调仍然会被每秒钟调用
+- D: 我们从没调用过 config.alert(), config 为 null
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+一般情况下当我们将对象赋值为 null, 那些对象会被进行 垃圾回收（garbage collected） 因为已经没有对这些对象的引用了。然而，setInterval的参数是一个箭头函数（所以上下文绑定到对象 config 了），回调函数仍然保留着对 config的引用。只要存在引用，对象就不会被垃圾回收。因为没有被垃圾回收，setInterval 的回调每1000ms (1s)会被调用一次。
+
+</details>
+
+---
+
+> 115.输出是什么？ 2021-05-09
+
+```javascript
+function compareMembers(person1, person2 = person) {
+  if (person1 !== person2) {
+    console.log("Not the same!");
+  } else {
+    console.log("They are the same!")
+  }
+}
+const person = {name: "WannTonn"}
+compareMembers(person)
+```
+
+- A: Not the same!
+- B: They are the same!
+- C: ReferenceError
+- D: SyntaxError
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+对象通过引用传递。 当我们检查对象的严格相等性（===）时，我们正在比较它们的引用。
+
+我们将“person2”的默认值设置为“person”对象，并将“person”对象作为“person1”的值传递。
+
+这意味着两个值都引用内存中的同一位置，因此它们是相等的。
+
+运行“ else”语句中的代码块，并记录They are the same! 。
+
 </details>
 
 ---
