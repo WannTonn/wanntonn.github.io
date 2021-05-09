@@ -2,10 +2,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-08 09:40:47
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-09 19:54:55
+ * @LastEditors: WannTonn
  * @Description:
- * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 ## 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>。同步更新中。
@@ -3320,7 +3320,7 @@ console.log(two.next().value) // undefined
 
 ---
 
-> 113.输出是什么？ 2021-05-09
+> 113.输出是什么？ 2021-05-08
 
 ```javascript
 console.log(`${(x => x)('I love')} to program`)
@@ -3341,7 +3341,7 @@ console.log(`${(x => x)('I love')} to program`)
 
 ---
 
-> 114.将会发生什么？ 2021-05-09
+> 114.将会发生什么？ 2021-05-08
 
 ```javascript
 let config = {
@@ -3368,7 +3368,7 @@ config = null
 
 ---
 
-> 115.输出是什么？ 2021-05-09
+> 115.输出是什么？ 2021-05-08
 
 ```javascript
 function compareMembers(person1, person2 = person) {
@@ -3398,6 +3398,92 @@ compareMembers(person)
 这意味着两个值都引用内存中的同一位置，因此它们是相等的。
 
 运行“ else”语句中的代码块，并记录They are the same! 。
+
+</details>
+
+---
+
+> 116.输出是什么？ 2021-05-09
+
+```javascript
+const person = {
+  name: "WannTonn",
+  age: 27
+}
+const changeAge = (x = {...person}) => x.age += 1;
+const changeAgeAndName = (x = {...person}) => {
+  x.age += 1
+  x.name = "Evan"
+}
+changeAge(person)
+changeAgeAndName()
+
+console.log(person)
+```
+
+- A: {name: "Evan", age: 28}
+- B: {name: "Evan", age: 29}
+- C: {name: "WannTonn", age: 28}
+- D: {name: "WannTonn", age: 29}
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+函数 changeAge 和函数 changeAgeAndName 有着不同的参数，定义一个 新 生成的对象 { ...person }。这个对象有着所有 person 对象 中 k/v 值的副本。
+
+首项, 我们调用 changeAge 函数并传递 person 对象作为它的参数。这个函数对 age 属性进行加一操作。person 现在是 { name: "WannTonn", age: 28 }。
+
+然后，我们调用函数 changeAgeAndName ，然而我们没有传递参数。取而代之，x 的值等价 new 生成的对象: { ...person }。因为它是一个新生成的对象，它并不会对对象 person 造成任何副作用。person 仍然等价于 { name: "WannTonn", age: 28 }。
+
+
+
+</details>
+
+---
+
+> 117.下面那个选项将会返回 6？ 2021-05-09
+
+```javascript
+function sumValues(x, y, z) {
+	return x + y + z;
+}
+```
+
+- A: sumValues([...1, 2, 3])
+- B: sumValues([...[1, 2, 3]])
+- C: sumValues(...[1, 2, 3])
+- D: sumValues([1, 2, 3])
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+通过展开操作符 ...，我们可以 暂开 单个可迭代的元素。函数 sumValues function 接收三个参数： x, y 和 z。...[1, 2, 3] 的执行结果为 1, 2, 3，将会传递给函数 sumValues。
+
+</details>
+
+---
+
+> 118.输出是什么？ 2021-05-09
+
+```javascript
+let num = 1;
+const list = ["🥳", "🤠", "🥰", "🤪"];
+
+console.log(list[(num += 1)]);
+```
+
+- A: 🤠
+- B: 🥰
+- C: SyntaxError
+- D: ReferenceError
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+通过 += 操作符，我们对值 num 进行加 1 操作。 num 有初始值 1，因此 1 + 1 的执行结果为 2。数组 list 的第二项为 🥰，console.log(list[2]) 输出 🥰.
 
 </details>
 
