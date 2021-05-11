@@ -2,10 +2,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-09 19:54:55
- * @LastEditors: WannTonn
+ * @LastEditTime: 2021-05-11 16:26:43
+ * @LastEditors: Please set LastEditors
  * @Description:
- * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 ## 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>。同步更新中。
@@ -3484,6 +3484,178 @@ console.log(list[(num += 1)]);
 答案: B
 <br />
 通过 += 操作符，我们对值 num 进行加 1 操作。 num 有初始值 1，因此 1 + 1 的执行结果为 2。数组 list 的第二项为 🥰，console.log(list[2]) 输出 🥰.
+
+</details>
+
+---
+
+> 119.输出是什么？ 2021-05-10
+
+```javascript
+const person = {
+  firstName: "Wann",
+  lastName: "Tonn",
+  pet: {
+    name: "Hachi",
+    breed: "土狗"
+  },
+  getFullName() {
+    return `${this.firstName} ${this.lastName}`;
+  }
+};
+
+console.log(person.pet?.name);
+console.log(person.pet?.family?.name);
+console.log(person.getFullName?.());
+console.log(member.getLastName?.());
+```
+
+- A: undefined undefined undefined undefined
+- B: Hachi undefined Wann Tonn undefined
+- C: Hachi null Wann Tonn null
+- D: null ReferenceError null ReferenceError
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+通过 ES10 或 TS3.7+可选链操作符 ?.，我们不再需要显式检测更深层的嵌套值是否有效。如果我们尝试获取 undefined 或 null 的值 (nullish)，表达将会短路并返回 undefined.
+
+person.pet?.name： person 有一个名为 pet 的属性： person.pet 不是 nullish。它有个名为 name 的属性，并返回字符串 Hachi。 person.pet?.family?.name： person 有一个名为 pet 的属性： person.pet 不是 nullish. pet 并没有 一个名为 family 的属性, person.pet.family 是 nullish。表达式返回 undefined。 person.getFullName?.()： person 有一个名为 getFullName 的属性： person.getFullName() 不是 nullish 并可以被调用，返回字符串Wann Tonn。 member.getLastName?.(): member is not defined: member.getLastName() is nullish. The expression returns undefined.
+
+</details>
+
+---
+
+> 120.输出是什么？ 2021-05-10
+
+```javascript
+const groceries = ["banana", "apple", "peanuts"];
+
+if (groceries.indexOf("banana")) {
+  console.log("We have to buy bananas!");
+} else {
+  console.log("We don't have to buy bananas!");
+}
+```
+
+- A: We have to buy bananas!
+- B: We don't have to buy bananas
+- C: undefined
+- D: 1
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+我们传递了一个状态 groceries.indexOf("banana") 给if条件语句。groceries.indexOf("banana") 返回 0， 一个 falsy 的值。因为if条件语句的状态为 falsy，else 块区内的代码执行，并且 We don't have to buy bananas! 被输出.
+
+</details>
+
+---
+
+> 121.输出是什么？ 2021-05-10
+
+```javascript
+const config = {
+  languages: [],
+  set language(lang) {
+    return this.languages.push(lang);
+  }
+};
+console.log(config.language);
+```
+
+- A: function language(lang) { this.languages.push(lang }
+- B: 0
+- C: []
+- D: undefined
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+方法 language 是一个 setter。Setters 并不保存一个实际值，它们的使命在于 修改 属性。当调用方法 setter， 返回 undefined。
+</details>
+
+---
+
+> 122.输出是什么？ 2021-05-11
+
+```javascript
+const name = "Wann Tonn";
+console.log(!typeof name === "object");
+console.log(!typeof name === "string");
+```
+
+- A: false true
+- B: true false
+- C: false false
+- D: true true
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+typeof name 返回 "string"。字符串 "string" 是一个 truthy 的值，因此 !typeof name 返回一个布尔值 false。 false === "object" 和 false === "string" 都返回 false。
+
+（如果我们想检测一个值的类型，我们应该用 !== 而不是 !typeof）
+
+</details>
+
+---
+
+> 123.输出是什么？ 2021-05-11
+
+```javascript
+const add = x => y => z => {
+  console.log(x, y, z);
+  return x + y + z;
+}
+add(4)(5)(6)
+```
+
+- A: 4 5 6
+- B: 6 5 4
+- C: 4 function function
+- D: undefined undefined 6
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+函数 add 是一个返回 返回箭头函数的箭头函数 的箭头函数（still with me?）。第一个函数接收一个值为 4 的参数 x。我们调用第二个函数，它接收一个值为 5 的参数 y。然后我们调用第三个函数，它接收一个值为 6 的参数 z。当我们尝试在最后一个箭头函数中获取 x, y 和 z 的值，JS 引擎根据作用域链去找 x 和 y 的值。得到 4 5 6.
+
+</details>
+
+---
+
+> 124.输出是什么？ 2021-05-11
+
+```javascript
+async function* range(start, end) {
+  for (let i = start; i <= end; i++) {
+    yield Promise.resolve(i);
+  }
+}
+(async () => {
+  const gen = range(1, 3);
+  for await (const item of gen) {
+    console.log(item);
+  }
+})();
+```
+
+- A: Promise {1} Promise {2} Promise {3}
+- B: Promise {<pending>} Promise {<pending>} Promise {<pending>}
+- C: 1 2 3
+- D: undefined undefined undefined
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+我们给 函数range 传递： Promise{1}, Promise{2}, Promise{3}，Generator 函数 range 返回一个全是 async object promise 数组。我们将 async object 赋值给变量 gen，之后我们使用for await ... of 进行循环遍历。我们将返回的 Promise 实例赋值给 item： 第一个返回 Promise{1}， 第二个返回 Promise{2}，之后是 Promise{3}。因为我们正 awaiting item 的值，resolved 状态的 promsie，promise数组的resolved 值 以此为： 1，2，3.
 
 </details>
 
