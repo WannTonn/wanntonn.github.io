@@ -2,7 +2,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-11 16:26:43
+ * @LastEditTime: 2021-05-12 17:35:12
  * @LastEditors: Please set LastEditors
  * @Description:
  * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
@@ -3656,6 +3656,87 @@ async function* range(start, end) {
 答案: C
 <br />
 我们给 函数range 传递： Promise{1}, Promise{2}, Promise{3}，Generator 函数 range 返回一个全是 async object promise 数组。我们将 async object 赋值给变量 gen，之后我们使用for await ... of 进行循环遍历。我们将返回的 Promise 实例赋值给 item： 第一个返回 Promise{1}， 第二个返回 Promise{2}，之后是 Promise{3}。因为我们正 awaiting item 的值，resolved 状态的 promsie，promise数组的resolved 值 以此为： 1，2，3.
+
+</details>
+
+---
+
+> 125.输出是什么？ 2021-05-12
+
+```javascript
+const myFunc = ({x, y, z}) => {
+  console.log(x, y, z)
+})
+```
+
+- A: 1, 2, 3
+- B: {1: 1} {2: 2} {3: 3}
+- C: { 1: undefined } undefined undefined
+- D: undefined undefined undefined
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+myFunc 期望接收一个包含 x, y 和 z 属性的对象作为它的参数。因为我们仅仅传递三个单独的数字值 (1, 2, 3) 而不是一个含有 x, y 和 z 属性的对象 ({x: 1, y: 2, z: 3})， x, y 和 z 有着各自的默认值 undefined.
+
+</details>
+
+---
+
+> 126.输出是什么？ 2021-05-12
+
+```javascript
+function getFine(speed, amount) {
+  const formattedSpeed = new Intl.NumberFormat({
+    'en-US',
+    {style: 'unit', unit: 'mile-per-hour'}
+  }).format(speed)
+
+  const formattedAmount = new Intl.NumberFormat({
+    'en-US',
+    {style: 'currency', currency: 'USD'}
+  }).format(amount)
+
+  return `The driver drove ${formattedSpeed} and has to pay ${formattedAmount}`
+}
+console.log(getFine(130, 300))
+```
+
+- A: The driver drove 130 and has to pay 300
+- B: The driver drove 130 mph and has to pay $300.00
+- C: The driver drove undefined and has to pay undefined
+- D: The driver drove 130.00 and has to pay 300.00
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+通过方法 Intl.NumberFormat，我们可以格式化任意区域的数字值。我们对数字值 130 进行 mile-per-hour 作为 unit 的 en-US 区域 格式化，结果为 130 mph。对数字值 300 进行 USD 作为 currentcy 的 en-US 区域格式化，结果为 $300.00.
+
+</details>
+
+---
+
+> 127.输出是什么？ 2021-05-12
+
+```javascript
+const spookyItems = ["👻", "🎃", "🕸"];
+({ item: spookyItems[3] } = { item: "💀" });
+
+console.log(spookyItems);
+```
+
+- A: ["👻", "🎃", "🕸"]
+- B: ["👻", "🎃", "🕸", "💀"]
+- C: ["👻", "🎃", "🕸", { item: "💀" }]
+- D: ["👻", "🎃", "🕸", "[object Object]"]
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+通过解构对象们，我们可以从右手边的对象中拆出值，并且将拆出的值分配给左手边对象同名的属性。在这种情况下，我们将值 "💀" 分配给 spookyItems[3]。相当于我们正在篡改数组 spookyItems，我们给它添加了值 "💀"。当输出 spookyItems 时，结果为 ["👻", "🎃", "🕸", "💀"]。
 
 </details>
 
