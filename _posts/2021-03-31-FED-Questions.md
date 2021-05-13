@@ -2,7 +2,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-13 10:28:22
+ * @LastEditTime: 2021-05-13 14:42:31
  * @LastEditors: Please set LastEditors
  * @Description:
  * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
@@ -3763,6 +3763,96 @@ console.log(spookyItems);
 <br />
 通过解构对象们，我们可以从右手边的对象中拆出值，并且将拆出的值分配给左手边对象同名的属性。在这种情况下，我们将值 "💀" 分配给 spookyItems[3]。相当于我们正在篡改数组 spookyItems，我们给它添加了值 "💀"。当输出 spookyItems 时，结果为 ["👻", "🎃", "🕸", "💀"]。
 
+</details>
+
+---
+
+> 128.输出是什么？ 2021-05-13
+
+```javascript
+const name = "Wann Tonn";
+const age = 27;
+console.log(Number.isNaN(name));
+console.log(Number.isNaN(age));
+
+console.log(isNaN(name));
+console.log(isNaN(age));
+```
+
+- A: true false true false
+- B: true false false false
+- C: false false true false
+- D: false true false true
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+通过方法 Number.isNaN，你可以检测你传递的值是否为 数字值 并且是否等价于 NaN。name 不是一个数字值，因此 Number.isNaN(name) 返回 false。age 是一个数字值，但它不等价于 NaN，因此 Number.isNaN(age) 返回 false.
+
+通过方法 isNaN， 你可以检测你传递的值是否一个 number。name 不是一个 number，因此 isNaN(name) 返回 true. age 是一个 number 因此 isNaN(age) 返回 false.
+
+</details>
+
+---
+
+> 129.输出是什么？ 2021-05-13
+
+```javascript
+const randomValue = 22;
+
+fucntion getInfo() {
+  console.log(typeof randomValue);
+  const randomValue = "Wann Tonn";
+}
+
+getInfo();
+```
+
+- A: "number"
+- B: "string"
+- C: undefined
+- D: ReferenceError
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+通过 const 关键字声明的变量在被初始化之前不可被引用：这被称之为 暂时性死区。在函数 getInfo 中, 变量 randomValue 声明在getInfo 的作用域的此法环境中。在想要对 typeof randomValue 进行log之前，变量 randomValue 仍未被初始化： 错误ReferenceError 被抛出! JS引擎并不会根据作用域链网上寻找该变量，因为我们已经在 getInfo 函数中声明了 randomValue 变量。
+
+</details>
+
+---
+
+> 130.输出是什么？ 2021-05-13
+
+```javascript
+const myPromise = Promise.resolve("Woah some cool data");
+
+(async () => {
+  try {
+    console.log(await myPromise);
+  } catch {
+    throw new Error(`Oops didn't work`);
+  } finally {
+    console.log("finally");
+  }
+})();
+```
+
+- A: Woah some cool data
+- B: finally!
+- C: Woah some cool data finally!
+- D: Oops didn't work finally!
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+在 try 块区，我们打印 myPromise 变量的 awaited 值： "Woah some cool data"。因为try 块区没有错误抛出，catch 块区的代码并不执行。finally 块区的代码 总是 执行，"Oh finally!" 被输出。
 </details>
 
 ---
