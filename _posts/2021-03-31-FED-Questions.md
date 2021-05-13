@@ -2,7 +2,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-12 17:53:55
+ * @LastEditTime: 2021-05-13 10:14:01
  * @LastEditors: Please set LastEditors
  * @Description:
  * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
@@ -2080,8 +2080,8 @@ console.log(data);
 ```
 
 - A: "I made it!"
-- B: Promise {<resolved>: "I made it!"}
-- C: Promise {<pending>}
+- B: Promise {< resolved >: "I made it!"}
+- C: Promise {< pending >}
 - D: undefined
 
 <details>
@@ -3060,8 +3060,8 @@ Promise.resolve(5)
 ```
 
 - A: 5
-- B: Promise {<pending>: 5}
-- C: Promise {<fulfilled>: 5}
+- B: Promise {< pending >: 5}
+- C: Promise {< fulfilled >: 5}
 - D: Error
 
 <details>
@@ -3075,8 +3075,7 @@ Promise.resolve(5)
 
 </details>
 
----
-
+------
 
 > 105.输出是什么？ 2021-05-05
 
@@ -3669,7 +3668,7 @@ async function* range(start, end) {
 ```
 
 - A: Promise {1} Promise {2} Promise {3}
-- B: Promise {<pending>} Promise {<pending>} Promise {<pending>}
+- B: Promise {< pending >} Promise {< pending >} Promise {< pending >}
 - C: 1 2 3
 - D: undefined undefined undefined
 
