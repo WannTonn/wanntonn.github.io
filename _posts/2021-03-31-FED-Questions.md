@@ -2,7 +2,7 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-13 10:25:46
+ * @LastEditTime: 2021-05-13 10:28:22
  * @LastEditors: Please set LastEditors
  * @Description:
  * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
@@ -3069,16 +3069,13 @@ Promise.resolve(5)
 
 答案: C
 <br />
-我们可以将我们想要的任何类型的值传递Promise.resolve，无论是否promise。 该方法本身返回带有已解析值的Promise (<fulfilled>)。 如果您传递常规函数，它将是具有常规值的已解决promise。 如果你通过了promise，它将是一个已经resolved的且带有传的值的promise。
+我们可以将我们想要的任何类型的值传递Promise.resolve，无论是否promise。 该方法本身返回带有已解析值的Promise (< fulfilled >)。 如果您传递常规函数，它将是具有常规值的已解决promise。 如果你通过了promise，它将是一个已经resolved的且带有传的值的promise。
 
 上述情况，我们传了数字5，因此返回一个resolved状态的promise，resolve值为5
 
 </details>
 
-------
-
-</br>
-
+---
 
 >105.输出是什么？ 2021-05-05
 
