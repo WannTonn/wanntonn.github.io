@@ -3,10 +3,10 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-13 14:42:31
- * @LastEditors: Please set LastEditors
+ * @LastEditTime: 2021-05-21 22:50:42
+ * @LastEditors: WannTonn
  * @Description:
- * @FilePath: /tyrantwt.github.io/_posts/2021-03-31-FED-Questions.md
+ * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
 
 ## 摘录自 <a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github</a>。同步更新中。
@@ -3860,6 +3860,111 @@ const myPromise = Promise.resolve('Woah some cool data');
 <br />
 在 try 块区，我们打印 myPromise 变量的 awaited 值： "Woah some cool data"。因为 try 块区没有错误抛出，catch 块区的代码并不执行。finally 块区的代码 总是 执行，"Oh finally!" 被输出。
 
+</details>
+
+---
+
+> 131.输出是什么？ 2021-05-14
+
+```javascript
+const emojis = ["🥑", ["✨", "✨", ["🍕", "🍕"]]];
+
+console.log(emojis.flat(1));
+```
+
+- A: ['🥑', ['✨', '✨', ['🍕', '🍕']]]
+- B: ['🥑', '✨', '✨', ['🍕', '🍕']]
+- C: ['🥑', ['✨', '✨', '🍕', '🍕']]
+- D: ['🥑', '✨', '✨', '🍕', '🍕']
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+通过方法 flat， 我们可以创建一个新的, 已被扁平化的数组。被扁平化的深度取决于我们传递的值。在这个case里，我们传递了值 1 (并不必要，这是默认值)，相当于只有第一层的数组才会被连接。即这个 case 里的 ['🥑'] and ['✨', '✨', ['🍕', '🍕']]。连接这两个数组得到结果 ['🥑', '✨', '✨', ['🍕', '🍕']].
+</details>
+
+---
+
+> 132.输出是什么？ 2021-05-14
+
+```javascript
+class Counter {
+  constructor() {
+    this.count = 0;
+  }
+  increment() {
+    this.count++;
+  }
+}
+const counterOne = new Counter();
+counterOne.increment();
+counterOne.increment();
+
+const counterTwo = counterOne;
+counterTwo.increment();
+
+console.log(counterOne.count);
+```
+
+- A: 0
+- B: 1
+- C: 2
+- D: 3
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: B
+<br />
+counterOne 是类 Counter 的一个实例，类Counter包含一个count 属性在它的构造函数里， 和一个increment方法。首先，我们通过counterOne.increment() 调用方法increment两次。现在，counterOne.count 为2.
+然后，我们创建一个新的变量counterTwo 并将counterOne的引用地址赋值给它。因为对象受引用地址的影响，我们刚刚创建了一个新的对象，其引用地址和counterOne的等价。因此它们指向同一块内存地址，任何对其的副作用都会影响counterTwo。现在counterTwo.count 为2.
+我们调用counterTwo.increment() 将count的值设为3.然后，我们打印counterOne里的count，结果为3.
+</details>
+
+---
+
+> 133.输出是什么？ 2021-05-14
+
+```javascript
+const myPromise = Promise.resolve(Promise.resolve("Promise!"));
+
+fucntion funcOne() {
+  myPromise.then(res => res).then(res => console.log(res));
+  setTimeout(() => console.log("Timeout!"), 0);
+  console.log("Last line!");
+}
+async function funcTwo() {
+  const res = await myPromise;
+  console.log(await res);
+  setTimeout(() => console.log("Timeout!"), 0);
+  console.log("Last line!");
+}
+
+funcOne();
+funcTwo();
+```
+
+- A: Promise! Last line! Promise! Last line! Last line! Promise!
+- B: Last line! Timeout! Promise! Last line! Timeout! Promise!
+- C: Promise! Last line! Last line! Promise! Timeout! Timeout!
+- D: Last line! Promise! Promise! Last line! Timeout! Timeout!
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: D
+<br />
+首先，我们调用 funcOne。在函数 funcOne 的第一行，我们调用myPromise promise 异步操作。当JS引擎在忙于执行 promise，它继续执行函数 funcOne。下一行 异步操作 setTimeout，其回调函数被 Web API 调用。 (详情请参考我关于event loop的文章.)
+
+promise 和 timeout 都是异步操作，函数继续执行当JS引擎忙于执行promise 和 处理 setTimeout 的回调。相当于 Last line! 首先被输出， 因为它不是异步操作。执行完 funcOne 的最后一行，promise 状态转变为 resolved，Promise! 被打印。然而，因为我们调用了 funcTwo(), 调用栈不为空，setTimeout 的回调仍不能入栈。
+
+我们现在处于 funcTwo，先 awaiting myPromise。通过 await 关键字， 我们暂停了函数的执行直到 promise 状态变为 resolved (或 rejected)。然后，我们输出 res 的 awaited 值（因为 promise 本身返回一个 promise）。 接着输出 Promise!。
+
+下一行就是 异步操作 setTimeout，其回调函数被 Web API 调用。
+
+我们执行到函数 funcTwo 的最后一行，输出 Last line!。现在，因为 funcTwo 出栈，调用栈为空。在事件队列中等待的回调函数（() => console.log("Timeout!") from funcOne, and () => console.log("Timeout!") from funcTwo）以此入栈。第一个回调输出 Timeout!，并出栈。然后，第二个回调输出 Timeout!，并出栈。得到结果 Last line! Promise! Promise! Last line! Timeout! Timeout!
 </details>
 
 ---
