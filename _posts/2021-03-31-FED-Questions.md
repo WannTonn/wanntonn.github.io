@@ -3,8 +3,8 @@
 <!--
  * @Author: WannTonn
  * @Date: 2021-04-03 22:26:05
- * @LastEditTime: 2021-05-21 22:50:42
- * @LastEditors: WannTonn
+ * @LastEditTime: 2021-06-14 22:47:40
+ * @LastEditors: Please set LastEditors
  * @Description:
  * @FilePath: /wanntonn.github.io/_posts/2021-03-31-FED-Questions.md
 -->
@@ -3965,6 +3965,86 @@ promise 和 timeout 都是异步操作，函数继续执行当JS引擎忙于执�
 下一行就是 异步操作 setTimeout，其回调函数被 Web API 调用。
 
 我们执行到函数 funcTwo 的最后一行，输出 Last line!。现在，因为 funcTwo 出栈，调用栈为空。在事件队列中等待的回调函数（() => console.log("Timeout!") from funcOne, and () => console.log("Timeout!") from funcTwo）以此入栈。第一个回调输出 Timeout!，并出栈。然后，第二个回调输出 Timeout!，并出栈。得到结果 Last line! Promise! Promise! Last line! Timeout! Timeout!
+</details>
+
+---
+
+> 134.我们怎样才能在 index.js 中调用 sum.js? 中的 sum？ 2021-06-14
+
+```javascript
+// sum.js
+export default function sum(x) {
+  return x + x;
+}
+// index.js
+import * as sum from "./sum";
+```
+
+- A: sum(4)
+- B: sum.sum(4)
+- C: sum.default(4)
+- D: 默认导出不用 * 来导入，只能具名导出
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+使用符号 * ，我们引入 文件中的所有值，包括默认和具名。我们可以通过调用 sum.default 来调用该函数。
+</details>
+
+---
+
+> 135.输出什么？ 2021-06-14
+
+```javascript
+const handler = {
+  set: () => console.log("Added a new property!"),
+  get: () => console.log("Accessed a property!)
+};
+const person = new Proxy({}, handler);
+
+person.name = "Lydia";
+person.name;
+```
+
+- A: Added a new property!
+- B: Accessed a property!
+- C: Added a new property! Accessed a property!
+- D: 没有任何输出
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: C
+<br />
+使用Proxy对象，我们可以给一个对象添加自定义行为。在这个case，我们传递一个包含以下属性的对象 handler: set and get。 每当我们设置属性值时 set 被调用，每当我们获取时 get 被调用。
+第一个参数是一个空对象{},作为person的值。对于这个对象，自定义行为被定义在对象handler。如果我们向对象person添加属性，set将被调用。如果我们获取person的属性，get将被调用。
+首先，我们向proxy对象{person.name = "Lydia"} 添加一个属性name。 set 被调用并输出 "Added a new property"。
+然后，我们获取proxy对象的一个属性，对象handler的属性get 被调用。输出"Accessed a property"。
+</details>
+
+---
+
+> 134.以下哪一项会对对象 person 有副作用？ 2021-06-14
+
+```javascript
+const person = {name: "Wann Tonn"};
+Object.seal(person);
+```
+
+- A: person.name = "WannTonn_1"
+- B: person.age = 21
+- C: delete person.name
+- D: Object.assign(person, { age: 21 })
+
+<details>
+<summary>点击查看答案</summary>
+
+答案: A
+<br />
+使用Object.seal 我们可以防止新属性 被添加，或者存在属性被移除。
+然而，你仍然可以怼存在属性进行更改。
 </details>
 
 ---
