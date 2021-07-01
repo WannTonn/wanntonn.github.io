@@ -8,7 +8,7 @@
 - 撇开Vue，react，等框架。你认为前端应该会的技能（知识点）有哪些
 - 对前端工程化的理解
 - 能否徒手从零构建一个工程化项目
-- 类的使用的理解
+- 类的使用的理解, 新建一个Person类，用构造函数定义 setName, getName, 并用User 继承Person类。
 - 对typescript的理解，平时是否有写过脱离框架的ts的使用
 - 是否封装过组件？是如何封装的
 - Vue业务层的代码是如何编写的
@@ -25,7 +25,28 @@
 - 
 - 
 - 
-- 
+- ```javascript
+  class Person {
+    constructor(name) {
+      this.name = name;
+    }
+
+  }
+  class User extends Person {
+    constructor(name) {
+      super(name);
+    }
+    getName() {
+      return this.name
+    }
+    setName(_name) {
+      this.name = _name
+    }
+  }
+  let user = new User("Wann"); User: {name: "Wann"} 
+  user.getName(); // 返回 Wann
+  user.setName("Tonn");
+  user.getName(); // 返回 Tonn
 - 
 - 
 -
