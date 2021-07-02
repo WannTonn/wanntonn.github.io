@@ -14,9 +14,8 @@ class Person {
  }
  
  class User extends Person {
-  constructor(name) {
-     super(name);
-     this.name = name;
+  constructor() {
+     super();
   }
   setName(_name) {
     this.name = _name 

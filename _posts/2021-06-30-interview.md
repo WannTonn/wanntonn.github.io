@@ -15,7 +15,11 @@
 - 怎么实现跨域请求数据
 - 响应式和自适应
 
-
+- 排序算法
+- 设计模式，在Vue中 或在开发过程中，有哪些常用的开发模式
+- 你对前端工程化的理解
+- 为什么要前端工程化
+- 前端性能优化的手段有哪些
 
 
 
@@ -33,8 +37,8 @@
 
   }
   class User extends Person {
-    constructor(name) {
-      super(name);
+    constructor() {
+      super();
     }
     getName() {
       return this.name
