@@ -20,8 +20,10 @@
 - 你对前端工程化的理解
 - 为什么要前端工程化
 - 前端性能优化的手段有哪些
-
-
+- HTTP 缓存
+- Vue 数据驱动原理
+- Vue 如何让视图刷新
+- webpack配置中，生产环境与生产环境的不同配置
 
 > 答
 
@@ -51,6 +53,7 @@
   user.getName(); // 返回 Wann
   user.setName("Tonn");
   user.getName(); // 返回 Tonn
+  ```
 - 
 - 
 -

@@ -17,13 +17,13 @@ System Integrity Protection status: disabled.
 
 ```
 # 临时挂载 / 。让 / 是可写入状态。
-$: sudo mount -uw /
+$ sudo mount -uw /
 # 备份原来的壁纸, 这里备份在下载文件夹目录
-$: sudo cp /System/Library/Desktop\ Pictures/Catalina.heic ~/Downloads/Catalina.back.heic
+$ sudo cp /System/Library/Desktop\ Pictures/Catalina.heic ~/Downloads/Catalina.back.heic
 # 将重命名后的新的登录壁纸替换原来的壁纸
-$: sudo cp -f ~/Downloads/Catalina.heic /System/Library/Desktop\ Pictures/Catalina.heic
+$ sudo cp -f ~/Downloads/Catalina.heic /System/Library/Desktop\ Pictures/Catalina.heic
 # 执行如下指令后，重启就可以看到效果。
-$: diskutil apfs updatePreboot /
+$ diskutil apfs updatePreboot /
 ```
 
 ---
