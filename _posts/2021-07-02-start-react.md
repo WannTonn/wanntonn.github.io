@@ -8,13 +8,13 @@
 ### 记录本菜鸡的react学习历程
 
 ---
-> 生成react-app 模板
+> ## 生成react-app 模板
 ```JavaScript
 $ npx create-react-app app-name
 ```
-> react中 { 开头就会被识别为 JavaScript， < 开头就会被识别为HTML
+> ## react中 { 开头就会被识别为 JavaScript， < 开头就会被识别为HTML
 
-> vscode react 添加emmet支持
+> ## vscode react 添加emmet支持
 ```
 # settings.json
 "emmet.includeLanguages": {
@@ -22,14 +22,55 @@ $ npx create-react-app app-name
 }
 
 ```
-> react 与 Vue功能相同，写法不同的语法
+> ## 重写react-app 配置
+```javascript
+// 1. 下载 react-app-rewired 和 customize-cra
+$ yarn add customize-cra react-app-rewired
+
+// 2. 配置package.json 
+scripts: {
+  "start": "react-app-rewired start" // 在start 前增加react-app-rewired
+}
+// 3.在项目根目录增加 config-overrides.js
+// config-overrides.js
+const {
+  override,
+  addDecoratorsLegacy,
+  disableEsLint,
+  addWebpackAlias,
+  addLessLoader,
+  addWebpackPlugin
+} = require("customize-cra");
+const path = require("path");
+module.exports = {
+  webpack: override(
+    // 启用装饰器模式
+    // addDecoratorsLegacy(),
+    
+    // 禁用eslint
+    disableEsLint(),
+    // 配置alias
+    addWebpackAlias({
+      ["@"]: path.resolve(__dirname, "src")
+    })
+  ),
+  devServer: function(configFunction) {
+    return function(proxy, allowedHost) {
+      const config = configFunction(proxy, allowedHost);
+      return config;
+    }
+  }
+}
+
+```
+> ## react 与 Vue功能相同，写法不同的语法
 - |react|vue|
   |-|-|
   | dangerouslySetInnerHTML={{__html: content}} | v-html|
   | className={}| :class="{}"|
   | constructor(props){super(props);this.state = { name: "xxx" }}| data() {return {name: "xxx"}}|
-  | this.props.functionName() | this.$emit("functionName") |
-> Hello world (创建父子组件，并在父组件引入子组件)
+  | this.props.functionName().bind(this) | this.$emit("functionName") |
+> ## Hello world (创建父子组件，并在父组件引入子组件)
 ```javascript
 // index.js
 import React, {Components} from 'react';
@@ -62,7 +103,7 @@ class HelloWorld extends Component {
 }
 ```
 
-> Hello world, I'm X! （父子组件之间的通信）
+> ## Hello world, I'm X! （父子组件之间的通信）
 ```javascript
 // index.js
 //... 此处省略部分代码
@@ -97,8 +138,9 @@ render() {
   }
 ...
 ```
-
-> 在子组件的生命周期中，配置shouldComponentUpdate(),提升性能
+> ## react的生命周期
+- 参考 [react-lifecycle-methods-diagram](https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/)
+> ## 在子组件的生命周期中，配置shouldComponentUpdate(),提升性能
 ```javascript
   // Hello.js
   ...
@@ -109,9 +151,12 @@ render() {
   ...
 ```
 
-> 安装axios发起请求
+
+
+> ## 安装axios发起请求
 ```
 $ npm install axios -save
 ```
+> ## Redux
 
-> 安装react-router
+> ## 安装react-router
