@@ -24,6 +24,15 @@ $ sudo cp /System/Library/Desktop\ Pictures/Catalina.heic ~/Downloads/Catalina.b
 $ sudo cp -f ~/Downloads/Catalina.heic /System/Library/Desktop\ Pictures/Catalina.heic
 # 执行如下指令后，重启就可以看到效果。
 $ diskutil apfs updatePreboot /
+
+# 如果以上没有效果，但是文件却已经替换成功。
+# 打开系统偏好设置 - 用户与群组 - 点击左下角的锁解除 - 在侧栏用户名点击右键打开高级选项 - 复制UUID。
+# 然后用终端进入如下路径
+$ cd /Library/Caches
+# 或者用Finder 进入 /Library/Caches
+#找到Desktop Pictures文件夹，新建一个文件夹，重命名为刚才复制的UUID，如果已经存在该UUID的文件夹，看看里面是否已经存在图片，删掉即可。重启即可见到效果。
+# enjoy
+
 ```
 
 ---
