@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta name="generator" content="Hugo 0.83.1" />
+
+
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/dsrkafuu/dsr-cdn-main@1/images/favicons/dsrca.ico" />
+
+
+
+<title> - My New Hugo Site</title>
+
+
+
+
+
+<meta property="og:title" content="" />
+<meta name="twitter:title" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/2021-07-02-start-react/" /><meta property="og:description" content="React 学习之路 记录本菜鸡的react学习历程   生成react-app 模板  $ npx create-react-app app-name  react中 { 开头就会被识别为 JavaScript， &lt; 开头就会被识别为HTML   vscode react 添加emmet支持  # settings.json &quot;emmet.includeLanguages&quot;: { &quot;javascript&quot;: &quot;javascriptreact&quot; }  重写react-app 配置  // 1. 下载 react-app-rewired 和 customize-cra $ yarn add customize-cra react-app-rewired // 2. 配置package.json scripts: { &#34;start&#34;: &#34;react-app-rewired start&#34; // 在start 前增加react-app-rewired } // 3.在项目根目录增加 config-overrides.js // config-overrides.js const { override, addDecoratorsLegacy, disableEsLint, addWebpackAlias, addLessLoader, addWebpackPlugin } = require(&#34;customize-cra&#34;); const path = require(&#34;path&#34;); module." />
+<meta name="twitter:description" content="React 学习之路 记录本菜鸡的react学习历程   生成react-app 模板  $ npx create-react-app app-name  react中 { 开头就会被识别为 JavaScript， &lt; 开头就会被识别为HTML   vscode react 添加emmet支持  # settings.json &quot;emmet.includeLanguages&quot;: { &quot;javascript&quot;: &quot;javascriptreact&quot; }  重写react-app 配置  // 1. 下载 react-app-rewired 和 customize-cra $ yarn add customize-cra react-app-rewired // 2. 配置package.json scripts: { &#34;start&#34;: &#34;react-app-rewired start&#34; // 在start 前增加react-app-rewired } // 3.在项目根目录增加 config-overrides.js // config-overrides.js const { override, addDecoratorsLegacy, disableEsLint, addWebpackAlias, addLessLoader, addWebpackPlugin } = require(&#34;customize-cra&#34;); const path = require(&#34;path&#34;); module." /><meta name="twitter:card" content="summary" />
+
+
+<style>
+    @media (prefers-color-scheme: dark) {
+        body[data-theme='auto'] img {
+            filter: brightness(60%);
+        }
+    }
+
+    body[data-theme='dark'] img {
+        filter: brightness(60%);
+    }
+</style>
+
+
+
+
+<link rel="stylesheet" href="http://example.org/assets/css/fuji.min.css" />
+
+
+
+
+
+
+
+
+</head>
+
+<body
+  data-theme="auto"
+  data-theme-auto='false'
+  >
+    <script data-cfasync="false">
+  
+  var fujiThemeData = localStorage.getItem('fuji_data-theme');
+  
+  if (!fujiThemeData) {
+    localStorage.setItem('fuji_data-theme', 'auto');
+  } else {
+    
+    if (fujiThemeData !== 'auto') {
+      document.body.setAttribute('data-theme', fujiThemeData === 'dark' ? 'dark' : 'light');
+    }
+  }
+</script>
+
+    <header>
+    <div class="container-lg clearfix">
+        <div class="col-12 header">
+            <a class="title-main" href="http://example.org/">My New Hugo Site</a>
+            
+        </div>
+    </div>
+</header>
+
+    <main>
+        <div class="container-lg clearfix">
+            
+            <div class="col-12 col-md-9 float-left content">
+                
+<article>
+    
+    <h2 class="post-item post-title">
+        <a href="http://example.org/posts/2021-07-02-start-react/"></a>
+    </h2>
+    <div class="post-item post-meta">
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;0001-01-01</span>
+
+
+
+<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
+
+    </div>
+    
+    <div class="post-content markdown-body">
+        <h1 id="react-学习之路">React 学习之路</h1>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="记录本菜鸡的react学习历程">记录本菜鸡的react学习历程</h3>
+<hr>
+<blockquote>
+<h2 id="生成react-app-模板">生成react-app 模板</h2>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-JavaScript" data-lang="JavaScript"><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">npx</span> <span style="color:#a6e22e">create</span><span style="color:#f92672">-</span><span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span> <span style="color:#a6e22e">app</span><span style="color:#f92672">-</span><span style="color:#a6e22e">name</span>
+</code></pre></div><blockquote>
+<h2 id="react中--开头就会被识别为-javascript--开头就会被识别为html">react中 { 开头就会被识别为 JavaScript， &lt; 开头就会被识别为HTML</h2>
+</blockquote>
+<blockquote>
+<h2 id="vscode-react-添加emmet支持">vscode react 添加emmet支持</h2>
+</blockquote>
+<pre><code># settings.json
+&quot;emmet.includeLanguages&quot;: {
+  &quot;javascript&quot;: &quot;javascriptreact&quot;
+}
+
+</code></pre><blockquote>
+<h2 id="重写react-app-配置">重写react-app 配置</h2>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// 1. 下载 react-app-rewired 和 customize-cra
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">$</span> <span style="color:#a6e22e">yarn</span> <span style="color:#a6e22e">add</span> <span style="color:#a6e22e">customize</span><span style="color:#f92672">-</span><span style="color:#a6e22e">cra</span> <span style="color:#a6e22e">react</span><span style="color:#f92672">-</span><span style="color:#a6e22e">app</span><span style="color:#f92672">-</span><span style="color:#a6e22e">rewired</span>
+
+<span style="color:#75715e">// 2. 配置package.json 
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">scripts</span><span style="color:#f92672">:</span> {
+  <span style="color:#e6db74">&#34;start&#34;</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;react-app-rewired start&#34;</span> <span style="color:#75715e">// 在start 前增加react-app-rewired
+</span><span style="color:#75715e"></span>}
+<span style="color:#75715e">// 3.在项目根目录增加 config-overrides.js
+</span><span style="color:#75715e">// config-overrides.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">const</span> {
+  <span style="color:#a6e22e">override</span>,
+  <span style="color:#a6e22e">addDecoratorsLegacy</span>,
+  <span style="color:#a6e22e">disableEsLint</span>,
+  <span style="color:#a6e22e">addWebpackAlias</span>,
+  <span style="color:#a6e22e">addLessLoader</span>,
+  <span style="color:#a6e22e">addWebpackPlugin</span>
+} <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;customize-cra&#34;</span>);
+<span style="color:#66d9ef">const</span> <span style="color:#a6e22e">path</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#34;path&#34;</span>);
+<span style="color:#a6e22e">module</span>.<span style="color:#a6e22e">exports</span> <span style="color:#f92672">=</span> {
+  <span style="color:#a6e22e">webpack</span><span style="color:#f92672">:</span> <span style="color:#a6e22e">override</span>(
+    <span style="color:#75715e">// 启用装饰器模式
+</span><span style="color:#75715e"></span>    <span style="color:#75715e">// addDecoratorsLegacy(),
+</span><span style="color:#75715e"></span>    
+    <span style="color:#75715e">// 禁用eslint
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">disableEsLint</span>(),
+    <span style="color:#75715e">// 配置alias
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">addWebpackAlias</span>({
+      [<span style="color:#e6db74">&#34;@&#34;</span>]<span style="color:#f92672">:</span> <span style="color:#a6e22e">path</span>.<span style="color:#a6e22e">resolve</span>(<span style="color:#ae81ff">__</span><span style="color:#a6e22e">dirname</span>, <span style="color:#e6db74">&#34;src&#34;</span>)
+    })
+  ),
+  <span style="color:#a6e22e">devServer</span><span style="color:#f92672">:</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">configFunction</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">proxy</span>, <span style="color:#a6e22e">allowedHost</span>) {
+      <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">config</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">configFunction</span>(<span style="color:#a6e22e">proxy</span>, <span style="color:#a6e22e">allowedHost</span>);
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">config</span>;
+    }
+  }
+}
+
+</code></pre></div><blockquote>
+<h2 id="react-与-vue功能相同写法不同的语法">react 与 Vue功能相同，写法不同的语法</h2>
+</blockquote>
+<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th>react</th>
+<th>vue</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dangerouslySetInnerHTML={{__html: content}}</td>
+<td>v-html</td>
+</tr>
+<tr>
+<td>className={}</td>
+<td>:class=&quot;{}&quot;</td>
+</tr>
+<tr>
+<td>constructor(props){super(props);this.state = { name: &ldquo;xxx&rdquo; }}</td>
+<td>data() {return {name: &ldquo;xxx&rdquo;}}</td>
+</tr>
+<tr>
+<td>this.props.functionName().bind(this)</td>
+<td>this.$emit(&ldquo;functionName&rdquo;)</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<blockquote>
+<h2 id="hello-world-创建父子组件并在父组件引入子组件">Hello world (创建父子组件，并在父组件引入子组件)</h2>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// index.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">React</span>, {<span style="color:#a6e22e">Components</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#66d9ef">import</span> <span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;./Hello&#39;</span>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">index</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Components</span> {
+  <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+      
+    }
+  }
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span>(
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#f92672">/&gt;</span>
+    )
+  }
+}
+
+<span style="color:#75715e">// Hello.js
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">import</span> <span style="color:#a6e22e">react</span>, {<span style="color:#a6e22e">Component</span>, <span style="color:#a6e22e">Fragment</span>} <span style="color:#a6e22e">from</span> <span style="color:#e6db74">&#39;react&#39;</span>;
+<span style="color:#75715e">// Fragment标签用做去除最外层标签用。
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> <span style="color:#66d9ef">extends</span> <span style="color:#a6e22e">Component</span> {
+  <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Fragment</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">World</span><span style="color:#f92672">!&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Fragment&gt;</span>
+    )
+  }
+}
+</code></pre></div><blockquote>
+<h2 id="hello-world-im-x-父子组件之间的通信">Hello world, I&rsquo;m X! （父子组件之间的通信）</h2>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#75715e">// index.js
+</span><span style="color:#75715e">//... 此处省略部分代码
+</span><span style="color:#75715e"></span> <span style="color:#a6e22e">constructor</span>(<span style="color:#a6e22e">props</span>) {
+    <span style="color:#66d9ef">super</span>(<span style="color:#a6e22e">props</span>);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span> <span style="color:#f92672">=</span> {
+      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Wann&#34;</span>
+    }
+  }
+ <span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span>(
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">name</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">state</span>.<span style="color:#a6e22e">name</span>} <span style="color:#a6e22e">toggleName</span><span style="color:#f92672">=</span>{<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">toggleName</span>} <span style="color:#f92672">/&gt;</span>
+    )
+  }
+  <span style="color:#a6e22e">toggleName</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">setState</span>({
+      <span style="color:#a6e22e">name</span><span style="color:#f92672">:</span> <span style="color:#e6db74">&#34;Tonn&#34;</span>
+    })
+  }
+
+<span style="color:#75715e">// Hello.js
+</span><span style="color:#75715e"></span>...
+<span style="color:#a6e22e">render</span>() {
+    <span style="color:#66d9ef">return</span> (
+      <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">Fragment</span><span style="color:#f92672">&gt;</span>
+        <span style="color:#f92672">&lt;</span><span style="color:#a6e22e">h1</span> <span style="color:#a6e22e">onClick</span><span style="color:#f92672">=</span><span style="color:#e6db74">&#34;handleClick&#34;</span><span style="color:#f92672">&gt;</span><span style="color:#a6e22e">Hello</span> <span style="color:#a6e22e">World</span><span style="color:#f92672">!</span> <span style="color:#a6e22e">I</span><span style="color:#960050;background-color:#1e0010">&#39;</span><span style="color:#a6e22e">m</span> {<span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>}<span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/h1&gt;</span>
+      <span style="color:#f92672">&lt;</span><span style="color:#960050;background-color:#1e0010">/Fragment&gt;</span>
+    )
+  }
+  <span style="color:#a6e22e">handleClick</span>() {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">toggleName</span>()
+  }
+...
+</code></pre></div><blockquote>
+<h2 id="react的生命周期">react的生命周期</h2>
+</blockquote>
+<ul>
+<li>参考 <a href="https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/" target="_blank">react-lifecycle-methods-diagram</a></li>
+</ul>
+<blockquote>
+<h2 id="在子组件的生命周期中配置shouldcomponentupdate提升性能">在子组件的生命周期中，配置shouldComponentUpdate(),提升性能</h2>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript">  <span style="color:#75715e">// Hello.js
+</span><span style="color:#75715e"></span>  ...
+  <span style="color:#a6e22e">shouldComponentUpdate</span>(<span style="color:#a6e22e">nextProps</span>, <span style="color:#a6e22e">nextState</span>) {
+    <span style="color:#75715e">// 此处name为父组件传给子组件的字段
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">nextProps</span>.<span style="color:#a6e22e">name</span> <span style="color:#f92672">!==</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">props</span>.<span style="color:#a6e22e">name</span>;
+  }
+  ...
+</code></pre></div><blockquote>
+<h2 id="安装axios发起请求">安装axios发起请求</h2>
+</blockquote>
+<pre><code>$ npm install axios -save
+</code></pre><blockquote>
+<h2 id="redux">Redux</h2>
+</blockquote>
+<blockquote>
+<h2 id="安装react-router">安装react-router</h2>
+</blockquote>
+
+    </div>
+</article>
+
+
+
+
+            </div>
+            <aside class="col-12 col-md-3 float-left sidebar">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+        </div>
+    </div>
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#记录本菜鸡的react学习历程">记录本菜鸡的react学习历程</a></li>
+      </ul>
+    </li>
+    <li><a href="#生成react-app-模板">生成react-app 模板</a></li>
+    <li><a href="#react中--开头就会被识别为-javascript--开头就会被识别为html">react中 { 开头就会被识别为 JavaScript， &lt; 开头就会被识别为HTML</a></li>
+    <li><a href="#vscode-react-添加emmet支持">vscode react 添加emmet支持</a></li>
+    <li><a href="#重写react-app-配置">重写react-app 配置</a></li>
+    <li><a href="#react-与-vue功能相同写法不同的语法">react 与 Vue功能相同，写法不同的语法</a></li>
+    <li><a href="#hello-world-创建父子组件并在父组件引入子组件">Hello world (创建父子组件，并在父组件引入子组件)</a></li>
+    <li><a href="#hello-world-im-x-父子组件之间的通信">Hello world, I&rsquo;m X! （父子组件之间的通信）</a></li>
+    <li><a href="#react的生命周期">react的生命周期</a></li>
+    <li><a href="#在子组件的生命周期中配置shouldcomponentupdate提升性能">在子组件的生命周期中，配置shouldComponentUpdate(),提升性能</a></li>
+    <li><a href="#安装axios发起请求">安装axios发起请求</a></li>
+    <li><a href="#redux">Redux</a></li>
+    <li><a href="#安装react-router">安装react-router</a></li>
+  </ul>
+</nav></div>
+</aside>
+
+        </div>
+        <div class="btn">
+    <div class="btn-menu" id="btn-menu">
+        <i class="iconfont icon-grid-sharp"></i>
+    </div>
+    <div class="btn-toggle-mode">
+        <i class="iconfont icon-contrast-sharp"></i>
+    </div>
+    <div class="btn-scroll-top">
+        <i class="iconfont icon-chevron-up-circle-sharp"></i>
+    </div>
+</div>
+<aside class="sidebar-mobile" style="display: none;">
+  <div class="sidebar-wrapper">
+    
+    <div class="sidebar-item sidebar-pages">
+        <h3>Pages</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-links">
+        <h3>Links</h3>
+        <ul>
+            
+        </ul>
+    </div>
+    
+    <div class="sidebar-item sidebar-tags">
+        <h3>Tags</h3>
+        <div>
+            
+        </div>
+    </div>
+    
+    
+    
+    
+  </div>
+</aside>
+    </main>
+
+    <footer>
+    <div class="container-lg clearfix">
+        <div class="col-12 footer">
+            
+            <span>&copy; 2021
+                <a href="http://example.org/"></a>
+                
+                | Powered by <a href="https://github.com/dsrkafuu/hugo-theme-fuji/"
+                   target="_blank">Fuji-v2</a> &amp; <a href="https://gohugo.io/"
+                                                    target="_blank">Hugo</a> 
+            </span>
+        </div>
+    </div>
+</footer>
+
+    
+<script defer src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/lazysizes@5.3.2/lazysizes.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/components/prism-core.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/prismjs@1.23.0/plugins/autoloader/prism-autoloader.min.js"></script>
+
+
+
+<script defer src="/assets/js/fuji.min.js"></script>
+
+
+
+</body>
+
+</html>
