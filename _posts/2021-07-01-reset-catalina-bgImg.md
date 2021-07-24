@@ -30,7 +30,7 @@ $ diskutil apfs updatePreboot /
 # 然后用终端进入如下路径
 $ cd /Library/Caches
 # 或者用Finder 进入 /Library/Caches
-#找到Desktop Pictures文件夹，新建一个文件夹，重命名为刚才复制的UUID，如果已经存在该UUID的文件夹，看看里面是否已经存在图片，删掉即可。重启即可见到效果。
+# 找到Desktop Pictures文件夹，新建一个文件夹，重命名为刚才复制的UUID，如果已经存在该UUID的文件夹，看看里面是否已经存在图片，删掉文件夹下的lockscreen.png, 复制一张新的lockscreen.png到文件夹下。重启即可见到效果。
 # enjoy
 
 ```
