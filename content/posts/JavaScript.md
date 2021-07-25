@@ -1,10 +1,10 @@
-# JavaScript 经验之js实现无感下载
-<!--
- * @Author: WannTonn
- * @Date: 2021-06-19 21:18:53
- * @Description: 
- * @FilePath: /wanntonn.github.io/_posts/2021-03-15-JavaScript.md
--->
+---
+title: "js 实现无感下载"
+date: 2021-03-15T23:35:24+08:00
+draft: false
+---
+<!--more-->
+
 
 > js 实现无感下载
 

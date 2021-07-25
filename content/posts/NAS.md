@@ -1,11 +1,13 @@
-# NAS 折腾日记
-<!--
- * @Author: WannTonn
- * @Date: 2021-07-10 23:12:41
- * @Description: 
- * @FilePath: /wanntonn.github.io/_posts/2021-07-10.NAS.md
--->
+---
+title: "NAS 折腾笔记"
+date: 2021-06-15T23:35:24+08:00
+draft: false
+---
+
+
 ## 前言：黑群晖起飞。以下记录为踩坑经验，仅供参考
+<!--more-->
+
 ## 参考： [不到千元！手把手教您组装一台家用NAS J3455黑群晖6.1.7搭建全过程](https://post.smzdm.com/p/ag82zdd3/) 跟着流程走，就可以顺利完成安装
 
 > 踩坑的点

@@ -16,17 +16,29 @@
 
 
 
-<title>Posts - { ...life }</title>
+<title>购买服务器之后开始学习运维知识。 - { ...life }</title>
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://wanntonn.github.io/posts/index.xml" title="{ ...life }" />
 
-<meta property="og:title" content="Posts" />
-<meta name="twitter:title" content="Posts" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wanntonn.github.io/posts/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2021-06-30T23:35:24+08:00" />
+<meta property="og:title" content="购买服务器之后开始学习运维知识。" />
+<meta name="twitter:title" content="购买服务器之后开始学习运维知识。" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanntonn.github.io/posts/operation-and-maintenance/" /><meta property="og:description" content="
+ssh config
+
+$ cd
+$ mkdir .ssh &amp;&amp; chmod 700 .ssh
+$ touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys
+" />
+<meta name="twitter:description" content="
+ssh config
+
+$ cd
+$ mkdir .ssh &amp;&amp; chmod 700 .ssh
+$ touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys
+" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2020-06-15T23:35:24+08:00" /><meta property="article:modified_time" content="2020-06-15T23:35:24+08:00" />
 
 
 <style>
@@ -87,55 +99,74 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/reinstallsystem/">MacOs重装后的一系列操作笔记</a>
+        <a href="https://wanntonn.github.io/posts/operation-and-maintenance/">购买服务器之后开始学习运维知识。</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-05-31</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-06-15</span>
 
 
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
-    <div class="post-item post-summary markdown-body">
+    
+    <div class="post-content markdown-body">
         <blockquote>
-<p>解除macOS 4位密码限制</p>
+<p>ssh config</p>
 </blockquote>
-<pre><code>pwpolicy -clearaccountpolicies
+<pre><code>$ cd
+$ mkdir .ssh &amp;&amp; chmod 700 .ssh
+$ touch .ssh/authorized_keys &amp;&amp; chmod 600 .ssh/authorized_keys
+</code></pre>
+<blockquote>
+<p>将开发者的ssh公钥添加到authorized_keys中</p>
+</blockquote>
+<pre><code>$ pbcopy &lt; ~/.ssh/id_rsa.pub
+$ vim .ssh/authorized_keys
+$  ssh-copy-id -i ~/.ssh/id_rsa.pub username@server -p 22 # 将rsa.pub 上传到服务器
+</code></pre>
+<blockquote>
+<p>自定义hostname 免记ip登录</p>
+</blockquote>
+<pre><code>$ vim ~/.ssh/config
+$ Host hostname # hostname 想要设置的别名
+  HostName IP
+  User root
+  IdentitiesOnly yes
+$ ssh hostname # hostname 为设置的别名
+</code></pre>
+<blockquote>
+<p>Ubuntu 安装yum</p>
+</blockquote>
+<pre><code>$ apt-get install yum
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package yum
+# 解决方法
+$ sudo apt-get update
+$ apt-get install yum # 完美解决
+</code></pre>
+<blockquote>
+<p>安装 nginx</p>
+</blockquote>
+<pre><code>sudo apt-get install nginx
+</code></pre>
+<blockquote>
+<p>配置Nginx conf</p>
+</blockquote>
+<pre><code>$ cd /etc/nginx
+$ vim nginx.conf
 </code></pre>
     </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/git/">关于 Git 的一些经验收集</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-03-07</span>
+</article>
 
 
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
-    </div>
-    <div class="post-item post-summary markdown-body">
-        
-    </div>
-</div>
-<div class="pagination"><div class="pag-first">
-    <a href="/posts/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
-  </div><div class="pag-previous">
-    <a href="/posts/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
-  </div><div class="pag-item">
-    <a href="/posts/">1</a>
-  </div><div class="pag-item pag-current">
-    <a href="/posts/page/2/">2</a>
-  </div></div>
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -159,9 +190,8 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents"></nav></div>
 </aside>
 
         </div>

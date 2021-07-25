@@ -16,17 +16,17 @@
 
 
 
-<title>Posts - { ...life }</title>
+<title>NAS 折腾笔记 - { ...life }</title>
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://wanntonn.github.io/posts/index.xml" title="{ ...life }" />
 
-<meta property="og:title" content="Posts" />
-<meta name="twitter:title" content="Posts" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wanntonn.github.io/posts/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2021-06-30T23:35:24+08:00" />
+<meta property="og:title" content="NAS 折腾笔记" />
+<meta name="twitter:title" content="NAS 折腾笔记" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanntonn.github.io/posts/nas/" /><meta property="og:description" content="前言：黑群晖起飞。以下记录为踩坑经验，仅供参考" />
+<meta name="twitter:description" content="前言：黑群晖起飞。以下记录为踩坑经验，仅供参考" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2021-06-15T23:35:24+08:00" /><meta property="article:modified_time" content="2021-06-15T23:35:24+08:00" />
 
 
 <style>
@@ -87,55 +87,60 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/reinstallsystem/">MacOs重装后的一系列操作笔记</a>
+        <a href="https://wanntonn.github.io/posts/nas/">NAS 折腾笔记</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-05-31</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-06-15</span>
 
 
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
-    <div class="post-item post-summary markdown-body">
-        <blockquote>
-<p>解除macOS 4位密码限制</p>
+    
+    <div class="post-content markdown-body">
+        <h2 id="前言黑群晖起飞以下记录为踩坑经验仅供参考">前言：黑群晖起飞。以下记录为踩坑经验，仅供参考</h2>
+<h2 id="参考-不到千元手把手教您组装一台家用nas-j3455黑群晖617搭建全过程httpspostsmzdmcompag82zdd3-跟着流程走就可以顺利完成安装">参考： <a href="https://post.smzdm.com/p/ag82zdd3/" target="_blank">不到千元！手把手教您组装一台家用NAS J3455黑群晖6.1.7搭建全过程</a> 跟着流程走，就可以顺利完成安装</h2>
+<blockquote>
+<p>踩坑的点</p>
 </blockquote>
-<pre><code>pwpolicy -clearaccountpolicies
-</code></pre>
+<ul>
+<li>
+<table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>由于DiskGenius版本为4.7，导致后来无法识别出NAS启动分区</td>
+<td>要升级到5.0+ 版本方可识别</td>
+</tr>
+<tr>
+<td>刷入DS3617_6.1.img 后。从路由器的LAN口直接连接到NAS，NAS的宽带网口亮红灯。</td>
+<td>再拿一个U盘 写入带有线网卡驱动的PE，进入到PE后，宽带口亮绿灯(就是玄学)</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<blockquote>
+<p>如何完善NAS</p>
+</blockquote>
+<ul>
+<li>待续。</li>
+</ul>
     </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/git/">关于 Git 的一些经验收集</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-03-07</span>
+</article>
 
 
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
-    </div>
-    <div class="post-item post-summary markdown-body">
-        
-    </div>
-</div>
-<div class="pagination"><div class="pag-first">
-    <a href="/posts/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
-  </div><div class="pag-previous">
-    <a href="/posts/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
-  </div><div class="pag-item">
-    <a href="/posts/">1</a>
-  </div><div class="pag-item pag-current">
-    <a href="/posts/page/2/">2</a>
-  </div></div>
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -159,9 +164,13 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#前言黑群晖起飞以下记录为踩坑经验仅供参考">前言：黑群晖起飞。以下记录为踩坑经验，仅供参考</a></li>
+    <li><a href="#参考-不到千元手把手教您组装一台家用nas-j3455黑群晖617搭建全过程httpspostsmzdmcompag82zdd3-跟着流程走就可以顺利完成安装">参考： <a href="https://post.smzdm.com/p/ag82zdd3/">不到千元！手把手教您组装一台家用NAS J3455黑群晖6.1.7搭建全过程</a> 跟着流程走，就可以顺利完成安装</a></li>
+  </ul>
+</nav></div>
 </aside>
 
         </div>

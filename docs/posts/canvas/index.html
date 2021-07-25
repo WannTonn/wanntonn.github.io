@@ -16,17 +16,17 @@
 
 
 
-<title>Posts - { ...life }</title>
+<title>canvas 路径绘制 - { ...life }</title>
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://wanntonn.github.io/posts/index.xml" title="{ ...life }" />
 
-<meta property="og:title" content="Posts" />
-<meta name="twitter:title" content="Posts" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wanntonn.github.io/posts/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2021-06-30T23:35:24+08:00" />
+<meta property="og:title" content="canvas 路径绘制" />
+<meta name="twitter:title" content="canvas 路径绘制" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanntonn.github.io/posts/canvas/" /><meta property="og:description" content="" />
+<meta name="twitter:description" content="" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2020-10-16T23:35:24+08:00" /><meta property="article:modified_time" content="2020-10-16T23:35:24+08:00" />
 
 
 <style>
@@ -87,55 +87,101 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/reinstallsystem/">MacOs重装后的一系列操作笔记</a>
+        <a href="https://wanntonn.github.io/posts/canvas/">canvas 路径绘制</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-05-31</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-10-16</span>
 
 
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
-    <div class="post-item post-summary markdown-body">
-        <blockquote>
-<p>解除macOS 4位密码限制</p>
-</blockquote>
-<pre><code>pwpolicy -clearaccountpolicies
-</code></pre>
+    
+    <div class="post-content markdown-body">
+        <table>
+<thead>
+<tr>
+<th>方法</th>
+<th style="text-align:right">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>fill()</td>
+<td style="text-align:right">填充路径</td>
+</tr>
+<tr>
+<td>stroke()</td>
+<td style="text-align:right">描边</td>
+</tr>
+<tr>
+<td>arc()</td>
+<td style="text-align:right">创建圆弧</td>
+</tr>
+<tr>
+<td>rect()</td>
+<td style="text-align:right">创建矩形</td>
+</tr>
+<tr>
+<td>fillRect()</td>
+<td style="text-align:right">绘制矩形路径区域</td>
+</tr>
+<tr>
+<td>strokeRect()</td>
+<td style="text-align:right">绘制矩形路径描边</td>
+</tr>
+<tr>
+<td>clearRect()</td>
+<td style="text-align:right">在给定的矩形内清除指定的像素</td>
+</tr>
+<tr>
+<td>arcTo()</td>
+<td style="text-align:right">创建两切线之间的弧/曲线</td>
+</tr>
+<tr>
+<td>beginPath()</td>
+<td style="text-align:right">起始一条路径，或重置当前路径</td>
+</tr>
+<tr>
+<td>moveTo()</td>
+<td style="text-align:right">把路径移动到画布中的指定点，不创建线条</td>
+</tr>
+<tr>
+<td>lineTo()</td>
+<td style="text-align:right">添加一个新点，然后在画布中创建从该点到最后指定点的线条</td>
+</tr>
+<tr>
+<td>closePath()</td>
+<td style="text-align:right">创建从当前点回到起始点的路径</td>
+</tr>
+<tr>
+<td>clip()</td>
+<td style="text-align:right">从原始画布剪切任意形状和尺寸的区域</td>
+</tr>
+<tr>
+<td>quadraticCurveTo()</td>
+<td style="text-align:right">创建二次方贝塞尔曲线</td>
+</tr>
+<tr>
+<td>bezierCurveTo()</td>
+<td style="text-align:right">创建三次方贝塞尔曲线</td>
+</tr>
+<tr>
+<td>isPointInPath()</td>
+<td style="text-align:right">如果指定的点位于当前路径中，则返回 true，否则返回 false</td>
+</tr>
+</tbody>
+</table>
     </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/git/">关于 Git 的一些经验收集</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-03-07</span>
+</article>
 
 
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
-    </div>
-    <div class="post-item post-summary markdown-body">
-        
-    </div>
-</div>
-<div class="pagination"><div class="pag-first">
-    <a href="/posts/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
-  </div><div class="pag-previous">
-    <a href="/posts/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
-  </div><div class="pag-item">
-    <a href="/posts/">1</a>
-  </div><div class="pag-item pag-current">
-    <a href="/posts/page/2/">2</a>
-  </div></div>
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -159,9 +205,8 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents"></nav></div>
 </aside>
 
         </div>

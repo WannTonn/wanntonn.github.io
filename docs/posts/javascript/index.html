@@ -16,17 +16,17 @@
 
 
 
-<title>Posts - { ...life }</title>
+<title>js 实现无感下载 - { ...life }</title>
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://wanntonn.github.io/posts/index.xml" title="{ ...life }" />
 
-<meta property="og:title" content="Posts" />
-<meta name="twitter:title" content="Posts" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wanntonn.github.io/posts/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2021-06-30T23:35:24+08:00" />
+<meta property="og:title" content="js 实现无感下载" />
+<meta name="twitter:title" content="js 实现无感下载" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanntonn.github.io/posts/javascript/" /><meta property="og:description" content="" />
+<meta name="twitter:description" content="" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2021-03-15T23:35:24+08:00" /><meta property="article:modified_time" content="2021-03-15T23:35:24+08:00" />
 
 
 <style>
@@ -87,55 +87,41 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/reinstallsystem/">MacOs重装后的一系列操作笔记</a>
+        <a href="https://wanntonn.github.io/posts/javascript/">js 实现无感下载</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-05-31</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-03-15</span>
 
 
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
-    <div class="post-item post-summary markdown-body">
+    
+    <div class="post-content markdown-body">
         <blockquote>
-<p>解除macOS 4位密码限制</p>
+<p>js 实现无感下载</p>
 </blockquote>
-<pre><code>pwpolicy -clearaccountpolicies
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">download</span>(<span style="color:#a6e22e">url</span>, <span style="color:#a6e22e">filename</span>) {
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">fetch</span>(<span style="color:#a6e22e">url</span>).<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">res</span> =&gt; <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">blob</span>().<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">blob</span> =&gt; {
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">a</span> <span style="color:#f92672">=</span> document.<span style="color:#a6e22e">createElement</span>(<span style="color:#e6db74">&#39;a&#39;</span>);
+        <span style="color:#66d9ef">let</span> <span style="color:#a6e22e">url</span> <span style="color:#f92672">=</span> window.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">createObjectURL</span>(<span style="color:#a6e22e">blob</span>);
+        <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">href</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">url</span>;
+        <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">download</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">filename</span>;
+        <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">click</span>();
+        window.<span style="color:#a6e22e">URL</span>.<span style="color:#a6e22e">revokeObjectURL</span>(<span style="color:#a6e22e">url</span>);
+    }))
+}
+</code></pre></div>
     </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/git/">关于 Git 的一些经验收集</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-03-07</span>
+</article>
 
 
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
-    </div>
-    <div class="post-item post-summary markdown-body">
-        
-    </div>
-</div>
-<div class="pagination"><div class="pag-first">
-    <a href="/posts/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
-  </div><div class="pag-previous">
-    <a href="/posts/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
-  </div><div class="pag-item">
-    <a href="/posts/">1</a>
-  </div><div class="pag-item pag-current">
-    <a href="/posts/page/2/">2</a>
-  </div></div>
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -159,9 +145,8 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents"></nav></div>
 </aside>
 
         </div>

@@ -1,12 +1,10 @@
-<!--
- * @Author: WannTonn
- * @Date: 2021-03-21 12:49:08
- * @LastEditTime: 2021-07-10 23:29:53
- * @LastEditors: Please set LastEditors
- * @Description: 
- * @FilePath: /wanntonn.github.io/_posts/2021-03-07-Git.md
--->
-# 关于 Git 的一些经验收集
+---
+title: "关于 Git 的一些经验收集"
+date: 2020-03-07T23:35:24+08:00
+draft: false
+---
+<!--more-->
+
   |问题|解决方案|
   |-|-|
   |关于 LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 报错|$ git config --global --unset http.proxy|

@@ -1,10 +1,15 @@
-# 购买服务器之后开始学习运维知识。
+---
+title: "购买服务器之后开始学习运维知识。"
+date: 2020-06-15T23:35:24+08:00
+draft: false
+---
 
 > ssh config
     
     $ cd
     $ mkdir .ssh && chmod 700 .ssh
     $ touch .ssh/authorized_keys && chmod 600 .ssh/authorized_keys
+<!--more-->
 
 >  将开发者的ssh公钥添加到authorized_keys中
 

@@ -1,5 +1,5 @@
 baseURL = "https://wanntonn.github.io/"
-languageCode = "en-us"
-title = "My New Hugo Site"
+languageCode = "zh-hans"
+title = "{ ...life }"
 theme = "fuji"
 publishDir = "docs"

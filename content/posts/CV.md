@@ -1,14 +1,13 @@
-# 个人简历
-<!--
- * @Author: WannTonn
- * @Date: 2021-05-06 21:15:31
- * @LastEditTime: 2021-07-05 23:10:34
- * @LastEditors: Please set LastEditors
- * @Description: 
- * @FilePath: /wanntonn.github.io/_posts/2021-07-02-CV.md
--->
+---
+title: "个人简历"
+date: 2020-06-15T23:35:24+08:00
+draft: false
+---
+
+<!--more-->
+
 ## 个人信息
-- 汪通 / 男 / 28岁
+- 汪通 / 男 / 1994年
 - 本科 / 电子商务专业
 - 工作年限：5年
 - 技术博客: [地址](https://wanntonn.github.io)

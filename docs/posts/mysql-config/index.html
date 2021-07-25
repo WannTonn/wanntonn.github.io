@@ -16,17 +16,21 @@
 
 
 
-<title>Posts - { ...life }</title>
+<title>MySQL workbench theme change - { ...life }</title>
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://wanntonn.github.io/posts/index.xml" title="{ ...life }" />
 
-<meta property="og:title" content="Posts" />
-<meta name="twitter:title" content="Posts" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wanntonn.github.io/posts/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2021-06-30T23:35:24+08:00" />
+<meta property="og:title" content="MySQL workbench theme change" />
+<meta name="twitter:title" content="MySQL workbench theme change" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanntonn.github.io/posts/mysql-config/" /><meta property="og:description" content="# from dark to light
+$ defaults write com.oracle.workbench.MySQLWorkbench NSRequiresAquaSystemAppearance -bool yes
+" />
+<meta name="twitter:description" content="# from dark to light
+$ defaults write com.oracle.workbench.MySQLWorkbench NSRequiresAquaSystemAppearance -bool yes
+" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2021-01-15T23:35:24+08:00" /><meta property="article:modified_time" content="2021-01-15T23:35:24+08:00" />
 
 
 <style>
@@ -87,55 +91,36 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/reinstallsystem/">MacOs重装后的一系列操作笔记</a>
+        <a href="https://wanntonn.github.io/posts/mysql-config/">MySQL workbench theme change</a>
     </h2>
     <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-05-31</span>
+        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2021-01-15</span>
 
 
 
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
-    <div class="post-item post-summary markdown-body">
-        <blockquote>
-<p>解除macOS 4位密码限制</p>
-</blockquote>
-<pre><code>pwpolicy -clearaccountpolicies
+    
+    <div class="post-content markdown-body">
+        <pre><code># from dark to light
+$ defaults write com.oracle.workbench.MySQLWorkbench NSRequiresAquaSystemAppearance -bool yes
+</code></pre><pre><code># from light to dark
+$ defaults write com.oracle.workbench.MySQLWorkbench NSRequiresAquaSystemAppearance -bool no
+</code></pre><h2 id="添加mysql-到bash">添加mysql 到bash</h2>
+<pre><code>  $ vi ~/.zshrc
+  输入 export PATH=${PATH}:/usr/local/mysql/bin
+  保存，退出
 </code></pre>
     </div>
-</div>
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/git/">关于 Git 的一些经验收集</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-03-07</span>
+</article>
 
 
 
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
-    </div>
-    <div class="post-item post-summary markdown-body">
-        
-    </div>
-</div>
-<div class="pagination"><div class="pag-first">
-    <a href="/posts/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
-  </div><div class="pag-previous">
-    <a href="/posts/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
-  </div><div class="pag-item">
-    <a href="/posts/">1</a>
-  </div><div class="pag-item pag-current">
-    <a href="/posts/page/2/">2</a>
-  </div></div>
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -159,9 +144,12 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li><a href="#添加mysql-到bash">添加mysql 到bash</a></li>
+  </ul>
+</nav></div>
 </aside>
 
         </div>

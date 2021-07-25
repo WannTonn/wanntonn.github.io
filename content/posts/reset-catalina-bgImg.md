@@ -1,11 +1,11 @@
-# 重置macOS Catalina登录壁纸
-<!--
- * @Author: WannTonn
- * @Date: 2021-07-01 21:02:28
- * @Description: 
- * @FilePath: /wanntonn.github.io/_posts/2021-07-01-reset-catalina-bgImg.md
--->
+---
+title: "重置macOS Catalina登录壁纸"
+date: 2021-05-15T23:35:24+08:00
+draft: false
+---
+
 > 前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。
+<!--more-->
 
 ### 步骤
 - 关闭SIP： 白苹果 - Google一下。 黑苹果：打开终端输入csrutil status 出现以下：

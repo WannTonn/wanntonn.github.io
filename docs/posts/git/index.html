@@ -16,17 +16,17 @@
 
 
 
-<title>Posts - { ...life }</title>
+<title>关于 Git 的一些经验收集 - { ...life }</title>
 
 
 
 
-<link rel="alternate" type="application/rss+xml" href="https://wanntonn.github.io/posts/index.xml" title="{ ...life }" />
 
-<meta property="og:title" content="Posts" />
-<meta name="twitter:title" content="Posts" />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://wanntonn.github.io/posts/" /><meta name="twitter:card" content="summary" /><meta property="og:updated_time" content="2021-06-30T23:35:24+08:00" />
+<meta property="og:title" content="关于 Git 的一些经验收集" />
+<meta name="twitter:title" content="关于 Git 的一些经验收集" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://wanntonn.github.io/posts/git/" /><meta property="og:description" content="" />
+<meta name="twitter:description" content="" /><meta name="twitter:card" content="summary" /><meta property="article:published_time" content="2020-03-07T23:35:24+08:00" /><meta property="article:modified_time" content="2020-03-07T23:35:24+08:00" />
 
 
 <style>
@@ -87,31 +87,8 @@
             
             <div class="col-12 col-md-9 float-left content">
                 
-
-
-
-<div class="post">
-    <h2 class="post-item post-title">
-        <a href="https://wanntonn.github.io/posts/reinstallsystem/">MacOs重装后的一系列操作笔记</a>
-    </h2>
-    <div class="post-item post-meta">
-        <span><i class="iconfont icon-today-sharp"></i>&nbsp;2020-05-31</span>
-
-
-
-<span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
-
-    </div>
-    <div class="post-item post-summary markdown-body">
-        <blockquote>
-<p>解除macOS 4位密码限制</p>
-</blockquote>
-<pre><code>pwpolicy -clearaccountpolicies
-</code></pre>
-    </div>
-</div>
-
-<div class="post">
+<article>
+    
     <h2 class="post-item post-title">
         <a href="https://wanntonn.github.io/posts/git/">关于 Git 的一些经验收集</a>
     </h2>
@@ -123,19 +100,41 @@
 <span><i class="iconfont icon-pricetags-sharp"></i>&nbsp;No tag</span>
 
     </div>
-    <div class="post-item post-summary markdown-body">
-        
+    
+    <div class="post-content markdown-body">
+        <table>
+<thead>
+<tr>
+<th>问题</th>
+<th>解决方案</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>关于 LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 报错</td>
+<td>$ git config &ndash;global &ndash;unset http.proxy</td>
+</tr>
+<tr>
+<td>关于 Git clone 下载慢</td>
+<td>$ git clone <a href="https://github.com.cnpmjs.org">https://github.com.cnpmjs.org</a> + /xxxx/xxx.git</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<h3 id="npm-配置淘宝镜像">npm 配置淘宝镜像</h3>
+</blockquote>
+<pre><code>npm config set registry https://registry.npm.taobao.org
+</code></pre><blockquote>
+<h3 id="npm-恢复默认">npm 恢复默认</h3>
+</blockquote>
+<pre><code> npm config set registry https://registry.npmjs.org
+</code></pre>
     </div>
-</div>
-<div class="pagination"><div class="pag-first">
-    <a href="/posts/"><i class="iconfont icon-caret-back-circle-sharp"></i></a>
-  </div><div class="pag-previous">
-    <a href="/posts/"><i class="iconfont icon-chevron-back-circle-sharp"></i></a>
-  </div><div class="pag-item">
-    <a href="/posts/">1</a>
-  </div><div class="pag-item pag-current">
-    <a href="/posts/page/2/">2</a>
-  </div></div>
+</article>
+
+
+
+
             </div>
             <aside class="col-12 col-md-3 float-left sidebar">
     
@@ -159,9 +158,17 @@
             
         </div>
     </div>
-    
-    
-    
+    <div class="sidebar-item sidebar-toc">
+        <h3>Table of Contents</h3><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#npm-配置淘宝镜像">npm 配置淘宝镜像</a></li>
+        <li><a href="#npm-恢复默认">npm 恢复默认</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
 </aside>
 
         </div>

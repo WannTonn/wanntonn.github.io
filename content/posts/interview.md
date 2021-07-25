@@ -1,10 +1,10 @@
-# 前端面试被提问的问题，与考虑的点
-<!--
- * @Author: WannTonn
- * @Date: 2021-06-30 22:10:06
- * @Description: 
- * @FilePath: /wanntonn.github.io/_posts/2021-06-30-interview.md
--->
+---
+title: "前端面试被提问的问题，与考虑的点"
+date: 2021-06-30T23:35:24+08:00
+draft: false
+---
+<!--more-->
+
 - 撇开Vue，react，等框架。你认为前端应该会的技能（知识点）有哪些
 - 对前端工程化的理解
 - 能否徒手从零构建一个工程化项目
