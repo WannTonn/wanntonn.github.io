@@ -42,7 +42,7 @@
       <pubDate>Wed, 02 Jun 2021 23:24:45 +0800</pubDate>
       
       <guid>https://wanntonn.github.io/posts/howtousehugo/</guid>
-      <description></description>
+      <description>   用途 指令     start server hugo server -D   new file hugo new posts/xxxx.md   run build hugo -D    </description>
     </item>
     
     <item>
