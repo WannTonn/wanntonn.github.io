@@ -6,7 +6,18 @@
     <description>Recent content on { ...life }</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-hans</language>
-    <lastBuildDate>Wed, 30 Jun 2021 23:35:24 +0800</lastBuildDate><atom:link href="https://wanntonn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Mon, 02 Aug 2021 23:24:27 +0800</lastBuildDate><atom:link href="https://wanntonn.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重学HTML</title>
+      <link>https://wanntonn.github.io/posts/relearnhtml/</link>
+      <pubDate>Mon, 02 Aug 2021 23:24:27 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/posts/relearnhtml/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;前言：菜了多年，重新学习前端，记录一些很不错的例子，转化为自己的知识储备。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
     <item>
       <title>前端面试被提问的问题，与考虑的点</title>
       <link>https://wanntonn.github.io/posts/interview/</link>
@@ -23,6 +34,15 @@
       
       <guid>https://wanntonn.github.io/posts/nas/</guid>
       <description>&lt;h2 id=&#34;前言黑群晖起飞以下记录为踩坑经验仅供参考&#34;&gt;前言：黑群晖起飞。以下记录为踩坑经验，仅供参考&lt;/h2&gt;</description>
+    </item>
+    
+    <item>
+      <title>如何使用hugo</title>
+      <link>https://wanntonn.github.io/posts/howtousehugo/</link>
+      <pubDate>Wed, 02 Jun 2021 23:24:45 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/posts/howtousehugo/</guid>
+      <description></description>
     </item>
     
     <item>
