@@ -1,0 +1,61 @@
+<!-- basic meta -->
+<meta charset="utf-8" />
+{{ if .Params.hide }}
+<meta name="robots" content="noindex, nofollow" />
+{{ end }}
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="HandheldFriendly" content="True" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+{{ hugo.Generator }}
+{{ partial "favicon.html" . }}
+
+<!-- seo metadata title -->
+{{- if .IsHome -}}
+<title>{{ .Site.Title }}</title>
+{{- else -}}
+<title>{{ .Title }} - {{ .Site.Title }}</title>
+{{- end -}}
+
+<!-- seo metadata author -->
+{{- if .Params.author -}}
+<meta name="author" content="{{ .Params.author }}" />
+{{- else -}}
+<meta name="author" content="{{ .Site.Params.author }}" />
+{{- end -}}
+
+<!-- $ description -->
+{{- if .Params.description -}}
+<meta name="description" content="{{ .Params.description }}" />
+{{- end -}}
+{{- if .Params.tags -}}
+<meta name="keywords" content="{{ delimit .Params.tags ", " }}" />
+{{- else if .Params.keywords -}}
+<meta name="keywords" content="{{ delimit .Params.keywords ", " }}" />
+{{- end -}}
+
+<!-- $ og -->
+{{ partial "opengraph.html" . }}
+
+<!-- stylesheets -->
+{{- if eq (getenv "NODE_ENV") "production" -}}
+{{ $options := (dict "targetPath" "assets/amzrk2.min.css" "outputStyle" "compressed" "includePaths" (slice "node_modules")) }}
+{{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{- else -}}
+{{ $options := (dict "targetPath" "assets/amzrk2.css" "outputStyle" "expanded" "enableSourceMap" true "includePaths" (slice "node_modules")) }}
+{{ $css := resources.Get "scss/index.scss" | resources.ToCSS $options }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}" />
+{{- end -}}
+
+{{- if eq (getenv "NODE_ENV") "production" -}}
+<!-- google analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
+<script>
+  //window.dataLayer = window.dataLayer || [];
+  //function gtag() { dataLayer.push(arguments); }
+  //gtag('js', new Date());
+  //gtag('config', 'UA-000000000-0');
+</script>
+{{- end -}}

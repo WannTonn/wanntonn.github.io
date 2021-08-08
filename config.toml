@@ -1,5 +1,0 @@
-baseURL = "https://wanntonn.github.io/"
-languageCode = "zh-hans"
-title = "{ ...life }"
-theme = "fuji"
-publishDir = "docs"
