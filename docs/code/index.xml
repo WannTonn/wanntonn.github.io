@@ -1,17 +1,119 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Codes on {...Life}</title><link>https://wanntonn.github.io/code/</link><description>Recent content in Codes on {...Life}</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 30 Jun 2021 23:35:24 +0800</lastBuildDate><atom:link href="https://wanntonn.github.io/code/index.xml" rel="self" type="application/rss+xml"/><item><title>前端面试被提问的问题，与考虑的点</title><link>https://wanntonn.github.io/code/interview/</link><pubDate>Wed, 30 Jun 2021 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/interview/</guid><description/></item><item><title>重置macOS Catalina登录壁纸</title><link>https://wanntonn.github.io/code/reset-catalina-bgimg/</link><pubDate>Sat, 15 May 2021 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/reset-catalina-bgimg/</guid><description>&lt;blockquote>
-&lt;p>前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。&lt;/p>
-&lt;/blockquote></description></item><item><title>前端 JavaScript 问答题目收录</title><link>https://wanntonn.github.io/code/fed-questions/</link><pubDate>Wed, 31 Mar 2021 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/fed-questions/</guid><description>&lt;p>摘录自
-&lt;a href="https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md" target="_blank">Github&lt;/a>
-。同步更新中。&lt;/p></description></item><item><title>js 实现无感下载</title><link>https://wanntonn.github.io/code/javascript/</link><pubDate>Mon, 15 Mar 2021 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/javascript/</guid><description/></item><item><title>关于Pycharm 激活</title><link>https://wanntonn.github.io/code/pycharm/</link><pubDate>Tue, 02 Mar 2021 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/pycharm/</guid><description>&lt;blockquote>
-&lt;p>用于无限试用Jetbrains的产品 (请勿无休止的一直试用，这并非此插件的本意)&lt;/p>
-&lt;/blockquote></description></item><item><title>canvas 路径绘制</title><link>https://wanntonn.github.io/code/canvas/</link><pubDate>Fri, 16 Oct 2020 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/canvas/</guid><description/></item><item><title>购买服务器之后开始学习运维知识。</title><link>https://wanntonn.github.io/code/operation-and-maintenance/</link><pubDate>Mon, 15 Jun 2020 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/operation-and-maintenance/</guid><description>&lt;blockquote>
-&lt;p>ssh config&lt;/p>
-&lt;/blockquote>
-&lt;pre>&lt;code>$ cd
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Codes on {...Life}</title>
+    <link>https://wanntonn.github.io/code/</link>
+    <description>Recent content in Codes on {...Life}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Mon, 02 Aug 2021 23:24:27 +0800</lastBuildDate><atom:link href="https://wanntonn.github.io/code/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>重学HTML</title>
+      <link>https://wanntonn.github.io/code/relearnhtml/</link>
+      <pubDate>Mon, 02 Aug 2021 23:24:27 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/relearnhtml/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;前言：菜了多年，重新学习前端，记录一些很不错的例子，转化为自己的知识储备。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>前端面试被提问的问题，与考虑的点</title>
+      <link>https://wanntonn.github.io/code/interview/</link>
+      <pubDate>Wed, 30 Jun 2021 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/interview/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>重置macOS Catalina登录壁纸</title>
+      <link>https://wanntonn.github.io/code/reset-catalina-bgimg/</link>
+      <pubDate>Sat, 15 May 2021 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/reset-catalina-bgimg/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>前端 JavaScript 问答题目收录</title>
+      <link>https://wanntonn.github.io/code/fed-questions/</link>
+      <pubDate>Wed, 31 Mar 2021 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/fed-questions/</guid>
+      <description>&lt;p&gt;摘录自 
+&lt;a href=&#34;https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md&#34; target=&#34;_blank&#34;&gt;Github&lt;/a&gt;
+。同步更新中。&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>js 实现无感下载</title>
+      <link>https://wanntonn.github.io/code/javascript/</link>
+      <pubDate>Mon, 15 Mar 2021 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>关于Pycharm 激活</title>
+      <link>https://wanntonn.github.io/code/pycharm/</link>
+      <pubDate>Tue, 02 Mar 2021 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/pycharm/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;用于无限试用Jetbrains的产品 (请勿无休止的一直试用，这并非此插件的本意)&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>canvas 路径绘制</title>
+      <link>https://wanntonn.github.io/code/canvas/</link>
+      <pubDate>Fri, 16 Oct 2020 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/canvas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>购买服务器之后开始学习运维知识。</title>
+      <link>https://wanntonn.github.io/code/operation-and-maintenance/</link>
+      <pubDate>Mon, 15 Jun 2020 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/operation-and-maintenance/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;ssh config&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;$ cd
 $ mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh
 $ touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys
-&lt;/code>&lt;/pre></description></item><item><title>MacOs重装后的一系列操作笔记</title><link>https://wanntonn.github.io/code/reinstallsystem/</link><pubDate>Sun, 31 May 2020 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/reinstallsystem/</guid><description>&lt;blockquote>
-&lt;p>解除macOS 4位密码限制&lt;/p>
-&lt;/blockquote>
-&lt;pre>&lt;code>pwpolicy -clearaccountpolicies
-&lt;/code>&lt;/pre></description></item><item><title>关于 Git 的一些经验收集</title><link>https://wanntonn.github.io/code/git/</link><pubDate>Sat, 07 Mar 2020 23:35:24 +0800</pubDate><guid>https://wanntonn.github.io/code/git/</guid><description/></item></channel></rss>
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>MacOs重装后的一系列操作笔记</title>
+      <link>https://wanntonn.github.io/code/reinstallsystem/</link>
+      <pubDate>Sun, 31 May 2020 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/reinstallsystem/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;解除macOS 4位密码限制&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre&gt;&lt;code&gt;pwpolicy -clearaccountpolicies
+&lt;/code&gt;&lt;/pre&gt;</description>
+    </item>
+    
+    <item>
+      <title>关于 Git 的一些经验收集</title>
+      <link>https://wanntonn.github.io/code/git/</link>
+      <pubDate>Sat, 07 Mar 2020 23:35:24 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/code/git/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
