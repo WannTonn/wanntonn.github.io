@@ -7,4 +7,4 @@ keywords:
   - Aofuji
   - index
 ---
-## 我是贪僧。
+## 知愚而后勇。

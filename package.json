@@ -1,11 +1,11 @@
 {
-  "name": "hugo-template-aofuji",
+  "name": "blog-of-wanntonn-by-hugo-template-aofuji",
   "version": "1.1.2",
-  "author": "DSRKafuU <amzrk2@outlook.com> (https://amzrk2.cc/)",
+  "author": "WannTonn",
   "license": "Apache-2.0",
   "repository": {
     "type": "git",
-    "url": "https://github.com/amzrk2/hugo-template-aofuji"
+    "url": "https://github.com/WannTonn/wanntonn.github.io"
   },
   "dependencies": {
     "bulma": "~0.9.1",
