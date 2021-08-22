@@ -7,4 +7,4 @@ keywords:
   - Aofuji
   - index
 ---
-## 知愚而后勇。
+知愚而后勇。

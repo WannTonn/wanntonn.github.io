@@ -4,11 +4,12 @@ date: 2021-01-15T23:35:24+08:00
 draft: false
 ---
 
+<!--more-->
+
 ```
 # from dark to light
 $ defaults write com.oracle.workbench.MySQLWorkbench NSRequiresAquaSystemAppearance -bool yes
 ```
-<!--more-->
 
 ```
 # from light to dark
