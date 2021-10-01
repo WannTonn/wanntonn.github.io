@@ -73,9 +73,6 @@ draft: false
 
 > 学习并实现用BeautifulSoup + Python 来爬取网图。([地址](https://github.com/WannTonn/gallerySpider))
 
-## 其他技能
-- Windows装机，与黑苹果(hackintosh)，实现win + MacOS 双系统。
-- 硬件轴体焊接，热衷客制化键盘。
 
 ## 致谢
 感谢您花时间阅读我的简历，期待能有机会与您共事。
