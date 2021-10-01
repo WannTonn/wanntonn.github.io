@@ -2,6 +2,9 @@
 title: "个人简历"
 date: 2020-06-15T23:35:24+08:00
 draft: false
+description: '123'
+tags:
+image: '/images/CV/_avatar.jpg'
 ---
 
 <!--more-->

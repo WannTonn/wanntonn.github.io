@@ -2,6 +2,9 @@
 title: "NAS 折腾笔记"
 date: 2021-06-15T23:35:24+08:00
 draft: false
+tags:
+ - Nas
+image: '/images/Post/Nas/Synology.png'
 ---
 
 

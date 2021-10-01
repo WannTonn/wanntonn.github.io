@@ -2,6 +2,8 @@
 title: "重置macOS Catalina登录壁纸"
 date: 2021-05-15T23:35:24+08:00
 draft: false
+image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
+
 ---
 
 > 前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。
