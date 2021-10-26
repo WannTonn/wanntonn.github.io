@@ -2,6 +2,9 @@
 title: "前端 JavaScript 问答题目收录"
 date: 2021-03-31T23:35:24+08:00
 draft: false
+tags:
+ - Code
+image: '/images/Code/javascript.jpg'
 ---
 
  摘录自 [Github](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)。同步更新中。
@@ -2656,7 +2659,7 @@ function giveMePizza() {
   return 'Here you are';
 }
 
-const giveMeDrink = () => 'Hure you go,enjoy';
+const giveMeDrink = () => 'Here you go,enjoy';
 
 console.log(giveMePizza.prototype);
 console.log(giveMeDrink.prototype);

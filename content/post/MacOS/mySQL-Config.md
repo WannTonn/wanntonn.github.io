@@ -2,6 +2,9 @@
 title: "MySQL workbench theme change"
 date: 2021-01-15T23:35:24+08:00
 draft: false
+tags:
+ - MacOS
+image: '/images/Post/MacOS/mysql.png'
 ---
 
 <!--more-->

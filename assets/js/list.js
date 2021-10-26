@@ -4,4 +4,4 @@
 import 'lazysizes';
 
 /* mail */
-import './components/mail';
+// import './components/mail';

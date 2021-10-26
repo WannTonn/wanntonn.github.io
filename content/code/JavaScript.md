@@ -1,7 +1,10 @@
 ---
-title: "js 实现无感下载"
-date: 2021-03-15T23:35:24+08:00
+title: "Javascript 日志"
+date: 2021-03-18T23:35:24+08:00
 draft: false
+tags: 
+ - Code
+image: '/images/Code/javascript.jpg'
 ---
 <!--more-->
 

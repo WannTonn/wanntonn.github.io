@@ -21,4 +21,15 @@ Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsU
 > 重启，进入MacOS设置时间后，再重启到windows。
 
 
-> 抑或使用hackintool工具，点击打开“工具”选项卡，点击最底下九宫格图标（生成Windows UTC 时间同步注册表文件）。Enjoy.
+> 抑或使用hackintool工具，点击打开“工具”选项卡，点击最底下九宫格图标（生成Windows UTC 时间同步注册表文件）。Enjoy。
+
+
+### 在安装白苹果降版本（10.14以下）时，遇到“这个安装macOS Mojave 应用程序副本已损坏。不能用来安装macOS”
+
+> 解决方法
+```
+# 1.断开网络
+# 2. 退出安装程序，找到实用工具 - 终端。 调整系统时间
+date 122014102015.30
+
+```

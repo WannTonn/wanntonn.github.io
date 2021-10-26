@@ -2,6 +2,9 @@
 title: "Kodi 快捷键"
 date: 2021-08-22T21:25:24+08:00
 draft: false
+tags:
+ - Nas
+image: '/images/Post/Nas/kodi.png'
 ---
 
 <!--more-->

@@ -2,6 +2,9 @@
 title: "关于Pycharm 激活"
 date: 2021-03-02T23:35:24+08:00
 draft: false
+tags: 
+ - Code
+image: '/images/Code/pycharm.png'
 ---
 
 > 用于无限试用Jetbrains的产品 (请勿无休止的一直试用，这并非此插件的本意)
@@ -23,4 +26,4 @@ draft: false
 ```
 ### 下载地址: (好孩子看不见)
 
-<a href="https://justcode.ikeepstudying.com/wp-content/uploads/2021/01/jetbrains-agent-latest.zip" style="color: #fff">好孩子看不见</a>
+<a href="https://justcode.ikeepstudying.com/wp-content/uploads/2021/01/jetbrains-agent-latest.zip" style="color: #4d5158">好孩子看不见</a>
