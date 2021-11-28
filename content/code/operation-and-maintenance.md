@@ -1,5 +1,5 @@
 ---
-title: "购买服务器之后开始学习运维知识。"
+title: "购买服务器之后开始学习运维知识。updated on 2021-11-28 "
 date: 2020-06-15T23:35:24+08:00
 draft: false
 ---
@@ -38,13 +38,45 @@ draft: false
     $ apt-get install yum # 完美解决
 
 > 安装 nginx
-
     sudo apt-get install nginx
 
 > 配置Nginx conf
 
-    $ cd /etc/nginx
-    $ vim nginx.conf
+     root@:~# cd /etc/nginx
+     root@:~# vim nginx.conf
+
+    # 配置文件中 主要有以下内容, 如果想映射其他端口，则在 /etc/nginx/sites-enabled/ 新建一个配置文件 / 复制一个新的default文件后修改
+    
+    server {
+        # 默认监听80端口的配置
+        listen 80 default_server;
+        listen [::]:80 default_server;
+
+        root /www; # 此处的www文件需自己在Linux系统下新建，可配置任意路径，只要能对得上。
+        index index.html; # 默认入口
+        # 配置已绑定到域名解析A的服务器域名
+        server_name hostname;   # hostname变量 为ip / 域名
+        # 监听端口对应的路径
+        location / {
+            root /www; # 此处的www文件需自己在Linux系统下新建，可配置任意路径，只要能对得上。
+            index index.html; # 默认入口
+            try_files $uri $uri/ /index.html; # 解决vue项目history模式 页面刷新空白。
+        }
+    }
+
+
+> Nginx 常用指令
+    # 测试配置文件语法
+    root@:~# nginx -t  
+    # 出现以下内容则语法正确
+    nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+    nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+    # 重载Nginx配置
+    root@:~# nginx -s reload
+    
+
+
 
 
     
