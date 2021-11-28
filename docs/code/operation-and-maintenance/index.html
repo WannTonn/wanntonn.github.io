@@ -57,11 +57,14 @@ server {
         try_files $uri $uri/ /index.html; # 解决vue项目history模式 页面刷新空白。
     }
 }
-</code></pre><blockquote><p>Nginx 常用指令
-# 测试配置文件语法
-root@:~# nginx -t<br># 出现以下内容则语法正确
+</code></pre><blockquote><p>Nginx 常用指令</p></blockquote><pre><code># 测试配置文件语法
+root@:~# nginx -t
+
+# 出现以下内容则语法正确
 nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
-nginx: configuration file /etc/nginx/nginx.conf test is successful</p></blockquote><pre><code># 重载Nginx配置
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+
+# 重载Nginx配置
 root@:~# nginx -s reload
 </code></pre></article></div></div></div><aside class="column single-sidebar is-one-quarter"><div class=card><div class=card-info><div class=avatar><div class="image-wrapper ratio-1x1"><img src=/images/_avatar.jpg></div></div><div class=info><span class=info-name>WannTonn</span>
 <span class=info-para>What is dead be never die</span></div><div class=counter><div class=counter-wrapper><span class=counter-data>35</span>

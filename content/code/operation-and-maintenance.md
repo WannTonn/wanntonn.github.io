@@ -66,15 +66,17 @@ draft: false
 
 
 > Nginx 常用指令
+
     # 测试配置文件语法
-    root@:~# nginx -t  
+    root@:~# nginx -t
+    
     # 出现以下内容则语法正确
     nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
     nginx: configuration file /etc/nginx/nginx.conf test is successful
 
     # 重载Nginx配置
     root@:~# nginx -s reload
-    
+
 
 
 
