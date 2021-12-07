@@ -91,8 +91,8 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 
 > 配置 npm / yarn 淘宝镜像
 
-    npm config set registry https://registry.npm.taobao.org
-    yarn config set registry https://registry.npm.taobao.org/
+    npm config set registry https://registry.npmmirror.com
+    yarn config set registry https://registry.npmmirror.com
 
 > 关于Git的一些问题与解决方案
 
@@ -103,11 +103,7 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 
 
 
-> ### npm 配置淘宝镜像
 
-```
-npm config set registry https://registry.npm.taobao.org
-```
 
 > ### npm 恢复默认
 
