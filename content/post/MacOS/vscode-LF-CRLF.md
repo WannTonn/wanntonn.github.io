@@ -10,7 +10,7 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 <!--more-->
 
 > 解决方法： 统一格式。
-- 打开VSCode，设置 - 搜索 "EOL", 修改该选项为(\r\n)。统一标准
+- 打开VSCode，设置 - 搜索 "EOL", 修改该选项为(\n: LF)。统一标准
 - 执行完成后，再在Git中设置一下。
   ```
     git config --global core.autocrlf false
