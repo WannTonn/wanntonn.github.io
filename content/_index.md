@@ -7,4 +7,4 @@ keywords:
   - Aofuji
   - index
 ---
-知愚而后勇。
+为他人期待而活才是小丑。

@@ -1,6 +1,6 @@
 ---
 title: "MacOs重装后的一系列操作笔记"
-date: 2020-05-31T23:35:24+08:00
+date: 2022-01-31T23:35:24+08:00
 draft: false
 tags:
  - MacOS

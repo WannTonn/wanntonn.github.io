@@ -1,5 +1,5 @@
 ---
-title: "canvas 路径绘制"
+title: "canvas 绘制路径记录"
 date: 2020-10-16T23:35:24+08:00
 draft: false
 ---
