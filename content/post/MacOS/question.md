@@ -11,5 +11,6 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 <!-- more -->
 
 ## 前言
-> 在日常开发过程中遇到的问题，如下图所示
-> ![](https://github.com/WannTonn/wanntonn.github.io/tree/master/static/images/Post/MacOS/clipboard.jpg?raw=true)
+> 在日常开发过程中遇到的问题，如下图所示(点击查看大图)
+
+> ![](https://github.com/WannTonn/wanntonn.github.io/blob/master/static/images/Post/MacOS/clipboard.jpg?raw=true)
