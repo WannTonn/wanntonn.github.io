@@ -1,7 +1,9 @@
 ---
-title: "购买服务器之后开始学习运维知识。updated on 2021-11-28 "
+title: "购买服务器之后开始学习运维知识"
 date: 2020-06-15T23:35:24+08:00
 draft: false
+tags:
+ - 运维
 ---
 
 > ssh config

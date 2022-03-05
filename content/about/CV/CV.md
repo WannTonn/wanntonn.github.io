@@ -1,9 +1,7 @@
 ---
 title: "个人简历"
-date: 2020-06-15T23:35:24+08:00
+date: 2022-03-04T23:35:24+08:00
 draft: false
-description: '123'
-tags:
 image: '/images/CV/_avatar.jpg'
 ---
 
@@ -12,7 +10,7 @@ image: '/images/CV/_avatar.jpg'
 ## 个人信息
 - 汪通 / 男 / 1994年
 - 本科 / 电子商务专业
-- 工作年限：5年
+- 工作年限：6年
 - 技术博客: [地址](https://wanntonn.github.io)
 - GitHub: [地址](https://github.com/WannTonn)
 - 期望职位： WEB前端工程师
@@ -20,6 +18,7 @@ image: '/images/CV/_avatar.jpg'
 
 ## 工作经历
 ### 福建紫讯科技有限公司(2021.07 ~ 至今)
+> 
 
 ### 福州迈索德塔科技有限公司（2021.05 ~ 2021.07）
 ### 职位：前端开发工程师
