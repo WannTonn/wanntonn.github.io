@@ -1,0 +1,547 @@
+<!doctype html><html lang=en>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=HandheldFriendly content="True">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=generator content="Hugo 0.88.1">
+<link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
+<link rel=manifest href=/favicons/site.webmanifest>
+<link rel="shortcut icon" href=/favicons/favicon.ico>
+<title>自己搭建一个Electron + React + umi 的通用模板 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Electron">
+<meta property="og:title" content="自己搭建一个Electron + React + umi 的通用模板">
+<meta property="og:description" content="
+前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://wanntonn.github.io/post/electron/create-a-demo-template/">
+<meta property="og:image" content="https://wanntonn.github.io/images/Post/Electron/bg.jpg"><meta property="article:published_time" content="2022-03-06T11:30:45+08:00">
+<meta property="article:modified_time" content="2022-03-06T11:30:45+08:00"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://wanntonn.github.io/images/Post/Electron/bg.jpg">
+<meta name=twitter:title content="自己搭建一个Electron + React + umi 的通用模板">
+<meta name=twitter:description content="
+前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。
+">
+<link rel=stylesheet href=/assets/amzrk2.min.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
+<script></script>
+<body data-theme=auto data-section=single>
+<script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
+<div id=top style=height:0;overflow:hidden></div>
+<header>
+<nav class=navbar>
+<div class=container>
+<div class=navbar-brand>
+<a class=navbar-item href=https://wanntonn.github.io>
+{...Life}
+</a>
+</div>
+<div class=navbar-menu>
+<div class=navbar-start>
+<a class=navbar-item href=/post/>
+笔记
+</a>
+<a class=navbar-item href=/daily/>
+日进一步
+</a>
+<a class=navbar-item href=/tags/>
+标签
+</a>
+<a class=navbar-item href=/about/>
+关于我
+</a>
+</div>
+<div class=navbar-end>
+<div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg>
+</div>
+<a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg>
+</a>
+<div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<div class="container single-container">
+<div class="columns single-columns">
+<div class="column single-content is-three-quarters">
+<div class=card>
+<div class="post-image image-wrapper ratio-40x9">
+<img src=/images/Post/Electron/bg.jpg>
+</div>
+<div class=post-box>
+<h2 class=post-title>自己搭建一个Electron + React + umi 的通用模板</h2>
+<div class=post-meta>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-03-06</time></span>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;5 min</span>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/electron>Electron</a></span>
+</div>
+</div>
+<div class=post-content>
+<article class="markdown content">
+<blockquote>
+<p>前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。</p>
+</blockquote>
+<h3 id=先上链接httpsgithubcomwanntonnelectron-umi-template>先上
+<a href=https://github.com/WannTonn/electron-umi-template target=_blank>链接</a>
+</h3>
+<h3 id=使用-umi-创建-react-项目此处为-macos-环境>使用 Umi 创建 React 项目(此处为 MacOS 环境)</h3>
+<pre><code class=language-bash>$ mkdir umi-demo  # 创建umi-demo文件夹
+$ cd umi-demo # 到umi-demo 文件夹下
+$ yarn create umi # 用yarn 创建umi项目, yarn的安装方法此处不做讨论
+
+$ [1/4] 🔍  Resolving packages...
+warning create-umi &gt; sylvanas &gt; @umijs/fabric &gt; stylelint &gt; @stylelint/postcss-markdown@0.36.2: Use the original unforked package instead: postcss-markdown
+warning create-umi &gt; yeoman-environment &gt; globby &gt; fast-glob &gt; micromatch &gt; snapdragon &gt; source-map-resolve@0.5.3: See https://github.com/lydell/source-map-resolve#deprecated
+warning create-umi &gt; yeoman-environment &gt; globby &gt; fast-glob &gt; micromatch &gt; snapdragon &gt; source-map-resolve &gt; resolve-url@0.2.1: https://github.com/lydell/resolve-url#deprecated
+warning create-umi &gt; yeoman-environment &gt; globby &gt; fast-glob &gt; micromatch &gt; snapdragon &gt; source-map-resolve &gt; urix@0.1.0: Please see https://github.com/lydell/urix#deprecated
+warning create-umi &gt; yeoman-environment &gt; globby &gt; fast-glob &gt; micromatch &gt; snapdragon &gt; source-map-resolve &gt; source-map-url@0.4.1: See https://github.com/lydell/source-map-url#deprecated
+[2/4] 🚚  Fetching packages...
+[3/4] 🔗  Linking dependencies...
+[4/4] 🔨  Building fresh packages...
+success Installed &quot;create-umi@0.27.0&quot; with binaries:
+      - create-umi
+
+$ ? Select the boilerplate type app   # 选择模板，此处选择了普通app模板
+? Do you want to use typescript? Yes  # 启用typescript
+? What functionality do you want to enable? # 此处选择antd
+   create package.json
+   create src/assets/yay.jpg
+   create .gitignore
+   create .editorconfig
+   create .env
+   create .eslintrc
+   create .prettierignore
+   create .prettierrc
+   create .umirc.ts
+   create mock/.gitkeep
+   create src/global.css
+   create src/layouts/__tests__/index.test.tsx
+   create src/layouts/index.css
+   create src/layouts/index.tsx
+   create src/pages/__tests__/index.test.tsx
+   create src/pages/index.css
+   create src/pages/index.tsx
+   create tsconfig.json
+   create typings.d.ts
+✨ File Generate Done
+✨  Done in 74.72s.
+</code></pre>
+<h3 id=安装依赖与运行项目>安装依赖与运行项目</h3>
+<pre><code class=language-bash>$ yarn
+yarn install v1.22.17
+info No lockfile found.
+[1/5] 🔍  Validating package.json...
+[2/5] 🔍  Resolving packages...
+warning babel-eslint@9.0.0: babel-eslint is now @babel/eslint-parser. This package will no longer receive updates.
+...此处省略N行
+[5/5] 🔨  Building fresh packages...
+success Saved lockfile.
+✨  Done in 89.98s.
+
+$ yarn start
+yarn run v1.22.17
+$ umi dev
+
+✔ Webpack
+  Compiled successfully in 3.56s
+
+Starting the development server...
+
+ DONE  Compiled successfully in 3566ms                                                                下午2:04:32
+
+
+  App running at:
+  - Local:   http://localhost:8000/ (copied to clipboard)
+  - Network: http://10.100.8.41:8000/
+
+ WAIT  Compiling...                                                                                   下午2:04:33
+
+
+✔ Webpack
+  Compiled successfully in 166.94ms
+
+ DONE  Compiled successfully in 168ms
+</code></pre>
+<p>这里 umi 项目就已经安装并成功运行了。</p>
+<h3 id=准备安装-electron>准备安装 Electron</h3>
+<blockquote>
+<p>在安装 Electron 之前，先调整项目的目录，这里分析一下为什么要调整项目的目录以及操作以下动作。</p>
+<ol>
+<li>为了优化 Electron 的安装包的体积，</li>
+</ol>
+</blockquote>
+<ol>
+<li>按下 <code>ctrl + c</code> ,先停止本地服务</li>
+<li>在项目根目录创建 <code>renderer</code> 文件夹(可以理解为 Electron 中的渲染进程)</li>
+<li>将刚刚生成的所有文件(<code>.gitignore</code>文件除外)移动到<code>renderer</code>文件夹下。</li>
+<li>在项目中创建<code>main</code>文件夹(Electron 项目的主进程)</li>
+<li>在项目根目录创建<code>index.js</code></li>
+<li>在终端输入以下指令</li>
+</ol>
+<ul>
+<li>
+<pre><code class=language-bash> $ npm init (初始化项目，用于安装Electron，根据需要初始化)
+</code></pre>
+</li>
+</ul>
+<h4 id=安装-electron>安装 Electron</h4>
+<pre><code class=language-bash>$ yarn add electron -D
+</code></pre>
+<h4 id=配置mainmainjs-主进程内容>配置<code>main/main.js</code> 主进程内容</h4>
+<details><summary>点击查看</summary>
+<p>
+<pre><code class=language-javascript>const {
+  app,
+  BrowserWindow,
+  ipcMain,
+  nativeTheme,
+  Menu,
+  MenuItem,
+  Notification,
+  globalShortcut,
+  webContents,
+  ipcRenderer,
+} = require('electron');
+const path = require('path');
+const isMac = process.platform === 'darwin'; // 如果是MacOS
+const isWin = process.platform === 'win32'; // 如果是Windows
+const isDev = process.env.NODE_ENV === 'development';
+const getRootPath = require('../rootPath');
+let windowIdMap = {};
+/**
+ * @description 初始化创建窗口
+ * @param name 窗口的名称
+ */
+function createWindow(name, option) {
+  const mainWindow = new BrowserWindow({
+    width: 1000,
+    height: 800,
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: true,
+      webviewTag: true,
+      enableRemoteModule: true,
+      preload: path.join(getRootPath(), 'static', 'electron-preload.js'),
+    },
+  });
+  windowIdMap[name] = mainWindow.webContents.id; // 将窗口名称设置到map
+  if (isDev) {
+    mainWindow.loadURL('http://localhost:8000');
+  } else {
+    mainWindow.loadFile(path.join(getRootPath(), '/dist/index.html'));
+  }
+  mainWindow.webContents.openDevTools();
+}
+/**
+ * @description 配置菜单,需要开启的话就将注释去掉，修改内容
+ */
+/* const menu = new Menu();
+menu.append(new MenuItem({
+  submenu: [{
+    label: '退出',
+    role: 'quit',
+    accelerator: isMac ? 'Cmd+Q' : 'Alt+F4',
+    click: () =&gt; { console.log('close app'); }
+  }, {
+    label: '老板键',
+    role: 'hide',
+    accelerator: isMac ? 'Cmd+H' : 'Win+D'
+  }]
+})); */
+// Menu.setApplicationMenu(menu);
+
+/**
+ * @description 弹一个通知
+ */
+function showNotification() {
+  const NOTICE_TITLE = '成功初始化';
+  const NOTICE_CONTENT = '恭喜初始化成功';
+  new Notification({ title: NOTICE_TITLE, body: NOTICE_CONTENT }).show();
+}
+
+/**
+ * @description 当是MacOS的时候
+ */
+// 切换暗黑模式
+if (isMac) {
+  ipcMain.handle('dark-mode:toggle', () =&gt; {
+    nativeTheme.themeSource = nativeTheme.shouldUseDarkColors ? 'light' : 'dark';
+    return nativeTheme.shouldUseDarkColors;
+  });
+  ipcMain.handle('dark-mode:system', () =&gt; {
+    nativeTheme.themeSource = 'system';
+  });
+}
+
+/**
+ * @description 绑定主进程响应渲染进程的通信
+ */
+ipcMain.on('login', (e, opt) =&gt; {
+  let { msg, callback } = opt;
+  console.log(msg, callback, opt);
+  callback?.();
+});
+
+ipcMain.handle('toMain', (callBack) =&gt; {
+  callBack?.();
+  return '我是main窗口，create window success';
+});
+
+/**
+ * @description 当electron初始化完成的时候
+ */
+app
+  .whenReady()
+  .then(async () =&gt; {
+    globalShortcut.register('F12', () =&gt; {
+      webContents.fromId(windowIdMap['default'])?.openDevTools();
+    });
+    createWindow('default');
+  })
+  .then(() =&gt; {
+    isMac &amp;&amp; showNotification();
+  });
+/**
+ * @description 当没有窗口打开时，则打开一个新窗口（MacOS）
+ */
+app.on('activate', function () {
+  if (!BrowserWindow.getAllWindows().length) createWindow();
+});
+/**
+ * @description 当electron关闭所有窗口时，退出应用。
+ */
+app.on('mainWindow-all-closed', function () {
+  if (isWin) app.quit();
+});
+</code></pre>
+</p>
+</details>
+<h3 id=修改根目录indexjs>修改根目录<code>index.js</code></h3>
+<pre><code class=language-javascript>require('./main/main.js');
+</code></pre>
+<h3 id=修改根目录packagejson>修改根目录<code>package.json</code></h3>
+<pre><code class=language-json># 找到scripts, 添加start指令
+&quot;scripts&quot;: {
+    &quot;test&quot;: &quot;echo \&quot;Error: no test specified\&quot; &amp;&amp; exit 1&quot;,
+    &quot;start&quot;: &quot;electron .&quot;
+},
+
+</code></pre>
+<h3 id=运行-electron>运行 Electron</h3>
+<pre><code class=language-bash>$ yarn start
+</code></pre>
+<h3 id=细节修改>细节修改</h3>
+<blockquote>
+<p>由于<code>main/main.js</code>是修改过的，入口增加了是否是 development 的判断(是：打开 http://localshost:8000, 否：打开编译好的正式包文件下的 index.html)，所以这里需要调整<code>package.json</code>，在<code>start</code>指令中添加 监听 <code>http://localhost:8000</code> 并启动 Electron 客户端。
+修改根目录下的<code>package.json</code></p>
+</blockquote>
+<pre><code class=language-json>&quot;scripts&quot;: {
+  &quot;elt:dev&quot;: &quot;cross-env NODE_ENV=development electron .&quot;,
+  &quot;start&quot;: &quot;concurrently \&quot;npm run start:app\&quot; \&quot;wait-on http://localhost:8000 &amp;&amp; npm run elt:dev\&quot;&quot;,
+  &quot;start:app&quot;: &quot;cross-env APP_ROOT=./renderer umi dev&quot;
+}
+</code></pre>
+<blockquote>
+<p>在运行 <code>yarn start</code>之前，先安装对应的依赖。因为指令中用到了
+<a href=https://www.npmjs.com/package/concurrently target=_blank>concurrently</a>
+与
+<a href=https://www.npmjs.com/package/wait-on target=_blank>wait-on</a>
+。所以我们需要先安装依赖(需要安装到<code>devDependencies</code>下，因为在后续的打包中，Electron 不会将<code>devDependencies</code>下的依赖打包进去。进而优化整体体积)。</p>
+</blockquote>
+<pre><code class=language-bash>$ yarn add wait-on concurrently -D
+</code></pre>
+<h3 id=再次运行-electron>再次运行 Electron</h3>
+<pre><code>$ yarn start
+
+</code></pre>
+<h3 id=安装electron-builder>安装<code>electron-builder</code></h3>
+<pre><code class=language-bash>$ yarn add electron-builder
+</code></pre>
+<h3 id=添加electron-builder配置-新增electron-builder-configjs名字随意起仅供参考具体按实际场景修改>添加<code>electron-builder</code>配置, 新增<code>electron-builder-config.js</code>（名字随意起）。仅供参考。具体按实际场景修改</h3>
+<details><summary>点击查看配置</summary>
+<p>
+<pre><code class=language-javascript>/**
+ * @description
+ * electron-builder配置文件， 使用时通过npmscript 指定--config 来匹配运行
+ * eg(当前)： elctron-builder --config .config/electron-build-config.js
+ */
+
+module.exports = {
+  files: [
+    // 'index.js', 'main/**/*', 'dist/**/*', 'node_modules/', 'package.json',
+    '**/*',
+    '!release/**/*',
+    '!renderer/**/*',
+    'dist/**/*',
+    'static/**/*',
+    '!src/**/*',
+    // &quot;!main/**/*&quot;
+  ],
+  productName: 'demoApp',
+  // 注入打包后package.json 内的属性
+  extraMetadata: {
+    main: 'index.js',
+  },
+  directories: {
+    output: 'release/${version}', // 编译文件输出文件夹
+  },
+  // mac打包配置
+  mac: {
+    // 包类型，参见 https://developer.apple.com/library/ios/documentation/General/Reference/InfoPlistKeyReference/Articles/LaunchServicesKeys.html#//apple_ref/doc/uid/TP40009250-SW8
+    // category: 'public.app-category.developer-tools',
+    type: 'development',
+    target: ['default'], // 目标包类型，
+  },
+
+  dmg: {
+    // background: 'build/appdmg.png', // dmg安装窗口背景图
+    // icon: 'public/icon.icns', // 客户端图标
+    iconSize: 100, // 安装图标大小
+    // 安装窗口中包含的项目和配置
+    contents: [
+      { x: 380, y: 280, type: 'link', path: '/Applications' },
+      { x: 110, y: 280, type: 'file' },
+    ],
+    window: { width: 500, height: 500 }, // 安装窗口大小
+  },
+  linux: {
+    target: ['AppImage', 'deb'],
+    icon: 'build/icon.png',
+  },
+  win: {
+    target: ['nsis', 'portable', 'squirrel'],
+    icon: 'public/icon.ico', // 客户端图标
+  },
+  nsis: {
+    shortcutName: 'demoApp', // 图标名称
+    oneClick: false, // 是否一键安装
+    allowElevation: true, // 允许请求提升。 如果为false，则用户必须使用提升的权限重新启动安装程序。
+    allowToChangeInstallationDirectory: true, // 允许修改安装目录
+    // installerIcon: &quot;./dist/public/icon.ico&quot;,// 安装图标
+    // uninstallerIcon: &quot;./dist/public/unist.ico&quot;,//卸载图标
+    // installerHeaderIcon: &quot;./dist/public/icon.ico&quot;, // 安装时头部图标
+    createDesktopShortcut: true, // 创建桌面图标
+    createStartMenuShortcut: true, // 创建开始菜单图标
+  },
+  // asar: {
+  //   smartUnpack: true,  // asar打包, 智能提取第三方模块
+  // },
+  // asar: false,
+  /* 
+  publish: [
+    {
+      provider: 'generic',
+      url: 'http://localhost/release/',//更新服务器地址,请按实际部署修改
+    },
+  ], */
+};
+</code></pre>
+</p>
+</details>
+<h3 id=修改packagejson>修改<code>package.json</code></h3>
+<pre><code class=language-json> &quot;scripts&quot;: {
+    &quot;elt:dev&quot;: &quot;cross-env NODE_ENV=development electron .&quot;,
+    &quot;start:app&quot;: &quot;cross-env APP_ROOT=./renderer umi dev&quot;,
+    &quot;start&quot;: &quot;concurrently \&quot;npm run start:app\&quot; \&quot;wait-on http://localhost:8000 &amp;&amp; npm run elt:dev\&quot;&quot;,
+    &quot;elt:dist&quot;: &quot;umi electron-builder -p never&quot;,
+    &quot;build:app&quot;: &quot;cross-env APP_ROOT=./renderer umi build&quot;,
+    &quot;elt:dist:all&quot;: &quot;cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder -mwl --config ./electron-builder-config.js&quot;,
+    &quot;elt:dist:mac&quot;: &quot;cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder -m --config ./electron-builder-config.js&quot;,
+    &quot;elt:dist:win&quot;: &quot;cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder -w --config ./electron-builder-config.js&quot;,
+    &quot;elt:dist:linux&quot;: &quot;cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder -l --config ./electron-builder-config.js&quot;
+  },
+</code></pre>
+<h3 id=执行编译>执行编译</h3>
+<pre><code class=language-bash>$ yarn run elt:dist:mac
+</code></pre>
+<h3 id=遇到的问题>遇到的问题</h3>
+<ol>
+<li>在编译的时候报以下这个错
+<code>Application entry file "/Users/mac/zones/electron-umi-template/release/mac/electron-app-template.app/Contents/Resources/app/index.js" does not exist. Seems like a wrong configuration.</code></li>
+</ol>
+<h3 id=解决方案>解决方案</h3>
+<ol>
+<li>思来想去，发现是文件夹重名了，原来我的渲染进程的文件夹是<code>app</code> ，而<code>electron-builder</code>打包出的入口文件夹也是<code>app</code>。将文件夹名字改成了<code>renderer</code>就解决了。</li>
+</ol>
+</article>
+</div>
+</div>
+</div>
+<aside class="column single-sidebar is-one-quarter">
+<div class=card>
+<div class=card-info>
+<div class=avatar>
+<div class="image-wrapper ratio-1x1">
+<img src=/images/_avatar.jpg>
+</div>
+</div>
+<div class=info>
+<span class=info-name>WannTonn</span>
+<span class=info-para>What is dead be never die</span>
+</div>
+<div class=counter>
+<div class=counter-wrapper>
+<span class=counter-data>9</span>
+<span class=counter-name>kWords</span>
+</div>
+<div class=counter-wrapper>
+<span class=counter-data>7</span>
+<span class=counter-name>Tags</span>
+</div>
+<div class=counter-wrapper>
+<span class=counter-data>18</span>
+<span class=counter-name>Posts</span>
+</div>
+</div>
+</div>
+</div>
+<div class=sticky>
+<div class="card toc hidden" id=table-of-contents>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#先上链接httpsgithubcomwanntonnelectron-umi-template>先上<a href=https://github.com/WannTonn/electron-umi-template>链接</a></a></li>
+<li><a href=#使用-umi-创建-react-项目此处为-macos-环境>使用 Umi 创建 React 项目(此处为 MacOS 环境)</a></li>
+<li><a href=#安装依赖与运行项目>安装依赖与运行项目</a></li>
+<li><a href=#准备安装-electron>准备安装 Electron</a></li>
+<li><a href=#修改根目录indexjs>修改根目录<code>index.js</code></a></li>
+<li><a href=#修改根目录packagejson>修改根目录<code>package.json</code></a></li>
+<li><a href=#运行-electron>运行 Electron</a></li>
+<li><a href=#细节修改>细节修改</a></li>
+<li><a href=#再次运行-electron>再次运行 Electron</a></li>
+<li><a href=#安装electron-builder>安装<code>electron-builder</code></a></li>
+<li><a href=#添加electron-builder配置-新增electron-builder-configjs名字随意起仅供参考具体按实际场景修改>添加<code>electron-builder</code>配置, 新增<code>electron-builder-config.js</code>（名字随意起）。仅供参考。具体按实际场景修改</a></li>
+<li><a href=#修改packagejson>修改<code>package.json</code></a></li>
+<li><a href=#执行编译>执行编译</a></li>
+<li><a href=#遇到的问题>遇到的问题</a></li>
+<li><a href=#解决方案>解决方案</a></li>
+</ul>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<footer class=footer>
+<div class=container>
+<span>Copyright &copy; 2020-2022 WannTonn</span>
+<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span>
+</div>
+</footer>
+<script defer src=/assets/amzrk2-common.min.js></script>
+<script defer src=/assets/amzrk2-single.min.js></script>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script>
+</body>
+</html>
