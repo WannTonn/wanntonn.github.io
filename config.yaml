@@ -32,9 +32,9 @@ menu:
     - name: "笔记"
       url: "/post/"
       weight: 1
-    - name: "日进一步"
-      url: "/daily/"
-      weight: 2
+    # - name: "日进一步"
+    #   url: "/daily/"
+    #   weight: 2
     - name: "标签"
       url: "/tags/"
       weight: 3
