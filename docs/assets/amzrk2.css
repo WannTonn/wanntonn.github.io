@@ -523,7 +523,7 @@ body[data-theme='dark'] img {
   outline: none;
 }
 
-.textarea[disabled], .input[disabled], fieldset[disabled] .textarea, fieldset[disabled] .input {
+[disabled].textarea, [disabled].input, fieldset[disabled] .textarea, fieldset[disabled] .input {
   cursor: not-allowed;
 }
 
@@ -2115,19 +2115,19 @@ table th {
   list-style-type: decimal;
 }
 
-.content ol.is-lower-alpha:not([type]) {
+.content ol:not([type]).is-lower-alpha {
   list-style-type: lower-alpha;
 }
 
-.content ol.is-lower-roman:not([type]) {
+.content ol:not([type]).is-lower-roman {
   list-style-type: lower-roman;
 }
 
-.content ol.is-upper-alpha:not([type]) {
+.content ol:not([type]).is-upper-alpha {
   list-style-type: upper-alpha;
 }
 
-.content ol.is-upper-roman:not([type]) {
+.content ol:not([type]).is-upper-roman {
   list-style-type: upper-roman;
 }
 
@@ -2274,26 +2274,26 @@ table th {
   box-shadow: 0 0 0 0.125em rgba(72, 95, 199, 0.25);
 }
 
-.textarea[disabled], .input[disabled], fieldset[disabled] .textarea, fieldset[disabled] .input {
+[disabled].textarea, [disabled].input, fieldset[disabled] .textarea, fieldset[disabled] .input {
   background-color: whitesmoke;
   border-color: whitesmoke;
   box-shadow: none;
   color: #7a7a7a;
 }
 
-.textarea[disabled]::-moz-placeholder, .input[disabled]::-moz-placeholder, fieldset[disabled] .textarea::-moz-placeholder, fieldset[disabled] .input::-moz-placeholder {
+[disabled].textarea::-moz-placeholder, [disabled].input::-moz-placeholder, fieldset[disabled] .textarea::-moz-placeholder, fieldset[disabled] .input::-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
-.textarea[disabled]::-webkit-input-placeholder, .input[disabled]::-webkit-input-placeholder, fieldset[disabled] .textarea::-webkit-input-placeholder, fieldset[disabled] .input::-webkit-input-placeholder {
+[disabled].textarea::-webkit-input-placeholder, [disabled].input::-webkit-input-placeholder, fieldset[disabled] .textarea::-webkit-input-placeholder, fieldset[disabled] .input::-webkit-input-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
-.textarea[disabled]:-moz-placeholder, .input[disabled]:-moz-placeholder, fieldset[disabled] .textarea:-moz-placeholder, fieldset[disabled] .input:-moz-placeholder {
+[disabled].textarea:-moz-placeholder, [disabled].input:-moz-placeholder, fieldset[disabled] .textarea:-moz-placeholder, fieldset[disabled] .input:-moz-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
-.textarea[disabled]:-ms-input-placeholder, .input[disabled]:-ms-input-placeholder, fieldset[disabled] .textarea:-ms-input-placeholder, fieldset[disabled] .input:-ms-input-placeholder {
+[disabled].textarea:-ms-input-placeholder, [disabled].input:-ms-input-placeholder, fieldset[disabled] .textarea:-ms-input-placeholder, fieldset[disabled] .input:-ms-input-placeholder {
   color: rgba(122, 122, 122, 0.3);
 }
 
@@ -2303,7 +2303,7 @@ table th {
   width: 100%;
 }
 
-.textarea[readonly], .input[readonly] {
+[readonly].textarea, [readonly].input {
   box-shadow: none;
 }
 

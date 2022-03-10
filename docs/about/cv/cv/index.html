@@ -9,7 +9,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
-<meta name="generator" content="Hugo 0.83.1" />
+<meta name="generator" content="Hugo 0.88.1" />
 
 <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png" />
 <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png" />
@@ -105,7 +105,7 @@
 <span>
   <svg class="icon" aria-hidden="true">
     <use xlink:href="#icon-clock"></use>
-  </svg>&nbsp;6 min</span>
+  </svg>&nbsp;5 min</span>
 <span>
   <svg class="icon" aria-hidden="true">
     <use xlink:href="#icon-hashtag"></use>
@@ -126,7 +126,9 @@
 <a href="https://github.com/WannTonn" target="_blank">地址</a>
 </li>
 <li>期望职位： WEB前端工程师</li>
-<li>Mail: <a href="mailto:wangtong@wanntonn.fun">wangtong@wanntonn.fun</a></li>
+<li>Mail: 
+<a href="mailto:wangtong@wanntonn.fun" target="_blank">wangtong@wanntonn.fun</a>
+</li>
 </ul>
 <h2 id="工作经历">工作经历</h2>
 <h3 id="福建紫讯科技有限公司202107--至今">福建紫讯科技有限公司(2021.07 ~ 至今)</h3>
@@ -142,9 +144,7 @@
 <li>用户反馈升级之前是影音模式，升级之后默认模式变成了游戏模式，导致用户在MacOS上用游戏线路看影音，导致了游戏线路拥堵。经排查，应用存放的数据为Electron内部的chromium的<code>LocalStorage</code>下，且应用是上架到APP Store下，沙盒应用的目录又与普通应用有所不同，导致应用升级，有可能导致数据丢失。经研究，将LocalStorage下的数据，存放在electron-store中，再将日志数据存放至其他文件夹，有效地处理了数据丢失的问题。</li>
 <li>在学习与维护项目的过程中，结合优秀项目，整合出自己的
 <a href="https://github.com/WannTonn/electron-umi-template" target="_blank">基于umi的通用Electron模板</a>
-，并制作了
-<a href="https://github.com/WannTonn/have-a-break" target="_blank">学(mo)习(yu)神器</a>
-,欢迎体验。</li>
+。</li>
 </ul>
 <blockquote>
 <p>参与后台项目的开发与维护</p>
@@ -161,27 +161,16 @@
 <li>原型中有大量的下拉筛选的Select场景，为避免重复拷贝代码，封装了带防抖与解决中文输入触发筛选的可配置是否发起请求的Select组件。</li>
 <li>封装其他场景中出现场景较频繁的小组件，极大的降低了重复性工作。</li>
 </ul>
-<h3 id="福州迈索德塔科技有限公司202105--202107">福州迈索德塔科技有限公司（2021.05 ~ 2021.07）</h3>
-<h3 id="职位前端开发工程师">职位：前端开发工程师</h3>
-<blockquote>
-<p>参与监狱项目(外包性质)的开发与维护
-项目描述：负责监狱项目代码开发与维护，同时对低版本浏览器(项目仅在监狱的XP系统上运行)进行兼容。</p>
-</blockquote>
-<h3 id="主要经历">主要经历：</h3>
-<ul>
-<li>接手监狱项目的开发，在项目出现新的功能在XP系统上无法使用的时候，通过完善babel(polyfill)配置，向下兼容低版本，同时在虚拟机安装同款XP系统进行联调。</li>
-<li>监狱项目表格在XP上无法正常显示(因为其他人是用grid来写的)，利用flex(兼容性高)布局重写表格样式，替换原有表格样式。</li>
-<li>监狱项目负责人想要免去工作人员手签表格，我运用了<code>vuejs-clipper</code>，编写了带预览功能的，上传手写签名照的组件，将白纸黑字的签名照替换成了透明底黑字的图片，并完成了上传操作。(
-<a href="https://wanntonn.github.io/signaturer/" target="_blank">React版(react-cropper + react)预览地址</a>
-)</li>
-</ul>
-<h3 id="福州东西乐活科技有限公司前福州东西电子商务科技有限公司-201808--202105">福州东西乐活科技有限公司(前：福州东西电子商务科技有限公司) (2018.08 ~ 2021.05)</h3>
+<h3 id="福州东西乐活科技有限公司前福州东西电子商务科技有限公司-201808--202107">福州东西乐活科技有限公司(前：福州东西电子商务科技有限公司) (2018.08 ~ 2021.07)</h3>
 <h3 id="职位-前端开发工程师">职位: 前端开发工程师</h3>
 <blockquote>
 <p>参与内部ERP系统 (Vue + Vue Router + Vuex + Antdv + axios + typescript)共同开发。</p>
 </blockquote>
 <p>项目描述：用技术手段实现日常业务操作(SKU管理，采购，备货，财务，质检等)，减少业务流程时间，提高业务部门的效率。</p>
 <ul>
+<li>运用<code>vuejs-clipper</code>，编写了带即时预览功能的，上传手写签名照的组件，将白纸黑字的签名照替换成了透明底黑字的图片，并同步完成上传操作。(
+<a href="https://wanntonn.github.io/signaturer/" target="_blank">React版(react-cropper + react)预览地址</a>
+)。</li>
 <li>完成项目业务组件以及通用组件的封装与完善，通过配置的形式完成页面功能。减少代码冗余，避免复制与修改代码带来的隐患。</li>
 <li>通用列表详情组件组件编写，整合列表组件与详情组件，通过传入配置，实现少代码就能快速完成页面渲染。</li>
 <li>主菜单列表组件，实现展示旧版与新版路由，添加input输入关键字，即时过滤菜单，清空后显示所有菜单选项, 实现快速筛选。</li>
@@ -307,10 +296,7 @@
     <li><a href="#工作经历">工作经历</a>
       <ul>
         <li><a href="#福建紫讯科技有限公司202107--至今">福建紫讯科技有限公司(2021.07 ~ 至今)</a></li>
-        <li><a href="#福州迈索德塔科技有限公司202105--202107">福州迈索德塔科技有限公司（2021.05 ~ 2021.07）</a></li>
-        <li><a href="#职位前端开发工程师">职位：前端开发工程师</a></li>
-        <li><a href="#主要经历">主要经历：</a></li>
-        <li><a href="#福州东西乐活科技有限公司前福州东西电子商务科技有限公司-201808--202105">福州东西乐活科技有限公司(前：福州东西电子商务科技有限公司) (2018.08 ~ 2021.05)</a></li>
+        <li><a href="#福州东西乐活科技有限公司前福州东西电子商务科技有限公司-201808--202107">福州东西乐活科技有限公司(前：福州东西电子商务科技有限公司) (2018.08 ~ 2021.07)</a></li>
         <li><a href="#职位-前端开发工程师">职位: 前端开发工程师</a></li>
         <li><a href="#福州票付通科技有限公司2017--201808">福州票付通科技有限公司(2017 ~ 2018.08)</a></li>
         <li><a href="#业余爱好">业余爱好</a></li>

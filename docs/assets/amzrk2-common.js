@@ -96,7 +96,6 @@
       }
     }
   };
-  var theme_default = ThemeManager;
 
   // ns-hugo:/Users/wanntonn/zones/wanntonn.github.io/assets/js/components/toc.js
   (function initMobileToc() {
@@ -115,7 +114,7 @@
 
   // <stdin>
   iconfont_default(window);
-  var themeManager = new theme_default();
+  var themeManager = new ThemeManager();
   document.getElementById("ctrl-adjust").addEventListener("click", () => {
     themeManager.switchTheme();
   });
