@@ -278,7 +278,6 @@ require('./main/main.js');
 ```bash
 $ yarn start
 ```
-
 ### 细节修改
 
 > 由于`main/main.js`是修改过的，入口增加了是否是 development 的判断(是：打开 http://localshost:8000, 否：打开编译好的正式包文件下的 index.html)，所以这里需要调整`package.json`，在`start`指令中添加 监听 `http://localhost:8000` 并启动 Electron 客户端。
