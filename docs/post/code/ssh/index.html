@@ -6,7 +6,7 @@
 <a class=navbar-item href=/tags/>标签</a>
 <a class=navbar-item href=/about/>关于我</a></div><div class=navbar-end><div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg></div><a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg></a><div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg></div></div></div></nav></header><main><div class="container single-container"><div class="columns single-columns"><div class="column single-content is-three-quarters"><div class=card><div class=post-box><h2 class=post-title>SSH指令</h2><div class=post-meta><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-05-04</time></span>
 <span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
-<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/ssh>ssh</a></span></div></div><div class=post-content><article class="markdown content"><blockquote><p>前言： 记录一些平时会用到，但是容易从脑袋中丢掉的指令</p></blockquote><blockquote><p>ssh指令之 - scp</p></blockquote><pre><code class=language-bash>  # 将本地文件 拷贝到 远程服务器上
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/ssh>ssh</a></span></div></div><div class=post-content><article class="markdown content"><blockquote><p>前言： 记录一些平时会用到，但是容易从脑袋中丢掉的指令</p></blockquote><blockquote><p>ssh 指令之 - scp</p></blockquote><pre><code class=language-bash>  # 将本地文件 拷贝到 远程服务器上
   scp ~/Downloads/demo.txt root@192.168.50.123:/tmp
 
   # 将远程服务器上的文件 拷贝到 本地文件夹
@@ -17,6 +17,14 @@
 
   # 将远程服务器上的demo文件夹 拷贝到本地
   scp -r root@192.168.50.123:/tmp/demo ~/Downloads/
+</code></pre><blockquote><p>ssh 指令之 - fuser （查看占用端口的进程的 pid）</p></blockquote><pre><code class=language-bash># 查看80端口占用
+ fuser -v- n tcp 80
+ # 以下为demo结果, 可以得出占用80端口的进程的PID为4245
+                    USER        PID ACCESS COMMAND
+80/tcp:             root        4245 F.... nginx
+                    www-data    4246 F.... nginx
+</code></pre><blockquote><p>ssh 指令之 - kill （kill pid）</p></blockquote><pre><code class=language-bash># 在找到占用80端口的进程的pid之后，用kill指令来关闭
+kill 4245
 </code></pre></article></div></div></div><aside class="column single-sidebar is-one-quarter"><div class=card><div class=card-info><div class=avatar><div class="image-wrapper ratio-1x1"><img src=/images/_avatar.jpg></div></div><div class=info><span class=info-name>WannTonn</span>
 <span class=info-para>What is dead be never die</span></div><div class=counter><div class=counter-wrapper><span class=counter-data>10</span>
 <span class=counter-name>kWords</span></div><div class=counter-wrapper><span class=counter-data>8</span>
