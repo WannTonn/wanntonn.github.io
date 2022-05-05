@@ -30,7 +30,7 @@ image: '/images/Post/Electron/bg.jpg'
   console.error(err.stack);
   process.exit(1);
   }); */
-  const path_ = path.join('electron-v17.1.0-darwin-x64.zip'); // 指定二进制压缩文件路径
+  const path_ = path.join(__dirname, 'electron-v17.1.0-darwin-x64.zip'); // 指定二进制压缩文件路径
   extractFile(path_); // 将二进制压缩文件路径进行解压操作
   ```
 - 在控制台敲入以下代码，回车即可完成离线安装。

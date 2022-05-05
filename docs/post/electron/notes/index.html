@@ -17,7 +17,7 @@ arch: process.env.npm_config_arch || process.arch
 console.error(err.stack);
 process.exit(1);
 }); */
-const path_ = path.join('electron-v17.1.0-darwin-x64.zip'); // 指定二进制压缩文件路径
+const path_ = path.join(__dirname, 'electron-v17.1.0-darwin-x64.zip'); // 指定二进制压缩文件路径
 extractFile(path_); // 将二进制压缩文件路径进行解压操作
 </code></pre></li><li>在控制台敲入以下代码，回车即可完成离线安装。</li><li><pre><code class=language-shell>node node_modules/electron/install.js
 </code></pre></li><li>看到<code>node_modules/electron/dist</code> 和 <code>node_modules/electron/path.txt</code> 就代表安装成功。</li></ul><h2 id=electron-store>Electron-Store</h2><h3 id=背景electron-store>背景（electron-store）</h3><blockquote><p>项目用的是 Electron 开发，原来数据是放在 Electron（即 Chrome）的 Storage 下，而 APP 需要上线 App Store，所以该应用为沙盒应用，在 App Store 更新的时候，有几率会将 Electron 的 RootPath 下的所有文件覆写，就会导致 Storage 数据丢失，所以采用 Electron-Store 方案，将需要缓存的数据写入磁盘。</p></blockquote><h3 id=遇到的问题electron-store>遇到的问题（electron-store）</h3><ul><li>项目中引用<code>electron-store</code>，项目运行起来之后，控制台报错，报错内容<code>WebContents #1 called ipcRenderer.sendSync() with 'electron-store-get-data' channel without listeners.</code></li><li>electro-store 生成的文件存放路径的问题。</li></ul><h3 id=分析>分析</h3><ul><li>初始化报错是由于&mldr;文档没看完，底下有强调要在主进程进行初始化。</li><li>MacOS 上的应用来源分为 App Store 商店下载与打包成<code>.dmg</code>镜像的压缩包(解压到 Applications/ 或任意文件夹就可以运行)与打包成 <code>.pkg</code>的执行安装的安装包文件 等。App Store 下载的应用都是一个独立的沙盒程序（需要上架到 App Store 就需要打开沙盒）,具体可参考
