@@ -17,7 +17,12 @@ tags:
 
     $ pbcopy < ~/.ssh/id_rsa.pub
     $ vim .ssh/authorized_keys
-    $  ssh-copy-id -i ~/.ssh/id_rsa.pub username@server -p 22 # 将rsa.pub 上传到服务器
+    $ a # 进入编辑状态
+    $ ctrl + v # 懂的都懂
+    $ esc
+    $ shift + ;
+    $ wq # 保存并退出vim模式
+    $ ssh-copy-id -i ~/.ssh/id_rsa.pub username@server -p 22 # 将rsa.pub 上传到服务器
     
 > 自定义hostname 免记ip登录
 
