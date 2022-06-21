@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Electron on {...Life}</title>
+    <link>https://wanntonn.github.io/tags/electron/</link>
+    <description>Recent content in Electron on {...Life}</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sun, 06 Mar 2022 11:30:45 +0800</lastBuildDate><atom:link href="https://wanntonn.github.io/tags/electron/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>自己搭建一个Electron &#43; React &#43; umi 的通用模板</title>
+      <link>https://wanntonn.github.io/post/electron/create-a-demo-template/</link>
+      <pubDate>Sun, 06 Mar 2022 11:30:45 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/post/electron/create-a-demo-template/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。&lt;/p&gt;
+&lt;/blockquote&gt;</description>
+    </item>
+    
+    <item>
+      <title>Electron学习笔记</title>
+      <link>https://wanntonn.github.io/post/electron/notes/</link>
+      <pubDate>Mon, 14 Feb 2022 11:30:45 +0800</pubDate>
+      
+      <guid>https://wanntonn.github.io/post/electron/notes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
