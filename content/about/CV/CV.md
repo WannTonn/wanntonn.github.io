@@ -1,7 +1,7 @@
 ---
 title: "个人简历"
 date: 2022-03-04T23:35:24+08:00
-draft: false
+draft: true
 image: '/images/CV/_avatar.jpg'
 ---
 

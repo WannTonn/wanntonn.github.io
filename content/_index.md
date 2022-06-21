@@ -1,6 +1,6 @@
 ---
 title: 'Index'
-description: 'Aofuji index.'
+description: 'Coding life'
 keywords:
   - index
 ---

@@ -31,6 +31,9 @@
   {{ partial "footer.html" . }}
   {{ partial "scripts-common.html" . }}
   {{ partial "scripts-search.html" . }}
+  <script>
+    window.location.href = '{{ .Site.BaseURL }}'
+  </script>
 </body>
 
 {{ end }}

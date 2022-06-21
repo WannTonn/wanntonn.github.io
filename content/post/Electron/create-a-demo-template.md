@@ -11,7 +11,7 @@ image: '/images/Post/Electron/bg.jpg'
 
 <!--more-->
 
-### 先上[链接](https://github.com/WannTonn/electron-umi-template)
+[先上链接](https://github.com/WannTonn/electron-umi-template)
 
 ### 使用 Umi 创建 React 项目(此处为 MacOS 环境)
 
@@ -81,14 +81,14 @@ $ umi dev
 
 Starting the development server...
 
- DONE  Compiled successfully in 3566ms                                                                下午2:04:32
+ DONE  Compiled successfully in 3566ms
 
 
   App running at:
   - Local:   http://localhost:8000/ (copied to clipboard)
   - Network: http://10.100.8.41:8000/
 
- WAIT  Compiling...                                                                                   下午2:04:33
+ WAIT  Compiling...
 
 
 ✔ Webpack
@@ -112,9 +112,9 @@ Starting the development server...
 5. 在项目根目录创建`index.js`
 6. 在终端输入以下指令
 
-- ```bash
-   $ npm init (初始化项目，用于安装Electron，根据需要初始化)
-  ```
+```bash
+  $ npm init (初始化项目，用于安装Electron，根据需要初始化)
+```
 
 #### 安装 Electron
 
@@ -278,6 +278,7 @@ require('./main/main.js');
 ```bash
 $ yarn start
 ```
+
 ### 细节修改
 
 > 由于`main/main.js`是修改过的，入口增加了是否是 development 的判断(是：打开 http://localshost:8000, 否：打开编译好的正式包文件下的 index.html)，所以这里需要调整`package.json`，在`start`指令中添加 监听 `http://localhost:8000` 并启动 Electron 客户端。
@@ -310,7 +311,8 @@ $ yarn start
 $ yarn add electron-builder
 ```
 
-### 添加`electron-builder`配置, 新增`electron-builder-config.js`（名字随意起）。仅供参考。具体按实际场景修改
+### 添加`electron-builder`配置
+新增`electron-builder-config.js`（名字随意起）。仅供参考。具体按实际场景修改
 
 <details><summary>点击查看配置</summary>
 <p>
@@ -392,10 +394,12 @@ module.exports = {
   ], */
 };
 ```
+
 </p>
 </details>
 
 ### 修改`package.json`
+
 ```json
  "scripts": {
     "elt:dev": "cross-env NODE_ENV=development electron .",
@@ -411,12 +415,16 @@ module.exports = {
 ```
 
 ### 执行编译
+
 ```bash
 $ yarn run elt:dist:mac
 ```
+
 ### 遇到的问题
+
 1. 在编译的时候报以下这个错
- `Application entry file "/Users/mac/zones/electron-umi-template/release/mac/electron-app-template.app/Contents/Resources/app/index.js" does not exist. Seems like a wrong configuration.`
+   `Application entry file "/Users/mac/zones/electron-umi-template/release/mac/electron-app-template.app/Contents/Resources/app/index.js" does not exist. Seems like a wrong configuration.`
 
 ### 解决方案
-1. 思来想去，发现是文件夹重名了，原来我的渲染进程的文件夹是`app` ，而`electron-builder`打包出的入口文件夹也是`app`。将文件夹名字改成了`renderer`就解决了。 
+
+1. 思来想去，发现是文件夹重名了，原来我的渲染进程的文件夹是`app` ，而`electron-builder`打包出的入口文件夹也是`app`。将文件夹名字改成了`renderer`就解决了。

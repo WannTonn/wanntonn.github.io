@@ -18,7 +18,7 @@ defaultContentLanguage: "en" # html
 params:
   # sidebar info
   author: "WannTonn"
-  para: "What is dead be never die"
+  para: "为他人期待而活才是小丑🤡"
   avatar: "/images/_avatar.jpg"
   image: "/images/_header.jpg"
   og: "/images/_og.png"
@@ -32,13 +32,22 @@ menu:
     - name: "笔记"
       url: "/post/"
       weight: 1
+    - name: "NAS"
+      url: "/nas/"
+      weight: 2
+    - name: "Hackintosh"
+      url: "/hackintosh/"
+      weight: 2
+    - name: "前端"
+      url: "/fed/"
+      weight: 2
     # - name: "日进一步"
     #   url: "/daily/"
     #   weight: 2
     - name: "标签"
       url: "/tags/"
       weight: 3
-    - name: "关于我"
+    - name: "关于"
       url: "/about/"
       weight: 4
   links:
@@ -52,8 +61,8 @@ menu:
     #   url: "https://space.bilibili.com/19767474"
     #   weight: 3
     # - name: "#icon-envelope-open-text"
-    #   url: "mailto:mail@fake.google" # fake mail here
-    #   weight: 4
+      # url: "mailto:mail@fake.google" # fake mail here
+      # weight: 4
 
 # markup
 markup:
@@ -61,7 +70,7 @@ markup:
     renderer:
       unsafe: true # enable user-embed HTML snippets
   highlight:
-    codeFences: false # disable code highlighter
+    codeFences: true # disable code highlighter
     tabWidth: 2
   tableOfContents:
     startLevel: 2
