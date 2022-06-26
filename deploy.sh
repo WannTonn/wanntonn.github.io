@@ -1,10 +1,10 @@
 #! /bin/bash
 # git add to git push
-git add .
 echo "git add"
-git commit -m "feat: update blogs"
+git add .
 echo "git commit"
-sleep 5s
+git commit -m "feat: update blogs"
 echo "sleep 5s for commit"
+sleep 5s
 git push origin master
 echo "it's done for git push"
