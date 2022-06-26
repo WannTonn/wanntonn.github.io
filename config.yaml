@@ -35,9 +35,6 @@ menu:
     - name: "NAS"
       url: "/nas/"
       weight: 2
-    - name: "Hackintosh"
-      url: "/hackintosh/"
-      weight: 2
     - name: "前端"
       url: "/fed/"
       weight: 2

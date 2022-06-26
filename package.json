@@ -19,6 +19,6 @@
   "scripts": {
     "dev": "cross-env NODE_ENV=development hugo server --port=1233 --gc",
     "test": "cross-env NODE_ENV=production hugo server --minify --gc",
-    "build": "cross-env NODE_ENV=production hugo --minify --cleanDestinationDir --gc"
+    "build": "cross-env NODE_ENV=production hugo --minify --cleanDestinationDir --gc && sh deploy.sh"
   }
 }

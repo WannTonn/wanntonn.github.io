@@ -11,7 +11,7 @@ image: '/images/Post/Nas/Synology.png'
 ## 前言：黑群晖起飞。以下记录为踩坑经验，仅供参考
 <!--more-->
 
-## 参考： [不到千元！手把手教您组装一台家用NAS J3455黑群晖6.1.7搭建全过程](https://post.smzdm.com/p/ag82zdd3/) 跟着流程走，就可以顺利完成安装
+> [参考：不到千元！手把手教您组装一台家用NAS J3455黑群晖6.1.7搭建全过程,跟着流程走，就可以顺利完成安装](https://post.smzdm.com/p/ag82zdd3/)
 
 > 踩坑的点
 
