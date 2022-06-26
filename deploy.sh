@@ -7,4 +7,4 @@ echo "git commit"
 sleep 5s
 echo "sleep 5s for commit"
 git push origin master
-echo "git push"
+echo "it's done for git push"
