@@ -1,101 +1,14 @@
-<!doctype html><html lang=en>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=HandheldFriendly content="True">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=generator content="Hugo 0.88.1">
-<link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
-<link rel=manifest href=/favicons/site.webmanifest>
-<link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>自己搭建一个Electron + React + umi 的通用模板 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Electron">
-<meta property="og:title" content="自己搭建一个Electron + React + umi 的通用模板">
-<meta property="og:description" content="
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=HandheldFriendly content="True"><meta http-equiv=x-ua-compatible content="IE=edge"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=generator content="Hugo 0.83.1"><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=manifest href=/favicons/site.webmanifest><link rel="shortcut icon" href=/favicons/favicon.ico><title>自己搭建一个Electron + React + umi 的通用模板 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Electron"><meta property="og:title" content="自己搭建一个Electron + React + umi 的通用模板"><meta property="og:description" content="
 前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。
-">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://wanntonn.github.io/fed/electron/create-a-demo-template/">
-<meta property="og:image" content="https://wanntonn.github.io/images/Post/Electron/bg.jpg"><meta property="article:published_time" content="2022-03-06T11:30:45+08:00">
-<meta property="article:modified_time" content="2022-03-06T11:30:45+08:00"><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://wanntonn.github.io/images/Post/Electron/bg.jpg">
-<meta name=twitter:title content="自己搭建一个Electron + React + umi 的通用模板">
-<meta name=twitter:description content="
+"><meta property="og:type" content="article"><meta property="og:url" content="https://blogs.wanntonn.fun/fed/electron/create-a-demo-template/"><meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Electron/bg.jpg"><meta property="article:published_time" content="2022-03-06T11:30:45+08:00"><meta property="article:modified_time" content="2022-03-06T11:30:45+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blogs.wanntonn.fun/images/Post/Electron/bg.jpg"><meta name=twitter:title content="自己搭建一个Electron + React + umi 的通用模板"><meta name=twitter:description content="
 前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。
-">
-<link rel=stylesheet href=/assets/amzrk2.min.css>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
-<script></script>
-<body data-theme=auto data-section=single>
-<script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
-<div id=top style=height:0;overflow:hidden></div>
-<header>
-<nav class=navbar>
-<div class=container>
-<div class=navbar-brand>
-<a class=navbar-item href=https://wanntonn.github.io>
-{...Life}
-</a>
-</div>
-<div class=navbar-menu>
-<div class=navbar-start>
-<a class=navbar-item href=/post/>
-笔记
-</a>
-<a class=navbar-item href=/nas/>
-NAS
-</a>
-<a class=navbar-item href=/fed/>
-前端
-</a>
-<a class=navbar-item href=/tags/>
-标签
-</a>
-<a class=navbar-item href=/about/>
-关于
-</a>
-</div>
-<div class=navbar-end>
-<div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg>
-</div>
-<a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg>
-</a>
-<div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg>
-</div>
-</div>
-</div>
-</nav>
-</header>
-<main>
-<div class="container single-container">
-<div class="columns single-columns">
-<div class="column single-content is-three-quarters">
-<div class=card>
-<div class="post-image image-wrapper ratio-32x9">
-<img src=/images/Post/Electron/bg.jpg>
-</div>
-<div class=post-box>
-<h2 class=post-title>自己搭建一个Electron + React + umi 的通用模板</h2>
-<div class=post-meta>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-03-06</time></span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;5 min</span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/electron>Electron</a></span>
-</div>
-</div>
-<div class=post-content>
-<article class="markdown content">
-<blockquote>
-<p>前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。</p>
-</blockquote>
-<p>
-<a href=https://github.com/WannTonn/electron-umi-template target=_blank>先上链接</a>
-</p>
-<h3 id=使用-umi-创建-react-项目此处为-macos-环境>使用 Umi 创建 React 项目(此处为 MacOS 环境)</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ mkdir umi-demo  <span style=color:#75715e># 创建umi-demo文件夹</span>
+"><link rel=stylesheet href=/assets/amzrk2.min.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script><script></script><body data-theme=auto data-section=single><script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script><div id=top style=height:0;overflow:hidden></div><header><nav class=navbar><div class=container><div class=navbar-brand><a class=navbar-item href=https://blogs.wanntonn.fun>{...Life}</a></div><div class=navbar-menu><div class=navbar-start><a class=navbar-item href=/post/>笔记</a>
+<a class=navbar-item href=/nas/>NAS</a>
+<a class=navbar-item href=/fed/>前端</a>
+<a class=navbar-item href=/tags/>标签</a>
+<a class=navbar-item href=/about/>关于</a></div><div class=navbar-end><div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg></div><a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg></a><div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg></div></div></div></nav></header><main><div class="container single-container"><div class="columns single-columns"><div class="column single-content is-three-quarters"><div class=card><div class="post-image image-wrapper ratio-32x9"><img src=/images/Post/Electron/bg.jpg></div><div class=post-box><h2 class=post-title>自己搭建一个Electron + React + umi 的通用模板</h2><div class=post-meta><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-03-06</time></span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;5 min</span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/electron>Electron</a></span></div></div><div class=post-content><article class="markdown content"><blockquote><p>前言：想自己构建一个通用模板。减去重复开发工作，并且可以在其中学习到更多知识。</p></blockquote><p><a href=https://github.com/WannTonn/electron-umi-template target=_blank>先上链接</a></p><h3 id=使用-umi-创建-react-项目此处为-macos-环境>使用 Umi 创建 React 项目(此处为 MacOS 环境)</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ mkdir umi-demo  <span style=color:#75715e># 创建umi-demo文件夹</span>
 $ cd umi-demo <span style=color:#75715e># 到umi-demo 文件夹下</span>
 $ yarn create umi <span style=color:#75715e># 用yarn 创建umi项目, yarn的安装方法此处不做讨论</span>
 
@@ -135,8 +48,7 @@ $ ? Select the boilerplate type app   <span style=color:#75715e># 选择模板�
    create typings.d.ts
 ✨ File Generate Done
 ✨  Done in 74.72s.
-</code></pre></div><h3 id=安装依赖与运行项目>安装依赖与运行项目</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn
+</code></pre></div><h3 id=安装依赖与运行项目>安装依赖与运行项目</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn
 yarn install v1.22.17
 info No lockfile found.
 <span style=color:#f92672>[</span>1/5<span style=color:#f92672>]</span> 🔍  Validating package.json...
@@ -170,29 +82,9 @@ Starting the development server...
   Compiled successfully in 166.94ms
 
  DONE  Compiled successfully in 168ms
-</code></pre></div><p>这里 umi 项目就已经安装并成功运行了。</p>
-<h3 id=准备安装-electron>准备安装 Electron</h3>
-<blockquote>
-<p>在安装 Electron 之前，先调整项目的目录，这里分析一下为什么要调整项目的目录以及操作以下动作。</p>
-<ol>
-<li>为了优化 Electron 的安装包的体积，</li>
-</ol>
-</blockquote>
-<ol>
-<li>按下 <code>ctrl + c</code> ,先停止本地服务</li>
-<li>在项目根目录创建 <code>renderer</code> 文件夹(可以理解为 Electron 中的渲染进程)</li>
-<li>将刚刚生成的所有文件(<code>.gitignore</code>文件除外)移动到<code>renderer</code>文件夹下。</li>
-<li>在项目中创建<code>main</code>文件夹(Electron 项目的主进程)</li>
-<li>在项目根目录创建<code>index.js</code></li>
-<li>在终端输入以下指令</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>  $ npm init <span style=color:#f92672>(</span>初始化项目，用于安装Electron，根据需要初始化<span style=color:#f92672>)</span>
-</code></pre></div><h4 id=安装-electron>安装 Electron</h4>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn add electron -D
-</code></pre></div><h4 id=配置mainmainjs-主进程内容>配置<code>main/main.js</code> 主进程内容</h4>
-<details><summary>点击查看</summary>
-<p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>const</span> {
+</code></pre></div><p>这里 umi 项目就已经安装并成功运行了。</p><h3 id=准备安装-electron>准备安装 Electron</h3><blockquote><p>在安装 Electron 之前，先调整项目的目录，这里分析一下为什么要调整项目的目录以及操作以下动作。</p><ol><li>为了优化 Electron 的安装包的体积，</li></ol></blockquote><ol><li>按下 <code>ctrl + c</code> ,先停止本地服务</li><li>在项目根目录创建 <code>renderer</code> 文件夹(可以理解为 Electron 中的渲染进程)</li><li>将刚刚生成的所有文件(<code>.gitignore</code>文件除外)移动到<code>renderer</code>文件夹下。</li><li>在项目中创建<code>main</code>文件夹(Electron 项目的主进程)</li><li>在项目根目录创建<code>index.js</code></li><li>在终端输入以下指令</li></ol><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>  $ npm init <span style=color:#f92672>(</span>初始化项目，用于安装Electron，根据需要初始化<span style=color:#f92672>)</span>
+</code></pre></div><h4 id=安装-electron>安装 Electron</h4><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn add electron -D
+</code></pre></div><h4 id=配置mainmainjs-主进程内容>配置<code>main/main.js</code> 主进程内容</h4><details><summary>点击查看</summary><p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>const</span> {
   <span style=color:#a6e22e>app</span>,
   <span style=color:#a6e22e>BrowserWindow</span>,
   <span style=color:#a6e22e>ipcMain</span>,
@@ -315,47 +207,29 @@ Starting the development server...
 <span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>on</span>(<span style=color:#e6db74>&#39;mainWindow-all-closed&#39;</span>, <span style=color:#66d9ef>function</span> () {
   <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>isWin</span>) <span style=color:#a6e22e>app</span>.<span style=color:#a6e22e>quit</span>();
 });
-</code></pre></div></p>
-</details>
-<h3 id=修改根目录indexjs>修改根目录<code>index.js</code></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;./main/main.js&#39;</span>);
-</code></pre></div><h3 id=修改根目录packagejson>修改根目录<code>package.json</code></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>#</span> <span style=color:#960050;background-color:#1e0010>找到scripts,</span> <span style=color:#960050;background-color:#1e0010>添加start指令</span>
+</code></pre></div></p></details><h3 id=修改根目录indexjs>修改根目录<code>index.js</code></h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;./main/main.js&#39;</span>);
+</code></pre></div><h3 id=修改根目录packagejson>修改根目录<code>package.json</code></h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=color:#960050;background-color:#1e0010>#</span> <span style=color:#960050;background-color:#1e0010>找到scripts,</span> <span style=color:#960050;background-color:#1e0010>添加start指令</span>
 <span style=color:#e6db74>&#34;scripts&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
     <span style=color:#f92672>&#34;test&#34;</span>: <span style=color:#e6db74>&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>,
     <span style=color:#f92672>&#34;start&#34;</span>: <span style=color:#e6db74>&#34;electron .&#34;</span>
 }<span style=color:#960050;background-color:#1e0010>,</span>
 
-</code></pre></div><h3 id=运行-electron>运行 Electron</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn start
-</code></pre></div><h3 id=细节修改>细节修改</h3>
-<blockquote>
-<p>由于<code>main/main.js</code>是修改过的，入口增加了是否是 development 的判断(是：打开 http://localshost:8000, 否：打开编译好的正式包文件下的 index.html)，所以这里需要调整<code>package.json</code>，在<code>start</code>指令中添加 监听 <code>http://localhost:8000</code> 并启动 Electron 客户端。
-修改根目录下的<code>package.json</code></p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=color:#e6db74>&#34;scripts&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
+</code></pre></div><h3 id=运行-electron>运行 Electron</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn start
+</code></pre></div><h3 id=细节修改>细节修改</h3><blockquote><p>由于<code>main/main.js</code>是修改过的，入口增加了是否是 development 的判断(是：打开 http://localshost:8000, 否：打开编译好的正式包文件下的 index.html)，所以这里需要调整<code>package.json</code>，在<code>start</code>指令中添加 监听 <code>http://localhost:8000</code> 并启动 Electron 客户端。
+修改根目录下的<code>package.json</code></p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json><span style=color:#e6db74>&#34;scripts&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
   <span style=color:#f92672>&#34;elt:dev&#34;</span>: <span style=color:#e6db74>&#34;cross-env NODE_ENV=development electron .&#34;</span>,
   <span style=color:#f92672>&#34;start&#34;</span>: <span style=color:#e6db74>&#34;concurrently \&#34;npm run start:app\&#34; \&#34;wait-on http://localhost:8000 &amp;&amp; npm run elt:dev\&#34;&#34;</span>,
   <span style=color:#f92672>&#34;start:app&#34;</span>: <span style=color:#e6db74>&#34;cross-env APP_ROOT=./renderer umi dev&#34;</span>
 }
-</code></pre></div><blockquote>
-<p>在运行 <code>yarn start</code>之前，先安装对应的依赖。因为指令中用到了
+</code></pre></div><blockquote><p>在运行 <code>yarn start</code>之前，先安装对应的依赖。因为指令中用到了
 <a href=https://www.npmjs.com/package/concurrently target=_blank>concurrently</a>
 与
 <a href=https://www.npmjs.com/package/wait-on target=_blank>wait-on</a>
-。所以我们需要先安装依赖(需要安装到<code>devDependencies</code>下，因为在后续的打包中，Electron 不会将<code>devDependencies</code>下的依赖打包进去。进而优化整体体积)。</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn add wait-on concurrently -D
-</code></pre></div><h3 id=再次运行-electron>再次运行 Electron</h3>
-<pre tabindex=0><code>$ yarn start
+。所以我们需要先安装依赖(需要安装到<code>devDependencies</code>下，因为在后续的打包中，Electron 不会将<code>devDependencies</code>下的依赖打包进去。进而优化整体体积)。</p></blockquote><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn add wait-on concurrently -D
+</code></pre></div><h3 id=再次运行-electron>再次运行 Electron</h3><pre><code>$ yarn start
 
-</code></pre><h3 id=安装electron-builder>安装<code>electron-builder</code></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn add electron-builder
-</code></pre></div><h3 id=添加electron-builder配置>添加<code>electron-builder</code>配置</h3>
-<p>新增<code>electron-builder-config.js</code>（名字随意起）。仅供参考。具体按实际场景修改</p>
-<details><summary>点击查看配置</summary>
-<p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#75715e>/**
+</code></pre><h3 id=安装electron-builder>安装<code>electron-builder</code></h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn add electron-builder
+</code></pre></div><h3 id=添加electron-builder配置>添加<code>electron-builder</code>配置</h3><p>新增<code>electron-builder-config.js</code>（名字随意起）。仅供参考。具体按实际场景修改</p><details><summary>点击查看配置</summary><p><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#75715e>/**
 </span><span style=color:#75715e> * @description
 </span><span style=color:#75715e> * electron-builder配置文件， 使用时通过npmscript 指定--config 来匹配运行
 </span><span style=color:#75715e> * eg(当前)： elctron-builder --config .config/electron-build-config.js
@@ -430,10 +304,7 @@ Starting the development server...
 </span><span style=color:#75715e>    },
 </span><span style=color:#75715e>  ], */</span>
 };
-</code></pre></div></p>
-</details>
-<h3 id=修改packagejson>修改<code>package.json</code></h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json> <span style=color:#e6db74>&#34;scripts&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
+</code></pre></div></p></details><h3 id=修改packagejson>修改<code>package.json</code></h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-json data-lang=json> <span style=color:#e6db74>&#34;scripts&#34;</span><span style=color:#960050;background-color:#1e0010>:</span> {
     <span style=color:#f92672>&#34;elt:dev&#34;</span>: <span style=color:#e6db74>&#34;cross-env NODE_ENV=development electron .&#34;</span>,
     <span style=color:#f92672>&#34;start:app&#34;</span>: <span style=color:#e6db74>&#34;cross-env APP_ROOT=./renderer umi dev&#34;</span>,
     <span style=color:#f92672>&#34;start&#34;</span>: <span style=color:#e6db74>&#34;concurrently \&#34;npm run start:app\&#34; \&#34;wait-on http://localhost:8000 &amp;&amp; npm run elt:dev\&#34;&#34;</span>,
@@ -444,88 +315,11 @@ Starting the development server...
     <span style=color:#f92672>&#34;elt:dist:win&#34;</span>: <span style=color:#e6db74>&#34;cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder -w --config ./electron-builder-config.js&#34;</span>,
     <span style=color:#f92672>&#34;elt:dist:linux&#34;</span>: <span style=color:#e6db74>&#34;cross-env ELECTRON_MIRROR=https://npm.taobao.org/mirrors/electron/ electron-builder -l --config ./electron-builder-config.js&#34;</span>
   }<span style=color:#960050;background-color:#1e0010>,</span>
-</code></pre></div><h3 id=执行编译>执行编译</h3>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn run elt:dist:mac
-</code></pre></div><h3 id=遇到的问题>遇到的问题</h3>
-<ol>
-<li>在编译的时候报以下这个错
-<code>Application entry file "/Users/mac/zones/electron-umi-template/release/mac/electron-app-template.app/Contents/Resources/app/index.js" does not exist. Seems like a wrong configuration.</code></li>
-</ol>
-<h3 id=解决方案>解决方案</h3>
-<ol>
-<li>思来想去，发现是文件夹重名了，原来我的渲染进程的文件夹是<code>app</code> ，而<code>electron-builder</code>打包出的入口文件夹也是<code>app</code>。将文件夹名字改成了<code>renderer</code>就解决了。</li>
-</ol>
-</article>
-</div>
-</div>
-</div>
-<aside class="column single-sidebar is-one-quarter">
-<div class=card>
-<div class=card-info>
-<div class=avatar>
-<div class="image-wrapper ratio-1x1">
-<img src=/images/_avatar.jpg>
-</div>
-</div>
-<div class=info>
-<span class=info-name>WannTonn</span>
-<span class=info-para>为他人期待而活才是小丑🤡</span>
-</div>
-<div class=counter>
-<div class=counter-wrapper>
-<span class=counter-data>8</span>
-<span class=counter-name>kWords</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>8</span>
-<span class=counter-name>Tags</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>18</span>
-<span class=counter-name>Posts</span>
-</div>
-</div>
-</div>
-</div>
-<div class=sticky>
-<div class="card toc hidden" id=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#使用-umi-创建-react-项目此处为-macos-环境>使用 Umi 创建 React 项目(此处为 MacOS 环境)</a></li>
-<li><a href=#安装依赖与运行项目>安装依赖与运行项目</a></li>
-<li><a href=#准备安装-electron>准备安装 Electron</a></li>
-<li><a href=#修改根目录indexjs>修改根目录<code>index.js</code></a></li>
-<li><a href=#修改根目录packagejson>修改根目录<code>package.json</code></a></li>
-<li><a href=#运行-electron>运行 Electron</a></li>
-<li><a href=#细节修改>细节修改</a></li>
-<li><a href=#再次运行-electron>再次运行 Electron</a></li>
-<li><a href=#安装electron-builder>安装<code>electron-builder</code></a></li>
-<li><a href=#添加electron-builder配置>添加<code>electron-builder</code>配置</a></li>
-<li><a href=#修改packagejson>修改<code>package.json</code></a></li>
-<li><a href=#执行编译>执行编译</a></li>
-<li><a href=#遇到的问题>遇到的问题</a></li>
-<li><a href=#解决方案>解决方案</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</aside>
-</div>
-</div>
-</main>
-<footer class=footer>
-<div class=container>
-<span>Copyright &copy; 2020-2022 WannTonn</span>
-<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span>
-</div>
-</footer>
-<script defer src=/assets/amzrk2-common.min.js></script>
-<script defer src=/assets/amzrk2-single.min.js></script>
-<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script>
-<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script>
-</body>
-</html>
+</code></pre></div><h3 id=执行编译>执行编译</h3><div class=highlight><pre style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash>$ yarn run elt:dist:mac
+</code></pre></div><h3 id=遇到的问题>遇到的问题</h3><ol><li>在编译的时候报以下这个错
+<code>Application entry file "/Users/mac/zones/electron-umi-template/release/mac/electron-app-template.app/Contents/Resources/app/index.js" does not exist. Seems like a wrong configuration.</code></li></ol><h3 id=解决方案>解决方案</h3><ol><li>思来想去，发现是文件夹重名了，原来我的渲染进程的文件夹是<code>app</code> ，而<code>electron-builder</code>打包出的入口文件夹也是<code>app</code>。将文件夹名字改成了<code>renderer</code>就解决了。</li></ol></article></div></div></div><aside class="column single-sidebar is-one-quarter"><div class=card><div class=card-info><div class=avatar><div class="image-wrapper ratio-1x1"><img src=/images/_avatar.jpg></div></div><div class=info><span class=info-name>WannTonn</span>
+<span class=info-para>为他人期待而活才是小丑🤡</span></div><div class=counter><div class=counter-wrapper><span class=counter-data>9</span>
+<span class=counter-name>kWords</span></div><div class=counter-wrapper><span class=counter-data>9</span>
+<span class=counter-name>Tags</span></div><div class=counter-wrapper><span class=counter-data>20</span>
+<span class=counter-name>Posts</span></div></div></div></div><div class=sticky><div class="card toc hidden" id=table-of-contents><nav id=TableOfContents><ul><li><ul><li><a href=#使用-umi-创建-react-项目此处为-macos-环境>使用 Umi 创建 React 项目(此处为 MacOS 环境)</a></li><li><a href=#安装依赖与运行项目>安装依赖与运行项目</a></li><li><a href=#准备安装-electron>准备安装 Electron</a></li><li><a href=#修改根目录indexjs>修改根目录<code>index.js</code></a></li><li><a href=#修改根目录packagejson>修改根目录<code>package.json</code></a></li><li><a href=#运行-electron>运行 Electron</a></li><li><a href=#细节修改>细节修改</a></li><li><a href=#再次运行-electron>再次运行 Electron</a></li><li><a href=#安装electron-builder>安装<code>electron-builder</code></a></li><li><a href=#添加electron-builder配置>添加<code>electron-builder</code>配置</a></li><li><a href=#修改packagejson>修改<code>package.json</code></a></li><li><a href=#执行编译>执行编译</a></li><li><a href=#遇到的问题>遇到的问题</a></li><li><a href=#解决方案>解决方案</a></li></ul></li></ul></nav></div></div></aside></div></div></main><footer class=footer><div class=container><span>Copyright &copy; 2020-2022 WannTonn</span>
+<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span></div></footer><script defer src=/assets/amzrk2-common.min.js></script><script defer src=/assets/amzrk2-single.min.js></script><script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script><script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script></body></html>

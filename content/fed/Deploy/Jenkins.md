@@ -74,3 +74,34 @@ $ systemctl status jenkins
 
 # 开始创建第一个要编译的项目。
 点击 `+ 新建Item` 创建一个 `Freestyle Project`
+![](/images/Post/Jenkins/step_4_add_item.jpg)
+进入项目配置
+1.描述
+项目描述
+2.钉钉机器人 [(添加钉钉机器人插件)]({{< ref "/fed/deploy/jenkins_config#DingtalkBot" >}})
+![](/images/Post/Jenkins/step_5_dingtalk.jpg)
+
+3.源码管理
+![](/images/Post/Jenkins/step_6_source_manage.jpg)
+
+4.构建触发器 [(添加GithubHook)]({{< ref "/fed/deploy/jenkins_config#GithubHook" >}})
+![](/images/Post/Jenkins/step_7_githubhook.jpg)
+
+5.构建环境 [(添加Nodejs)]({{< ref "/fed/deploy/jenkins_config#Nodejs" >}})
+![](/images/Post/Jenkins/step_8_build_env.jpg)
+
+6.构建
+![](/images/Post/Jenkins/step_9_build.jpg)
+在shell中配置对应的shell脚本，这里贴一下自己用到的shell做参考
+```shell
+tar -zcvf blogs.tar.gz docs/
+sudo mv blogs.tar.gz /pages
+cd /pages
+sudo rm -rf blogs_bak
+mv /pages/blogs /pages/blogs_bak
+sudo tar -zxf blogs.tar.gz
+mv /pages/docs /pages/blogs
+sudo rm -rf blogs.tar.gz
+```
+
+7.点击 保存 配置即生效。
