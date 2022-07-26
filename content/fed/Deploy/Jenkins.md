@@ -78,16 +78,16 @@ $ systemctl status jenkins
 进入项目配置
 1.描述
 项目描述
-2.钉钉机器人 [(添加钉钉机器人插件)]({{< ref "/fed/deploy/jenkins_config#DingtalkBot" >}})
+2.钉钉机器人 [(添加钉钉机器人插件)](/fed/deploy/jenkins_config#DingtalkBot)
 ![](/images/Post/Jenkins/step_5_dingtalk.jpg)
 
 3.源码管理
 ![](/images/Post/Jenkins/step_6_source_manage.jpg)
 
-4.构建触发器 [(添加GithubHook)]({{< ref "/fed/deploy/jenkins_config#GithubHook" >}})
+4.构建触发器 [(添加GithubHook)](/fed/deploy/jenkins_config#GithubHook)
 ![](/images/Post/Jenkins/step_7_githubhook.jpg)
 
-5.构建环境 [(添加Nodejs)]({{< ref "/fed/deploy/jenkins_config#Nodejs" >}})
+5.构建环境 [(添加Nodejs)](/fed/deploy/jenkins_config#Nodejs)
 ![](/images/Post/Jenkins/step_8_build_env.jpg)
 
 6.构建
