@@ -1,7 +1,7 @@
 ---
 title: 'Jenkins配置'
 date: 2022-07-24T11:30:45+08:00
-draft: true
+draft: false
 tags:
   - Jenkins
 image: '/images/FED/Jenkins.png'

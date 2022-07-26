@@ -10,16 +10,20 @@
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
 <link rel=manifest href=/favicons/site.webmanifest>
 <link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>黑苹果笔记 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Hackintosh">
-<meta property="og:title" content="黑苹果笔记">
-<meta property="og:description" content>
+<title>Jenkins配置 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Jenkins">
+<meta property="og:title" content="Jenkins配置">
+<meta property="og:description" content="
+Jenkins 插件配置
+">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blogs.wanntonn.fun/post/macos/notes/">
-<meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg"><meta property="article:published_time" content="2021-10-01T20:30:45+08:00">
-<meta property="article:modified_time" content="2021-10-01T20:30:45+08:00"><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg">
-<meta name=twitter:title content="黑苹果笔记">
-<meta name=twitter:description content>
+<meta property="og:url" content="https://blogs.wanntonn.fun/fed/deploy/jenkins_config/">
+<meta property="og:image" content="https://blogs.wanntonn.fun/images/FED/Jenkins.png"><meta property="article:published_time" content="2022-07-24T11:30:45+08:00">
+<meta property="article:modified_time" content="2022-07-24T11:30:45+08:00"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blogs.wanntonn.fun/images/FED/Jenkins.png">
+<meta name=twitter:title content="Jenkins配置">
+<meta name=twitter:description content="
+Jenkins 插件配置
+">
 <link rel=stylesheet href=/assets/amzrk2.min.css>
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
 <script></script>
@@ -69,43 +73,47 @@ NAS
 <div class="column single-content is-three-quarters">
 <div class=card>
 <div class="post-image image-wrapper ratio-32x9">
-<img src=/images/Post/Hackintosh/notes/macOSBigSur.jpeg>
+<img src=/images/FED/Jenkins.png>
 </div>
 <div class=post-box>
-<h2 class=post-title>黑苹果笔记</h2>
+<h2 class=post-title>Jenkins配置</h2>
 <div class=post-meta>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2021-10-01</time></span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-07-24</time></span>
 <span>
 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/hackintosh>Hackintosh</a></span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/jenkins>Jenkins</a></span>
 </div>
 </div>
 <div class=post-content>
 <article class="markdown content">
-<pre tabindex=0><code># 处理PE中DiskGenius 重新分配硬盘空间的时候报 “文件分配表中有标记为已使用的未用簇”
-# 命令行输入 &quot;chkdsk /f /x C:&quot;  C: 替换为要检查的盘符
-</code></pre><blockquote>
-<p>当计算机拥有MacOS 与 Windows双系统时，2个系统之间会有8个小时的时差。可以用以下两个方法来实现统一UTC时间。</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=color:#75715e># windows 下，以管理员身份打开 cmd / powershell，输入以下命令，回车即可。或者将以下内容复制到新建的.txt文档内，保存后修改后缀名为.reg。双击注入注册表即可。</span>
-Reg add HKLM<span style=color:#ae81ff>\S</span>YSTEM<span style=color:#ae81ff>\C</span>urrentControlSet<span style=color:#ae81ff>\C</span>ontrol<span style=color:#ae81ff>\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span style=color:#ae81ff>1</span>
-</code></pre></div><blockquote>
-<p>重启，进入MacOS设置时间后，再重启到windows。</p>
-</blockquote>
 <blockquote>
-<p>抑或使用hackintool工具，点击打开“工具”选项卡，点击最底下九宫格图标（生成Windows UTC 时间同步注册表文件）。Enjoy。</p>
+<p>Jenkins 插件配置</p>
 </blockquote>
-<h3 id=在安装白苹果降版本1014以下时遇到这个安装macos-mojave-应用程序副本已损坏不能用来安装macos>在安装白苹果降版本（10.14以下）时，遇到“这个安装macOS Mojave 应用程序副本已损坏。不能用来安装macOS”</h3>
-<blockquote>
-<p>解决方法</p>
-</blockquote>
-<pre tabindex=0><code># 1.断开网络
-# 2. 退出安装程序，找到实用工具 - 终端。 调整系统时间
-date 122014102015.30
-
-</code></pre>
+<p><a name=DingtalkBot>添加钉钉机器人插件</a></p>
+<ul>
+<li>Jenkins 配置</li>
+</ul>
+<ol>
+<li>打开 <code>系统管理</code>- 找到<code>插件管理</code>- 选择<code>可选插件</code> - 搜索 <code>DingTalk</code></li>
+<li>勾选<code>DingTalk</code>, 点击最下方的 <code>Download now and install after restart</code>, 等待安装完毕并重启Jenkins
+<a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_1.jpg target=_blank>
+<img src=/images/Post/Jenkins/dingtalk_add_bot_1.jpg alt>
+</a></li>
+</ol>
+<ul>
+<li>钉钉配置</li>
+</ul>
+<ol>
+<li>打开钉钉，生成一个自己的群组</li>
+<li>点击右上角齿轮(群设置)图标</li>
+<li>选择智能群助手, 找到 自定义(通过Webhook接入自定义服务)
+<a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_2.jpg target=_blank>
+<img src=/images/Post/Jenkins/dingtalk_add_bot_2.jpg alt>
+</a></li>
+<li>完善机器人配置</li>
+</ol>
 </article>
 </div>
 </div>
@@ -140,15 +148,7 @@ date 122014102015.30
 </div>
 <div class=sticky>
 <div class="card toc hidden" id=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li>
-<ul>
-<li><a href=#在安装白苹果降版本1014以下时遇到这个安装macos-mojave-应用程序副本已损坏不能用来安装macos>在安装白苹果降版本（10.14以下）时，遇到“这个安装macOS Mojave 应用程序副本已损坏。不能用来安装macOS”</a></li>
-</ul>
-</li>
-</ul>
-</nav>
+<nav id=TableOfContents></nav>
 </div>
 </div>
 </aside>
