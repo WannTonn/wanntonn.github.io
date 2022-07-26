@@ -76,22 +76,32 @@ $ systemctl status jenkins
 点击 `+ 新建Item` 创建一个 `Freestyle Project`
 ![](/images/Post/Jenkins/step_4_add_item.jpg)
 进入项目配置
+
 1.描述
+
 项目描述
+
 2.钉钉机器人 [(添加钉钉机器人插件)](/fed/deploy/jenkins_config#DingtalkBot)
+
 ![](/images/Post/Jenkins/step_5_dingtalk.jpg)
 
 3.源码管理
+
 ![](/images/Post/Jenkins/step_6_source_manage.jpg)
+> 注意事项： 如果显示无法连接仓库，请确认服务端是否安装了git,如果没有安装git 则运行 `apt install git`
 
 4.构建触发器 [(添加GithubHook)](/fed/deploy/jenkins_config#GithubHook)
+
 ![](/images/Post/Jenkins/step_7_githubhook.jpg)
 
 5.构建环境 [(添加Nodejs)](/fed/deploy/jenkins_config#Nodejs)
+
 ![](/images/Post/Jenkins/step_8_build_env.jpg)
 
 6.构建
+
 ![](/images/Post/Jenkins/step_9_build.jpg)
+
 在shell中配置对应的shell脚本，这里贴一下自己用到的shell做参考
 ```shell
 tar -zcvf blogs.tar.gz docs/
@@ -104,4 +114,4 @@ mv /pages/docs /pages/blogs
 sudo rm -rf blogs.tar.gz
 ```
 
-7.点击 保存 配置即生效。
+7.点击 `保存` 配置即生效。

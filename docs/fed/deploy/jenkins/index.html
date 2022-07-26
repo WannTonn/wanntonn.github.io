@@ -153,33 +153,39 @@ $ systemctl status jenkins
 <a class=image-link href=/images/Post/Jenkins/step_4_add_item.jpg target=_blank>
 <img src=/images/Post/Jenkins/step_4_add_item.jpg alt>
 </a>
-进入项目配置
-1.描述
-项目描述
-2.钉钉机器人
+进入项目配置</p>
+<p>1.描述</p>
+<p>项目描述</p>
+<p>2.钉钉机器人
 <a href=/fed/deploy/jenkins_config#DingtalkBot target=_blank>(添加钉钉机器人插件)</a>
-<a class=image-link href=/images/Post/Jenkins/step_5_dingtalk.jpg target=_blank>
+</p>
+<p><a class=image-link href=/images/Post/Jenkins/step_5_dingtalk.jpg target=_blank>
 <img src=/images/Post/Jenkins/step_5_dingtalk.jpg alt>
 </a></p>
-<p>3.源码管理
-<a class=image-link href=/images/Post/Jenkins/step_6_source_manage.jpg target=_blank>
+<p>3.源码管理</p>
+<p><a class=image-link href=/images/Post/Jenkins/step_6_source_manage.jpg target=_blank>
 <img src=/images/Post/Jenkins/step_6_source_manage.jpg alt>
 </a></p>
+<blockquote>
+<p>注意事项： 如果显示无法连接仓库，请确认服务端是否安装了git,如果没有安装git 则运行 <code>apt install git</code></p>
+</blockquote>
 <p>4.构建触发器
 <a href=/fed/deploy/jenkins_config#GithubHook target=_blank>(添加GithubHook)</a>
-<a class=image-link href=/images/Post/Jenkins/step_7_githubhook.jpg target=_blank>
+</p>
+<p><a class=image-link href=/images/Post/Jenkins/step_7_githubhook.jpg target=_blank>
 <img src=/images/Post/Jenkins/step_7_githubhook.jpg alt>
 </a></p>
 <p>5.构建环境
 <a href=/fed/deploy/jenkins_config#Nodejs target=_blank>(添加Nodejs)</a>
-<a class=image-link href=/images/Post/Jenkins/step_8_build_env.jpg target=_blank>
+</p>
+<p><a class=image-link href=/images/Post/Jenkins/step_8_build_env.jpg target=_blank>
 <img src=/images/Post/Jenkins/step_8_build_env.jpg alt>
 </a></p>
-<p>6.构建
-<a class=image-link href=/images/Post/Jenkins/step_9_build.jpg target=_blank>
+<p>6.构建</p>
+<p><a class=image-link href=/images/Post/Jenkins/step_9_build.jpg target=_blank>
 <img src=/images/Post/Jenkins/step_9_build.jpg alt>
-</a>
-在shell中配置对应的shell脚本，这里贴一下自己用到的shell做参考</p>
+</a></p>
+<p>在shell中配置对应的shell脚本，这里贴一下自己用到的shell做参考</p>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>tar -zcvf blogs.tar.gz docs/
 sudo mv blogs.tar.gz /pages
 cd /pages
@@ -188,7 +194,7 @@ mv /pages/blogs /pages/blogs_bak
 sudo tar -zxf blogs.tar.gz
 mv /pages/docs /pages/blogs
 sudo rm -rf blogs.tar.gz
-</code></pre></div><p>7.点击 保存 配置即生效。</p>
+</code></pre></div><p>7.点击 <code>保存</code> 配置即生效。</p>
 </article>
 </div>
 </div>
