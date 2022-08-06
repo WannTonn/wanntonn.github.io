@@ -32,7 +32,11 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 
     sudo mount -uw /  (Catalina 有限制，需要加载)
     sudo ln -s /Users/wanton/zones /zones
-
+    # Bigsur 用以下方法
+    vi /etc/synthetic.conf
+    添加你需要软连接的路径，用tab分隔，保存后要重启系统，这里用/zones 做例子
+    zones /Users/wanntonn/zones
+    
 > 设置ssh keygen
 
     ssh-keygen -t rsa -C "your_email@example.com"
@@ -54,7 +58,8 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
     ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
     # 上述方法无效的话 
-      访问https://raw.githubusercontent.com/Homebrew/install/master/install，将文件另存为 brewinstall.rb 至文件夹(我存在Downloads)。打开terminal运行: $> ruby ~/Downloads/brewinstall.rb。
+    1. 访问https://raw.githubusercontent.com/Homebrew/install/master/install，将文件另存为 brewinstall.rb 至文件夹(我存在Downloads)。打开terminal运行: $> ruby ~/Downloads/brewinstall.rb。
+    2. 如果遇到 443 端口错误，就将dns配置为114。114.114.114 / 8.8.8.8
 
 
 > 更改brew源

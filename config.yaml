@@ -72,3 +72,10 @@ markup:
   tableOfContents:
     startLevel: 2
     endLevel: 3
+
+security: 
+  funcs:
+    getenv:
+      - ^HUGO
+      - ^WC
+      - ^NODE_ENV
