@@ -1,6 +1,6 @@
 ---
 title: "关于Pycharm 激活"
-date: 2021-03-02T23:35:24+08:00
+date: 2022-03-02T23:35:24+08:00
 draft: false
 tags: 
  - Code
@@ -8,22 +8,10 @@ image: '/images/Code/pycharm.png'
 ---
 
 > 用于无限试用Jetbrains的产品 (请勿无休止的一直试用，这并非此插件的本意)
-
+> 此方法已在2021.2.3 以上版本失效，请自行选择使用。
 <!--more-->
-> 安装参数：
-
- ```
-  f9fF1I/ygZI7Ff14sigGMZmZ7KJkhsM364o6exiukAqGORVXN1e4Fk4B8+hGSl5B+iLp9nIA2pSNhNGlxnDgSV3xC85CGVvWY9SWa+ECeWhJZ1+hitDPCNw5lKaRBnxIKhAfQ3aJl4S5WmrOkfKoIuz3UXVoX7hZGxofqQtzfuc
-  ```
-
-### 安装方法：
-```
-1.安装完Pycharm后，选择试用
-2.将zip插件包拖到IDE界面安装，或者可以在Settings/Preferences -> Plugins ->
-  手动安装(Install Plugin From Disk...)
-3.使用方法: 没打开项目： 在Welcome界面： Get Help -> Eval Reset。
-  打开了项目： Help ->: Eval Reset
-```
-### 下载地址: (好孩子看不见)
-
-<a href="https://justcode.ikeepstudying.com/wp-content/uploads/2021/01/jetbrains-agent-latest.zip" style="color: #4d5158">好孩子看不见</a>
+1. 插件市场安装：
+- 找到 Settings/Preferences  -> Plugins -> Manage Plugin Repositories 
+- 添加 https://plugins.zhile.io，点击ok
+- 搜索找到 IDE Eval Reset ， 点击install
+- 重启IDE，即可看见效果

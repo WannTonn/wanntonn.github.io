@@ -12,6 +12,9 @@
 &lt;p>前言： 从网络上看到关于
 &lt;a href="https://www.zhihu.com/question/23150301/answer/1229870117" target="_blank">一份优秀的前端开发工程师简历是怎么样的？&lt;/a>
 , 从文章中，学习到如何用&lt;code>STAR&lt;/code>法则来向其他人描述自己所做的事，以此做下笔记。&lt;/p>
+&lt;/blockquote></description></item><item><title>关于Pycharm 激活</title><link>https://blogs.wanntonn.fun/post/macos/pycharm/</link><pubDate>Wed, 02 Mar 2022 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/pycharm/</guid><description>&lt;blockquote>
+&lt;p>用于无限试用Jetbrains的产品 (请勿无休止的一直试用，这并非此插件的本意)
+此方法已在2021.2.3 以上版本失效，请自行选择使用。&lt;/p>
 &lt;/blockquote></description></item><item><title>MacOS下用终端生成.icns格式图标文件</title><link>https://blogs.wanntonn.fun/post/macos/create-icns/</link><pubDate>Sat, 26 Feb 2022 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/create-icns/</guid><description>&lt;blockquote>
 &lt;p>用命令行生成icns文件&lt;/p>
 &lt;/blockquote></description></item><item><title>有一个疑问想请来这里的大佬帮忙看看。</title><link>https://blogs.wanntonn.fun/post/macos/question/</link><pubDate>Sat, 26 Feb 2022 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/question/</guid><description>此为开发时碰到的问题，暂无得到解决方法。 前言 在日常开发过程中遇到的问题，如下图所示(点击查看大图)</description></item><item><title>Electron学习笔记</title><link>https://blogs.wanntonn.fun/fed/electron/notes/</link><pubDate>Mon, 14 Feb 2022 11:30:45 +0800</pubDate><guid>https://blogs.wanntonn.fun/fed/electron/notes/</guid><description/></item><item><title>github-pages去除custom-domain配置后，浏览器依旧重定向的解决方案</title><link>https://blogs.wanntonn.fun/post/github/refresh-github-pages-dns-cache/</link><pubDate>Sat, 12 Feb 2022 09:30:45 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/github/refresh-github-pages-dns-cache/</guid><description>&lt;blockquote>
@@ -24,8 +27,6 @@
 &lt;p>前情提要, 在Windows 与MacOS 切换开发的时候，提交的代码会出现LF与CRLF不一样导致没有改动，但是在Git暂存区中出现文件改动的情况。&lt;/p>
 &lt;/blockquote></description></item><item><title>黑苹果笔记</title><link>https://blogs.wanntonn.fun/post/macos/notes/</link><pubDate>Fri, 01 Oct 2021 20:30:45 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/notes/</guid><description/></item><item><title>Kodi 快捷键</title><link>https://blogs.wanntonn.fun/nas/kodi/</link><pubDate>Sun, 22 Aug 2021 21:25:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/nas/kodi/</guid><description/></item><item><title>NAS 折腾笔记</title><link>https://blogs.wanntonn.fun/nas/nas/</link><pubDate>Tue, 15 Jun 2021 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/nas/nas/</guid><description>&lt;h2 id="前言黑群晖起飞以下记录为踩坑经验仅供参考">前言：黑群晖起飞。以下记录为踩坑经验，仅供参考&lt;/h2></description></item><item><title>重置macOS Catalina登录壁纸</title><link>https://blogs.wanntonn.fun/post/macos/reset-catalina-bgimg/</link><pubDate>Sat, 15 May 2021 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/reset-catalina-bgimg/</guid><description>&lt;blockquote>
 &lt;p>前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。&lt;/p>
-&lt;/blockquote></description></item><item><title>关于Pycharm 激活</title><link>https://blogs.wanntonn.fun/post/macos/pycharm/</link><pubDate>Tue, 02 Mar 2021 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/pycharm/</guid><description>&lt;blockquote>
-&lt;p>用于无限试用Jetbrains的产品 (请勿无休止的一直试用，这并非此插件的本意)&lt;/p>
 &lt;/blockquote></description></item><item><title>canvas 绘制路径记录</title><link>https://blogs.wanntonn.fun/fed/code/canvas/</link><pubDate>Fri, 16 Oct 2020 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/fed/code/canvas/</guid><description/></item><item><title>购买服务器之后开始学习运维知识</title><link>https://blogs.wanntonn.fun/fed/code/operation-and-maintenance/</link><pubDate>Mon, 15 Jun 2020 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/fed/code/operation-and-maintenance/</guid><description>&lt;blockquote>
 &lt;p>ssh config&lt;/p>
 &lt;/blockquote>
