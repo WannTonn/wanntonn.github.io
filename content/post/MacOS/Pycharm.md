@@ -14,4 +14,5 @@ image: '/images/Code/pycharm.png'
 - 找到 Settings/Preferences  -> Plugins -> Manage Plugin Repositories 
 - 添加 https://plugins.zhile.io，点击ok
 - 搜索找到 IDE Eval Reset ， 点击install
-- 重启IDE，即可看见效果
+- 重启Pycharm
+- 菜单栏 Help - Eval Reset 即可重置
