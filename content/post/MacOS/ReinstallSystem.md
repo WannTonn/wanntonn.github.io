@@ -13,6 +13,11 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 
 <!--more-->
 
+> 如果是覆盖安装升级上来的，在执行脚本时，会出现 `xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun` 的类似的报错。
+
+    $ xcode-select --install
+
+    
 > 安装包已损坏，移至垃圾篓提示
   
     sudo spctl --master-disable
