@@ -111,6 +111,12 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
   |关于 LibreSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443 报错|$ git config --global --unset http.proxy|
   |关于 Git clone 下载慢|$ git clone https://github.com.cnpmjs.org + /xxxx/xxx.git|
 
+> 配置pip源为国内的清华镜像源
+
+  $ pip3 config set global.index-url 'https://pypi.tuna.tsinghua.edu.cn/simple'
+  $ pip3 config set install.trusted-host 'https://pypi.tuna.tsinghua.edu.cn'
+  # 显示pip配置
+  $ pip3 config list
 
 
 
