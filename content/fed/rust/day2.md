@@ -1,7 +1,7 @@
 ---
 title: '学习Rust - Day2'
 date: 2022-08-07T11:30:45+08:00
-draft: false
+draft: true
 tags:
   - Rust
 image: '/images/FED/Rust.jpg'
