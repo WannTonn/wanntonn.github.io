@@ -7,29 +7,31 @@ image: '/images/CV/_avatar.jpg'
 
 <!--more-->
 
+
 ## 个人信息
 - 汪通 / 男 / 1994年
 - 本科 / 电子商务专业
-- 工作年限：5年
-- 技术博客: [地址](https://wanntonn.github.io)
-- GitHub: [地址](https://github.com/WannTonn)
+- 工作年限：6年
+- 技术博客: [https://blogs.wanntonn.fun ](https://blogs.wanntonn.fun)
+- GitHub: [https://github.com/WannTonn](https://github.com/WannTonn)
 - 期望职位： WEB前端工程师
 - Mail: wangtong@wanntonn.fun
-
 ## 工作经历
 ### 福建紫讯科技有限公司(2021.07 ~ 至今)
-> 所在项目组：QuickFox（为海外华人提供快速回国的加速器）
+> 所在项目组:  紫鸟浏览器-生态中心
+> 参与BSS后台，紫鸟开发者开放平台以及紫鸟生态中心的开发与维护(React+ typescript + umi + antd)
+- BSS后台中由表单/列表组合的页面居多，表单中部分Input，Select组件多为可复用的组件，为减少重复开发，进而对其出现场景多的组件进行封装，降低了开发与维护的成本。
 
-> 参与 `Window / MacOS` 双端的基于 `Electron`的桌面端的加速器的开发与维护
+> 所在项目组：QuickFox（为海外华人提供快速回国的加速器）
+> 参与 `Window / MacOS` 双端的基于 `Electron`的桌面端的加速器的开发与维护(React+ typescript + umi + antd + Electron)
  - MacOS 端曾出现HTTPS证书导致应用无法打开的问题，且问题较为普遍，经考究，可以利用终端以忽略证书错误的形式打开应用，但方法繁琐且不友好, 还可以在初始化界面提前加上将证书错误忽略的逻辑，也并非是最好的方案。后来决定将Electron的版本从9.0升级到13.0，用户应用打不开的反馈也大大减少。
  - 升级Electron期间遇到了`上下文隔离(contextIsolation)`的写法改变，导致了与webview内嵌页通信失效的问题。经研究，将与内嵌页通信的用于preload的js的写法修改，同时调整内嵌页的引用API的方法，做到向下兼容。
  - 用户反馈升级之前是影音模式，升级之后默认模式变成了游戏模式，导致用户在MacOS上用游戏线路看影音，导致了游戏线路拥堵。经排查，应用存放的数据为Electron内部的chromium的`LocalStorage`下，且应用是上架到APP Store下，沙盒应用的目录又与普通应用有所不同，导致应用升级，有可能导致数据丢失。经研究，将LocalStorage下的数据，存放在electron-store中，再将日志数据存放至其他文件夹，有效地处理了数据丢失的问题。
- - 在学习与维护项目的过程中，结合优秀项目，整合出自己的[基于umi的通用Electron模板](https://github.com/WannTonn/electron-umi-template)。
-> 参与后台项目的开发与维护
+> 参与后台项目的开发与维护(React+ typescript + umi + antd)
  - 原项目的菜单结构较仅为2层，想调整为多层。在调整过程中遇到了路由配置等问题，为了用最少量的工作量来解决，通过修改所有文件目录的方式，配合umi的约定式路由，完成了对原来单页面下用tab切换的形式浏览到一个菜单一个页面的迁移，并完成了菜单多层渲染的开发。
  - 在原有的菜单的基础上，后来加入了模拟浏览器tab的方式，将路由映射成一个tab，实现多tab切换，有效提高了运营人员的效率。
-> 参与APP应用内嵌页与官网页面的开发与维护
-> 参与CCKA代充系统的开发与维护
+> 参与APP应用内嵌页与官网页面的开发与维护(React+ typescript + umi + antd)
+> 参与CCKA代充系统的开发与维护(React+ typescript + antd)
  - 原型中有大量的下拉筛选的Select场景，为避免重复拷贝代码，封装了带防抖与解决中文输入触发筛选的可配置是否发起请求的Select组件。
  - 封装其他场景中出现场景较频繁的小组件，极大的降低了重复性工作。
 
@@ -38,7 +40,7 @@ image: '/images/CV/_avatar.jpg'
 > 参与内部ERP系统 (Vue + Vue Router + Vuex + Antdv + axios + typescript)共同开发。
 
   项目描述：用技术手段实现日常业务操作(SKU管理，采购，备货，财务，质检等)，减少业务流程时间，提高业务部门的效率。
- - 运用`vuejs-clipper`，编写了带即时预览功能的，上传手写签名照的组件，将白纸黑字的签名照替换成了透明底黑字的图片，并同步完成上传操作。([React版(react-cropper + react)预览地址](https://wanntonn.github.io/signaturer/))。
+ - 运用`vuejs-clipper`，编写了带即时预览功能的，上传手写签名照的组件，将白纸黑字的签名照替换成了透明底黑字的图片，并同步完成上传操作。
  - 完成项目业务组件以及通用组件的封装与完善，通过配置的形式完成页面功能。减少代码冗余，避免复制与修改代码带来的隐患。
  - 通用列表详情组件组件编写，整合列表组件与详情组件，通过传入配置，实现少代码就能快速完成页面渲染。
  - 主菜单列表组件，实现展示旧版与新版路由，添加input输入关键字，即时过滤菜单，清空后显示所有菜单选项, 实现快速筛选。
@@ -71,8 +73,15 @@ image: '/images/CV/_avatar.jpg'
 
  > 参与PC端，手机端(微信)页面功能开发 (webpack + jq + Vue)
 
-  - 实现页面在pc端展示，适配IE
-  - 实现活动页面等在手机端的适配
+  - 实现页面在pc端展示，兼容IE浏览器。
+  - 实现活动页面等在手机端，微信浏览器等移动设备的适配
+ 
+## 个人项目
+- 个人博客项目（基于hugo + Jenkins+ github webhook + DingTalk）完成本地编写预览与编译，提交自动更新。解决github.io 更新不及时的问题。[预览地址: https://blogs.wanntonn.fun/](https://blogs.wanntonn.fun/) | [项目地址: https://github.com/WannTonn/wanntonn.github.io](https://github.com/WannTonn/wanntonn.github.io)
+- 基于React + React-cropper 的关于手写签名图的预览、裁剪工具。[预览地址：https://wanntonn.github.io/signaturer/](https://wanntonn.github.io/signaturer/) | [项目地址:https://github.com/WannTonn/signaturer](https://github.com/WannTonn/signaturer)。
+- 基于React + create-react-app 完成个人在项目中用到的TodoList，图片上传工具，提高了工作效率。 [预览地址：https://tools.wanntonn.fun](https://tools.wanntonn.fun) |  [https://tools.wanntonn.fun/imageUploader](https://tools.wanntonn.fun/imageUploader)
+- 基于umi的自用通用Electron模板，electron外壳 + 个人页面项目。实现electron与页面项目隔离 | [项目地址](https://github.com/WannTonn/electron-umi-template)。
+
 ## 业余爱好
  - 黑苹果
  - 键盘客制化
