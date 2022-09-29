@@ -1,22 +1,239 @@
-<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=HandheldFriendly content="True"><meta http-equiv=x-ua-compatible content="IE=edge"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=generator content="Hugo 0.101.0"><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=manifest href=/favicons/site.webmanifest><link rel="shortcut icon" href=/favicons/favicon.ico><title>Jenkins配置 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Jenkins"><meta property="og:title" content="Jenkins配置"><meta property="og:description" content="
+<!doctype html><html lang=en>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<meta name=HandheldFriendly content="True">
+<meta http-equiv=x-ua-compatible content="IE=edge">
+<meta http-equiv=cache-control content="no-transform">
+<meta http-equiv=cache-control content="no-siteapp">
+<meta name=generator content="Hugo 0.88.1">
+<link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
+<link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
+<link rel=manifest href=/favicons/site.webmanifest>
+<link rel="shortcut icon" href=/favicons/favicon.ico>
+<title>Jenkins配置 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Jenkins">
+<meta property="og:title" content="Jenkins配置">
+<meta property="og:description" content="
 Jenkins 插件配置
-"><meta property="og:type" content="article"><meta property="og:url" content="https://blogs.wanntonn.fun/fed/deploy/jenkins_config/"><meta property="og:image" content="https://blogs.wanntonn.fun/images/FED/Jenkins.png"><meta property="article:published_time" content="2022-07-24T11:30:45+08:00"><meta property="article:modified_time" content="2022-07-24T11:30:45+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blogs.wanntonn.fun/images/FED/Jenkins.png"><meta name=twitter:title content="Jenkins配置"><meta name=twitter:description content="
+">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blogs.wanntonn.fun/fed/deploy/jenkins_config/">
+<meta property="og:image" content="https://blogs.wanntonn.fun/images/FED/Jenkins.png"><meta property="article:published_time" content="2022-07-24T11:30:45+08:00">
+<meta property="article:modified_time" content="2022-07-24T11:30:45+08:00"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blogs.wanntonn.fun/images/FED/Jenkins.png">
+<meta name=twitter:title content="Jenkins配置">
+<meta name=twitter:description content="
 Jenkins 插件配置
-"><link rel=stylesheet href=/assets/amzrk2.min.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
-<script></script><body data-theme=auto data-section=single><script>!function(e){let t;try{t=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch{t=null}t&&t!==e&&document.body.setAttribute("data-theme",t)}(document.body.getAttribute("data-theme"))</script><div id=top style=height:0;overflow:hidden></div><header><nav class=navbar><div class=container><div class=navbar-brand><a class=navbar-item href=https://blogs.wanntonn.fun>{...Life}</a></div><div class=navbar-menu><div class=navbar-start><a class=navbar-item href=/post/>笔记</a>
-<a class=navbar-item href=/nas/>NAS</a>
-<a class=navbar-item href=/fed/>前端</a>
-<a class=navbar-item href=/tags/>标签</a>
-<a class=navbar-item href=/about/>关于</a></div><div class=navbar-end><div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg></div><a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg></a><div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg></div></div></div></nav></header><main><div class="container single-container"><div class="columns single-columns"><div class="column single-content is-three-quarters"><div class=card><div class="post-image image-wrapper ratio-32x9"><img src=/images/FED/Jenkins.png></div><div class=post-box><h2 class=post-title>Jenkins配置</h2><div class=post-meta><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-07-24</time></span>
-<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
-<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/jenkins>Jenkins</a></span></div></div><div class=post-content><article class="markdown content"><blockquote><p>Jenkins 插件配置</p></blockquote><p><a name=DingtalkBot>添加钉钉机器人插件</a></p><ul><li>钉钉配置</li></ul><ol><li><p>打开钉钉，拉人再移除，生成一个自己的群组</p></li><li><p>点击右上角齿轮(群设置)图标</p></li></ol><p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_1.jpg target=_blank><img src=/images/Post/Jenkins/dingtalk_add_bot_1.jpg alt></a></p><ol start=3><li>选择智能群助手, 找到 自定义(通过Webhook接入自定义服务)</li></ol><p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_2.jpg target=_blank><img src=/images/Post/Jenkins/dingtalk_add_bot_2.jpg alt></a></p><ol start=4><li><p>完善机器人配置</p></li><li><p>点击完成，并复制框中的 <code>webhook</code></p></li></ol><p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_3.png target=_blank><img src=/images/Post/Jenkins/dingtalk_add_bot_3.png alt></a></p><ul><li>Jenkins 配置</li></ul><ol><li><p>打开 <code>系统管理</code>- 找到<code>插件管理</code>- 选择<code>可选插件</code> - 搜索 <code>DingTalk</code></p></li><li><p>勾选<code>DingTalk</code>, 点击最下方的 <code>Download now and install after restart</code>, 等待安装完毕并重启Jenkins</p></li><li><p>打开<code>系统管理</code> - <code>系统配置</code> - <code>钉钉</code> - 点击<code>新增</code> - 将必填项填充 (其中
+">
+<link rel=stylesheet href=/assets/amzrk2.min.css>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
+<script></script>
+<body data-theme=auto data-section=single>
+<script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
+<div id=top style=height:0;overflow:hidden></div>
+<header>
+<nav class=navbar>
+<div class=container>
+<div class=navbar-brand>
+<a class=navbar-item href=https://blogs.wanntonn.fun>
+{...Life}
+</a>
+</div>
+<div class=navbar-menu>
+<div class=navbar-start>
+<a class=navbar-item href=/post/>
+笔记
+</a>
+<a class=navbar-item href=/nas/>
+NAS
+</a>
+<a class=navbar-item href=/fed/>
+前端
+</a>
+<a class=navbar-item href=/tags/>
+标签
+</a>
+<a class=navbar-item href=/about/>
+关于
+</a>
+</div>
+<div class=navbar-end>
+<div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg>
+</div>
+<a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg>
+</a>
+<div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg>
+</div>
+</div>
+</div>
+</nav>
+</header>
+<main>
+<div class="container single-container">
+<div class="columns single-columns">
+<div class="column single-content is-three-quarters">
+<div class=card>
+<div class="post-image image-wrapper ratio-32x9">
+<img src=/images/FED/Jenkins.png>
+</div>
+<div class=post-box>
+<h2 class=post-title>Jenkins配置</h2>
+<div class=post-meta>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-07-24</time></span>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/jenkins>Jenkins</a></span>
+</div>
+</div>
+<div class=post-content>
+<article class="markdown content">
+<blockquote>
+<p>Jenkins 插件配置</p>
+</blockquote>
+<p><a name=DingtalkBot>添加钉钉机器人插件</a></p>
+<ul>
+<li>钉钉配置</li>
+</ul>
+<ol>
+<li>
+<p>打开钉钉，拉人再移除，生成一个自己的群组</p>
+</li>
+<li>
+<p>点击右上角齿轮(群设置)图标</p>
+</li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_1.jpg target=_blank>
+<img src=/images/Post/Jenkins/dingtalk_add_bot_1.jpg alt>
+</a></p>
+<ol start=3>
+<li>选择智能群助手, 找到 自定义(通过Webhook接入自定义服务)</li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_2.jpg target=_blank>
+<img src=/images/Post/Jenkins/dingtalk_add_bot_2.jpg alt>
+</a></p>
+<ol start=4>
+<li>
+<p>完善机器人配置</p>
+</li>
+<li>
+<p>点击完成，并复制框中的 <code>webhook</code></p>
+</li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_3.png target=_blank>
+<img src=/images/Post/Jenkins/dingtalk_add_bot_3.png alt>
+</a></p>
+<ul>
+<li>Jenkins 配置</li>
+</ul>
+<ol>
+<li>
+<p>打开 <code>系统管理</code>- 找到<code>插件管理</code>- 选择<code>可选插件</code> - 搜索 <code>DingTalk</code></p>
+</li>
+<li>
+<p>勾选<code>DingTalk</code>, 点击最下方的 <code>Download now and install after restart</code>, 等待安装完毕并重启Jenkins</p>
+</li>
+<li>
+<p>打开<code>系统管理</code> - <code>系统配置</code> - <code>钉钉</code> - 点击<code>新增</code> - 将必填项填充 (其中
 <a href=#GithubHook target=_blank>webhook</a>
-从该教程中获取)</p></li></ol><p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_0.png target=_blank><img src=/images/Post/Jenkins/dingtalk_add_bot_0.png alt></a></p><p><a name=GithubHook>添加GithubHook</a></p><ol><li>打开github项目 - Settings - 左侧菜单栏找到 <code>Webhooks</code></li></ol><p><a class=image-link href=/images/Post/Jenkins/github_add_hook_0.jpg target=_blank><img src=/images/Post/Jenkins/github_add_hook_0.jpg alt></a></p><ol start=2><li><p>点击addhook, 可能需要输入密码</p></li><li><p>将必填项填入(注意📢：URL分成 Jenkins 地址 + <code>/github-webhook/</code>, 举个🌰： http://38.107.111.22:8080/github-webhook/)</p></li></ol><p><a class=image-link href=/images/Post/Jenkins/github_add_hook_1.jpg target=_blank><img src=/images/Post/Jenkins/github_add_hook_1.jpg alt></a></p><p><a name=Nodejs>添加Nodejs</a></p><ol><li><p>打开 <code>系统管理</code> - 找到<code>插件管理</code>- 选择<code>可选插件</code> - 搜索 <code>Nodejs</code></p></li><li><p>勾选 <code>NodeJS Plugin</code>，点击最下方的 <code>Download now and install after restart</code>, 等待安装完毕并重启Jenkins</p></li><li><p>打开<code>系统管理</code> - <code>全局工具配置</code> - 找到<code>Nodejs</code> - 完成如下配置后 - 点击保存即可生效</p></li></ol><p><a class=image-link href=/images/Post/Jenkins/add_nodejs_0.jpg target=_blank><img src=/images/Post/Jenkins/add_nodejs_0.jpg alt></a></p><ol start=4><li>返回 <code>Dashboard</code> - 选择项目 - 找到 <code>构建</code></li></ol><p><a class=image-link href=/images/Post/Jenkins/add_nodejs_1.jpg target=_blank><img src=/images/Post/Jenkins/add_nodejs_1.jpg alt></a></p><ol start=5><li>选择刚才配置的nodejs版本，在script中写入需要用到的node脚本后，点击保存即可</li></ol></article></div></div></div><aside class="column single-sidebar is-one-quarter"><div class=card><div class=card-info><div class=avatar><div class="image-wrapper ratio-1x1"><img src=/images/_avatar.jpg></div></div><div class=info><span class=info-name>WannTonn</span>
-<span class=info-para>为他人期待而活才是小丑🤡</span></div><div class=counter><div class=counter-wrapper><span class=counter-data>10</span>
-<span class=counter-name>kWords</span></div><div class=counter-wrapper><span class=counter-data>9</span>
-<span class=counter-name>Tags</span></div><div class=counter-wrapper><span class=counter-data>23</span>
-<span class=counter-name>Posts</span></div></div></div></div><div class=sticky><div class="card toc hidden" id=table-of-contents><nav id=TableOfContents></nav></div></div></aside></div></div></main><footer class=footer><div class=container><span>Copyright &copy; 2020-2022 WannTonn</span>
-<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span></div></footer><script defer src=/assets/amzrk2-common.min.js></script>
+从该教程中获取)</p>
+</li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/dingtalk_add_bot_0.png target=_blank>
+<img src=/images/Post/Jenkins/dingtalk_add_bot_0.png alt>
+</a></p>
+<p><a name=GithubHook>添加GithubHook</a></p>
+<ol>
+<li>打开github项目 - Settings - 左侧菜单栏找到 <code>Webhooks</code></li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/github_add_hook_0.jpg target=_blank>
+<img src=/images/Post/Jenkins/github_add_hook_0.jpg alt>
+</a></p>
+<ol start=2>
+<li>
+<p>点击addhook, 可能需要输入密码</p>
+</li>
+<li>
+<p>将必填项填入(注意📢：URL分成 Jenkins 地址 + <code>/github-webhook/</code>, 举个🌰： http://38.107.111.22:8080/github-webhook/)</p>
+</li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/github_add_hook_1.jpg target=_blank>
+<img src=/images/Post/Jenkins/github_add_hook_1.jpg alt>
+</a></p>
+<p><a name=Nodejs>添加Nodejs</a></p>
+<ol>
+<li>
+<p>打开 <code>系统管理</code> - 找到<code>插件管理</code>- 选择<code>可选插件</code> - 搜索 <code>Nodejs</code></p>
+</li>
+<li>
+<p>勾选 <code>NodeJS Plugin</code>，点击最下方的 <code>Download now and install after restart</code>, 等待安装完毕并重启Jenkins</p>
+</li>
+<li>
+<p>打开<code>系统管理</code> - <code>全局工具配置</code> - 找到<code>Nodejs</code> - 完成如下配置后 - 点击保存即可生效</p>
+</li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/add_nodejs_0.jpg target=_blank>
+<img src=/images/Post/Jenkins/add_nodejs_0.jpg alt>
+</a></p>
+<ol start=4>
+<li>返回 <code>Dashboard</code> - 选择项目 - 找到 <code>构建</code></li>
+</ol>
+<p><a class=image-link href=/images/Post/Jenkins/add_nodejs_1.jpg target=_blank>
+<img src=/images/Post/Jenkins/add_nodejs_1.jpg alt>
+</a></p>
+<ol start=5>
+<li>选择刚才配置的nodejs版本，在script中写入需要用到的node脚本后，点击保存即可</li>
+</ol>
+</article>
+</div>
+</div>
+</div>
+<aside class="column single-sidebar is-one-quarter">
+<div class=card>
+<div class=card-info>
+<div class=avatar>
+<div class="image-wrapper ratio-1x1">
+<img src=/images/_avatar.jpg>
+</div>
+</div>
+<div class=info>
+<span class=info-name>WannTonn</span>
+<span class=info-para>为他人期待而活才是小丑🤡</span>
+</div>
+<div class=counter>
+<div class=counter-wrapper>
+<span class=counter-data>10</span>
+<span class=counter-name>kWords</span>
+</div>
+<div class=counter-wrapper>
+<span class=counter-data>9</span>
+<span class=counter-name>Tags</span>
+</div>
+<div class=counter-wrapper>
+<span class=counter-data>23</span>
+<span class=counter-name>Posts</span>
+</div>
+</div>
+</div>
+</div>
+<div class=sticky>
+<div class="card toc hidden" id=table-of-contents>
+<nav id=TableOfContents></nav>
+</div>
+</div>
+</aside>
+</div>
+</div>
+</main>
+<footer class=footer>
+<div class=container>
+<span>Copyright &copy; 2020-2022 WannTonn</span>
+<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span>
+</div>
+</footer>
+<script defer src=/assets/amzrk2-common.min.js></script>
 <script defer src=/assets/amzrk2-single.min.js></script>
 <script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script>
-<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script></body></html>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script>
+</body>
+</html>
