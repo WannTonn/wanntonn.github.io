@@ -103,18 +103,6 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 
     npm config set registry https://registry.npmmirror.com
     yarn config set registry https://registry.npmmirror.com
-    pnpm config set registry https://registry.npmmirror.com
-
-
-
-> npm 恢复默认
-
-```
- npm config set registry https://registry.npmjs.org
- yarn config set registry https://registry.npmjs.org
- pnpm config set registry https://registry.npmjs.org
-```
-
 
 > 关于Git的一些问题与解决方案
 
@@ -124,13 +112,12 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
   |关于 Git clone 下载慢|$ git clone https://github.com.cnpmjs.org + /xxxx/xxx.git|
 
 > 配置pip源为国内的清华镜像源
-```
+
   $ pip3 config set global.index-url 'https://pypi.tuna.tsinghua.edu.cn/simple'
   $ pip3 config set install.trusted-host 'https://pypi.tuna.tsinghua.edu.cn'
   # 显示pip配置
   $ pip3 config list
 
-```
 
 > pnpm配置
 
@@ -139,4 +126,9 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 $ pnpm config set auto-install-peers true
 # 还原pnpm配置
 $ pnpm config delete auto-install-peers
+
+> ### npm 恢复默认
+
+```
+ npm config set registry https://registry.npmjs.org
 ```

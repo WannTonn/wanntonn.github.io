@@ -191,15 +191,8 @@ brew install node / npm / yarn
 </blockquote>
 <pre><code>npm config set registry https://registry.npmmirror.com
 yarn config set registry https://registry.npmmirror.com
-pnpm config set registry https://registry.npmmirror.com
 </code></pre>
 <blockquote>
-<p>npm 恢复默认</p>
-</blockquote>
-<pre tabindex=0><code> npm config set registry https://registry.npmjs.org
- yarn config set registry https://registry.npmjs.org
- pnpm config set registry https://registry.npmjs.org
-</code></pre><blockquote>
 <p>关于Git的一些问题与解决方案</p>
 </blockquote>
 <table>
@@ -225,12 +218,27 @@ pnpm config set registry https://registry.npmmirror.com
 <blockquote>
 <p>配置pip源为国内的清华镜像源</p>
 </blockquote>
-<pre tabindex=0><code>  $ pip3 config set global.index-url 'https://pypi.tuna.tsinghua.edu.cn/simple'
-  $ pip3 config set install.trusted-host 'https://pypi.tuna.tsinghua.edu.cn'
-  # 显示pip配置
-  $ pip3 config list
+<p>$ pip3 config set global.index-url &lsquo;
+<a href=https://pypi.tuna.tsinghua.edu.cn/simple%27 target=_blank>https://pypi.tuna.tsinghua.edu.cn/simple'</a>
+$ pip3 config set install.trusted-host &lsquo;
+<a href=https://pypi.tuna.tsinghua.edu.cn target=_blank>https://pypi.tuna.tsinghua.edu.cn</a>
+&rsquo;</p>
+<h1 id=显示pip配置>显示pip配置</h1>
+<p>$ pip3 config list</p>
+<blockquote>
+<p>pnpm配置</p>
+</blockquote>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=color:#75715e># 自动安装依赖的深度依赖</span>
+$ pnpm config set auto-install-peers true
+<span style=color:#75715e># 还原pnpm配置</span>
+$ pnpm config delete auto-install-peers
 
-</code></pre>
+&gt; <span style=color:#75715e>### npm 恢复默认</span>
+
+</code></pre></div><p>npm config set registry
+<a href=https://registry.npmjs.org target=_blank>https://registry.npmjs.org</a>
+</p>
+<pre tabindex=0><code></code></pre>
 </article>
 </div>
 </div>
@@ -249,7 +257,7 @@ pnpm config set registry https://registry.npmmirror.com
 </div>
 <div class=counter>
 <div class=counter-wrapper>
-<span class=counter-data>10</span>
+<span class=counter-data>14</span>
 <span class=counter-name>kWords</span>
 </div>
 <div class=counter-wrapper>
@@ -257,7 +265,7 @@ pnpm config set registry https://registry.npmmirror.com
 <span class=counter-name>Tags</span>
 </div>
 <div class=counter-wrapper>
-<span class=counter-data>23</span>
+<span class=counter-data>26</span>
 <span class=counter-name>Posts</span>
 </div>
 </div>
