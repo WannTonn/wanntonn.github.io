@@ -132,5 +132,11 @@ image: '/images/Post/Hackintosh/notes/macOSBigSur.jpeg'
 
 ```
 
+> pnpm配置
 
-
+```shell
+# 自动安装依赖的深度依赖
+$ pnpm config set auto-install-peers true
+# 还原pnpm配置
+$ pnpm config delete auto-install-peers
+```
