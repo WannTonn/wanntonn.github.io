@@ -10,10 +10,22 @@
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
 <link rel=manifest href=/favicons/site.webmanifest>
 <link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>404 NOT FOUND - {...Life}</title>
+<title>pnpm - 遇到的问题与解决方案 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="MacOS">
+<meta property="og:title" content="pnpm - 遇到的问题与解决方案">
+<meta property="og:description" content="前言：在使用 React + antd@latest 开发时，遇到了缺少 &lsquo;rc-table&rsquo; 之类的报错">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://blogs.wanntonn.fun/fed/code/pnpm/">
+<meta property="og:image" content="https://blogs.wanntonn.fun/images/Code/javascript.png"><meta property="article:published_time" content="2022-10-17T13:35:24+08:00">
+<meta property="article:modified_time" content="2022-10-17T13:35:24+08:00"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blogs.wanntonn.fun/images/Code/javascript.png">
+<meta name=twitter:title content="pnpm - 遇到的问题与解决方案">
+<meta name=twitter:description content="前言：在使用 React + antd@latest 开发时，遇到了缺少 &lsquo;rc-table&rsquo; 之类的报错">
 <link rel=stylesheet href=/assets/amzrk2.min.css>
-<body data-theme=auto data-section=404>
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
+<script></script>
+<body data-theme=auto data-section=single>
 <script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
+<div id=top style=height:0;overflow:hidden></div>
 <header>
 <nav class=navbar>
 <div class=container>
@@ -52,19 +64,35 @@ NAS
 </nav>
 </header>
 <main>
-<div class="container main-container">
-<div class="columns main-columns">
-<div class="column main-content is-three-quarters">
+<div class="container single-container">
+<div class="columns single-columns">
+<div class="column single-content is-three-quarters">
 <div class=card>
+<div class="post-image image-wrapper ratio-32x9">
+<img src=/images/Code/javascript.png>
+</div>
+<div class=post-box>
+<h2 class=post-title>pnpm - 遇到的问题与解决方案</h2>
+<div class=post-meta>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-10-17</time></span>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
+<span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/macos>MacOS</a></span>
+</div>
+</div>
+<div class=post-content>
 <article class="markdown content">
-<h2>404 NOT FOUND</h2>
-<p><strong>Resource not found or under construction</strong></p>
-<p><span id=timer>10</span> seconds to <a href=https://blogs.wanntonn.fun target=_blank>home page</a></p>
+<p>前言：在使用 React + antd@latest 开发时，遇到了缺少 &lsquo;rc-table&rsquo; 之类的报错</p>
+<p>症状：在node_modules下，确实没有rc-* 相关的依赖。</p>
+<p>解决方案：
+在执行 pnpm install的时候， 加一串配置参数 <code>--shamefully-hoist</code>，安装完毕后，重启vscode即可</p>
 </article>
 </div>
 </div>
-<aside class="column main-sidebar is-one-quarter">
-<div class=sticky>
+</div>
+<aside class="column single-sidebar is-one-quarter">
 <div class=card>
 <div class=card-info>
 <div class=avatar>
@@ -92,9 +120,9 @@ NAS
 </div>
 </div>
 </div>
-<div class="card card-links">
-<a class=links-item href=https://github.com/WannTonn target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-github"/></svg>
-</a>
+<div class=sticky>
+<div class="card toc hidden" id=table-of-contents>
+<nav id=TableOfContents></nav>
 </div>
 </div>
 </aside>
@@ -108,7 +136,8 @@ NAS
 </div>
 </footer>
 <script defer src=/assets/amzrk2-common.min.js></script>
-<script defer src=/assets/amzrk2-list.min.js></script>
-<script>(function(){setTimeout(()=>{window.location.href='https://blogs.wanntonn.fun'},1e4),setInterval(()=>{let a=document.getElementById('timer'),b=Number.parseInt(a.textContent);b>0&&(a.textContent=--b)},1e3)})()</script>
+<script defer src=/assets/amzrk2-single.min.js></script>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script>
 </body>
 </html>
