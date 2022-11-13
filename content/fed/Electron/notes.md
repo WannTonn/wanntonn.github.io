@@ -79,4 +79,16 @@ image: '/images/Post/Electron/bg.jpg'
   });
   ```
 
+### Electron进程间的通信
+- 渲染进程到主进程
+  - Callback 写法
+    - ipcRenderer.send(channel, ...args)
+    - ipcMain.on(channel, handler)
 
+  - Promise 写法
+    - ipcRenderer.invoke(channel, ...args)
+    - ipcMain.handle(channel, handler)
+
+- 主进程通知渲染进程
+  - ipcRenderer.on(channel, handler)
+  - webContents.send(channel)

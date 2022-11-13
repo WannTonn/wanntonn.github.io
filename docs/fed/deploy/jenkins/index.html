@@ -1,257 +1,53 @@
-<!doctype html><html lang=en>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=HandheldFriendly content="True">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=generator content="Hugo 0.88.1">
-<link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
-<link rel=manifest href=/favicons/site.webmanifest>
-<link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>用Jenkins实现前端项目部署 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Jenkins">
-<meta property="og:title" content="用Jenkins实现前端项目部署">
-<meta property="og:description" content="
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=HandheldFriendly content="True"><meta http-equiv=x-ua-compatible content="IE=edge"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=generator content="Hugo 0.101.0"><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=manifest href=/favicons/site.webmanifest><link rel="shortcut icon" href=/favicons/favicon.ico><title>用Jenkins实现前端项目部署 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Jenkins"><meta property="og:title" content="用Jenkins实现前端项目部署"><meta property="og:description" content="
 前言：github.io 编译总出问题，更新迟滞，现想用部署工具部署在服务器，拟实现代码推送，自动部署，不用看GitHub脸色。在此正以记录的形式记录下过程。
-">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://blogs.wanntonn.fun/fed/deploy/jenkins/">
-<meta property="og:image" content="https://blogs.wanntonn.fun/images/FED/Jenkins.png"><meta property="article:published_time" content="2022-07-17T21:30:45+08:00">
-<meta property="article:modified_time" content="2022-07-17T21:30:45+08:00"><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://blogs.wanntonn.fun/images/FED/Jenkins.png">
-<meta name=twitter:title content="用Jenkins实现前端项目部署">
-<meta name=twitter:description content="
+"><meta property="og:type" content="article"><meta property="og:url" content="https://blogs.wanntonn.fun/fed/deploy/jenkins/"><meta property="og:image" content="https://blogs.wanntonn.fun/images/FED/Jenkins.png"><meta property="article:published_time" content="2022-07-17T21:30:45+08:00"><meta property="article:modified_time" content="2022-07-17T21:30:45+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blogs.wanntonn.fun/images/FED/Jenkins.png"><meta name=twitter:title content="用Jenkins实现前端项目部署"><meta name=twitter:description content="
 前言：github.io 编译总出问题，更新迟滞，现想用部署工具部署在服务器，拟实现代码推送，自动部署，不用看GitHub脸色。在此正以记录的形式记录下过程。
-">
-<link rel=stylesheet href=/assets/amzrk2.min.css>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
-<script></script>
-<body data-theme=auto data-section=single>
-<script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
-<div id=top style=height:0;overflow:hidden></div>
-<header>
-<nav class=navbar>
-<div class=container>
-<div class=navbar-brand>
-<a class=navbar-item href=https://blogs.wanntonn.fun>
-{...Life}
-</a>
-</div>
-<div class=navbar-menu>
-<div class=navbar-start>
-<a class=navbar-item href=/post/>
-笔记
-</a>
-<a class=navbar-item href=/nas/>
-NAS
-</a>
-<a class=navbar-item href=/fed/>
-前端
-</a>
-<a class=navbar-item href=/tags/>
-标签
-</a>
-<a class=navbar-item href=/about/>
-关于
-</a>
-</div>
-<div class=navbar-end>
-<div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg>
-</div>
-<a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg>
-</a>
-<div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg>
-</div>
-</div>
-</div>
-</nav>
-</header>
-<main>
-<div class="container single-container">
-<div class="columns single-columns">
-<div class="column single-content is-three-quarters">
-<div class=card>
-<div class="post-image image-wrapper ratio-32x9">
-<img src=/images/FED/Jenkins.png>
-</div>
-<div class=post-box>
-<h2 class=post-title>用Jenkins实现前端项目部署</h2>
-<div class=post-meta>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-07-17</time></span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;2 min</span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/jenkins>Jenkins</a></span>
-</div>
-</div>
-<div class=post-content>
-<article class="markdown content">
-<blockquote>
-<p>前言：github.io 编译总出问题，更新迟滞，现想用部署工具部署在服务器，拟实现代码推送，自动部署，不用看GitHub脸色。在此正以记录的形式记录下过程。</p>
-</blockquote>
-<p>本文借鉴了
-<a href=https://mp.weixin.qq.com/s/yf6vClrNvVA4bKbeqcJ9SA target=_blank>《前端工程化：保姆级教学 Jenkins 部署前端项目》</a>
-</p>
-<h2 id=准备事项>准备事项</h2>
-<ul>
-<li>云服务器一台(Linux),此处用的Ubuntu 18.04</li>
-<li>物理机一台（远程用）</li>
-<li>
-<a href=https://blogs.wanntonn.fun/fed/deploy/linux_repo/ target=_blank>配置Ubuntu的镜像源</a>
-</li>
-</ul>
-<h2 id=开始安装>开始安装</h2>
-<ol>
-<li>配置apt-get的Jenkins的repo</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ sudo apt-get update -y
-$ sudo apt-get upgrade -y
-</code></pre></div><ol start=2>
-<li>安装JDK</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ sudo apt install openjdk-11-jdk -y
-</code></pre></div><ol start=3>
-<li>验证JDK版本号</li>
-</ol>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ java -version
-</code></pre></div><p>4.添加Jenkins的gpg key</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -
-</code></pre></div><p>5.添加仓库地址</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ sudo sh -c <span style=color:#e6db74>&#39;echo deb https://pkg.jenkins.io/debian-stable binary/ &gt; \ e&gt; /etc/apt/sources.list.d/jenkins.list&#39;</span>
-</code></pre></div><p>6.更新apt-get</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ sudo apt-get update -y
-</code></pre></div><p>7.安装Jenkins</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ sudo apt-get install jenkins -y
-</code></pre></div><h2 id=jenkins-指令>Jenkins 指令</h2>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=color:#75715e># 启动Jenkins</span>
-$ systemctl start jenkins
-<span style=color:#75715e># 停止Jenkins</span>
-$ systemctl stop jenkins
-<span style=color:#75715e># 重启Jenkins</span>
-$ systemctl restart jenkins
-<span style=color:#75715e># 查看Jenkins状态</span>
-$ systemctl status jenkins
-</code></pre></div><p>启动服务之后，访问云服务器IP:8080，Jenkins默认端口为8080.</p>
-<h2 id=jenkins使用以及freestyle任务构建>Jenkins使用以及Freestyle任务构建</h2>
-<p><a class=image-link href=/images/Post/Jenkins/step1.jpg target=_blank>
-<img src=/images/Post/Jenkins/step1.jpg alt>
-</a>
-首次使用需要用 <code>cat /var/lib/jenkins/secrets/initialAdminPassword</code> 查看密码。然后点继续。</p>
-<p>随后进入插件安装页面，这里安装系统推荐的插件。</p>
-<p><a class=image-link href=/images/Post/Jenkins/step2.jpg target=_blank>
-<img src=/images/Post/Jenkins/step2.jpg alt>
-</a>
-等待新手入门的进度条走完。</p>
-<p>走完创建用户的流程之后就进到Jenkins的首页了。
-<a class=image-link href=/images/Post/Jenkins/step3.jpg target=_blank>
-<img src=/images/Post/Jenkins/step3.jpg alt>
-</a></p>
-<h1 id=开始创建第一个要编译的项目>开始创建第一个要编译的项目。</h1>
-<p>点击 <code>+ 新建Item</code> 创建一个 <code>Freestyle Project</code>
-<a class=image-link href=/images/Post/Jenkins/step_4_add_item.jpg target=_blank>
-<img src=/images/Post/Jenkins/step_4_add_item.jpg alt>
-</a>
-进入项目配置</p>
-<p>1.描述</p>
-<p>项目描述</p>
-<p>2.钉钉机器人
-<a href=/fed/deploy/jenkins_config#DingtalkBot target=_blank>(添加钉钉机器人插件)</a>
-</p>
-<p><a class=image-link href=/images/Post/Jenkins/step_5_dingtalk.jpg target=_blank>
-<img src=/images/Post/Jenkins/step_5_dingtalk.jpg alt>
-</a></p>
-<p>3.源码管理</p>
-<p><a class=image-link href=/images/Post/Jenkins/step_6_source_manage.jpg target=_blank>
-<img src=/images/Post/Jenkins/step_6_source_manage.jpg alt>
-</a></p>
-<blockquote>
-<p>注意事项： 如果显示无法连接仓库，请确认服务端是否安装了git,如果没有安装git 则运行 <code>apt install git</code></p>
-</blockquote>
-<p>4.构建触发器
-<a href=/fed/deploy/jenkins_config#GithubHook target=_blank>(添加GithubHook)</a>
-</p>
-<p><a class=image-link href=/images/Post/Jenkins/step_7_githubhook.jpg target=_blank>
-<img src=/images/Post/Jenkins/step_7_githubhook.jpg alt>
-</a></p>
-<p>5.构建环境
-<a href=/fed/deploy/jenkins_config#Nodejs target=_blank>(添加Nodejs)</a>
-</p>
-<p><a class=image-link href=/images/Post/Jenkins/step_8_build_env.jpg target=_blank>
-<img src=/images/Post/Jenkins/step_8_build_env.jpg alt>
-</a></p>
-<p>6.构建</p>
-<p><a class=image-link href=/images/Post/Jenkins/step_9_build.jpg target=_blank>
-<img src=/images/Post/Jenkins/step_9_build.jpg alt>
-</a></p>
-<p>在shell中配置对应的shell脚本，这里贴一下自己用到的shell做参考</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>tar -zcvf blogs.tar.gz docs/
-sudo mv blogs.tar.gz /pages
-cd /pages
-sudo rm -rf blogs_bak
-mv /pages/blogs /pages/blogs_bak
-sudo tar -zxf blogs.tar.gz
-mv /pages/docs /pages/blogs
-sudo rm -rf blogs.tar.gz
-</code></pre></div><p>7.点击 <code>保存</code> 配置即生效。</p>
-</article>
-</div>
-</div>
-</div>
-<aside class="column single-sidebar is-one-quarter">
-<div class=card>
-<div class=card-info>
-<div class=avatar>
-<div class="image-wrapper ratio-1x1">
-<img src=/images/_avatar.jpg>
-</div>
-</div>
-<div class=info>
-<span class=info-name>WannTonn</span>
-<span class=info-para>为他人期待而活才是小丑🤡</span>
-</div>
-<div class=counter>
-<div class=counter-wrapper>
-<span class=counter-data>14</span>
-<span class=counter-name>kWords</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>9</span>
-<span class=counter-name>Tags</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>27</span>
-<span class=counter-name>Posts</span>
-</div>
-</div>
-</div>
-</div>
-<div class=sticky>
-<div class="card toc hidden" id=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#准备事项>准备事项</a></li>
-<li><a href=#开始安装>开始安装</a></li>
-<li><a href=#jenkins-指令>Jenkins 指令</a></li>
-<li><a href=#jenkins使用以及freestyle任务构建>Jenkins使用以及Freestyle任务构建</a></li>
-</ul>
-</nav>
-</div>
-</div>
-</aside>
-</div>
-</div>
-</main>
-<footer class=footer>
-<div class=container>
-<span>Copyright &copy; 2020-2022 WannTonn</span>
-<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span>
-</div>
-</footer>
-<script defer src=/assets/amzrk2-common.min.js></script>
+"><link rel=stylesheet href=/assets/amzrk2.min.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
+<script></script><body data-theme=auto data-section=single><script>!function(e){let t;try{t=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch{t=null}t&&t!==e&&document.body.setAttribute("data-theme",t)}(document.body.getAttribute("data-theme"))</script><div id=top style=height:0;overflow:hidden></div><header><nav class=navbar><div class=container><div class=navbar-brand><a class=navbar-item href=https://blogs.wanntonn.fun>{...Life}</a></div><div class=navbar-menu><div class=navbar-start><a class=navbar-item href=/post/>笔记</a>
+<a class=navbar-item href=/nas/>NAS</a>
+<a class=navbar-item href=/fed/>前端</a>
+<a class=navbar-item href=/tags/>标签</a>
+<a class=navbar-item href=/about/>关于</a></div><div class=navbar-end><div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg></div><a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg></a><div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg></div></div></div></nav></header><main><div class="container single-container"><div class="columns single-columns"><div class="column single-content is-three-quarters"><div class=card><div class="post-image image-wrapper ratio-32x9"><img src=/images/FED/Jenkins.png></div><div class=post-box><h2 class=post-title>用Jenkins实现前端项目部署</h2><div class=post-meta><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-07-17</time></span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;2 min</span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/jenkins>Jenkins</a></span></div></div><div class=post-content><article class="markdown content"><blockquote><p>前言：github.io 编译总出问题，更新迟滞，现想用部署工具部署在服务器，拟实现代码推送，自动部署，不用看GitHub脸色。在此正以记录的形式记录下过程。</p></blockquote><p>本文借鉴了
+<a href=https://mp.weixin.qq.com/s/yf6vClrNvVA4bKbeqcJ9SA target=_blank>《前端工程化：保姆级教学 Jenkins 部署前端项目》</a></p><h2 id=准备事项>准备事项</h2><ul><li>云服务器一台(Linux),此处用的Ubuntu 18.04</li><li>物理机一台（远程用）</li><li><a href=https://blogs.wanntonn.fun/fed/deploy/linux_repo/ target=_blank>配置Ubuntu的镜像源</a></li></ul><h2 id=开始安装>开始安装</h2><ol><li>配置apt-get的Jenkins的repo</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>$ sudo apt-get update -y
+</span></span><span style=display:flex><span>$ sudo apt-get upgrade -y
+</span></span></code></pre></div><ol start=2><li>安装JDK</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>$ sudo apt install openjdk-11-jdk -y
+</span></span></code></pre></div><ol start=3><li>验证JDK版本号</li></ol><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>$ java -version
+</span></span></code></pre></div><p>4.添加Jenkins的gpg key</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>$ wget -q -O - https://pkg.jenkins.io/debian-stable/jenkins.io.key | apt-key add -
+</span></span></code></pre></div><p>5.添加仓库地址</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>$ sudo sh -c <span style=color:#e6db74>&#39;echo deb https://pkg.jenkins.io/debian-stable binary/ &gt; \ e&gt; /etc/apt/sources.list.d/jenkins.list&#39;</span>
+</span></span></code></pre></div><p>6.更新apt-get</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>$ sudo apt-get update -y
+</span></span></code></pre></div><p>7.安装Jenkins</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>$ sudo apt-get install jenkins -y
+</span></span></code></pre></div><h2 id=jenkins-指令>Jenkins 指令</h2><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span><span style=color:#75715e># 启动Jenkins</span>
+</span></span><span style=display:flex><span>$ systemctl start jenkins
+</span></span><span style=display:flex><span><span style=color:#75715e># 停止Jenkins</span>
+</span></span><span style=display:flex><span>$ systemctl stop jenkins
+</span></span><span style=display:flex><span><span style=color:#75715e># 重启Jenkins</span>
+</span></span><span style=display:flex><span>$ systemctl restart jenkins
+</span></span><span style=display:flex><span><span style=color:#75715e># 查看Jenkins状态</span>
+</span></span><span style=display:flex><span>$ systemctl status jenkins
+</span></span></code></pre></div><p>启动服务之后，访问云服务器IP:8080，Jenkins默认端口为8080.</p><h2 id=jenkins使用以及freestyle任务构建>Jenkins使用以及Freestyle任务构建</h2><p><a class=image-link href=/images/Post/Jenkins/step1.jpg target=_blank><img src=/images/Post/Jenkins/step1.jpg alt></a>
+首次使用需要用 <code>cat /var/lib/jenkins/secrets/initialAdminPassword</code> 查看密码。然后点继续。</p><p>随后进入插件安装页面，这里安装系统推荐的插件。</p><p><a class=image-link href=/images/Post/Jenkins/step2.jpg target=_blank><img src=/images/Post/Jenkins/step2.jpg alt></a>
+等待新手入门的进度条走完。</p><p>走完创建用户的流程之后就进到Jenkins的首页了。
+<a class=image-link href=/images/Post/Jenkins/step3.jpg target=_blank><img src=/images/Post/Jenkins/step3.jpg alt></a></p><h1 id=开始创建第一个要编译的项目>开始创建第一个要编译的项目。</h1><p>点击 <code>+ 新建Item</code> 创建一个 <code>Freestyle Project</code>
+<a class=image-link href=/images/Post/Jenkins/step_4_add_item.jpg target=_blank><img src=/images/Post/Jenkins/step_4_add_item.jpg alt></a>
+进入项目配置</p><p>1.描述</p><p>项目描述</p><p>2.钉钉机器人
+<a href=/fed/deploy/jenkins_config#DingtalkBot target=_blank>(添加钉钉机器人插件)</a></p><p><a class=image-link href=/images/Post/Jenkins/step_5_dingtalk.jpg target=_blank><img src=/images/Post/Jenkins/step_5_dingtalk.jpg alt></a></p><p>3.源码管理</p><p><a class=image-link href=/images/Post/Jenkins/step_6_source_manage.jpg target=_blank><img src=/images/Post/Jenkins/step_6_source_manage.jpg alt></a></p><blockquote><p>注意事项： 如果显示无法连接仓库，请确认服务端是否安装了git,如果没有安装git 则运行 <code>apt install git</code></p></blockquote><p>4.构建触发器
+<a href=/fed/deploy/jenkins_config#GithubHook target=_blank>(添加GithubHook)</a></p><p><a class=image-link href=/images/Post/Jenkins/step_7_githubhook.jpg target=_blank><img src=/images/Post/Jenkins/step_7_githubhook.jpg alt></a></p><p>5.构建环境
+<a href=/fed/deploy/jenkins_config#Nodejs target=_blank>(添加Nodejs)</a></p><p><a class=image-link href=/images/Post/Jenkins/step_8_build_env.jpg target=_blank><img src=/images/Post/Jenkins/step_8_build_env.jpg alt></a></p><p>6.构建</p><p><a class=image-link href=/images/Post/Jenkins/step_9_build.jpg target=_blank><img src=/images/Post/Jenkins/step_9_build.jpg alt></a></p><p>在shell中配置对应的shell脚本，这里贴一下自己用到的shell做参考</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>tar -zcvf blogs.tar.gz docs/
+</span></span><span style=display:flex><span>sudo mv blogs.tar.gz /pages
+</span></span><span style=display:flex><span>cd /pages
+</span></span><span style=display:flex><span>sudo rm -rf blogs_bak
+</span></span><span style=display:flex><span>mv /pages/blogs /pages/blogs_bak
+</span></span><span style=display:flex><span>sudo tar -zxf blogs.tar.gz
+</span></span><span style=display:flex><span>mv /pages/docs /pages/blogs
+</span></span><span style=display:flex><span>sudo rm -rf blogs.tar.gz
+</span></span></code></pre></div><p>7.点击 <code>保存</code> 配置即生效。</p></article></div></div></div><aside class="column single-sidebar is-one-quarter"><div class=card><div class=card-info><div class=avatar><div class="image-wrapper ratio-1x1"><img src=/images/_avatar.jpg></div></div><div class=info><span class=info-name>WannTonn</span>
+<span class=info-para>为他人期待而活才是小丑🤡</span></div><div class=counter><div class=counter-wrapper><span class=counter-data>14</span>
+<span class=counter-name>kWords</span></div><div class=counter-wrapper><span class=counter-data>9</span>
+<span class=counter-name>Tags</span></div><div class=counter-wrapper><span class=counter-data>27</span>
+<span class=counter-name>Posts</span></div></div></div></div><div class=sticky><div class="card toc hidden" id=table-of-contents><nav id=TableOfContents><ul><li><a href=#准备事项>准备事项</a></li><li><a href=#开始安装>开始安装</a></li><li><a href=#jenkins-指令>Jenkins 指令</a></li><li><a href=#jenkins使用以及freestyle任务构建>Jenkins使用以及Freestyle任务构建</a></li></ul></nav></div></div></aside></div></div></main><footer class=footer><div class=container><span>Copyright &copy; 2020-2022 WannTonn</span>
+<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span></div></footer><script defer src=/assets/amzrk2-common.min.js></script>
 <script defer src=/assets/amzrk2-single.min.js></script>
 <script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script>
-<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script>
-</body>
-</html>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script></body></html>

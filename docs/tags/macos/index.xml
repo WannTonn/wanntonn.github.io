@@ -4,7 +4,7 @@
 &lt;/ul></description></item><item><title>MacOS下用终端生成.icns格式图标文件</title><link>https://blogs.wanntonn.fun/post/macos/create-icns/</link><pubDate>Sat, 26 Feb 2022 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/create-icns/</guid><description>&lt;blockquote>
 &lt;p>用命令行生成icns文件&lt;/p>
 &lt;/blockquote></description></item><item><title>有一个疑问想请来这里的大佬帮忙看看。</title><link>https://blogs.wanntonn.fun/post/macos/question/</link><pubDate>Sat, 26 Feb 2022 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/question/</guid><description>此为开发时碰到的问题，暂无得到解决方法。 前言 在日常开发过程中遇到的问题，如下图所示(点击查看大图)</description></item><item><title>MacOs重装后的一系列操作笔记</title><link>https://blogs.wanntonn.fun/post/macos/reinstallsystem/</link><pubDate>Mon, 31 Jan 2022 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/reinstallsystem/</guid><description>&lt;blockquote>
-&lt;p>解除macOS 4位密码限制&lt;/p>
+&lt;p>解除 macOS 4 位密码限制&lt;/p>
 &lt;/blockquote>
 &lt;pre>&lt;code>pwpolicy -clearaccountpolicies
 &lt;/code>&lt;/pre></description></item><item><title>VScode 在MacOS与Windows下LF，CRLF格式的问题解决办法</title><link>https://blogs.wanntonn.fun/post/macos/vscode-lf-crlf/</link><pubDate>Fri, 24 Dec 2021 17:25:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/post/macos/vscode-lf-crlf/</guid><description>&lt;blockquote>

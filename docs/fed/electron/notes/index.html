@@ -1,232 +1,50 @@
-<!doctype html><html lang=en>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=HandheldFriendly content="True">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=generator content="Hugo 0.88.1">
-<link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
-<link rel=manifest href=/favicons/site.webmanifest>
-<link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>Electron学习笔记 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Electron">
-<meta property="og:title" content="Electron学习笔记">
-<meta property="og:description" content>
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://blogs.wanntonn.fun/fed/electron/notes/">
-<meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Electron/bg.jpg"><meta property="article:published_time" content="2022-02-14T11:30:45+08:00">
-<meta property="article:modified_time" content="2022-02-14T11:30:45+08:00"><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://blogs.wanntonn.fun/images/Post/Electron/bg.jpg">
-<meta name=twitter:title content="Electron学习笔记">
-<meta name=twitter:description content>
-<link rel=stylesheet href=/assets/amzrk2.min.css>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
-<script></script>
-<body data-theme=auto data-section=single>
-<script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
-<div id=top style=height:0;overflow:hidden></div>
-<header>
-<nav class=navbar>
-<div class=container>
-<div class=navbar-brand>
-<a class=navbar-item href=https://blogs.wanntonn.fun>
-{...Life}
-</a>
-</div>
-<div class=navbar-menu>
-<div class=navbar-start>
-<a class=navbar-item href=/post/>
-笔记
-</a>
-<a class=navbar-item href=/nas/>
-NAS
-</a>
-<a class=navbar-item href=/fed/>
-前端
-</a>
-<a class=navbar-item href=/tags/>
-标签
-</a>
-<a class=navbar-item href=/about/>
-关于
-</a>
-</div>
-<div class=navbar-end>
-<div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg>
-</div>
-<a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg>
-</a>
-<div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg>
-</div>
-</div>
-</div>
-</nav>
-</header>
-<main>
-<div class="container single-container">
-<div class="columns single-columns">
-<div class="column single-content is-three-quarters">
-<div class=card>
-<div class="post-image image-wrapper ratio-32x9">
-<img src=/images/Post/Electron/bg.jpg>
-</div>
-<div class=post-box>
-<h2 class=post-title>Electron学习笔记</h2>
-<div class=post-meta>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-02-14</time></span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;3 min</span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/electron>Electron</a></span>
-</div>
-</div>
-<div class=post-content>
-<article class="markdown content">
-<h2 id=安装-electron>安装 Electron</h2>
-<h3 id=在项目中想安装-electron运行npm-install-electron--d-的时候一直卡进度条或者下载十分缓慢可以尝试以下方法解决>在项目中想安装 Electron，运行<code>npm install electron -D</code> 的时候，一直卡进度条，或者下载十分缓慢，可以尝试以下方法解决。</h3>
-<ul>
-<li>Ctrl + c，停止当前安装。</li>
-<li>到 Electron 的国内镜像去寻找与项目版本一致的二进制镜像包，
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=HandheldFriendly content="True"><meta http-equiv=x-ua-compatible content="IE=edge"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=generator content="Hugo 0.101.0"><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=manifest href=/favicons/site.webmanifest><link rel="shortcut icon" href=/favicons/favicon.ico><title>Electron学习笔记 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Electron"><meta property="og:title" content="Electron学习笔记"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://blogs.wanntonn.fun/fed/electron/notes/"><meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Electron/bg.jpg"><meta property="article:published_time" content="2022-02-14T11:30:45+08:00"><meta property="article:modified_time" content="2022-02-14T11:30:45+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blogs.wanntonn.fun/images/Post/Electron/bg.jpg"><meta name=twitter:title content="Electron学习笔记"><meta name=twitter:description content><link rel=stylesheet href=/assets/amzrk2.min.css><script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
+<script></script><body data-theme=auto data-section=single><script>!function(e){let t;try{t=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch{t=null}t&&t!==e&&document.body.setAttribute("data-theme",t)}(document.body.getAttribute("data-theme"))</script><div id=top style=height:0;overflow:hidden></div><header><nav class=navbar><div class=container><div class=navbar-brand><a class=navbar-item href=https://blogs.wanntonn.fun>{...Life}</a></div><div class=navbar-menu><div class=navbar-start><a class=navbar-item href=/post/>笔记</a>
+<a class=navbar-item href=/nas/>NAS</a>
+<a class=navbar-item href=/fed/>前端</a>
+<a class=navbar-item href=/tags/>标签</a>
+<a class=navbar-item href=/about/>关于</a></div><div class=navbar-end><div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg></div><a class=navbar-item id=ctrl-rss href=/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg></a><div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg></div></div></div></nav></header><main><div class="container single-container"><div class="columns single-columns"><div class="column single-content is-three-quarters"><div class=card><div class="post-image image-wrapper ratio-32x9"><img src=/images/Post/Electron/bg.jpg></div><div class=post-box><h2 class=post-title>Electron学习笔记</h2><div class=post-meta><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-02-14</time></span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;3 min</span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/electron>Electron</a></span></div></div><div class=post-content><article class="markdown content"><h2 id=安装-electron>安装 Electron</h2><h3 id=在项目中想安装-electron运行npm-install-electron--d-的时候一直卡进度条或者下载十分缓慢可以尝试以下方法解决>在项目中想安装 Electron，运行<code>npm install electron -D</code> 的时候，一直卡进度条，或者下载十分缓慢，可以尝试以下方法解决。</h3><ul><li>Ctrl + c，停止当前安装。</li><li>到 Electron 的国内镜像去寻找与项目版本一致的二进制镜像包，
 <a href=https://npm.taobao.org/mirrors/electron/ target=_blank>地址</a>
 ，这里我将下载当前最新的<code>17.1.0</code>版本做示范，
 <a href=https://registry.npmmirror.com/-/binary/electron/17.1.0/electron-v17.1.0-darwin-x64.zip target=_blank>镜像地址</a>
-。</li>
-<li>将<code>electron-v17.1.0-darwin-x64.zip</code>文件下载完成之后，打开项目，找到<code>node_modules/electron/</code>文件夹，将刚才下载好的二进制压缩包文件<code>electron-v17.1.0-darwin-x64.zip</code>复制到<code>node_modules/electron/</code>下。</li>
-<li>找到<code>node_modules/electron/install.js</code>，打开这个文件进行编辑</li>
-<li>找到文件第 22 行左右的位置，找到<code>downloadArtifact</code>方法，将其注释，具体可以看以下代码</li>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#75715e>/* downloadArtifact({
-</span><span style=color:#75715e>version,
-</span><span style=color:#75715e>artifactName: &#39;electron&#39;,
-</span><span style=color:#75715e>force: process.env.force_no_cache === &#39;true&#39;,
-</span><span style=color:#75715e>cacheRoot: process.env.electron_config_cache,
-</span><span style=color:#75715e>platform: process.env.npm_config_platform || process.platform,
-</span><span style=color:#75715e>arch: process.env.npm_config_arch || process.arch
-</span><span style=color:#75715e>}).then(extractFile).catch(err =&gt; {
-</span><span style=color:#75715e>console.error(err.stack);
-</span><span style=color:#75715e>process.exit(1);
-</span><span style=color:#75715e>}); */</span>
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>path_</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>path</span>.<span style=color:#a6e22e>join</span>(<span style=color:#ae81ff>__</span><span style=color:#a6e22e>dirname</span>, <span style=color:#e6db74>&#39;electron-v17.1.0-darwin-x64.zip&#39;</span>); <span style=color:#75715e>// 指定二进制压缩文件路径
-</span><span style=color:#75715e></span><span style=color:#a6e22e>extractFile</span>(<span style=color:#a6e22e>path_</span>); <span style=color:#75715e>// 将二进制压缩文件路径进行解压操作
-</span></code></pre></div></li>
-<li>在控制台敲入以下代码，回车即可完成离线安装。</li>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>node node_modules/electron/install.js
-</code></pre></div></li>
-<li>看到<code>node_modules/electron/dist</code> 和 <code>node_modules/electron/path.txt</code> 就代表安装成功。</li>
-</ul>
-<h2 id=electron-store>Electron-Store</h2>
-<h3 id=背景electron-store>背景（electron-store）</h3>
-<blockquote>
-<p>项目用的是 Electron 开发，原来数据是放在 Electron（即 Chrome）的 Storage 下，而 APP 需要上线 App Store，所以该应用为沙盒应用，在 App Store 更新的时候，有几率会将 Electron 的 RootPath 下的所有文件覆写，就会导致 Storage 数据丢失，所以采用 Electron-Store 方案，将需要缓存的数据写入磁盘。</p>
-</blockquote>
-<h3 id=遇到的问题electron-store>遇到的问题（electron-store）</h3>
-<ul>
-<li>项目中引用<code>electron-store</code>，项目运行起来之后，控制台报错，报错内容<code>WebContents #1 called ipcRenderer.sendSync() with 'electron-store-get-data' channel without listeners.</code></li>
-<li>electro-store 生成的文件存放路径的问题。</li>
-</ul>
-<h3 id=分析>分析</h3>
-<ul>
-<li>初始化报错是由于&mldr;文档没看完，底下有强调要在主进程进行初始化。</li>
-<li>MacOS 上的应用来源分为 App Store 商店下载与打包成<code>.dmg</code>镜像的压缩包(解压到 Applications/ 或任意文件夹就可以运行)与打包成 <code>.pkg</code>的执行安装的安装包文件 等。App Store 下载的应用都是一个独立的沙盒程序（需要上架到 App Store 就需要打开沙盒）,具体可参考
+。</li><li>将<code>electron-v17.1.0-darwin-x64.zip</code>文件下载完成之后，打开项目，找到<code>node_modules/electron/</code>文件夹，将刚才下载好的二进制压缩包文件<code>electron-v17.1.0-darwin-x64.zip</code>复制到<code>node_modules/electron/</code>下。</li><li>找到<code>node_modules/electron/install.js</code>，打开这个文件进行编辑</li><li>找到文件第 22 行左右的位置，找到<code>downloadArtifact</code>方法，将其注释，具体可以看以下代码</li><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>/* downloadArtifact({
+</span></span></span><span style=display:flex><span><span style=color:#75715e>version,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>artifactName: &#39;electron&#39;,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>force: process.env.force_no_cache === &#39;true&#39;,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>cacheRoot: process.env.electron_config_cache,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>platform: process.env.npm_config_platform || process.platform,
+</span></span></span><span style=display:flex><span><span style=color:#75715e>arch: process.env.npm_config_arch || process.arch
+</span></span></span><span style=display:flex><span><span style=color:#75715e>}).then(extractFile).catch(err =&gt; {
+</span></span></span><span style=display:flex><span><span style=color:#75715e>console.error(err.stack);
+</span></span></span><span style=display:flex><span><span style=color:#75715e>process.exit(1);
+</span></span></span><span style=display:flex><span><span style=color:#75715e>}); */</span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>path_</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>path</span>.<span style=color:#a6e22e>join</span>(<span style=color:#a6e22e>__dirname</span>, <span style=color:#e6db74>&#39;electron-v17.1.0-darwin-x64.zip&#39;</span>); <span style=color:#75715e>// 指定二进制压缩文件路径
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#a6e22e>extractFile</span>(<span style=color:#a6e22e>path_</span>); <span style=color:#75715e>// 将二进制压缩文件路径进行解压操作
+</span></span></span></code></pre></div></li><li>在控制台敲入以下代码，回车即可完成离线安装。</li><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell><span style=display:flex><span>node node_modules/electron/install.js
+</span></span></code></pre></div></li><li>看到<code>node_modules/electron/dist</code> 和 <code>node_modules/electron/path.txt</code> 就代表安装成功。</li></ul><h2 id=electron-store>Electron-Store</h2><h3 id=背景electron-store>背景（electron-store）</h3><blockquote><p>项目用的是 Electron 开发，原来数据是放在 Electron（即 Chrome）的 Storage 下，而 APP 需要上线 App Store，所以该应用为沙盒应用，在 App Store 更新的时候，有几率会将 Electron 的 RootPath 下的所有文件覆写，就会导致 Storage 数据丢失，所以采用 Electron-Store 方案，将需要缓存的数据写入磁盘。</p></blockquote><h3 id=遇到的问题electron-store>遇到的问题（electron-store）</h3><ul><li>项目中引用<code>electron-store</code>，项目运行起来之后，控制台报错，报错内容<code>WebContents #1 called ipcRenderer.sendSync() with 'electron-store-get-data' channel without listeners.</code></li><li>electro-store 生成的文件存放路径的问题。</li></ul><h3 id=分析>分析</h3><ul><li>初始化报错是由于&mldr;文档没看完，底下有强调要在主进程进行初始化。</li><li>MacOS 上的应用来源分为 App Store 商店下载与打包成<code>.dmg</code>镜像的压缩包(解压到 Applications/ 或任意文件夹就可以运行)与打包成 <code>.pkg</code>的执行安装的安装包文件 等。App Store 下载的应用都是一个独立的沙盒程序（需要上架到 App Store 就需要打开沙盒）,具体可参考
 <a href=https://developer.apple.com/cn/app-store/review/guidelines/ target=_blank>Apple Store 审核指南</a>
-。言归正传，强调沙盒程序就是因为开启了沙盒之后，程序（Electron）默认的位置(app.getPath(&lsquo;appData&rsquo;))就会在 <code>~/Library/Containers/appName/Data/Library/Application Support/appName/</code>，而非沙盒应用的路径是在<code>~/Library/Application Support/appName/</code>。要规避 Electron 应用因为更新导致数据被覆盖，可以利用沙盒下的路径，将数据放置在与<code>appName</code>同级。</li>
-</ul>
-<h3 id=解决方法electron-store>解决方法（electron-store）</h3>
-<ul>
-<li>
-<p>解决初始化报错。在主进程中代码写入以下初始化代码</p>
-</li>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#75715e>// main.js
-</span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ElectronStore</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;electron-store&#39;</span>);
-<span style=color:#a6e22e>ElectronStore</span>.<span style=color:#a6e22e>initRenderer</span>();
-</code></pre></div></li>
-<li>
-<p>修改 electron-store 文件存放路径</p>
-</li>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#75715e>// 初始化store的时候，修改cwd字段的配置
-</span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Store</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;electron-store&#39;</span>;
-<span style=color:#66d9ef>import</span> <span style=color:#a6e22e>path</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;path&#39;</span>;
-
-<span style=color:#66d9ef>const</span> <span style=color:#a6e22e>store</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Store</span>({
-  <span style=color:#a6e22e>cwd</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>path</span>.<span style=color:#a6e22e>join</span>(
-    <span style=color:#e6db74>&#39;/Users/mac/Library/Containers/appName/Data/Library/Application Support/&#39;</span>,
-    <span style=color:#e6db74>&#39;appData&#39;</span>
-  ), <span style=color:#75715e>// 这里需要以实际在main.js 中获取到的path为准（app.getPath(&#39;appData&#39;)）;
-</span><span style=color:#75715e></span>  <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;cacheData&#39;</span>, <span style=color:#75715e>// 重新命名配置文件名字，自行修改
-</span><span style=color:#75715e></span>});
-</code></pre></div></li>
-</ul>
-</article>
-</div>
-</div>
-</div>
-<aside class="column single-sidebar is-one-quarter">
-<div class=card>
-<div class=card-info>
-<div class=avatar>
-<div class="image-wrapper ratio-1x1">
-<img src=/images/_avatar.jpg>
-</div>
-</div>
-<div class=info>
-<span class=info-name>WannTonn</span>
-<span class=info-para>为他人期待而活才是小丑🤡</span>
-</div>
-<div class=counter>
-<div class=counter-wrapper>
-<span class=counter-data>14</span>
-<span class=counter-name>kWords</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>9</span>
-<span class=counter-name>Tags</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>27</span>
-<span class=counter-name>Posts</span>
-</div>
-</div>
-</div>
-</div>
-<div class=sticky>
-<div class="card toc hidden" id=table-of-contents>
-<nav id=TableOfContents>
-<ul>
-<li><a href=#安装-electron>安装 Electron</a>
-<ul>
-<li><a href=#在项目中想安装-electron运行npm-install-electron--d-的时候一直卡进度条或者下载十分缓慢可以尝试以下方法解决>在项目中想安装 Electron，运行<code>npm install electron -D</code> 的时候，一直卡进度条，或者下载十分缓慢，可以尝试以下方法解决。</a></li>
-</ul>
-</li>
-<li><a href=#electron-store>Electron-Store</a>
-<ul>
-<li><a href=#背景electron-store>背景（electron-store）</a></li>
-<li><a href=#遇到的问题electron-store>遇到的问题（electron-store）</a></li>
-<li><a href=#分析>分析</a></li>
-<li><a href=#解决方法electron-store>解决方法（electron-store）</a></li>
-</ul>
-</li>
-</ul>
-</nav>
-</div>
-</div>
-</aside>
-</div>
-</div>
-</main>
-<footer class=footer>
-<div class=container>
-<span>Copyright &copy; 2020-2022 WannTonn</span>
-<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span>
-</div>
-</footer>
-<script defer src=/assets/amzrk2-common.min.js></script>
+。言归正传，强调沙盒程序就是因为开启了沙盒之后，程序（Electron）默认的位置(app.getPath(&lsquo;appData&rsquo;))就会在 <code>~/Library/Containers/appName/Data/Library/Application Support/appName/</code>，而非沙盒应用的路径是在<code>~/Library/Application Support/appName/</code>。要规避 Electron 应用因为更新导致数据被覆盖，可以利用沙盒下的路径，将数据放置在与<code>appName</code>同级。</li></ul><h3 id=解决方法electron-store>解决方法（electron-store）</h3><ul><li><p>解决初始化报错。在主进程中代码写入以下初始化代码</p></li><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// main.js
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>ElectronStore</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;electron-store&#39;</span>);
+</span></span><span style=display:flex><span><span style=color:#a6e22e>ElectronStore</span>.<span style=color:#a6e22e>initRenderer</span>();
+</span></span></code></pre></div></li><li><p>修改 electron-store 文件存放路径</p></li><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#75715e>// 初始化store的时候，修改cwd字段的配置
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>Store</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;electron-store&#39;</span>;
+</span></span><span style=display:flex><span><span style=color:#66d9ef>import</span> <span style=color:#a6e22e>path</span> <span style=color:#a6e22e>from</span> <span style=color:#e6db74>&#39;path&#39;</span>;
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>store</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Store</span>({
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>cwd</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>path</span>.<span style=color:#a6e22e>join</span>(
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;/Users/mac/Library/Containers/appName/Data/Library/Application Support/&#39;</span>,
+</span></span><span style=display:flex><span>    <span style=color:#e6db74>&#39;appData&#39;</span>
+</span></span><span style=display:flex><span>  ), <span style=color:#75715e>// 这里需要以实际在main.js 中获取到的path为准（app.getPath(&#39;appData&#39;)）;
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>  <span style=color:#a6e22e>name</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;cacheData&#39;</span>, <span style=color:#75715e>// 重新命名配置文件名字，自行修改
+</span></span></span><span style=display:flex><span><span style=color:#75715e></span>});
+</span></span></code></pre></div></li></ul><h3 id=electron进程间的通信>Electron进程间的通信</h3><ul><li><p>渲染进程到主进程</p><ul><li><p>Callback 写法</p><ul><li>ipcRenderer.send(channel, &mldr;args)</li><li>ipcMain.on(channel, handler)</li></ul></li><li><p>Promise 写法</p><ul><li>ipcRenderer.invoke(channel, &mldr;args)</li><li>ipcMain.handle(channel, handler)</li></ul></li></ul></li><li><p>主进程通知渲染进程</p><ul><li>ipcRenderer.on(channel, handler)</li><li>webContents.send(channel)</li></ul></li></ul></article></div></div></div><aside class="column single-sidebar is-one-quarter"><div class=card><div class=card-info><div class=avatar><div class="image-wrapper ratio-1x1"><img src=/images/_avatar.jpg></div></div><div class=info><span class=info-name>WannTonn</span>
+<span class=info-para>为他人期待而活才是小丑🤡</span></div><div class=counter><div class=counter-wrapper><span class=counter-data>14</span>
+<span class=counter-name>kWords</span></div><div class=counter-wrapper><span class=counter-data>9</span>
+<span class=counter-name>Tags</span></div><div class=counter-wrapper><span class=counter-data>27</span>
+<span class=counter-name>Posts</span></div></div></div></div><div class=sticky><div class="card toc hidden" id=table-of-contents><nav id=TableOfContents><ul><li><a href=#安装-electron>安装 Electron</a><ul><li><a href=#在项目中想安装-electron运行npm-install-electron--d-的时候一直卡进度条或者下载十分缓慢可以尝试以下方法解决>在项目中想安装 Electron，运行<code>npm install electron -D</code> 的时候，一直卡进度条，或者下载十分缓慢，可以尝试以下方法解决。</a></li></ul></li><li><a href=#electron-store>Electron-Store</a><ul><li><a href=#背景electron-store>背景（electron-store）</a></li><li><a href=#遇到的问题electron-store>遇到的问题（electron-store）</a></li><li><a href=#分析>分析</a></li><li><a href=#解决方法electron-store>解决方法（electron-store）</a></li><li><a href=#electron进程间的通信>Electron进程间的通信</a></li></ul></li></ul></nav></div></div></aside></div></div></main><footer class=footer><div class=container><span>Copyright &copy; 2020-2022 WannTonn</span>
+<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span></div></footer><script defer src=/assets/amzrk2-common.min.js></script>
 <script defer src=/assets/amzrk2-single.min.js></script>
 <script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script>
-<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script>
-</body>
-</html>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script></body></html>
