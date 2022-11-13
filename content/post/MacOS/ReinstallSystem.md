@@ -130,5 +130,4 @@ $ pip3 config set global.index-url 'https://pypi.tuna.tsinghua.edu.cn/simple'
 $ pip3 config set install.trusted-host 'https://pypi.tuna.tsinghua.edu.cn'
 
 # 显示 pip 配置
-
 $ pip3 config list
