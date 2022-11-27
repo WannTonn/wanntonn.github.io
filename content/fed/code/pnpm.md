@@ -4,7 +4,7 @@ date: 2022-10-17T13:35:24+08:00
 draft: false
 tags:
  - MacOS
-image: '/images/Code/javascript.png'
+image: '/images/Code/javascript.jpg'
 ---
 
 前言：在使用 React + antd@latest 开发时，遇到了缺少 'rc-table' 之类的报错
