@@ -140,7 +140,7 @@ No Errors Logged
 
 - 资料读取（Data Units Read）：记录电脑从SSD读取512字节数据单元的总量，每1000个单元记录一次，即这项Raw数据1的值等于500KB。
 
-- 资料写入（Data Units Read）：如上，就是写入总量。
+- 资料写入（Data Units Written）：如上，就是写入总量。
 
 - 主机读取命令（Host Read Commands）：主控收到的读取命令数量。
 
