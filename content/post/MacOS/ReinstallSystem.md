@@ -131,3 +131,18 @@ $ pip3 config set install.trusted-host 'https://pypi.tuna.tsinghua.edu.cn'
 
 # 显示 pip 配置
 $ pip3 config list
+
+
+# homebrew 安装 nvm
+$ brew install nvm
+
+# 安装完毕之后，编辑当前bash的配置文件，添加nvm的配置
+```bash
+# 新建文件夹
+$ mkdir ~/.nvm
+# 编辑bash配置，当前以zsh为例
+$ vi ~/.zshrc
+# 添加配置
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+```
