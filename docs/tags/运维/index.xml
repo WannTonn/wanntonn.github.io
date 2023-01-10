@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>运维 on {...Life}</title><link>https://blogs.wanntonn.fun/tags/%E8%BF%90%E7%BB%B4/</link><description>Recent content in 运维 on {...Life}</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 15 Jun 2020 23:35:24 +0800</lastBuildDate><atom:link href="https://blogs.wanntonn.fun/tags/%E8%BF%90%E7%BB%B4/index.xml" rel="self" type="application/rss+xml"/><item><title>购买服务器之后开始学习运维知识</title><link>https://blogs.wanntonn.fun/fed/code/operation-and-maintenance/</link><pubDate>Mon, 15 Jun 2020 23:35:24 +0800</pubDate><guid>https://blogs.wanntonn.fun/fed/code/operation-and-maintenance/</guid><description>&lt;blockquote>
-&lt;p>ssh config&lt;/p>
-&lt;/blockquote>
-&lt;pre>&lt;code>$ cd
-$ mkdir .ssh &amp;amp;&amp;amp; chmod 700 .ssh
-$ touch .ssh/authorized_keys &amp;amp;&amp;amp; chmod 600 .ssh/authorized_keys
-&lt;/code>&lt;/pre></description></item></channel></rss>
