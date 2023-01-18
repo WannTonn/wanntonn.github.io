@@ -10,8 +10,8 @@
       <div class="navbar-start">
         {{ $currentPage := . }}
         {{ range .Site.Menus.main }}
-        <a class="navbar-item {{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}"
-           href="{{ .URL }}">
+        <a class="navbar-item {{ if or ($currentPage.IsMenuCurrent "main" .) ($currentPage.HasMenuCurrent "main" .)
+          }}active{{ end }}" href="{{ .URL }}">
           {{ .Name }}
         </a>
         {{ end }}
@@ -28,7 +28,7 @@
             <use xlink:href="#icon-adjust"></use>
           </svg>
         </div>
-        <a class="navbar-item" id="ctrl-rss" href="{{ "/index.xml" | relURL }}" target="_blank">
+        <a class="navbar-item" id="ctrl-rss" href="{{ " /index.xml" | relURL }}" target="_blank">
           <svg class="icon" aria-hidden="true">
             <use xlink:href="#icon-rss"></use>
           </svg>

@@ -25,23 +25,28 @@ params:
   mainSections:
     - "post"
     - "code"
-
+sectionPagesMenu: "main"
 # menu
 menu:
   main:
     - name: "笔记"
+      identifier: "post"
       url: "/post/"
       weight: 1
     - name: "前端"
+      identifier: "fed"
       url: "/fed/"
       weight: 2
     - name: "Hackintosh"
+      identifier: "hackintosh"
       url: "/hackintosh/"
       weight: 3
     - name: "标签"
+      identifier: "tags"
       url: "/tags/"
       weight: 4
     - name: "关于"
+      identifier: "about"
       url: "/about/"
       weight: 5
   links:
