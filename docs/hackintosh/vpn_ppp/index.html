@@ -10,22 +10,23 @@
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
 <link rel=manifest href=/favicons/site.webmanifest>
 <link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>VScode 在MacOS与Windows下LF，CRLF格式的问题解决办法 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="MacOS">
-<meta property="og:title" content="VScode 在MacOS与Windows下LF，CRLF格式的问题解决办法">
+<title>MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="MacOS">
+<meta property="og:title" content="MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。">
 <meta property="og:description" content="
-前情提要, 在Windows 与MacOS 切换开发的时候，提交的代码会出现LF与CRLF不一样导致没有改动，但是在Git暂存区中出现文件改动的情况。
+前言
+在macOS上想连接VPN，但是保存配置之后报了 MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。的错误。
 ">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blogs.wanntonn.fun/post/macos/vscode-lf-crlf/">
-<meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg"><meta property="article:published_time" content="2021-12-24T17:25:24+08:00">
-<meta property="article:modified_time" content="2021-12-24T17:25:24+08:00"><meta name=twitter:card content="summary_large_image">
+<meta property="og:url" content="https://blogs.wanntonn.fun/hackintosh/vpn_ppp/">
+<meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg"><meta property="article:published_time" content="2022-08-23T23:35:24+08:00">
+<meta property="article:modified_time" content="2022-08-23T23:35:24+08:00"><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg">
-<meta name=twitter:title content="VScode 在MacOS与Windows下LF，CRLF格式的问题解决办法">
+<meta name=twitter:title content="MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。">
 <meta name=twitter:description content="
-前情提要, 在Windows 与MacOS 切换开发的时候，提交的代码会出现LF与CRLF不一样导致没有改动，但是在Git暂存区中出现文件改动的情况。
+前言
+在macOS上想连接VPN，但是保存配置之后报了 MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。的错误。
 ">
 <link rel=stylesheet href=/assets/amzrk2.min.css>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
 <script></script>
 <body data-theme=auto data-section=single>
 <script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
@@ -43,11 +44,11 @@
 <a class=navbar-item href=/post/>
 笔记
 </a>
-<a class=navbar-item href=/nas/>
-NAS
-</a>
 <a class=navbar-item href=/fed/>
 前端
+</a>
+<a class=navbar-item href=/hackintosh/>
+黑苹果
 </a>
 <a class=navbar-item href=/tags/>
 标签
@@ -76,10 +77,10 @@ NAS
 <img src=/images/Post/Hackintosh/notes/macOSBigSur.jpeg>
 </div>
 <div class=post-box>
-<h2 class=post-title>VScode 在MacOS与Windows下LF，CRLF格式的问题解决办法</h2>
+<h2 class=post-title>MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。</h2>
 <div class=post-meta>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2021-12-24</time></span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-08-23</time></span>
 <span>
 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
 <span>
@@ -88,18 +89,21 @@ NAS
 </div>
 <div class=post-content>
 <article class="markdown content">
-<blockquote>
-<p>前情提要, 在Windows 与MacOS 切换开发的时候，提交的代码会出现LF与CRLF不一样导致没有改动，但是在Git暂存区中出现文件改动的情况。</p>
-</blockquote>
-<blockquote>
-<p>解决方法： 统一格式。</p>
-</blockquote>
 <ul>
-<li>打开VSCode，设置 - 搜索 &ldquo;EOL&rdquo;, 修改该选项为(\n: LF)。统一标准</li>
-<li>执行完成后，再在Git中设置一下。
-<pre tabindex=0><code>  git config --global core.autocrlf false
-</code></pre></li>
+<li>前言
+在macOS上想连接VPN，但是保存配置之后报了 <code>MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。</code>的错误。</li>
 </ul>
+<ul>
+<li>解决方案</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ sudo vim /etc/ppp/options
+
+<span style=color:#75715e># 在文件中新增如下内容</span>
+plugin L2TP.ppp
+l2tpnoipsec
+
+<span style=color:#75715e># 保存退出</span>
+</code></pre></div><p>保存之后，点击高级 - 选项 - 勾选 <code>通过VPN连接发送所有流量</code></p>
 </article>
 </div>
 </div>
@@ -118,15 +122,15 @@ NAS
 </div>
 <div class=counter>
 <div class=counter-wrapper>
-<span class=counter-data>16</span>
+<span class=counter-data>15</span>
 <span class=counter-name>kWords</span>
 </div>
 <div class=counter-wrapper>
-<span class=counter-data>9</span>
+<span class=counter-data>8</span>
 <span class=counter-name>Tags</span>
 </div>
 <div class=counter-wrapper>
-<span class=counter-data>29</span>
+<span class=counter-data>27</span>
 <span class=counter-name>Posts</span>
 </div>
 </div>

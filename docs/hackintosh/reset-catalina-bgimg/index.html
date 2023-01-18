@@ -10,18 +10,21 @@
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
 <link rel=manifest href=/favicons/site.webmanifest>
 <link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>黑苹果笔记 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Hackintosh">
-<meta property="og:title" content="黑苹果笔记">
-<meta property="og:description" content>
+<title>重置macOS Catalina登录壁纸 - {...Life}</title><meta name=author content="WannTonn">
+<meta property="og:title" content="重置macOS Catalina登录壁纸">
+<meta property="og:description" content="
+前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。
+">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blogs.wanntonn.fun/post/macos/notes/">
-<meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg"><meta property="article:published_time" content="2021-10-01T20:30:45+08:00">
-<meta property="article:modified_time" content="2021-10-01T20:30:45+08:00"><meta name=twitter:card content="summary_large_image">
+<meta property="og:url" content="https://blogs.wanntonn.fun/hackintosh/reset-catalina-bgimg/">
+<meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg"><meta property="article:published_time" content="2021-05-15T23:35:24+08:00">
+<meta property="article:modified_time" content="2021-05-15T23:35:24+08:00"><meta name=twitter:card content="summary_large_image">
 <meta name=twitter:image content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg">
-<meta name=twitter:title content="黑苹果笔记">
-<meta name=twitter:description content>
+<meta name=twitter:title content="重置macOS Catalina登录壁纸">
+<meta name=twitter:description content="
+前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。
+">
 <link rel=stylesheet href=/assets/amzrk2.min.css>
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-000000000-0"></script>
 <script></script>
 <body data-theme=auto data-section=single>
 <script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
@@ -39,11 +42,11 @@
 <a class=navbar-item href=/post/>
 笔记
 </a>
-<a class=navbar-item href=/nas/>
-NAS
-</a>
 <a class=navbar-item href=/fed/>
 前端
+</a>
+<a class=navbar-item href=/hackintosh/>
+黑苹果
 </a>
 <a class=navbar-item href=/tags/>
 标签
@@ -72,40 +75,55 @@ NAS
 <img src=/images/Post/Hackintosh/notes/macOSBigSur.jpeg>
 </div>
 <div class=post-box>
-<h2 class=post-title>黑苹果笔记</h2>
+<h2 class=post-title>重置macOS Catalina登录壁纸</h2>
 <div class=post-meta>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2021-10-01</time></span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2021-05-15</time></span>
 <span>
 <svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/hackintosh>Hackintosh</a></span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;No tag</span>
 </div>
 </div>
 <div class=post-content>
 <article class="markdown content">
-<pre tabindex=0><code># 处理PE中DiskGenius 重新分配硬盘空间的时候报 “文件分配表中有标记为已使用的未用簇”
-# 命令行输入 &quot;chkdsk /f /x C:&quot;  C: 替换为要检查的盘符
-</code></pre><blockquote>
-<p>当计算机拥有MacOS 与 Windows双系统时，2个系统之间会有8个小时的时差。可以用以下两个方法来实现统一UTC时间。</p>
-</blockquote>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=color:#75715e># windows 下，以管理员身份打开 cmd / powershell，输入以下命令，回车即可。或者将以下内容复制到新建的.txt文档内，保存后修改后缀名为.reg。双击注入注册表即可。</span>
-Reg add HKLM<span style=color:#ae81ff>\S</span>YSTEM<span style=color:#ae81ff>\C</span>urrentControlSet<span style=color:#ae81ff>\C</span>ontrol<span style=color:#ae81ff>\T</span>imeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d <span style=color:#ae81ff>1</span>
-</code></pre></div><blockquote>
-<p>重启，进入MacOS设置时间后，再重启到windows。</p>
-</blockquote>
 <blockquote>
-<p>抑或使用hackintool工具，点击打开“工具”选项卡，点击最底下九宫格图标（生成Windows UTC 时间同步注册表文件）。Enjoy。</p>
+<p>前言：自定义Catalina登录壁纸， Big Sur 安全性加强了，还没去找替换方案。</p>
 </blockquote>
-<h3 id=在安装白苹果降版本1014以下时遇到这个安装macos-mojave-应用程序副本已损坏不能用来安装macos>在安装白苹果降版本（10.14以下）时，遇到“这个安装macOS Mojave 应用程序副本已损坏。不能用来安装macOS”</h3>
-<blockquote>
-<p>解决方法</p>
-</blockquote>
-<pre tabindex=0><code># 1.断开网络
-# 2. 退出安装程序，找到实用工具 - 终端。 调整系统时间
-date 122014102015.30
+<h3 id=步骤>步骤</h3>
+<ul>
+<li>关闭SIP： 白苹果 - Google一下。 黑苹果：打开终端输入csrutil status 出现以下：</li>
+</ul>
+<pre tabindex=0><code>System Integrity Protection status: disabled.
+</code></pre><ul>
+<li>以上说明SIP已经关闭，接着进行如下操作。</li>
+</ul>
+<pre tabindex=0><code># 临时挂载 / 。让 / 是可写入状态。
+$ sudo mount -uw /
+# 备份原来的壁纸, 这里备份在下载文件夹目录
+$ sudo cp /System/Library/Desktop\ Pictures/Catalina.heic ~/Downloads/Catalina.back.heic
+# 将重命名后的新的登录壁纸替换原来的壁纸
+$ sudo cp -f ~/Downloads/Catalina.heic /System/Library/Desktop\ Pictures/Catalina.heic
+# 执行如下指令后，重启就可以看到效果。
+$ diskutil apfs updatePreboot /
 
-</code></pre>
+# 如果以上没有效果，但是文件却已经替换成功。
+# 打开系统偏好设置 - 用户与群组 - 点击左下角的锁解除 - 在侧栏用户名点击右键打开高级选项 - 复制UUID。
+# 然后用终端进入如下路径
+$ cd /Library/Caches
+# 或者用Finder 进入 /Library/Caches
+# 找到Desktop Pictures文件夹，新建一个文件夹，重命名为刚才复制的UUID，如果已经存在该UUID的文件夹，看看里面是否已经存在图片，删掉文件夹下的lockscreen.png, 复制一张新的lockscreen.png到文件夹下。重启即可见到效果。
+# enjoy
+
+</code></pre><hr>
+<blockquote>
+<p>参考</p>
+</blockquote>
+<ul>
+<li>
+<a href=https://michael728.github.io/2020/03/04/tools-mac-change-wallpaper-login/ target=_blank>Mac 10.15 Catalina 开机登录壁纸图片修改</a>
+</li>
+</ul>
 </article>
 </div>
 </div>
@@ -124,15 +142,15 @@ date 122014102015.30
 </div>
 <div class=counter>
 <div class=counter-wrapper>
-<span class=counter-data>16</span>
+<span class=counter-data>15</span>
 <span class=counter-name>kWords</span>
 </div>
 <div class=counter-wrapper>
-<span class=counter-data>9</span>
+<span class=counter-data>8</span>
 <span class=counter-name>Tags</span>
 </div>
 <div class=counter-wrapper>
-<span class=counter-data>29</span>
+<span class=counter-data>27</span>
 <span class=counter-name>Posts</span>
 </div>
 </div>
@@ -144,7 +162,7 @@ date 122014102015.30
 <ul>
 <li>
 <ul>
-<li><a href=#在安装白苹果降版本1014以下时遇到这个安装macos-mojave-应用程序副本已损坏不能用来安装macos>在安装白苹果降版本（10.14以下）时，遇到“这个安装macOS Mojave 应用程序副本已损坏。不能用来安装macOS”</a></li>
+<li><a href=#步骤>步骤</a></li>
 </ul>
 </li>
 </ul>
