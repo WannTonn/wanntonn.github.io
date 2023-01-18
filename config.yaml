@@ -35,7 +35,7 @@ menu:
     - name: "前端"
       url: "/fed/"
       weight: 2
-    - name: "黑苹果"
+    - name: "Hackintosh"
       url: "/hackintosh/"
       weight: 3
     - name: "标签"
