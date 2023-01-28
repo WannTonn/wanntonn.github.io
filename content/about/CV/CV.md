@@ -13,33 +13,35 @@ image: '/images/CV/_avatar.jpg'
 - 手机：18060476141
 - Mail: wangtong@wanntonn.fun
 - 技术博客: [https://blogs.wanntonn.fun ](https://blogs.wanntonn.fun)
-- GitHub: [https://github.com/WannTonn](https://github.com/WannTonn)
+<!-- - GitHub: [https://github.com/WannTonn](https://github.com/WannTonn) -->
 - 期望职位： WEB前端工程师
-## 工作经历
-### 福建紫讯科技有限公司(2021.07 ~ 至今)
-> 所在项目组:  紫鸟浏览器-生态中心
-> 参与BSS后台，紫鸟开发者开放平台以及紫鸟生态中心的开发与维护(React+ typescript + umi + antd)
-- 项目中出现许多基于Antd的基础组件重复复制粘贴的情况，作为项目维护者，将日常业务场景中的Input，Select，Modal等组件进行二次封装，降低了开发时重复复制，导致的代码冗余，降低了维护成本。
 
-> 所在项目组：QuickFox（为海外华人提供快速回国的加速器）
-> 参与 `Window / MacOS` 双端的基于 `Electron`的桌面端的加速器的开发与维护(React+ typescript + umi + antd + Electron)
+## 工作经历
+### 福建紫讯科技有限公司(2021.07 ~ 至今)(WEB前端工程师)
+### 福州东西乐活科技有限公司(前：福州东西电子商务科技有限公司) (2018.08 ~ 2021.07)(WEB前端工程师)
+### 福州票付通科技有限公司(2016.09 ~ 2018.08)(WEB前端工程师)
+## 项目经历
+> BSS后台（紫鸟业务支撑系统）(React+ typescript + umi + antd)
+- 项目中出现许多基于Antd的基础组件重复复制粘贴的情况，作为项目维护者，将日常业务场景中的Input，Select，Modal等组件进行二次封装，降低了开发时重复复制，导致的代码冗余，降低了维护成本。
+> 紫鸟开发者开放平台(React+ typescript + umi + antd)
+
+> 紫鸟生态中心(React+ typescript + umi + antd)
+
+> QuickFox（为海外华人提供快速回国的加速器）PC(Windows / MacOS) 客户端的开发与维护(React+ typescript + umi + antd + Electron)。
  - MacOS端出现由于HTTPS证书导致的应用无法正常打开的问题，作为项目维护者，在应用初始化前加入忽略证书的请求参数以跳过证书错误的方法的基础上。决定将版本升级至当时最新的版本（13版本修复了证书错误）。降低了应用打不开的反馈。
  - MacOS端上的Electron版本升级之后，由于语法更新，`上下文隔离(contextIsolation)`的写法改变，进而导致与webview内嵌页的通信失效。通过改写preload.js的写法，改写新的语法的同时，向下兼容旧版本的语法，解决新版本通信失效的问题。
  - MacOS下，Electron升级可能会导致LocalStorage数据丢失，进而在升级应用后存储在LocalStorage的数据丢失。通过引入`electron-store`，将数据存以二进制文件的形式存放在本地，降低了数据丢失的风险。
+
 > 参与后台项目的开发与维护(React+ typescript + umi + antd)
  - 原项目的菜单结构较仅为2层，想调整为多层。在调整过程中遇到了路由配置等问题，为了用最少量的工作量来解决，通过修改所有文件目录的方式，配合umi的约定式路由，完成了对原来单页面下用tab切换的形式浏览到一个菜单一个页面的迁移，并完成了菜单多层渲染的开发。
  - 在原有的菜单的基础上，后来加入了模拟浏览器tab的方式，将路由映射成一个tab，实现多tab切换，有效提高了运营人员的效率。
 > 参与APP应用内嵌页与官网页面的开发与维护(React+ typescript + umi + antd)
+
 > 参与CCKA代充系统的开发与维护(React+ typescript + antd)
  - 原型中有大量的下拉筛选的Select场景，为避免重复拷贝代码，封装了带防抖与解决中文输入触发筛选的可配置是否发起请求的Select组件。
  - 封装其他场景中出现场景较频繁的小组件，极大的降低了重复性工作。
 
-### 福州东西乐活科技有限公司(前：福州东西电子商务科技有限公司) (2018.08 ~ 2021.07)
- 职位: 前端开发工程师
-> 参与内部ERP系统 (Vue + Vue Router + Vuex + Antdv + axios + typescript)共同开发。
-
-  项目描述：用技术手段实现日常业务操作(SKU管理，采购，备货，财务，质检等)，减少业务流程时间，提高业务部门的效率。
-  
+> 参与内部ERP系统 (Vue + Vue Router + Vuex + Antdv + axios + typescript)共同开发
  - 运用`vuejs-clipper`，编写了带即时预览功能的，上传手写签名照的组件，将白纸黑字的签名照替换成了透明底黑字的图片，并同步完成上传操作。
  - 完成项目业务组件以及通用组件的封装与完善，通过配置的形式完成页面功能。减少代码冗余，避免复制与修改代码带来的隐患。
  - 通用列表详情组件组件编写，整合列表组件与详情组件，通过传入配置，实现少代码就能快速完成页面渲染。
@@ -47,11 +49,8 @@ image: '/images/CV/_avatar.jpg'
  - 引入typescript，规范代码风格，减少写法上错误带来的bug。
 
 > 独立开发基于内部ERP系统的内部工单系统 (Vue + Vue Router + Vuex + Antdv + axios + typescript)
-
- 项目描述: 工单系统包括往来邮件详情，将多个不同渠道来源的工单进行整合啊，然后统一系统进行管理，使原本四分五裂的多系统操作合并为一个操作，同时增加了处理时长预警之类的功能，使客服的效率提升了200%。
- 
  - case详情页面请求偏多(业务多，需要显示的内容多，请求个数大于浏览器请求并发数量)，网速偏慢的情况下，从页面A点击到页面B后。页面A请求回的内容会覆盖页面B，导致页面B的内容有误。通过引用 axios的cancelToken方案，添加路由配置，通过路由判断需要取消请求的路由。有效解决工单切换时由于接口请求响应慢导致的渲染错误。
-  - case加载未清洗页面时，收到的邮件的样式覆盖了项目的部分样式。通过iframe来渲染外部case的URL，有效阻隔外部case的样式污染问题。
+ - case加载未清洗页面时，收到的邮件的样式覆盖了项目的部分样式。通过iframe来渲染外部case的URL，有效阻隔外部case的样式污染问题。
 
 > 参与内部AIDE系统(Vue + Vue Router + Element + axios) 共同开发
 

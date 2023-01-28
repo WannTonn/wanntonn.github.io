@@ -30,7 +30,7 @@ tags:
 
 ```bash
 # 查看80端口占用
- fuser -v- n tcp 80
+ fuser -v -n tcp 80
  # 以下为demo结果, 可以得出占用80端口的进程的PID为4245
                     USER        PID ACCESS COMMAND
 80/tcp:             root        4245 F.... nginx

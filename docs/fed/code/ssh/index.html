@@ -103,7 +103,7 @@ Hackintosh
 <p>ssh 指令之 - fuser （查看占用端口的进程的 pid）</p>
 </blockquote>
 <div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-bash data-lang=bash><span style=color:#75715e># 查看80端口占用</span>
- fuser -v- n tcp <span style=color:#ae81ff>80</span>
+ fuser -v -n tcp <span style=color:#ae81ff>80</span>
  <span style=color:#75715e># 以下为demo结果, 可以得出占用80端口的进程的PID为4245</span>
                     USER        PID ACCESS COMMAND
 80/tcp:             root        <span style=color:#ae81ff>4245</span> F.... nginx
