@@ -10,22 +10,16 @@
 <link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
 <link rel=manifest href=/favicons/site.webmanifest>
 <link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="MacOS">
-<meta property="og:title" content="MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。">
-<meta property="og:description" content="
-前言
-在macOS上想连接VPN，但是保存配置之后报了 MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。的错误。
-">
+<title>关于浏览器缓存 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Code">
+<meta property="og:title" content="关于浏览器缓存">
+<meta property="og:description" content="在日常工作或面试的时候，都会提到一点：如何合理配置浏览器缓存。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blogs.wanntonn.fun/hackintosh/vpn_ppp/">
-<meta property="og:image" content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg"><meta property="article:published_time" content="2022-08-23T23:35:24+08:00">
-<meta property="article:modified_time" content="2022-08-23T23:35:24+08:00"><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://blogs.wanntonn.fun/images/Post/Hackintosh/notes/macOSBigSur.jpeg">
-<meta name=twitter:title content="MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。">
-<meta name=twitter:description content="
-前言
-在macOS上想连接VPN，但是保存配置之后报了 MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。的错误。
-">
+<meta property="og:url" content="https://blogs.wanntonn.fun/fed/code/browsercache/">
+<meta property="og:image" content="https://blogs.wanntonn.fun/images/Code/javascript.jpg"><meta property="article:published_time" content="2023-02-03T08:30:24+08:00">
+<meta property="article:modified_time" content="2023-02-03T08:30:24+08:00"><meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://blogs.wanntonn.fun/images/Code/javascript.jpg">
+<meta name=twitter:title content="关于浏览器缓存">
+<meta name=twitter:description content="在日常工作或面试的时候，都会提到一点：如何合理配置浏览器缓存。">
 <link rel=stylesheet href=/assets/amzrk2.min.css>
 <script></script>
 <body data-theme=auto data-section=single>
@@ -74,36 +68,43 @@ Hackintosh
 <div class="column single-content is-three-quarters">
 <div class=card>
 <div class="post-image image-wrapper ratio-32x9">
-<img src=/images/Post/Hackintosh/notes/macOSBigSur.jpeg>
+<img src=/images/Code/javascript.jpg>
 </div>
 <div class=post-box>
-<h2 class=post-title>MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。</h2>
+<h2 class=post-title>关于浏览器缓存</h2>
 <div class=post-meta>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2022-08-23</time></span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2023-02-03</time></span>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;1 min</span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;2 min</span>
 <span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/macos>MacOS</a></span>
+<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/code>Code</a></span>
 </div>
 </div>
 <div class=post-content>
 <article class="markdown content">
+<p>在日常工作或面试的时候，都会提到一点：如何合理配置浏览器缓存。</p>
+<h3 id=什么是浏览器缓存>什么是浏览器缓存</h3>
+<p>用户通过HTTP获取到的所有资源，会保存在浏览器缓存中，在下一次请求时可以避免重复向服务器发起多余请求。</p>
+<h3 id=浏览器缓存的分类>浏览器缓存的分类</h3>
+<p>一般而言浏览器缓存分为两类：</p>
 <ul>
-<li>前言
-在macOS上想连接VPN，但是保存配置之后报了 <code>MacOS连接VPN 提醒 “IPSec共享密钥”丢失。请验证您的设置并尝试重新连接。</code>的错误。</li>
-</ul>
+<li>强缓存：
 <ul>
-<li>解决方案</li>
+<li>Expires Expires: Fri, 3 Mar 2023 09:00:45 GMT （不建议使用，Expire为服务端下发的绝对时间是与客户端上的时间做比较匹配，所以会收客户端上的时间的影响，从而造成误差。）</li>
+<li>Cache-Control Cache-Control:max-age=3600 （相对时间，max-age以秒为单位，相对服务器下发时间多少秒作为缓存失效的时效）</li>
+<li>Expires与Cache-Control同时配置的时候。以Cache-Control为准。</li>
 </ul>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-shell data-lang=shell>$ sudo vim /etc/ppp/options
-
-<span style=color:#75715e># 在文件中新增如下内容</span>
-plugin L2TP.ppp
-l2tpnoipsec
-
-<span style=color:#75715e># 保存退出</span>
-</code></pre></div><p>保存之后，点击高级 - 选项 - 勾选 <code>通过VPN连接发送所有流量</code></p>
+</li>
+<li>协商缓存：
+<ul>
+<li>Last-Modified If-Modified-Since Last-Modified: Fri, 3 Mar 2023 19:35:45 GMT</li>
+<li>Etag If-None-Match（Etag为一串hash值，当过了强缓存失效后，客户端发起资源请求给服务端的时候，用这个hash值给服务器匹配，解决本地资源已缓存，但是只是时间过期导致的资源重复请求的问题。）</li>
+<li>Last-Modified和Etag是可以同时设置的，服务器会优先校验Etag，如果Etag相等就会继续比对Last-Modified，最后才会决定是否返回304
+我们需要知道的是，浏览器在加载资源时，会先判断是否命中强缓存，再验证是否命中协商缓存。</li>
+</ul>
+</li>
+</ul>
 </article>
 </div>
 </div>
@@ -138,7 +139,16 @@ l2tpnoipsec
 </div>
 <div class=sticky>
 <div class="card toc hidden" id=table-of-contents>
-<nav id=TableOfContents></nav>
+<nav id=TableOfContents>
+<ul>
+<li>
+<ul>
+<li><a href=#什么是浏览器缓存>什么是浏览器缓存</a></li>
+<li><a href=#浏览器缓存的分类>浏览器缓存的分类</a></li>
+</ul>
+</li>
+</ul>
+</nav>
 </div>
 </div>
 </aside>

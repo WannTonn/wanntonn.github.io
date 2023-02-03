@@ -2,6 +2,9 @@
 title: '前端面试题、知识点收集'
 date: 2023-01-30T23:35:24+08:00
 draft: false
+tags:
+ - Code
+image: '/images/Code/javascript.jpg'
 ---
 
 <!--more-->
