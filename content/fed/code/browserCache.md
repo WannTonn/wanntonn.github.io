@@ -4,6 +4,7 @@ date: 2023-02-03T08:30:24+08:00
 draft: false
 tags:
  - Code
+ - Browser
 image: '/images/Code/javascript.jpg'
 ---
 
