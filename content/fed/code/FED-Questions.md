@@ -4,7 +4,7 @@ date: 2021-03-31T23:35:24+08:00
 draft: true
 tags:
  - Code
-image: '/images/Code/javascript.jpg'
+image: '/images/Code/javascript.png'
 ---
 
  摘录自 [Github](https://github.com/lydiahallie/javascript-questions/blob/master/zh-CN/README-zh_CN.md)。同步更新中。

@@ -5,7 +5,7 @@ draft: false
 tags:
  - Code
  - CSS
-image: '/images/Code/javascript.jpg'
+image: '/images/Code/javascript.png'
 ---
 
 

@@ -4,7 +4,7 @@ date: 2021-03-18T23:35:24+08:00
 draft: true
 tags: 
  - Code
-image: '/images/Code/javascript.jpg'
+image: '/images/Code/javascript.png'
 ---
 <!--more-->
 

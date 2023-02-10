@@ -4,7 +4,7 @@ date: 2023-02-01T19:35:24+08:00
 draft: false
 tags:
   - Code
-image: '/images/Code/javascript.jpg'
+image: '/images/Code/javascript.png'
 ---
 
 曾在面试的时候被问到是否有过项目优化的经历。特记录一番

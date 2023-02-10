@@ -5,7 +5,7 @@ draft: false
 tags:
  - Code
  - Browser
-image: '/images/Code/javascript.jpg'
+image: '/images/Code/javascript.png'
 ---
 
 在日常工作或面试的时候，都会提到一点：如何合理配置浏览器缓存。

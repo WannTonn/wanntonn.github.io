@@ -4,7 +4,7 @@ date: 2021-08-20T22:35:24+08:00
 draft: false
 tags:
   - Code
-image: '/images/Code/javascript.jpg'
+image: '/images/Code/javascript.png'
 ---
 
 老生常谈的问题了，作为前端，之前都没有涉及过服务器 NGINX 部署相关的操作。当做是初次踩坑的笔记吧。

@@ -4,7 +4,7 @@ date: 2022-10-09T13:15:24+08:00
 draft: false
 tags:
   - Code
-image: '/images/Code/javascript.jpg'
+image: '/images/Code/javascript.png'
 ---
 
 <!--more-->
