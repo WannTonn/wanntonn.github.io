@@ -1,649 +1,78 @@
-<!doctype html><html lang=en>
-<meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1">
-<meta name=HandheldFriendly content="True">
-<meta http-equiv=x-ua-compatible content="IE=edge">
-<meta http-equiv=cache-control content="no-transform">
-<meta http-equiv=cache-control content="no-siteapp">
-<meta name=generator content="Hugo 0.88.1">
-<link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png>
-<link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png>
-<link rel=manifest href=/favicons/site.webmanifest>
-<link rel="shortcut icon" href=/favicons/favicon.ico>
-<title>前端面试题、知识点收集 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Code">
-<meta property="og:title" content="前端面试题、知识点收集">
-<meta property="og:description" content>
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://blogs.wanntonn.fun/fed/code/interview/">
-<meta property="og:image" content="https://blogs.wanntonn.fun/images/Code/javascript.jpg"><meta property="article:published_time" content="2023-01-30T23:35:24+08:00">
-<meta property="article:modified_time" content="2023-01-30T23:35:24+08:00"><meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://blogs.wanntonn.fun/images/Code/javascript.jpg">
-<meta name=twitter:title content="前端面试题、知识点收集">
-<meta name=twitter:description content>
-<link rel=stylesheet href=/assets/amzrk2.min.css>
-<script></script>
-<body data-theme=auto data-section=single>
-<script>!function(b){let a;try{a=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch(b){a=null}a&&a!==b&&document.body.setAttribute("data-theme",a)}(document.body.getAttribute("data-theme"))</script>
-<div id=top style=height:0;overflow:hidden></div>
-<header>
-<nav class=navbar>
-<div class=container>
-<div class=navbar-brand>
-<a class=navbar-item href=https://blogs.wanntonn.fun>
-{...Life}
-</a>
-</div>
-<div class=navbar-menu>
-<div class=navbar-start>
-<a class=navbar-item href=/post/>
-笔记
-</a>
-<a class=navbar-item href=/fed/>
-前端
-</a>
-<a class=navbar-item href=/hackintosh/>
-Hackintosh
-</a>
-<a class=navbar-item href=/tags/>
-标签
-</a>
-<a class=navbar-item href=/about/>
-关于
-</a>
-</div>
-<div class=navbar-end>
-<div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg>
-</div>
-<a class=navbar-item id=ctrl-rss href=/%20/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg>
-</a>
-<div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg>
-</div>
-</div>
-</div>
-</nav>
-</header>
-<main>
-<div class="container single-container">
-<div class="columns single-columns">
-<div class="column single-content is-three-quarters">
-<div class=card>
-<div class="post-image image-wrapper ratio-32x9">
-<img src=/images/Code/javascript.jpg>
-</div>
-<div class=post-box>
-<h2 class=post-title>前端面试题、知识点收集</h2>
-<div class=post-meta>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2023-01-30</time></span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;8 min</span>
-<span>
-<svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/code>Code</a></span>
-</div>
-</div>
-<div class=post-content>
-<article class="markdown content">
-<ul>
-<li>
-<p>设置元素 background 的哪些区域颜色会改变</p>
-<ul>
-<li>background 填充区域默认为 content、padding、border 区域。该行为由 background-clip 属性决定（默认 content-box）。以下为 background 的填充对应区域：</li>
-<li>
-<table>
-<thead>
-<tr>
-<th>background-clip</th>
-<th>margin</th>
-<th>border</th>
-<th>padding</th>
-<th>content</th>
-<th>text</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>border-box(default)</td>
-<td>x</td>
-<td>√</td>
-<td>√</td>
-<td>√</td>
-<td>-</td>
-</tr>
-<tr>
-<td>padding-box</td>
-<td>x</td>
-<td>x</td>
-<td>√</td>
-<td>√</td>
-<td>-</td>
-</tr>
-<tr>
-<td>content-box</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>√</td>
-<td>-</td>
-</tr>
-<tr>
-<td>text(webkit)</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>x</td>
-<td>√</td>
-</tr>
-</tbody>
-</table>
-</li>
-</ul>
-</li>
-<li>
-<p>重排与重绘</p>
-<ul>
-<li>区别： 重绘不一定需要重排（改变颜色），重排一定导致重绘（改变网页的位置）</li>
-<li>重排（reflow）
-<ul>
-<li>当渲染树的一部分必须更新并且节点的尺寸发生了变化，浏览器会使渲染树当中受影响的部分失效，并重新构造渲染树。</li>
-</ul>
-</li>
-<li>重绘（repaint）
-<ul>
-<li>是在一个元素的外观被改变时触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使得元素呈现新的外观。比如某个元素的 背景色，文字颜色，边框颜色等属性的改变。</li>
-</ul>
-</li>
-<li>如何减少重排次数以及缩小重排的影响范围
-<ol>
-<li>将多次改变样式属性的操作，整合到一次中修改。</li>
-<li>将需要多次重排的元素，使其脱离文档流（定义position属性为 absolute/fixed）。</li>
-<li>如果对一个元素进行复杂的操作，可以先定义display属性为none，操作完成后再显示。</li>
-<li>在需要经常获取那些引起浏览器重排的属性值时，先缓存到变量中。</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>
-<p>JavaScript的数据类型有哪些：</p>
-<ul>
-<li>基本类型： Number, String, Boolean, Undefined, Null, Symbol,</li>
-<li>引用类型： Function, Object, Array</li>
-<li>基本类型与引用类型的区别
-<ul>
-<li>基本类型：基本类型的访问都是按值访问的，我们可以操作保存在变量中的实际的值。有如下特点：
-<ol>
-<li>基本类型的值不可变</li>
-<li>基本类型的比较是值的比较</li>
-<li>基本类型的变量是存放在栈区中（即内存中的栈内存）</li>
-</ol>
-</li>
-<li>引用类型：可以拥有属性与方法，属性又可以包含基本类型与引用类型。有如下特点：
-<ol>
-<li>引用类型的值可变</li>
-<li>引用类型的比较是引用的比较</li>
-<li>引用类型的值是同时保存在栈内存和堆内存中的对象</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>判断一个对象是不是数组</p>
-<ul>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>object</span> <span style=color:#f92672>=</span> {};
-Array.<span style=color:#a6e22e>isArray</span>(<span style=color:#a6e22e>object</span>);
-</code></pre></div></li>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>object</span> <span style=color:#f92672>=</span> {};
-Object.<span style=color:#a6e22e>prototype</span>.<span style=color:#a6e22e>toString</span>.<span style=color:#a6e22e>call</span>(<span style=color:#a6e22e>object</span>).<span style=color:#a6e22e>includes</span>(<span style=color:#e6db74>&#39;Array&#39;</span>)
-</code></pre></div></li>
-</ul>
-</li>
-<li>
-<p>JS事件循环机制</p>
-<ul>
-<li>Event Loop包含两类，二者独立运行
-<ul>
-<li>基于Browsing Context</li>
-<li>基于 Worker</li>
-</ul>
-</li>
-<li>任务队列
-<ul>
-<li>任务可以分为同步任务和异步任务。</li>
-<li>同步任务：立即执行的任务，同步任务一般会直接进入到主线程中进行。</li>
-<li>异步任务：异步执行的任务（Ajax，setTimeout），异步任务会通过任务队列（Event Queue）的机制来协调。</li>
-<li>事件循环中，每进行一次循环操作称为一个tick。每次tick的任务处理模型如下：
-<ol>
-<li>在此次tick中选择最先进入队列的任务（oldest task）,如果有则执行（一次）</li>
-<li>检查是否存在Microtasks，如果存在则不断执行，直到Microtask Queue清空</li>
-<li>更新render</li>
-<li>主线程重复执行上述步骤</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>深拷贝与浅拷贝</p>
-<ul>
-<li>深拷贝（Deep Clone）：从堆内存中开辟一个新的区域存放新对象，将对象中的子对象进行递归拷贝，拷贝前后的两个对象互不影响。</li>
-<li>实现方式：
-<ol>
-<li>JSON.parse(JSON.stringify())</li>
-<li>lodash 库的 _.deepClone</li>
-<li>jQuery</li>
-</ol>
-</li>
-<li>浅拷贝（Shallow Clone）： 重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，但拷贝前后对象的引用类型因共享同一块内存，会相互影响。</li>
-<li>实现方式：
-<ol>
-<li>Object.assign</li>
-<li>lodash 库的 _.clone</li>
-<li>展开运算符 &mldr;</li>
-<li>Array.prototype.concat()</li>
-<li>Array.prototype.slice()</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>
-<p>箭头函数</p>
-<ul>
-<li>不绑定this，其中的this指向函数定义位置的上下文this</li>
-<li>内部不存在arguments和new.target，使用的都是外部的</li>
-<li>没有原型，占用内存空间小</li>
-</ul>
-</li>
-<li>
-<p>JS垃圾回收方法</p>
-<ul>
-<li>JavaScript具有自动垃圾回收机制（GC：Garbage Collection）</li>
-<li>原理：垃圾收集器会定期（周期性）找到不再继续使用的变量，销毁并释放内存
-<ol>
-<li>标记清除法：在函数声明一个变量的时候，就将这个变量标记为”进入环境“</li>
-<li>引用计数法：引用计数的含义是跟踪记录每个值被引用的次数，当被引用次数为0的时候，就将其占用的内存空间回收</li>
-</ol>
-</li>
-</ul>
-</li>
-<li>
-<p>如何监听一个变量的变化 长度 index</p>
-<ul>
-<li>defineProperty
-<ul>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetObject</span> <span style=color:#f92672>=</span> {<span style=color:#a6e22e>targetVal</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>};
-<span style=color:#66d9ef>var</span> <span style=color:#a6e22e>latestVal</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetObject</span>.<span style=color:#a6e22e>targetVal</span>;
-Object.<span style=color:#a6e22e>defineProperty</span>(<span style=color:#a6e22e>targetObejct</span>, <span style=color:#e6db74>&#39;targetVal&#39;</span>, {
-  <span style=color:#a6e22e>get</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>() {
-    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;get:&#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>targetVal</span>);
-    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>targetVal</span>;
-  },
-  <span style=color:#a6e22e>set</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>val</span>) {
-    <span style=color:#a6e22e>targetVal</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>val</span>;
-    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>latestVal</span> <span style=color:#f92672>!=</span>  <span style=color:#a6e22e>targetVal</span>) {
-      <span style=color:#a6e22e>latestVal</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetVal</span>;
-      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;value changed. set: &#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>targetVal</span>);
-    }
-  }
-})
-
-<span style=color:#a6e22e>targetObject</span>.<span style=color:#a6e22e>targetVal</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
-</code></pre></div></li>
-</ul>
-</li>
-<li>Proxy
-<ul>
-<li>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>observer</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>object</span>, <span style=color:#a6e22e>onChange</span>) =&gt; {
-  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> {
-    <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>property</span>, <span style=color:#a6e22e>receiver</span>) {
-      <span style=color:#66d9ef>try</span> {
-        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Proxy(<span style=color:#a6e22e>target</span>[<span style=color:#a6e22e>property</span>], <span style=color:#a6e22e>handler</span>);
-      } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
-        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Reflect</span>.<span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>property</span>, <span style=color:#a6e22e>receiver</span>);
-      }
-    },
-    <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>receiver</span>) {
-      <span style=color:#a6e22e>onChange</span>(<span style=color:#a6e22e>value</span>);
-      <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Reflect</span>.<span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>receiver</span>);
-    }
-  }
-  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Proxy(<span style=color:#a6e22e>object</span>, <span style=color:#a6e22e>handler</span>);
-}
-
-<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>obj</span> <span style=color:#f92672>=</span> {
-  <span style=color:#a6e22e>foo</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;abcd&#39;</span>,
-  <span style=color:#a6e22e>a</span><span style=color:#f92672>:</span> {
-    <span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>y</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;z&#39;</span>},
-    <span style=color:#a6e22e>b</span><span style=color:#f92672>:</span> [{<span style=color:#a6e22e>c</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>false</span>}]
-  }
-};
-<span style=color:#66d9ef>let</span> <span style=color:#a6e22e>watchedObj</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>observer</span>(<span style=color:#a6e22e>obj</span>, (<span style=color:#a6e22e>val</span>) =&gt; {
-  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`监听到值变化为</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>val</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>);
-});
-<span style=color:#a6e22e>watchedObj</span>.<span style=color:#a6e22e>foo</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;efgh&#39;</span>;
-<span style=color:#a6e22e>watchedObj</span>.<span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;a&#39;</span>;
-<span style=color:#a6e22e>watchedObj</span>.<span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>b</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
-</code></pre></div></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>webpack loader / plugin</p>
-<ul>
-<li>loader的使用方式
-<ul>
-<li>1.在webpack.config.js中配置
-<pre tabindex=0><code>module.exports = {
+<!doctype html><html lang=en><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=HandheldFriendly content="True"><meta http-equiv=x-ua-compatible content="IE=edge"><meta http-equiv=cache-control content="no-transform"><meta http-equiv=cache-control content="no-siteapp"><meta name=generator content="Hugo 0.110.0"><link rel=icon type=image/png sizes=32x32 href=/favicons/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicons/favicon-16x16.png><link rel=manifest href=/favicons/site.webmanifest><link rel="shortcut icon" href=/favicons/favicon.ico><title>前端面试题、知识点收集 - {...Life}</title><meta name=author content="WannTonn"><meta name=keywords content="Code"><meta property="og:title" content="前端面试题、知识点收集"><meta property="og:description" content><meta property="og:type" content="article"><meta property="og:url" content="https://blogs.wanntonn.fun/fed/code/interview/"><meta property="og:image" content="https://blogs.wanntonn.fun/images/Code/javascript.jpg"><meta property="article:published_time" content="2023-01-30T23:35:24+08:00"><meta property="article:modified_time" content="2023-01-30T23:35:24+08:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://blogs.wanntonn.fun/images/Code/javascript.jpg"><meta name=twitter:title content="前端面试题、知识点收集"><meta name=twitter:description content><link rel=stylesheet href=/assets/amzrk2.min.css><script></script><body data-theme=auto data-section=single><script>!function(e){let t;try{t=JSON.parse(localStorage.getItem("amzrk2-theme"))}catch{t=null}t&&t!==e&&document.body.setAttribute("data-theme",t)}(document.body.getAttribute("data-theme"))</script><div id=top style=height:0;overflow:hidden></div><header><nav class=navbar><div class=container><div class=navbar-brand><a class=navbar-item href=https://blogs.wanntonn.fun>{...Life}</a></div><div class=navbar-menu><div class=navbar-start><a class=navbar-item href=/post/>笔记</a>
+<a class=navbar-item href=/fed/>前端</a>
+<a class=navbar-item href=/hackintosh/>Hackintosh</a>
+<a class=navbar-item href=/tags/>标签</a>
+<a class=navbar-item href=/about/>关于</a></div><div class=navbar-end><div class=navbar-item id=ctrl-adjust><svg class="icon" aria-hidden="true"><use xlink:href="#icon-adjust"/></svg></div><a class=navbar-item id=ctrl-rss href=/%20/index.xml target=_blank><svg class="icon" aria-hidden="true"><use xlink:href="#icon-rss"/></svg></a><div class=navbar-item id=ctrl-toc><svg class="icon" aria-hidden="true"><use xlink:href="#icon-bars"/></svg></div></div></div></nav></header><main><div class="container single-container"><div class="columns single-columns"><div class="column single-content is-three-quarters"><div class=card><div class="post-image image-wrapper ratio-32x9"><img src=/images/Code/javascript.jpg></div><div class=post-box><h2 class=post-title>前端面试题、知识点收集</h2><div class=post-meta><span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-calendar-day"/></svg>&nbsp;<time>2023-01-30</time></span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-clock"/></svg>&nbsp;8 min</span>
+<span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hashtag"/></svg>&nbsp;<a href=/tags/code>Code</a></span></div></div><div class=post-content><article class="markdown content"><ul><li><p>设置元素 background 的哪些区域颜色会改变</p><ul><li>background 填充区域默认为 content、padding、border 区域。该行为由 background-clip 属性决定（默认 content-box）。以下为 background 的填充对应区域：</li><li><table><thead><tr><th>background-clip</th><th>margin</th><th>border</th><th>padding</th><th>content</th><th>text</th></tr></thead><tbody><tr><td>border-box(default)</td><td>x</td><td>√</td><td>√</td><td>√</td><td>-</td></tr><tr><td>padding-box</td><td>x</td><td>x</td><td>√</td><td>√</td><td>-</td></tr><tr><td>content-box</td><td>x</td><td>x</td><td>x</td><td>√</td><td>-</td></tr><tr><td>text(webkit)</td><td>x</td><td>x</td><td>x</td><td>x</td><td>√</td></tr></tbody></table></li></ul></li><li><p>重排与重绘</p><ul><li>区别： 重绘不一定需要重排（改变颜色），重排一定导致重绘（改变网页的位置）</li><li>重排（reflow）<ul><li>当渲染树的一部分必须更新并且节点的尺寸发生了变化，浏览器会使渲染树当中受影响的部分失效，并重新构造渲染树。</li></ul></li><li>重绘（repaint）<ul><li>是在一个元素的外观被改变时触发的浏览器行为，浏览器会根据元素的新属性重新绘制，使得元素呈现新的外观。比如某个元素的 背景色，文字颜色，边框颜色等属性的改变。</li></ul></li><li>如何减少重排次数以及缩小重排的影响范围<ol><li>将多次改变样式属性的操作，整合到一次中修改。</li><li>将需要多次重排的元素，使其脱离文档流（定义position属性为 absolute/fixed）。</li><li>如果对一个元素进行复杂的操作，可以先定义display属性为none，操作完成后再显示。</li><li>在需要经常获取那些引起浏览器重排的属性值时，先缓存到变量中。</li></ol></li></ul></li><li><p>JavaScript的数据类型有哪些：</p><ul><li>基本类型： Number, String, Boolean, Undefined, Null, Symbol,</li><li>引用类型： Function, Object, Array</li><li>基本类型与引用类型的区别<ul><li>基本类型：基本类型的访问都是按值访问的，我们可以操作保存在变量中的实际的值。有如下特点：<ol><li>基本类型的值不可变</li><li>基本类型的比较是值的比较</li><li>基本类型的变量是存放在栈区中（即内存中的栈内存）</li></ol></li><li>引用类型：可以拥有属性与方法，属性又可以包含基本类型与引用类型。有如下特点：<ol><li>引用类型的值可变</li><li>引用类型的比较是引用的比较</li><li>引用类型的值是同时保存在栈内存和堆内存中的对象</li></ol></li></ul></li></ul></li><li><p>判断一个对象是不是数组</p><ul><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>object</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span>Array.<span style=color:#a6e22e>isArray</span>(<span style=color:#a6e22e>object</span>);
+</span></span></code></pre></div></li><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>object</span> <span style=color:#f92672>=</span> {};
+</span></span><span style=display:flex><span>Object.<span style=color:#a6e22e>prototype</span>.<span style=color:#a6e22e>toString</span>.<span style=color:#a6e22e>call</span>(<span style=color:#a6e22e>object</span>).<span style=color:#a6e22e>includes</span>(<span style=color:#e6db74>&#39;Array&#39;</span>)
+</span></span></code></pre></div></li></ul></li><li><p>JS事件循环机制</p><ul><li>Event Loop包含两类，二者独立运行<ul><li>基于Browsing Context</li><li>基于 Worker</li></ul></li><li>任务队列<ul><li>任务可以分为同步任务和异步任务。</li><li>同步任务：立即执行的任务，同步任务一般会直接进入到主线程中进行。</li><li>异步任务：异步执行的任务（Ajax，setTimeout），异步任务会通过任务队列（Event Queue）的机制来协调。</li><li>事件循环中，每进行一次循环操作称为一个tick。每次tick的任务处理模型如下：<ol><li>在此次tick中选择最先进入队列的任务（oldest task）,如果有则执行（一次）</li><li>检查是否存在Microtasks，如果存在则不断执行，直到Microtask Queue清空</li><li>更新render</li><li>主线程重复执行上述步骤</li></ol></li></ul></li></ul></li><li><p>深拷贝与浅拷贝</p><ul><li>深拷贝（Deep Clone）：从堆内存中开辟一个新的区域存放新对象，将对象中的子对象进行递归拷贝，拷贝前后的两个对象互不影响。</li><li>实现方式：<ol><li>JSON.parse(JSON.stringify())</li><li>lodash 库的 _.deepClone</li><li>jQuery</li></ol></li><li>浅拷贝（Shallow Clone）： 重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，但拷贝前后对象的引用类型因共享同一块内存，会相互影响。</li><li>实现方式：<ol><li>Object.assign</li><li>lodash 库的 _.clone</li><li>展开运算符 &mldr;</li><li>Array.prototype.concat()</li><li>Array.prototype.slice()</li></ol></li></ul></li><li><p>箭头函数</p><ul><li>不绑定this，其中的this指向函数定义位置的上下文this</li><li>内部不存在arguments和new.target，使用的都是外部的</li><li>没有原型，占用内存空间小</li></ul></li><li><p>JS垃圾回收方法</p><ul><li>JavaScript具有自动垃圾回收机制（GC：Garbage Collection）</li><li>原理：垃圾收集器会定期（周期性）找到不再继续使用的变量，销毁并释放内存<ol><li>标记清除法：在函数声明一个变量的时候，就将这个变量标记为”进入环境“</li><li>引用计数法：引用计数的含义是跟踪记录每个值被引用的次数，当被引用次数为0的时候，就将其占用的内存空间回收</li></ol></li></ul></li><li><p>如何监听一个变量的变化 长度 index</p><ul><li>defineProperty<ul><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>targetObject</span> <span style=color:#f92672>=</span> {<span style=color:#a6e22e>targetVal</span><span style=color:#f92672>:</span> <span style=color:#ae81ff>0</span>};
+</span></span><span style=display:flex><span><span style=color:#66d9ef>var</span> <span style=color:#a6e22e>latestVal</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetObject</span>.<span style=color:#a6e22e>targetVal</span>;
+</span></span><span style=display:flex><span>Object.<span style=color:#a6e22e>defineProperty</span>(<span style=color:#a6e22e>targetObejct</span>, <span style=color:#e6db74>&#39;targetVal&#39;</span>, {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>get</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>() {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;get:&#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>targetVal</span>);
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>targetVal</span>;
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>set</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>function</span>(<span style=color:#a6e22e>val</span>) {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>targetVal</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>val</span>;
+</span></span><span style=display:flex><span>    <span style=color:#66d9ef>if</span> (<span style=color:#a6e22e>latestVal</span> <span style=color:#f92672>!=</span>  <span style=color:#a6e22e>targetVal</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>latestVal</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>targetVal</span>;
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#39;value changed. set: &#39;</span> <span style=color:#f92672>+</span> <span style=color:#a6e22e>targetVal</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>})
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#a6e22e>targetObject</span>.<span style=color:#a6e22e>targetVal</span> <span style=color:#f92672>=</span> <span style=color:#ae81ff>1</span>;
+</span></span></code></pre></div></li></ul></li><li>Proxy<ul><li><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:2;-o-tab-size:2;tab-size:2><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>observer</span> <span style=color:#f92672>=</span> (<span style=color:#a6e22e>object</span>, <span style=color:#a6e22e>onChange</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>property</span>, <span style=color:#a6e22e>receiver</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>try</span> {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Proxy(<span style=color:#a6e22e>target</span>[<span style=color:#a6e22e>property</span>], <span style=color:#a6e22e>handler</span>);
+</span></span><span style=display:flex><span>      } <span style=color:#66d9ef>catch</span> (<span style=color:#a6e22e>err</span>) {
+</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Reflect</span>.<span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>property</span>, <span style=color:#a6e22e>receiver</span>);
+</span></span><span style=display:flex><span>      }
+</span></span><span style=display:flex><span>    },
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>receiver</span>) {
+</span></span><span style=display:flex><span>      <span style=color:#a6e22e>onChange</span>(<span style=color:#a6e22e>value</span>);
+</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Reflect</span>.<span style=color:#a6e22e>set</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>key</span>, <span style=color:#a6e22e>value</span>, <span style=color:#a6e22e>receiver</span>);
+</span></span><span style=display:flex><span>    }
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Proxy(<span style=color:#a6e22e>object</span>, <span style=color:#a6e22e>handler</span>);
+</span></span><span style=display:flex><span>}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>obj</span> <span style=color:#f92672>=</span> {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>foo</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;abcd&#39;</span>,
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>a</span><span style=color:#f92672>:</span> {
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>x</span><span style=color:#f92672>:</span> {<span style=color:#a6e22e>y</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#39;z&#39;</span>},
+</span></span><span style=display:flex><span>    <span style=color:#a6e22e>b</span><span style=color:#f92672>:</span> [{<span style=color:#a6e22e>c</span><span style=color:#f92672>:</span> <span style=color:#66d9ef>false</span>}]
+</span></span><span style=display:flex><span>  }
+</span></span><span style=display:flex><span>};
+</span></span><span style=display:flex><span><span style=color:#66d9ef>let</span> <span style=color:#a6e22e>watchedObj</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>observer</span>(<span style=color:#a6e22e>obj</span>, (<span style=color:#a6e22e>val</span>) =&gt; {
+</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`监听到值变化为</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>val</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>);
+</span></span><span style=display:flex><span>});
+</span></span><span style=display:flex><span><span style=color:#a6e22e>watchedObj</span>.<span style=color:#a6e22e>foo</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;efgh&#39;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>watchedObj</span>.<span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>x</span>.<span style=color:#a6e22e>y</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>&#39;a&#39;</span>;
+</span></span><span style=display:flex><span><span style=color:#a6e22e>watchedObj</span>.<span style=color:#a6e22e>a</span>.<span style=color:#a6e22e>b</span>[<span style=color:#ae81ff>0</span>] <span style=color:#f92672>=</span> <span style=color:#66d9ef>true</span>;
+</span></span></code></pre></div></li></ul></li></ul></li><li><p>webpack loader / plugin</p><ul><li>loader的使用方式<ul><li>1.在webpack.config.js中配置<pre tabindex=0><code>module.exports = {
   module: {
     rules: [
       {
         test: /\.txt$/,
-        use: 'raw-loader'
+        use: &#39;raw-loader&#39;
       }
     ]
   }
 }
-</code></pre></li>
-<li>2.通过命令行参数方式
-<pre tabindex=0><code>webpack --module-bind 'txt=raw-loader'
-</code></pre></li>
-<li>3.通过内联使用
-<pre tabindex=0><code>import txt from 'raw-loader!./file.txt'
-</code></pre></li>
-</ul>
-</li>
-<li>常用的loader
-<ul>
-<li>样式：style-loader, css-loader, less-loader, sass-loader等</li>
-<li>文件：raw-loader, file-loader, url-loader等</li>
-<li>编译：babel-loader, coffee-loader, ts-loader等</li>
-<li>测试：mocha-loader, jshint-loader, eslint-loader等</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>地址栏输入一个URL地址到页面渲染的过程发生了什么</p>
-</li>
-<li>
-<p>HTTP请求准备阶段</p>
-<ul>
-<li>
-<ol>
-<li>构建请求：浏览器构建请求行信息，准备发起网络请求 GET /index.html HTTP1.1</li>
-</ol>
-</li>
-<li>
-<ol start=2>
-<li>查找缓存：如果浏览器发现请求的资源存在副本，根据强缓存规则，如果没有过期，则返回资源，如果查找失败则进入下一个环节：</li>
-</ol>
-<ul>
-<li>
-<ol>
-<li>准备ip地址和端口</li>
-</ol>
-</li>
-<li>
-<ol start=2>
-<li>DNS（域名和ip的映射系统）域名解析，拿到ip之后找端口，默认端口为80</li>
-</ol>
-</li>
-<li>
-<ol start=3>
-<li>建立TCP链接（三次握手，四次挥手）</li>
-</ol>
-</li>
-<li>
-<ol start=4>
-<li>如果是https还需建立TLS连接</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>HTTP发送请求</p>
-<ul>
-<li>浏览器向服务器发起http请求，把请求头和请求行一起发送给服务器，服务端解析请求头。如果发现cache-control和etag(if-none-match)，if-modified(if-modified-since)字段就会判断缓存是否过期，如果没有就返回304，否则返回200</li>
-</ul>
-</li>
-<li>
-<p>HTTP响应返回</p>
-<ul>
-<li>浏览器拿到响应数据，首先判断是否是4XX或者5XX是就报错，如果是3XX就要重定向，2XX就开始解析文件，如果是gzip就解压文件</li>
-<li>TCP断开连接</li>
-<li>4次挥手</li>
-<li>浏览器解析渲染</li>
-<li>根据HTML建立DOM树与CSS树，如果遇到script首选判断是否defer和async否则会阻塞渲染并编译执行js，如果没有则组合生成render tree，最后浏览器开启GPU进行绘制合成涂层，将内容显示到屏幕。</li>
-</ul>
-</li>
-<li>
-<p>content-type的作用</p>
-<ul>
-<li>Content-Type实体头部用于指示资源的MIME类型 media type。</li>
-<li>在响应中，Content-Type标头告诉客户端实际返回的内容的内容类型。浏览器会在某些情况下进行MIME查找，并不一定遵循此标题的值。为了防止这种行为，可以将标题X-Content-Type-Options 设置为nosniff。</li>
-<li>在请求中（如POST/PUT等），客户端告诉服务器实际发送的数据类型。</li>
-<li>Content-Type的值类型：
-<ul>
-<li>
-<ol>
-<li>application/json: 消息主体是序列化后的JSON字符串</li>
-</ol>
-</li>
-<li>
-<ol start=2>
-<li>application/x-www-form-urlencded: 数据被编码为名称/值对。这是标准的编码格式</li>
-</ol>
-</li>
-<li>
-<ol start=3>
-<li>multipart/form-data: 需要在表单中进行文件上传时，就需要使用该格式。常见的媒体格式是上传文件时使用的</li>
-</ol>
-</li>
-<li>
-<ol start=4>
-<li>text/plain: 数据以纯文本形式（text/json/xml/html）进行编码，其中不含任何控件或格式字符</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>状态码介绍</p>
-<ul>
-<li>
-<table>
-<thead>
-<tr>
-<th>状态码</th>
-<th>解析</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>1**</td>
-<td>信息，服务器收到请求，需要请求者继续执行操作</td>
-</tr>
-<tr>
-<td>2**</td>
-<td>成功，操作被成功接收并处理</td>
-</tr>
-<tr>
-<td>3**</td>
-<td>重定向，需要进一步的操作以完成请求</td>
-</tr>
-<tr>
-<td>4**</td>
-<td>客户端错误，请求包含语法错误或无法完成请求</td>
-</tr>
-<tr>
-<td>5**</td>
-<td>服务器错误，服务器在处理请求的过程中发生了错误</td>
-</tr>
-</tbody>
-</table>
-</li>
-<li>301：（永久移动）请求的网页已被永久移动到新位置。服务器返回此响应（作为对GET或HEAD请求的响应）时，会自动将请求者转到新位置</li>
-<li>302：（临时移动）服务器目前正从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。此代码与响应GET和HEAD请求的301代码类似，会自动将请求者转到不同的位置</li>
-<li>HTTP状态码301与302的区别
-<ul>
-<li>
-<ol>
-<li>关键区别为，资源是否存在有效性</li>
-</ol>
-</li>
-<li>
-<ol start=2>
-<li>301资源还在只是换了一个位置，返回的是新位置的内容</li>
-</ol>
-</li>
-<li>
-<ol start=3>
-<li>302资源暂时失效，返回的是一个临时的代替页</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>怎么减少页面加载时间</p>
-<ul>
-<li>压缩css, js文件</li>
-<li>合并js，css文件，减少http请求</li>
-<li>外部js，css文件，放在文件最底下</li>
-<li>减少dom操作，尽可能用变量替代不必要的dom操作</li>
-<li>优化图像（格式选择，懒加载等）</li>
-<li>使用CDN</li>
-<li>使用缓存</li>
-<li>合并文件，合并图片，减少http请求</li>
-<li>标明高度和宽度</li>
-<li>网址后加斜杆</li>
-<li>优化TCP协议</li>
-</ul>
-</li>
-<li>
-<p>撇开 Vue，react，等框架。你认为前端应该会的技能（知识点）有哪些</p>
-</li>
-<li>
-<p>对前端工程化的理解</p>
-</li>
-<li>
-<p>能否徒手从零构建一个工程化项目</p>
-</li>
-<li>
-<p>类的使用的理解, 新建一个 Person 类，用构造函数定义 setName, getName, 并用 User 继承 Person 类。</p>
-</li>
-<li>
-<p>对 typescript 的理解，平时是否有写过脱离框架的 ts 的使用</p>
-</li>
-<li>
-<p>是否封装过组件？是如何封装的</p>
-</li>
-<li>
-<p>Vue 业务层的代码是如何编写的</p>
-</li>
-<li>
-<p>怎么实现跨域请求数据</p>
-</li>
-<li>
-<p>响应式和自适应</p>
-<ul>
-<li>响应式(RWD) && 自适应(AWD)
-<ul>
-<li>响应式(RWD): 所有设备的代码是一样的；自适应(AWD): 不同设备的代码是不一样的</li>
-<li>RWD: Ethan.M 提出 RWD 是采用 CSS 的 media query 技术，配合流体布局(fluid grids) 和同样可以自适应的图片/视频等素材。RWD 倾向于只改变元素的外观布局，而不大幅度改变内容。</li>
-<li>AWD：Adaptive Design 是 Aaron G. 的一本技术书的标题,他认为 AWD 在包括 RWD 的 CSS media query 技术以外，AWD 有可能会针对移动端用户减去内容，减去功能。AWD 可以在服务器端就进行优化，把优化的内容送到终端上。</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>
-<p>排序算法</p>
-</li>
-<li>
-<p>设计模式，在 Vue 中 或在开发过程中，有哪些常用的开发模式</p>
-</li>
-<li>
-<p>你对前端工程化的理解</p>
-</li>
-<li>
-<p>为什么要前端工程化</p>
-</li>
-<li>
-<p>前端性能优化的手段有哪些</p>
-</li>
-<li>
-<p>HTTP 缓存</p>
-</li>
-<li>
-<p>Vue 数据驱动原理</p>
-</li>
-<li>
-<p>Vue 如何让视图刷新</p>
-</li>
-<li>
-<p>webpack 配置中，生产环境与生产环境的不同配置</p>
-</li>
-</ul>
-</article>
-</div>
-</div>
-</div>
-<aside class="column single-sidebar is-one-quarter">
-<div class=card>
-<div class=card-info>
-<div class=avatar>
-<div class="image-wrapper ratio-1x1">
-<img src=/images/_avatar.jpg>
-</div>
-</div>
-<div class=info>
-<span class=info-name>WannTonn</span>
-<span class=info-para>为他人期待而活才是小丑🤡</span>
-</div>
-<div class=counter>
-<div class=counter-wrapper>
-<span class=counter-data>19</span>
-<span class=counter-name>kWords</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>8</span>
-<span class=counter-name>Tags</span>
-</div>
-<div class=counter-wrapper>
-<span class=counter-data>29</span>
-<span class=counter-name>Posts</span>
-</div>
-</div>
-</div>
-</div>
-<div class=sticky>
-<div class="card toc hidden" id=table-of-contents>
-<nav id=TableOfContents></nav>
-</div>
-</div>
-</aside>
-</div>
-</div>
-</main>
-<footer class=footer>
-<div class=container>
-<span>Copyright &copy; 2020-2023 WannTonn</span>
-<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span>
-</div>
-</footer>
-<script defer src=/assets/amzrk2-common.min.js></script>
+</code></pre></li><li>2.通过命令行参数方式<pre tabindex=0><code>webpack --module-bind &#39;txt=raw-loader&#39;
+</code></pre></li><li>3.通过内联使用<pre tabindex=0><code>import txt from &#39;raw-loader!./file.txt&#39;
+</code></pre></li></ul></li><li>常用的loader<ul><li>样式：style-loader, css-loader, less-loader, sass-loader等</li><li>文件：raw-loader, file-loader, url-loader等</li><li>编译：babel-loader, coffee-loader, ts-loader等</li><li>测试：mocha-loader, jshint-loader, eslint-loader等</li></ul></li></ul></li><li><p>地址栏输入一个URL地址到页面渲染的过程发生了什么</p></li><li><p>HTTP请求准备阶段</p><ul><li><ol><li>构建请求：浏览器构建请求行信息，准备发起网络请求 GET /index.html HTTP1.1</li></ol></li><li><ol start=2><li>查找缓存：如果浏览器发现请求的资源存在副本，根据强缓存规则，如果没有过期，则返回资源，如果查找失败则进入下一个环节：</li></ol><ul><li><ol><li>准备ip地址和端口</li></ol></li><li><ol start=2><li>DNS（域名和ip的映射系统）域名解析，拿到ip之后找端口，默认端口为80</li></ol></li><li><ol start=3><li>建立TCP链接（三次握手，四次挥手）</li></ol></li><li><ol start=4><li>如果是https还需建立TLS连接</li></ol></li></ul></li></ul></li><li><p>HTTP发送请求</p><ul><li>浏览器向服务器发起http请求，把请求头和请求行一起发送给服务器，服务端解析请求头。如果发现cache-control和etag(if-none-match)，if-modified(if-modified-since)字段就会判断缓存是否过期，如果没有就返回304，否则返回200</li></ul></li><li><p>HTTP响应返回</p><ul><li>浏览器拿到响应数据，首先判断是否是4XX或者5XX是就报错，如果是3XX就要重定向，2XX就开始解析文件，如果是gzip就解压文件</li><li>TCP断开连接</li><li>4次挥手</li><li>浏览器解析渲染</li><li>根据HTML建立DOM树与CSS树，如果遇到script首选判断是否defer和async否则会阻塞渲染并编译执行js，如果没有则组合生成render tree，最后浏览器开启GPU进行绘制合成涂层，将内容显示到屏幕。</li></ul></li><li><p>content-type的作用</p><ul><li>Content-Type实体头部用于指示资源的MIME类型 media type。</li><li>在响应中，Content-Type标头告诉客户端实际返回的内容的内容类型。浏览器会在某些情况下进行MIME查找，并不一定遵循此标题的值。为了防止这种行为，可以将标题X-Content-Type-Options 设置为nosniff。</li><li>在请求中（如POST/PUT等），客户端告诉服务器实际发送的数据类型。</li><li>Content-Type的值类型：<ul><li><ol><li>application/json: 消息主体是序列化后的JSON字符串</li></ol></li><li><ol start=2><li>application/x-www-form-urlencded: 数据被编码为名称/值对。这是标准的编码格式</li></ol></li><li><ol start=3><li>multipart/form-data: 需要在表单中进行文件上传时，就需要使用该格式。常见的媒体格式是上传文件时使用的</li></ol></li><li><ol start=4><li>text/plain: 数据以纯文本形式（text/json/xml/html）进行编码，其中不含任何控件或格式字符</li></ol></li></ul></li></ul></li><li><p>状态码介绍</p><ul><li><table><thead><tr><th>状态码</th><th>解析</th></tr></thead><tbody><tr><td>1**</td><td>信息，服务器收到请求，需要请求者继续执行操作</td></tr><tr><td>2**</td><td>成功，操作被成功接收并处理</td></tr><tr><td>3**</td><td>重定向，需要进一步的操作以完成请求</td></tr><tr><td>4**</td><td>客户端错误，请求包含语法错误或无法完成请求</td></tr><tr><td>5**</td><td>服务器错误，服务器在处理请求的过程中发生了错误</td></tr></tbody></table></li><li>301：（永久移动）请求的网页已被永久移动到新位置。服务器返回此响应（作为对GET或HEAD请求的响应）时，会自动将请求者转到新位置</li><li>302：（临时移动）服务器目前正从不同位置的网页响应请求，但请求者应继续使用原有位置来进行以后的请求。此代码与响应GET和HEAD请求的301代码类似，会自动将请求者转到不同的位置</li><li>HTTP状态码301与302的区别<ul><li><ol><li>关键区别为，资源是否存在有效性</li></ol></li><li><ol start=2><li>301资源还在只是换了一个位置，返回的是新位置的内容</li></ol></li><li><ol start=3><li>302资源暂时失效，返回的是一个临时的代替页</li></ol></li></ul></li></ul></li><li><p>怎么减少页面加载时间</p><ul><li>压缩css, js文件</li><li>合并js，css文件，减少http请求</li><li>外部js，css文件，放在文件最底下</li><li>减少dom操作，尽可能用变量替代不必要的dom操作</li><li>优化图像（格式选择，懒加载等）</li><li>使用CDN</li><li>使用缓存</li><li>合并文件，合并图片，减少http请求</li><li>标明高度和宽度</li><li>网址后加斜杆</li><li>优化TCP协议</li></ul></li><li><p>撇开 Vue，react，等框架。你认为前端应该会的技能（知识点）有哪些</p></li><li><p>对前端工程化的理解</p></li><li><p>能否徒手从零构建一个工程化项目</p></li><li><p>类的使用的理解, 新建一个 Person 类，用构造函数定义 setName, getName, 并用 User 继承 Person 类。</p></li><li><p>对 typescript 的理解，平时是否有写过脱离框架的 ts 的使用</p></li><li><p>是否封装过组件？是如何封装的</p></li><li><p>Vue 业务层的代码是如何编写的</p></li><li><p>怎么实现跨域请求数据</p></li><li><p>响应式和自适应</p><ul><li>响应式(RWD) && 自适应(AWD)<ul><li>响应式(RWD): 所有设备的代码是一样的；自适应(AWD): 不同设备的代码是不一样的</li><li>RWD: Ethan.M 提出 RWD 是采用 CSS 的 media query 技术，配合流体布局(fluid grids) 和同样可以自适应的图片/视频等素材。RWD 倾向于只改变元素的外观布局，而不大幅度改变内容。</li><li>AWD：Adaptive Design 是 Aaron G. 的一本技术书的标题,他认为 AWD 在包括 RWD 的 CSS media query 技术以外，AWD 有可能会针对移动端用户减去内容，减去功能。AWD 可以在服务器端就进行优化，把优化的内容送到终端上。</li></ul></li></ul></li><li><p>排序算法</p></li><li><p>设计模式，在 Vue 中 或在开发过程中，有哪些常用的开发模式</p></li><li><p>你对前端工程化的理解</p></li><li><p>为什么要前端工程化</p></li><li><p>前端性能优化的手段有哪些</p></li><li><p>HTTP 缓存</p></li><li><p>Vue 数据驱动原理</p></li><li><p>Vue 如何让视图刷新</p></li><li><p>webpack 配置中，生产环境与生产环境的不同配置</p></li></ul></article></div></div></div><aside class="column single-sidebar is-one-quarter"><div class=card><div class=card-info><div class=avatar><div class="image-wrapper ratio-1x1"><img src=/images/_avatar.jpg></div></div><div class=info><span class=info-name>WannTonn</span>
+<span class=info-para>为他人期待而活才是小丑🤡</span></div><div class=counter><div class=counter-wrapper><span class=counter-data>19</span>
+<span class=counter-name>kWords</span></div><div class=counter-wrapper><span class=counter-data>10</span>
+<span class=counter-name>Tags</span></div><div class=counter-wrapper><span class=counter-data>29</span>
+<span class=counter-name>Posts</span></div></div></div></div><div class=sticky><div class="card toc hidden" id=table-of-contents><nav id=TableOfContents></nav></div></div></aside></div></div></main><footer class=footer><div class=container><span>Copyright &copy; 2020-2023 WannTonn</span>
+<span>Original theme <a href=https://github.com/amzrk2/hugo-template-aofuji target=_blank>Aofuji</a> with Apache-2.0 license</span></div></footer><script defer src=/assets/amzrk2-common.min.js></script>
 <script defer src=/assets/amzrk2-single.min.js></script>
 <script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/components/prism-core.min.js></script>
-<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script>
-</body>
-</html>
+<script defer src=https://cdn.jsdelivr.net/npm/prismjs@1.21.0/plugins/autoloader/prism-autoloader.min.js></script></body></html>
