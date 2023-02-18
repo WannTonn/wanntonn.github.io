@@ -1,0 +1,84 @@
+---
+title: '前端面试题 - CSS'
+date: 2023-02-17T23:35:24+08:00
+draft: false
+tags:
+ - Code
+image: '/images/Code/css.png'
+---
+
+- 盒模型
+  - 基本概念 （margin + border + padding + content）
+  - 标准模型
+    - 元素宽 / 高 度计算公式：width = content
+  - IE模型
+    - 元素宽 / 高 度计算公式：width = content + padding + border
+  - 如何获取两种盒模型的元素的宽高
+    - css3新增属性 box-sizing: content-box | border-box 分别设置盒模型为 标准模型 / IE模型
+  - 如何用JavaScript获取到盒模型的宽高
+    - dom.style.width/height 只能获取到行内样式的宽高， style标签中的link外链的样式取不到
+    - dom.currentStyle.width/height 取到的是最终渲染的宽高，只有IE支持
+    - window.getComputedStyle(dom).width/height, 取到的是最终渲染的宽高，兼容多个浏览器，IE9+
+    - dom.getBoundingClientRect().width / height 也可以获取到渲染后的宽高，兼容多个浏览器，IE9+，还可以获取视窗的上下左右的距离
+  - 外边距重叠
+    - 当2个外边距（margin），它们将会合成一个外边距，边距的数值为两者边距的较大者
+    - 只有普通文档流中块框的垂直外边距才会发生外边距合并，行内框，浮动框或者绝对定位之间的外边距不合并
+  - BFC
+    - 概念： BFC(block format context 块级格式化上下文)：决定了元素如何对其内容进行定位，以及与其他元素的关系和相互作用。当涉及到可视化布局的时候，BFC提供了一个环境，HTML元素在这个环境中按照规则进行布局，一个环境中的元素不会影响到其他环境中的布局
+    - 原理：
+      - BFC元素垂直方向的边距会发生重叠，属于不同BFC外边距不会发生重叠
+      - BFC区域不会与浮动元素的布局重叠
+      - BFC元素是一个独立的容器，外面的元素不会影响里面的元素，里面的元素也不会影响外面的元素
+      - 计算BFC高度的时候，浮动元素也会参与计算（清除浮动）
+    - 如何创建BFC
+      - overflow不为visible
+      - float 值不为none
+      - position值不为static/relative
+      - display属性为inline-block，table，table-cell，table-caption，flex，inline-flex
+- CSS选择器
+  - 简单选择器：通过元素，class，id匹配一个或多个元素
+  - 属性选择器：通过属性/属性值匹配一个或多个元素
+  - 伪类选择器：匹配处于确定状态的一个或多个元素
+- position（定位允许从正常的文档流布局从中取出元素，并使他们具有不同的行为）
+  - static（静态定位）：静态定位是每个元素获取的默认值，只是意味着将元素放在它的文档布局流中的正常位置
+  - relative（相对定位）：与静态定位相似，占据在正常的文档流中，可以与页面上的元素重叠
+  - absolute（绝对定位）：脱离正常文档流
+- flex布局（注：当设置display:flex之后，子元素的float，clear，vertical-align的属性将会失效）
+  - flex-direction(决定主轴的方向（项目的排列方向）)
+    - row：默认值，主轴水平方向，起点在左端1 2 3
+    - row-reverse：主轴为水平方向，起点在右端 3 2 1
+    - column：主轴为垂直方向，起点在上沿 上至下1 2 3
+    - column-reverse：主轴为垂直方向，起点在下沿  上至下 3 2 1
+  - flex-wrap(决定容器内项目是否可以换行)
+    - nowrap: 默认 - 不换行
+    - wrap: 换行 - 第一行在上方
+    - wrap-reverse: 换行 - 第一行在下方
+  - flex-flow （是flex-direction属性和flex-wrap属性的简写形式，默认值为 row nowrap）
+    - 写法为： flex-flow: <flex-direction> || <flex-wrap>
+  - justify-content（定义了项目在主轴上的对齐方式）
+    - 写法为： justify-content: flex-start | flex-end | center | space-between | space-around | space-evenly 等
+  - align-items（定义项目在交叉轴上如何对齐）
+    - 写法为：align-items: flex-start（交叉轴起点对齐） | flex-end（交叉轴终点对齐） | center（交叉轴中点对齐） | baseline（项目第一行文字的基线对齐） | stretch（默认：如果项目未设置高度或设置为auto，则占满整个容器的高度）
+  - align-content（属性定义了多根轴线的对齐方式，如果项目只有一根轴线，该属性不起作用）
+    - 写法为：flex-start（交叉轴起点对齐） | flex-end（交叉轴终点对齐） | center（交叉轴中点对齐） | space-between（交叉轴两端对齐，轴线之间间隔平均分布） | space-around（轴线两侧的间隔相等，轴线之间的间隔比轴线与边框的间隔大一倍） | stretch（默认：轴线占满整个交叉轴）
+  - order（定义项目的排列顺序。数值越小，排列越靠前，默认为0）
+  - flex-grow （属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大）
+    - 如果所有项目的flex-grow属性都为1，则它们将等分剩余空间，如果一个项目的flex-grow属性为2，其他项目为1，则属性为2的项目占据的空间将比其他项目多一倍。
+  - flex-shrink（定义了项目的缩小比例，默认为1，如果空间不足，项目将缩小）
+    - 如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小，如果一个项目的flex-shrink属性为0，其他项目都为1，空间不足时，flex-shrink为0的项目部缩小
+  - flex-basis（定义了在分配多余空间之前，项目占据的主轴空间。浏览器根据这个属性，计算主轴是否有多余空间。默认值为auto）
+    - 用法：flex-basis: <length> | auto ; 可以设为width或height属性一样的值，则项目将占据固定空间
+  - flex （是 flex-grow。flex-shrink，flex-basis的简写，默认值：0 1 auto 后2个属性可选）
+    - 该属性有2个快捷值 auto（1 1 auto） 和none（0 0 auto）
+    - 建议优先使用flex属性，代替分离的3个属性值
+  - align-self（允许单个项目有其他项目不一样的对齐方式，可覆盖 align-items属性，默认值 auto，表示继承父元素的align-items属性，如果没有父元素，则等同于 stretch）
+    - 用法：align-self： auto | flex-start | flex-end | center | baseline | stretch
+
+- 移动端1px问题与解决方法
+  - 产生原因： 主要是根据DPR设备像素比，是被默认缩放为100%的情况下，设备像素和css像素的比值
+  - 解决方案
+    - WWDC对iOS系统给出的方案：（当写0.5px的时候，就会显示一个物理像素宽度的border，而不是css像素的border。在iOS下可以border：0.5px solid #eee）： 优点：简单无副作用 缺点：支持iOS8+，不支持安卓
+    - 使用边框图片： border: 1px solid transparent; border-img: url('') 2 repeat : 优点：简单无副作用 缺点：border颜色替换成本高，圆角模糊
+    - box-shadow： 优点：使用简单，圆角也可以实现   缺点：模拟的实现方法
+    - 使用伪元素
+    - 设置viewport的scale值

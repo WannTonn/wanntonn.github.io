@@ -8,7 +8,10 @@ image: '/images/Code/javascript.png'
 ---
 
 <!--more-->
-
+- package.json
+  - 什么是package.json
+  - package.json中的 dependency 与 devDpendency字段的区别
+  
 - 设置元素 background 的哪些区域颜色会改变
 
   - background 填充区域默认为 content、padding、border 区域。该行为由 background-clip 属性决定（默认 content-box）。以下为 background 的填充对应区域：
@@ -174,7 +177,7 @@ image: '/images/Code/javascript.png'
     - 测试：mocha-loader, jshint-loader, eslint-loader等
 -  地址栏输入一个URL地址到页面渲染的过程发生了什么
   - HTTP请求准备阶段
-    - 1. 构建请求：浏览器构建请求行信息，准备发起网络请求 GET /index.html HTTP1.1
+    - 1. 构建请求：浏览器构建请求行（请求头，请求体）信息，准备发起网络请求 GET /index.html HTTP1.1
     - 2. 查找缓存：如果浏览器发现请求的资源存在副本，根据强缓存规则，如果没有过期，则返回资源，如果查找失败则进入下一个环节：
       - 1. 准备ip地址和端口
       - 2. DNS（域名和ip的映射系统）域名解析，拿到ip之后找端口，默认端口为80
