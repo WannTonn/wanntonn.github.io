@@ -167,6 +167,7 @@ image: '/images/Code/javascript.png'
         console.log(new Animal(), new Animal2()); // Animal{name: 'name'} Animal2{name: ""}
         ```
   - 实现继承的几种方式
+
     - ```javascript
       // 1.借助构造函数继承
       function Parent1() {
@@ -199,11 +200,11 @@ image: '/images/Code/javascript.png'
       console.log(s1.play, s2.play); // [1,2,3,4] [1,2,3,4]
 
       // 3. 组合方式
-      function Parent3 () {
+      function Parent3() {
         this.name = 'parent3';
         this.play = [1, 2, 3];
       }
-      function Child3 () {
+      function Child3() {
         Parent3.call(this);
         this.type = 'child3';
       }
@@ -215,11 +216,11 @@ image: '/images/Code/javascript.png'
       console.log(s3.play, s4.play);
 
       // 4. 组合继承方式 - 优化
-      function Parent4 () {
+      function Parent4() {
         this.name = 'parent4';
         this.play = [1, 2, 3];
       }
-      function Child4 () {
+      function Child4() {
         Parent4.call(this);
         this.type = 'child4';
       }
@@ -234,11 +235,11 @@ image: '/images/Code/javascript.png'
       console.log(s5.constructor);
 
       // 5. 组合继承方式- 优化2
-        function Parent5 () {
+      function Parent5() {
         this.name = 'parent5';
         this.play = [1, 2, 3];
       }
-      function Child5 () {
+      function Child5() {
         Parent5.call(this);
         this.type = 'child5';
       }
@@ -252,22 +253,88 @@ image: '/images/Code/javascript.png'
       console.log(s7 instanceof Child5, s7 instanceof Parent5);
       console.log(s7.constructor);
       ```
+
 - 跨域通信的几种方式
-  - jsonp （利用script标签的异步属性）
-  - Hash （URL中#号后面的字符发生改变，页面不会发生跳转（search改变会跳转））
+
+  - jsonp （利用 script 标签的异步属性）
+  - Hash （URL 中#号后面的字符发生改变，页面不会发生跳转（search 改变会跳转））
   - PostMessage
   - Websocket
-  - CORS （跨域请求在header中添加CORS-cross-origin，如果服务器不接收这个变量，则拒绝请求，浏览器会主动发起拦截。）
+  - CORS （跨域请求在 header 中添加 CORS-cross-origin，如果服务器不接收这个变量，则拒绝请求，浏览器会主动发起拦截。）
 
 - 网站安全
   - CSRF（跨站请求伪造）
-    - 原理：引诱用户点击钓鱼网站的请求API接口并带上cookie，进而发送给被攻击的网站，实现API调用（需要登录）
-    - 解决方案： 1.添加token请求验证， 2.服务器添加Referer验证， 3.隐藏令牌（在请求头中添加token）
+    - 原理：引诱用户点击钓鱼网站的请求 API 接口并带上 cookie，进而发送给被攻击的网站，实现 API 调用（需要登录）
+    - 解决方案： 1.添加 token 请求验证， 2.服务器添加 Referer 验证， 3.隐藏令牌（在请求头中添加 token）
   - XSS （跨域脚本攻击）
-    - 原理：在富文本编辑器中注入script脚本，
-    - 解决方案：将富文本内容中的script脚本清洗。让其无法执行。
+    - 原理：在富文本编辑器中注入 script 脚本，
+    - 解决方案：将富文本内容中的 script 脚本清洗。让其无法执行。
 - 深/浅拷贝
+
   - 基本数据类型（简单的数据段 保存在栈中，保存在内存中的一个位置。基本类型有：String, Number, Undefined, Null, Symbol, Boolean）
   - 引用数据类型（保存在堆内存中的对象，所以引用类型的值保存的是一个指针，这个指针指向存储在堆中的对象。除了上述 6 种基本类型。剩下的就是引用类型。统称为 Object 类型。分别有：Object，Array，Date，RegExp，Function 等）
 
+- 渲染机制
 
+  - DOCTYPE 及作用
+    - DOCTYPE 告诉浏览器当前文档用哪个版本的DTD。
+    - DTD<document type definition, 文档类型定义>。 是一系列的语法法则，用来定义 XML/XHTML 的文件类型。浏览器会使用它来判断文档类型，决定使用哪种协议来解析，以及切换浏览器模式（HTML4版本所有：严格模式/传统模式）
+      - html5: <!DOCTYPE html>
+      - html4.01 Strict：包含所有HTML元素和属性，但不包括展示性和弃用的元素（比如font）
+      - html4.01 Trasitional：包含所有HTML元素和属性，包括展示性和弃用的元素（比如font）
+
+  - 浏览器渲染过程（输入 URL 到渲染）
+    - ![](/images/interview/browser-render.png)
+  - 重排 Reflow（DOM结构中的各个元素都有自己的盒子，当浏览器修改了该盒子的部分属性时，浏览器会根据其修改的属性，重新绘制并渲染。这个过程就叫重排），以下为触发Reflow的几个方式
+    - 增加、删除、修改DOM节点时，会导致Reflow/Repaint
+    - 移动DOM的位置，或是做动画时
+    - 修改CSS样式时 （width, height, display）
+    - Resize窗口，或是滚动的时候(可能)
+    - 修改网页的默认字体时
+  - 重绘 Repaint
+    - 当定义盒子的位置、大小以及其他（颜色，字体大小）等属性都确定下来后，浏览器便把这些元素都按照各自的特性绘制一遍，于是页面的内容出现，这个过程称之为Repaint，触发Repaint有以下方式：
+      - DOM改动
+      - CSS改动
+    - 如何最大程度高效Repaint
+      - 一个节点的多次Repaint操作放一次执行
+- JS 运行机制
+  - ```javascript
+    console.log(1);
+    // 异步任务
+    setTimeout(() => {
+      console.log(2)
+    }, 1000);
+    console.log(3);
+    // 依次输出 1,3,2
+    ```
+  - 异步任务
+    - setTimeout / setInterval
+    - DOM事件
+    - ES6中的Promise
+  - 总结
+    - 理解JS的单线程的理念
+    - 理解任务队列
+    - 理解Event Loop
+    - 理解哪些语句会放入异步任务队列
+    - 理解语句放入异步任务队列的时机
+- 页面性能
+  - 提升性能
+    - 资源压缩合并，减少http请求
+    - 非核心代码异步加载 -> 异步加载的方式 -> 异步加载的区别
+      - 异步加载的方式
+        - 动态脚本加载(用js创建标签后进行渲染)
+        - defer 
+        - async
+      - 异步加载的区别
+        - defer：在HTML解析完成之后才执行，如果是多个，按照加载的顺序依次执行
+        - async：在加载完之后立即执行，如果是多个，执行顺序与加载顺序无关（先加载先执行）
+    - 利用浏览器缓存 -> 缓存的分类 -> 缓存的原理
+    - 使用CDN
+    - 与解析DNS
+      - ```html
+        // https协议默认关闭dns预解析，用这个标签强制打开a标签预解析
+        <meta http-equiv="x-dns-prefech-control" content="on" >
+        <link rel="dns-prefetch" href="//host_name_to_prefetch.com">
+        ```
+  - 异步加载
+- 错误监控
