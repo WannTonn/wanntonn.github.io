@@ -1,11 +1,12 @@
 ---
-title: '前端面试题 - Javascript'
+title: '前端学习路线 - Javascript'
 date: 2023-02-17T23:35:24+08:00
 draft: true
 tags:
  - Code
 image: '/images/Code/javascript.png'
 ---
+<!--more-->
 - 执行上下文
   - 什么是执行上下文（context）
     - 是评估和执行JavaScript代码环境的抽象概念，每当JavaScript代码运行的时候，它都是在执行上下文中运行

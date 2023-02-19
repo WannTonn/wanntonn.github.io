@@ -37,7 +37,7 @@ menu:
       identifier: "fed"
       url: "/fed/"
       weight: 2
-    - name: "Hackintosh"
+    - name: "MacOS"
       identifier: "hackintosh"
       url: "/hackintosh/"
       weight: 3
@@ -81,3 +81,8 @@ security:
       - ^HUGO
       - ^WC
       - ^NODE_ENV
+frontmatter:
+  lastmod:
+    - lastmod
+    - :git
+    - date

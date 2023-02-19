@@ -1,6 +1,7 @@
 ---
 title: '个人简历'
 date: 2022-03-04T23:35:24+08:00
+lastmod: 2023-02-18T13:12:55+08:00
 draft: false
 image: '/images/CV/_avatar.jpg'
 ---
@@ -12,9 +13,9 @@ image: '/images/CV/_avatar.jpg'
 - 本科 / 电子商务专业 (2012-2016)
 - 工作年限：7 年 (2016.09 ~ 至今)
 - 手机：18060476141
-- Mail: wangtong@wanntonn.fun
+- Mail：wangtong@wanntonn.fun
 - 期望职位： WEB 前端工程师
-- 技术博客: [https://blogs.wanntonn.fun ](https://blogs.wanntonn.fun)
+- 技术博客：[https://blogs.wanntonn.fun ](https://blogs.wanntonn.fun)
   <!-- - GitHub: [https://github.com/WannTonn](https://github.com/WannTonn) -->
 
 ## 工作经历
