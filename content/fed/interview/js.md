@@ -134,7 +134,7 @@ image: '/images/Code/javascript.png'
       ```
 
   - ![](/images/interview/object-prototype.jpg)
-  - 原型(对象)
+  - 原型(对象):（原型是JS实现继承的主要方式。用constructor的时候，产生一个实例，实例.__proto__指向构造函数的原型对象，也就是构造函数.prototype。构造函数.prototype.constructor指向构造函数的本身，构造函数.prototype.__proto__指向Object的实例对象，也就是构造函数.prototype.__proto__指向Object的原型对象，然后再从实例.Object.__proto__指向Obj.prototype这个过程，它都是原型上的__proto__然后直接往上指的底边就形成一条原型链，最终指向null。即Object.prototype.__proto__ === null）
   - 原型链
   - 构造函数：new Fn() 用 new 构造实例的函数叫做构造函数，生成函数的时候就会生成原型对象（prototype）.函数也是对象，所以函数也有**proto**
   - 实例：例子中的 o1，o2，o3 都叫做实例
