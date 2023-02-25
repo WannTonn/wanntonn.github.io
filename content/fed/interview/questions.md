@@ -8,7 +8,38 @@ image: '/images/Code/javascript.png'
 ---
 
 <!--more-->
-
+- 实现一个函数validateStr，校验"[],{}), [()]"等是否匹配
+  - ```javascript
+    // 思路:
+    // 1. 遍历字符串的每一个字符
+    // 2. 如果是左半部分则直接push入栈
+    // 3. 如果是右半部分，则将栈顶的第一个元素取出来与当前的元素进行对比，如果不匹配，return false，如果匹配，则出栈遍历完之后判断栈内是否为空。
+    function validateStr(str) {
+      // 定义一个map做映射
+      const strMap = {
+        '{': '}',
+        '[': ']',
+        '(': ')'
+      };
+      // 定义一个栈
+      let arr = [];
+      // 遍历str字符串
+      for (let i of str) {
+        // 如果是左半部分，就push入栈
+        if (strMap[i]) {
+          arr.push(i);
+        } else if (Object.values(strMap).includes(i)) {
+          // 右半部分 将当前的元素和栈顶的第一个元素进行匹配
+          let top = arr.pop();
+          if (i !== strMap[top]) return false;
+        } else {
+          return false;
+        }
+      }
+      // 遍历完成后要保证栈的长度为0
+      return arr.length === 0;
+    }
+    ```
 - 谈谈 Vue 和 React 这 2 个框架的理解与区别
 
   - 两个框架都提倡组件化，都是通过虚拟 DOM 高效实现更新视图。都使用了 diff 算法，也都对 diff 算法进行了优化。都有 router 库实现 URL 到组件的映射，都有状态管理等。
@@ -345,12 +376,16 @@ image: '/images/Code/javascript.png'
   - 合并文件，合并图片，减少 http 请求
   - 标明高度和宽度
   - 网址后加斜杆
-  - 优化 TCP 协议
-- 为什么要选择 Vue，Vue 解决了哪些问题
-- 对 Vue 生命周期的理解
-- v-if / v-show 的区别
-- Vue.js 中 组件之间的通信手段
-- Vue 中的数据双向绑定
+  - 优化TCP协议
+- 为什么要选择Vue，Vue解决了哪些问题
+- 对Vue生命周期的理解
+- v-if / v-show的区别
+- Vue.js中 组件之间的通信手段
+- Vue中的数据双向绑定
+- 对浏览器与静态资源的理解
+- 对interator的理解
+- 静态资源更新如何通知用户刷新页面
+- 自身有什么优势
 - 如果让你实现一个基本的双向数据绑定，有什么思路
 - MVVM 和 MVC 有什么区别
 - 前端自动化测试框架的使用经历
