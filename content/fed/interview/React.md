@@ -4,11 +4,11 @@ date: 2023-02-19T19:35:24+08:00
 draft: true
 tags:
  - Code
-image: '/images/Code/.jpg'
+image: '/images/Code/react.jpg'
 ---
 <!--more-->
 
-- 搞懂这12个Hooks，婉转React
+- 搞懂这12个Hooks，玩转React
 
   我们知道React Hooks有useState设置变量，useEffect副作用，useRef获取元素的所有属性，还有useMemo，useCallback来做性能优化，还有一个自定义Hooks，来创建自己想要的Hooks
 

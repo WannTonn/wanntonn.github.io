@@ -29,10 +29,10 @@ sectionPagesMenu: "main"
 # menu
 menu:
   main:
-    - name: "笔记"
-      identifier: "post"
-      url: "/post/"
-      weight: 1
+    # - name: "笔记"
+    #   identifier: "post"
+    #   url: "/post/"
+    #   weight: 1
     - name: "前端"
       identifier: "fed"
       url: "/fed/"
