@@ -333,7 +333,7 @@ image: '/images/Code/javascript.png'
     - 与解析DNS
       - ```html
         // https协议默认关闭dns预解析，用这个标签强制打开a标签预解析
-        <meta http-equiv="x-dns-prefech-control" content="on" >
+        <meta http-equiv="x-dns-prefetch-control" content="on" >
         <link rel="dns-prefetch" href="//host_name_to_prefetch.com">
         ```
   - 异步加载
