@@ -285,6 +285,12 @@ image: '/images/Code/javascript.png'
 
   - 浏览器渲染过程（输入 URL 到渲染）
     - ![](/images/interview/browser-render.png)
+    - 1. 浏览器解析HTML，生成DOM Tree （Parse HTML）
+    - 2. 浏览器解析CSS，生成CSSOM Tree
+    - 3. JavaScript通过DOM API和CSSOM API来操作DOM Tree 和CSS Rule Tree，浏览器将DOM Tree 和 CSSOM Tree合成渲染树（Render Tree）
+    - 4. 布局（layout），根据生成的Render Tree，进行回流，以计算每个节点的几何信息（位置，大小，字体样式等）
+    - 5. 绘制（painting），根据渲染树和回流得到的几何信息，得到每个节点的绝对像素
+    - 6. 展示（display），将像素发送给图形处理器（GPU），展示到页面上
   - 重排 Reflow（DOM结构中的各个元素都有自己的盒子，当浏览器修改了该盒子的部分属性时，浏览器会根据其修改的属性，重新绘制并渲染。这个过程就叫重排），以下为触发Reflow的几个方式
     - 增加、删除、修改DOM节点时，会导致Reflow/Repaint
     - 移动DOM的位置，或是做动画时
