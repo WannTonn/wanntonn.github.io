@@ -32,7 +32,8 @@ tags:
       User root
       IdentitiesOnly yes
     $ ssh hostname # hostname 为设置的别名
-
+>  在git clone 的时候遇到`WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED!`的问题
+    $ ssh-keygen -R github.com
 > Ubuntu 安装yum
 
     $ apt-get install yum
