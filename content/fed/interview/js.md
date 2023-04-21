@@ -344,3 +344,28 @@ image: '/images/Code/javascript.png'
         ```
   - 异步加载
 - 错误监控
+
+- 新大陆支付
+- 在登录页面加的倒计时，需要销毁吗
+- 登录页面加的倒计时在进到其他页面的时候，返回的话。这个倒计时是否还在
+- 如果在登录页面加一个interval，在interval中写入console，那组件销毁后，console是否还在。
+- 如果想要封装一个http库，思路是什么
+- 如果想要在这个http库中发起重试，该怎么写
+- 关于HOC与hooks的区别
+- typescript如何规范class的字段
+- 如果不知道接受的参数的字段类型，那如何定义？（泛型）
+- 是否了解过洋葱模型
+- 除了框架之外，是否还有了解其他技术
+
+- 兴业证券
+- React中的useEffect
+- React中的useRef
+- css 中的盒模型
+- background-size 中 100% 100% 和cover和contain的差别
+- 在quickfox项目中，前端与原生通信的方式，如何触发
+- 封装过哪些组件，细说
+- 有了解过H5中的REM么，是怎么实现的
+- babel-preset 与 babel-runtime的差别，与优先级
+- babel-pollyfill 与 babel-preset的区别
+- git冲突，（细指开发流程，从拉取代码到合并代码）
+- 开发时项目中有哪些分支，各分支的角色是什么
