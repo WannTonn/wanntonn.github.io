@@ -1,31 +1,33 @@
----
-title: '个人简历'
-date: 2022-03-04T23:35:24+08:00
-lastmod: 2023-02-18T13:12:55+08:00
-draft: false
-image: '/images/CV/_avatar.jpg'
----
-
-<!--more-->
 ## 个人信息
 
 - 汪通 / 男 / 1994 年
 - 本科 / 电子商务专业 (2012-2016)
-- 工作年限：6 年 (2016.09 ~ 至今)
+- 工作年限：7 年 (2016.09 ~ 至今)
 - 手机：18060476141
 - Mail：wangtong@wanntonn.fun
 - 期望职位： WEB 前端工程师
-- 技术博客：[https://blogs.wanntonn.fun ](https://blogs.wanntonn.fun)
-  <!-- - GitHub: [https://github.com/WannTonn](https://github.com/WannTonn) -->
+<!-- - GitHub: [https://github.com/WannTonn](https://github.com/WannTonn) -->
+<!-- - 技术博客：[https://blogs.wanntonn.fun ](https://blogs.wanntonn.fun) -->
 
 ## 工作经历
-
-- 福建紫讯科技有限公司(2021.07 ~ 至今)(WEB 前端工程师)
+- 杭州合聚变信息技术有限公司福州分公司(2023.05~至今)
+- 福建紫讯科技有限公司(2021.07 ~ 2023.04)(WEB 前端工程师)
 - 福州东西乐活科技有限公司(前：福州东西电子商务科技有限公司) (2018.08 ~ 2021.07)(WEB 前端工程师)
 - 福州票付通科技有限公司(2016.09 ~ 2018.08)(WEB 前端工程师)
 
 ## 项目经历
-
+- 考古加 [预览地址：https://kaogujia.com](https://kaogujia.com)
+    - WEB前端开发
+    - 项目描述：为内容电商而生的专业数据服务平台。
+    - 项目职责：
+        -  参与官网WEB页面的开发、维护与优化
+             - 替换原先留存的UI组件，提高使用效率，减少了重复工作量
+             - 处理底层商品标签数据，减少数据重复处理，加快页面切换响应速度
+             - 优化页面加载速度
+        - 参与后台系统的开发与维护与优化
+          - 共同参与重构后台系统的重构
+          - 独立维护后台系统的后续功能与需求
+          - 优化后台系统的加载速度
 - HubStudio [预览地址：https://hubstudio.cn/](https://hubstudio.cn/)
     - WEB前端开发
     - 项目描述：多账号指纹浏览器(客户端：React + Electron / 官网： NextJs + React)
@@ -47,7 +49,7 @@ image: '/images/CV/_avatar.jpg'
     - 项目职责：
         - 参与页面的开发与维护
         - 封装常用的功能组件
-- 紫鸟业务支撑系统(后台系统) 
+- 紫鸟业务支撑系统(后台系统)
     - WEB前端开发
     - 项目描述：官网与开放平台的管理后台。
     - 项目简介：基于React + typescript + antd，配合后端，封装前端校验hooks，实现对账号精确的页面与按钮的权限控制、封装通用高频的业务组件，提高开发效率。
@@ -76,10 +78,8 @@ image: '/images/CV/_avatar.jpg'
 
 ## 个人项目
 - 防篡改的水印依赖（基于watermark-dom的逻辑，在此基础上，用canvas做为水印载体，实现的防篡改的水印组件） [项目地址: https://github.com/WannTonn/tonn-watermarkjs](https://github.com/WannTonn/tonn-watermarkjs)
-- 个人博客项目 [预览地址: https://blogs.wanntonn.fun/](https://blogs.wanntonn.fun/) |  [项目地址: https://github.com/WannTonn/wanntonn.github.io](https://github.com/WannTonn/wanntonn.github.io)
-    - 项目简介： 基于 hugo + Jenkins+ github webhook + DingTalk）完成本地编写预览与编译，提交自动更新。代替 github的jeykill。
 -  手写签名图的预览、裁剪工具。[预览地址：https://wanntonn.github.io/signaturer/](https://wanntonn.github.io/signaturer/) | [项目地址:https://github.com/WannTonn/signaturer](https://github.com/WannTonn/signaturer)。
-     - 项目简介：基于 React + React-cropper，完成对白纸的手写签名/文字的处理，转换成透明底部的文字，用于在页面上显示。  
+     - 项目简介：基于 React + React-cropper，完成对白纸的手写签名/文字的处理，转换成透明底部的文字，用于在页面上显示。
 - 基于 umi 的 Electron 模板  | [项目地址：https://github.com/WannTonn/electron-umi-template](https://github.com/WannTonn/electron-umi-template)。
 
 ## 业余爱好

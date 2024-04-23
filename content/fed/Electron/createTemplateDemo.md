@@ -11,8 +11,8 @@ image: '/images/Post/Electron/bg.jpg'
 
 <!--more-->
 
-[先上链接](https://github.com/WannTonn/electron-umi-template)
-
+[先上链接](https://github.com/WannTonn/electron-umi-template?_blank)
+<a href="https://github.com/WannTonn/electron-umi-template" target="_blank">先上链接</a>
 ### 使用 Umi 创建 React 项目(此处为 MacOS 环境)
 
 ```bash

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .banner-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 160px;
+      height: 52px;
+      border-radius: 4px;
+      font-size: 20px;
+      cursor: pointer;
+      color: #fff;
+      transition: all 0.3s ease;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        left: -60px;
+        top: -60px;
+        content: "";
+        width: 300px;
+        height: 300px;
+        border-radius: 50%;
+        background: linear-gradient(110deg, #2f6cf8 8.47%, #4ca5fa 63.39%);
+        transition: all 0.3s ease;
+      }
+      &::after {
+        display: none;
+        position: absolute;
+        content: "";
+        left: -40px;
+        top: -40px;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        background: linear-gradient(110deg, #4ca5fa 8.47%, #2f6cf8 63.39%);
+        /* background: red; */
+        transition: all 0.3s ease;
+      }
+      &:hover {
+        filter: blur(50%);
+        &::before {
+          display: block;
+          background: linear-gradient(110deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1)),
+          linear-gradient(#2f6cf8 8.47%, #4ca5fa 63.39%);
+        /* background: linear-gradient(110deg, #2f6cf8 8.47%, #4ca5fa 63.39%); */
+
+          animation: liquidColor 5s infinite linear;
+        }
+        &::after {
+          /* display:  block; */
+          background: linear-gradient(90deg,
+            rgba(255, 255, 255, 0.1),
+            rgba(255, 255, 255, 0.1)),
+          linear-gradient(#4ca5fa 8.47%, #2f6cf8 63.39%);
+          filter: blur(50%);
+          animation: liquidColor 5s infinite linear;
+        }
+
+      }
+    }
+
+    @keyframes liquidColor {
+      0% {
+        transform:  rotate(-110deg);
+      }
+      /* 50% {
+        transform:  rotate(120deg);
+      }
+      60% {
+        transform:  rotate(210deg);
+      }
+      80% {
+        
+        transform:  rotate(360deg);
+      } */
+      100% {
+        transform:  rotate(250deg);
+      }
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="banner-btn">
+  </div>
+
+</body>
+
+</html>
