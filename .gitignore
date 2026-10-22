@@ -1,0 +1,7 @@
+# Deployment branch: track only the static site.
+/*
+!/.gitignore
+!/.nojekyll
+!/index.html
+!/assets/
+!/assets/**
